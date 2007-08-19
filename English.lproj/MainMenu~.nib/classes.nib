@@ -1,0 +1,35 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                addDirectory = id; 
+                exitFullScreen = id; 
+                exportToDirectory = id; 
+                fullScreenMode = id; 
+                moveToTrash = id; 
+                rotateLeft = id; 
+                rotateRight = id; 
+                setDirectory = id; 
+                toggleFullScreen = id; 
+            }; 
+            CLASS = CocoaSlideShow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                imageView = MyImageView; 
+                imagesController = NSArrayController; 
+                mainWindow = NSWindow; 
+                panelImageView = NSImageView; 
+                slideShowPanel = NSPanel; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = MyImageView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; }; 
+            SUPERCLASS = NSImageView; 
+        }
+    ); 
+    IBVersion = 1; 
+}
