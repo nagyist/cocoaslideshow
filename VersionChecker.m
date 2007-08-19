@@ -44,8 +44,17 @@ static VersionChecker *sharedInstance = nil;
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *currentVersionString = [infoDictionary valueForKey:@"CFBundleShortVersionString"];
-    NSArray *currentVersion = [currentVersionString componentsSeparatedByString:@"."];
 
+	if(!currentVersionString) {
+		currentVersionString = [infoDictionary valueForKey:@"CFBundleVersion"];
+		if(currentVersionString) {
+			NSArray *components = [currentVersionString componentsSeparatedByString:@" "];
+			currentVersionString = [components objectAtIndex:0];
+		}
+	}
+
+    NSArray *currentVersion = [currentVersionString componentsSeparatedByString:@"."];
+	
     NSURL *versionCheckURL = [NSURL URLWithString:VERSION_CHECK_URL_STRING];
     NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:versionCheckURL];
     if(d == nil ||
