@@ -317,7 +317,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>03A3F60B0C78734D009AD69D</string>
+										<string>03A3F6A80C7878A5009AD69D</string>
 										<key>history</key>
 										<array>
 											<string>036D57490C714374004A8236</string>
@@ -537,8 +537,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
-									<integer>1</integer>
+									<integer>25</integer>
+									<integer>22</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -576,7 +576,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>03B1BB120C5173CA0032C03F</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MyWindow.h</string>
+								<string>VersionChecker.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -584,11 +584,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>03B1BB130C5173CA0032C03F</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MyWindow.h</string>
+										<string>VersionChecker.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>03A3F6120C78734D009AD69D</string>
+										<string>03A3F6A90C7878A5009AD69D</string>
 										<key>history</key>
 										<array>
 											<string>036D55390C712E6D004A8236</string>
@@ -605,16 +605,16 @@
 											<string>03A3F46D0C77DBAA009AD69D</string>
 											<string>03A3F46E0C77DBAA009AD69D</string>
 											<string>03A3F4CC0C77E334009AD69D</string>
-											<string>03A3F5510C77EA54009AD69D</string>
-											<string>03A3F5600C786A2E009AD69D</string>
 											<string>03A3F56B0C786A43009AD69D</string>
 											<string>03A3F56C0C786A43009AD69D</string>
 											<string>03A3F5CB0C787159009AD69D</string>
-											<string>03A3F5CC0C787159009AD69D</string>
-											<string>03A3F60C0C78734D009AD69D</string>
 											<string>03A3F60D0C78734D009AD69D</string>
 											<string>03A3F60E0C78734D009AD69D</string>
-											<string>03A3F5CE0C787159009AD69D</string>
+											<string>03A3F63F0C7875D5009AD69D</string>
+											<string>03A3F6410C7875D5009AD69D</string>
+											<string>03A3F6720C7876DB009AD69D</string>
+											<string>03A3F6A00C787890009AD69D</string>
+											<string>03A3F69E0C787890009AD69D</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -670,6 +670,16 @@
 											<string>03A3F60F0C78734D009AD69D</string>
 											<string>03A3F6100C78734D009AD69D</string>
 											<string>03A3F6110C78734D009AD69D</string>
+											<string>03A3F6430C7875D5009AD69D</string>
+											<string>03A3F6440C7875D5009AD69D</string>
+											<string>03A3F6450C7875D5009AD69D</string>
+											<string>03A3F6520C787615009AD69D</string>
+											<string>03A3F6530C787615009AD69D</string>
+											<string>03A3F65E0C787672009AD69D</string>
+											<string>03A3F65F0C787672009AD69D</string>
+											<string>03A3F6600C787672009AD69D</string>
+											<string>03A3F6730C7876DB009AD69D</string>
+											<string>03A3F6740C7876DB009AD69D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -972,6 +982,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>03A3F67A0C7876E5009AD69D</string>
+		<string>03A3F67B0C7876E5009AD69D</string>
 		<string>03A3F5E80C787159009AD69D</string>
 		<string>/Users/nst/Projects/cocoaslideshow/CocoaSlideShow.xcodeproj</string>
 	</array>

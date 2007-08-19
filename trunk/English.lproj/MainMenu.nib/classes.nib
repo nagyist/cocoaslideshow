@@ -35,6 +35,18 @@
             LANGUAGE = ObjC; 
             OUTLETS = {delegate = id; }; 
             SUPERCLASS = NSWindow; 
+        }, 
+        {
+            ACTIONS = {checkUpdate = id; checkUpdateAndShowPanel = id; }; 
+            CLASS = SSVersionChecker; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {checkUpdate = id; checkUpdateAndShowPanel = id; }; 
+            CLASS = VersionChecker; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
         }
     ); 
     IBVersion = 1; 
