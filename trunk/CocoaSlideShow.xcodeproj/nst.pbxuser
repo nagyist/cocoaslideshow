@@ -166,7 +166,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 170";
 		rLen = 0;
-		rLoc = 5992;
+		rLoc = 5935;
 		rType = 0;
 		vrLen = 1249;
 		vrLoc = 2822;
@@ -931,7 +931,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: draggingEntered:";
 		rLen = 855;
-		rLoc = 11434;
+		rLoc = 11435;
 		rType = 0;
 		vrLen = 679;
 		vrLoc = 11146;
@@ -961,7 +961,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 363";
 		rLen = 0;
-		rLoc = 10261;
+		rLoc = 10204;
 		rType = 0;
 		vrLen = 671;
 		vrLoc = 10685;
@@ -991,7 +991,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 395";
 		rLen = 0;
-		rLoc = 12271;
+		rLoc = 12272;
 		rType = 0;
 		vrLen = 1203;
 		vrLoc = 0;
@@ -1011,7 +1011,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 394";
 		rLen = 0;
-		rLoc = 12265;
+		rLoc = 12266;
 		rType = 0;
 		vrLen = 679;
 		vrLoc = 10710;
@@ -1031,7 +1031,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: prepareForDragOperation:";
 		rLen = 0;
-		rLoc = 11650;
+		rLoc = 11651;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 10685;
@@ -1071,7 +1071,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: sendRemoteButtonEvent:pressedDown:remoteControl:";
 		rLen = 0;
-		rLoc = 10145;
+		rLoc = 10088;
 		rType = 0;
 		vrLen = 1234;
 		vrLoc = 9912;
@@ -1101,7 +1101,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: draggingEntered:";
 		rLen = 855;
-		rLoc = 11434;
+		rLoc = 11435;
 		rType = 0;
 		vrLen = 679;
 		vrLoc = 11146;
@@ -1141,7 +1141,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: draggingEntered:";
 		rLen = 855;
-		rLoc = 11434;
+		rLoc = 11435;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 11121;
@@ -1161,7 +1161,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 377";
 		rLen = 0;
-		rLoc = 11243;
+		rLoc = 11244;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 9975;
@@ -1181,7 +1181,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 378";
 		rLen = 0;
-		rLoc = 11057;
+		rLoc = 11058;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 9975;
@@ -1201,7 +1201,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 356";
 		rLen = 0;
-		rLoc = 10260;
+		rLoc = 10203;
 		rType = 0;
 		vrLen = 1198;
 		vrLoc = 9975;
@@ -1221,7 +1221,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 378";
 		rLen = 0;
-		rLoc = 11057;
+		rLoc = 11058;
 		rType = 0;
 		vrLen = 1253;
 		vrLoc = 9975;
@@ -1241,7 +1241,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 412";
 		rLen = 0;
-		rLoc = 11976;
+		rLoc = 11977;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 11195;
@@ -2063,6 +2063,86 @@
 		vrLen = 1543;
 		vrLoc = 0;
 	};
+	03A3F77C0C7885B8009AD69D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C165DFE840E0CC02AAC07 /* English */;
+		name = "English: 3";
+		rLen = 0;
+		rLoc = 97;
+		rType = 0;
+		vrLen = 97;
+		vrLoc = 0;
+	};
+	03A3F77D0C7885B8009AD69D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4C00C77E27B009AD69D /* VersionChecker.m */;
+		name = "VersionChecker.m: 5";
+		rLen = 0;
+		rLoc = 183;
+		rType = 0;
+		vrLen = 1543;
+		vrLoc = 0;
+	};
+	03A3F77E0C7885B8009AD69D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: takeFilesFromDefault";
+		rLen = 0;
+		rLoc = 455;
+		rType = 0;
+		vrLen = 808;
+		vrLoc = 0;
+	};
+	03A3F77F0C7885B8009AD69D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4C00C77E27B009AD69D /* VersionChecker.m */;
+		name = "VersionChecker.m: 5";
+		rLen = 0;
+		rLoc = 183;
+		rType = 0;
+		vrLen = 1543;
+		vrLoc = 0;
+	};
+	03A3F7800C7885B8009AD69D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: takeFilesFromDefault";
+		rLen = 0;
+		rLoc = 455;
+		rType = 0;
+		vrLen = 808;
+		vrLoc = 0;
+	};
+	03A3F7810C7885B8009AD69D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 373";
+		rLen = 0;
+		rLoc = 10815;
+		rType = 0;
+		vrLen = 1323;
+		vrLoc = 9918;
+	};
+	03A3F7830C7885C3009AD69D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C165DFE840E0CC02AAC07 /* English */;
+		name = "English: 3";
+		rLen = 0;
+		rLoc = 97;
+		rType = 0;
+		vrLen = 97;
+		vrLoc = 0;
+	};
+	03A3F7840C7885C3009AD69D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: sendRemoteButtonEvent:pressedDown:remoteControl:";
+		rLen = 0;
+		rLoc = 10088;
+		rType = 0;
+		vrLen = 1323;
+		vrLoc = 9918;
+	};
 	03B1BAFE0C51655B0032C03F /* CocoaSlideShow */ = {
 		isa = PBXExecutable;
 		activeArgIndex = 2147483647;
@@ -2113,8 +2193,8 @@
 	03B1BB100C5173B40032C03F /* CocoaSlideShow.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1007, 5964}}";
-			sepNavSelRange = "{105, 0}";
-			sepNavVisRect = "{{0, 0}, {1007, 571}}";
+			sepNavSelRange = "{10088, 0}";
+			sepNavVisRect = "{{0, 4790}, {1007, 571}}";
 			sepNavWindowFrame = "{{111, 18}, {1110, 801}}";
 		};
 	};
@@ -2127,7 +2207,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 03B1BAFE0C51655B0032C03F /* CocoaSlideShow */;
 		activeTarget = 8D1107260486CEB800E47090 /* CocoaSlideShow */;
 		addToTargets = (
@@ -2398,6 +2478,14 @@
 			03A3F6D20C787A04009AD69D /* PBXTextBookmark */ = 03A3F6D20C787A04009AD69D /* PBXTextBookmark */;
 			03A3F6D70C787A17009AD69D /* PBXTextBookmark */ = 03A3F6D70C787A17009AD69D /* PBXTextBookmark */;
 			03A3F6D80C787A17009AD69D /* PBXTextBookmark */ = 03A3F6D80C787A17009AD69D /* PBXTextBookmark */;
+			03A3F77C0C7885B8009AD69D /* PBXTextBookmark */ = 03A3F77C0C7885B8009AD69D /* PBXTextBookmark */;
+			03A3F77D0C7885B8009AD69D /* PBXTextBookmark */ = 03A3F77D0C7885B8009AD69D /* PBXTextBookmark */;
+			03A3F77E0C7885B8009AD69D /* PBXTextBookmark */ = 03A3F77E0C7885B8009AD69D /* PBXTextBookmark */;
+			03A3F77F0C7885B8009AD69D /* PBXTextBookmark */ = 03A3F77F0C7885B8009AD69D /* PBXTextBookmark */;
+			03A3F7800C7885B8009AD69D /* PBXTextBookmark */ = 03A3F7800C7885B8009AD69D /* PBXTextBookmark */;
+			03A3F7810C7885B8009AD69D /* PBXTextBookmark */ = 03A3F7810C7885B8009AD69D /* PBXTextBookmark */;
+			03A3F7830C7885C3009AD69D /* PBXTextBookmark */ = 03A3F7830C7885C3009AD69D /* PBXTextBookmark */;
+			03A3F7840C7885C3009AD69D /* PBXTextBookmark */ = 03A3F7840C7885C3009AD69D /* PBXTextBookmark */;
 		};
 		sourceControlManager = 03B1BB0A0C5165790032C03F /* Source Control */;
 		userBuildSettings = {
