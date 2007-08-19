@@ -374,7 +374,6 @@
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
-	NSLog(@"-> %@", filenames);
 	if([filenames count] > 0) {
 		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
 		[self addFiles:filenames];
