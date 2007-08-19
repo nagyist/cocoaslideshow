@@ -2,7 +2,7 @@
 
 // TODO move this string in info.plist
 static NSString *VERSION_CHECK_URL_STRING = @"http://cocoaslideshow.googlecode.com/svn/trunk/VersionCheck.plist";
-//static NSString *VERSION_CHECK_URL_STRING = @"http://127.0.0.1/~nst/SSVersionCheck.plist";
+//static NSString *VERSION_CHECK_URL_STRING = @"http://127.0.0.1/~nst/VersionCheck.plist";
 
 static VersionChecker *sharedInstance = nil;
 
@@ -89,7 +89,7 @@ static VersionChecker *sharedInstance = nil;
                                       [NSString stringWithFormat: NSLocalizedString(@"What do you want to do?", nil), latestVersionString],
                                       NSLocalizedString(@"Download now", nil),
                                       NSLocalizedString(@"Ignore and Continue", nil),
-                                      NSLocalizedString(@"Open CocoaSlideShow website", nil));
+                                      NSLocalizedString(@"Go to website", nil));
                                       
     switch (alertReturn) {
         case NSAlertDefaultReturn:
