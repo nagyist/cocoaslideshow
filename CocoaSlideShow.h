@@ -20,6 +20,7 @@
 	RemoteControl* remoteControl;
 
 	BOOL isFullScreen;
+	BOOL takeFilesFromDefault;
 }
 
 - (IBAction)setDirectory:(id)sender;

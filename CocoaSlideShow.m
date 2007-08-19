@@ -9,6 +9,7 @@
 	self = [super init];
 	images = [[NSMutableArray alloc] init];
 	isFullScreen = NO;
+	takeFilesFromDefault = YES;
 	return self;
 }
 
@@ -104,13 +105,6 @@
 }
 
 - (void)awakeFromNib {
-	NSString *defaultDir = [NSString pathWithComponents:[NSArray arrayWithObjects:NSHomeDirectory(), @"Pictures", nil]];
-	NSString *defaultValue = [[NSUserDefaults standardUserDefaults] valueForKey:@"ImagesDirectory"];
-	if(defaultValue) {
-		defaultDir = defaultValue;
-	}
-	[self setupImagesControllerWithDir:defaultDir recursive:NO];
-
 	remoteControl = [[[AppleRemote alloc] initWithDelegate: self] retain];
 	
 	[mainWindow registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
@@ -365,6 +359,30 @@
     [remoteControl stopListening: self];
 }
 
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	if(takeFilesFromDefault) {
+		NSString *defaultDir = [NSString pathWithComponents:[NSArray arrayWithObjects:NSHomeDirectory(), @"Pictures", nil]];
+		NSString *defaultValue = [[NSUserDefaults standardUserDefaults] valueForKey:@"ImagesDirectory"];
+		if(defaultValue) {
+			defaultDir = defaultValue;
+		}
+		[self setupImagesControllerWithDir:defaultDir recursive:NO];
+	}
+}
+
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
+	NSLog(@"-> %@", filenames);
+	if([filenames count] > 0) {
+		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
+		[self addFiles:filenames];
+		int numberOfImagesAfter = [[imagesController arrangedObjects] count];
+		if(numberOfImagesAfter > numberOfImagesBefore) {
+			[imagesController setSelectionIndex:numberOfImagesBefore];
+		}
+		takeFilesFromDefault = NO;
+	}
+}
+
 #pragma mark NSWindow delegates
 
 - (void)windowWillClose:(NSNotification *)aNotification {
@@ -390,21 +408,15 @@
  
 	if ([[pboard types] containsObject:NSFilenamesPboardType]) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
+		
+		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
 		[self addFiles:files];
+		int numberOfImagesAfter = [[imagesController arrangedObjects] count];
+		if(numberOfImagesAfter > numberOfImagesBefore) {
+			[imagesController setSelectionIndex:numberOfImagesBefore];
+		}		
     }
     return YES;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end
