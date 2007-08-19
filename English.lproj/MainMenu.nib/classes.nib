@@ -29,6 +29,12 @@
             LANGUAGE = ObjC; 
             OUTLETS = {delegate = id; }; 
             SUPERCLASS = NSImageView; 
+        }, 
+        {
+            CLASS = MyWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; }; 
+            SUPERCLASS = NSWindow; 
         }
     ); 
     IBVersion = 1; 

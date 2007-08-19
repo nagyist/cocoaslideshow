@@ -15,6 +15,9 @@
 		036D55130C712BFC004A8236 /* HIDRemoteControlDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55120C712BFC004A8236 /* HIDRemoteControlDevice.m */; };
 		036D55170C712C1B004A8236 /* RemoteControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55160C712C1B004A8236 /* RemoteControl.m */; };
 		036D5C2F0C7269D0004A8236 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036D5C2E0C7269D0004A8236 /* Carbon.framework */; };
+		03A3F4410C77D97E009AD69D /* MyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A3F4400C77D97E009AD69D /* MyWindow.m */; };
+		03A3F4C10C77E27B009AD69D /* VersionChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A3F4C00C77E27B009AD69D /* VersionChecker.m */; };
+		03A3F4E70C77E3B0009AD69D /* VersionCheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */; };
 		03B1BB110C5173B40032C03F /* CocoaSlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -36,6 +39,11 @@
 		036D55150C712C1B004A8236 /* RemoteControl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = RemoteControl.h; sourceTree = "<group>"; };
 		036D55160C712C1B004A8236 /* RemoteControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = RemoteControl.m; sourceTree = "<group>"; };
 		036D5C2E0C7269D0004A8236 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		03A3F43F0C77D97E009AD69D /* MyWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MyWindow.h; sourceTree = "<group>"; };
+		03A3F4400C77D97E009AD69D /* MyWindow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MyWindow.m; sourceTree = "<group>"; };
+		03A3F4BF0C77E27B009AD69D /* VersionChecker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = VersionChecker.h; sourceTree = "<group>"; };
+		03A3F4C00C77E27B009AD69D /* VersionChecker.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = VersionChecker.m; sourceTree = "<group>"; };
+		03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = VersionCheck.plist; sourceTree = "<group>"; };
 		03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CocoaSlideShow.h; sourceTree = "<group>"; };
 		03B1BB100C5173B40032C03F /* CocoaSlideShow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CocoaSlideShow.m; sourceTree = "<group>"; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -67,6 +75,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				03A3F4BF0C77E27B009AD69D /* VersionChecker.h */,
+				03A3F4C00C77E27B009AD69D /* VersionChecker.m */,
 				036D55110C712BFC004A8236 /* HIDRemoteControlDevice.h */,
 				036D55120C712BFC004A8236 /* HIDRemoteControlDevice.m */,
 				032F08190C542D820037F590 /* AppleRemote.h */,
@@ -77,6 +87,8 @@
 				030461600C75158100D70803 /* NSFileManager+CSS.m */,
 				030462540C751CDF00D70803 /* MyImageView.h */,
 				030462550C751CDF00D70803 /* MyImageView.m */,
+				03A3F43F0C77D97E009AD69D /* MyWindow.h */,
+				03A3F4400C77D97E009AD69D /* MyWindow.m */,
 				03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */,
 				03B1BB100C5173B40032C03F /* CocoaSlideShow.m */,
 			);
@@ -126,6 +138,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */,
 				32CA4F630368D1EE00C91783 /* CocoaSlideShow_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -198,6 +211,7 @@
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				030463F10C75347700D70803 /* Credits.html in Resources */,
+				03A3F4E70C77E3B0009AD69D /* VersionCheck.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +245,8 @@
 				036D55170C712C1B004A8236 /* RemoteControl.m in Sources */,
 				030461610C75158100D70803 /* NSFileManager+CSS.m in Sources */,
 				030462560C751CDF00D70803 /* MyImageView.m in Sources */,
+				03A3F4410C77D97E009AD69D /* MyWindow.m in Sources */,
+				03A3F4C10C77E27B009AD69D /* VersionChecker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
