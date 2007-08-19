@@ -106,8 +106,6 @@
 }
 
 - (void)awakeFromNib {
-    [[VersionChecker sharedInstance] checkUpdate:self];
-
 	remoteControl = [[[AppleRemote alloc] initWithDelegate: self] retain];
 	
 	[mainWindow registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
@@ -371,6 +369,8 @@
 		}
 		[self setupImagesControllerWithDir:defaultDir recursive:NO];
 	}
+	
+    [[VersionChecker sharedInstance] checkUpdate:self];
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
