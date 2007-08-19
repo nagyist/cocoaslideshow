@@ -19,4 +19,16 @@
 	}
 }
 
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
+	return [delegate draggingEntered:sender];
+}
+
+- (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender {
+	return [delegate prepareForDragOperation:sender];
+}
+
+- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
+	return [delegate performDragOperation:sender];
+}
+
 @end
