@@ -4,10 +4,21 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Folder</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>fold</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>CocoaSlideShow</string>
 	<key>CFBundleIdentifier</key>
 	<string>ch.seriot.CocoaSlideShow</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -22,17 +33,6 @@
 	<string>0.2 __myBundleVersion__</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Folder</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>fold</string>
-			</array>
-		</dict>
-	</array>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>
