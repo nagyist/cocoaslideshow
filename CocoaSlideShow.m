@@ -2,6 +2,7 @@
 #import "AppleRemote.h"
 
 #import "NSFileManager+CSS.h"
+#import "VersionChecker.h"
 
 @implementation CocoaSlideShow
 
@@ -105,6 +106,8 @@
 }
 
 - (void)awakeFromNib {
+    [[VersionChecker sharedInstance] checkUpdate:self];
+
 	remoteControl = [[[AppleRemote alloc] initWithDelegate: self] retain];
 	
 	[mainWindow registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
