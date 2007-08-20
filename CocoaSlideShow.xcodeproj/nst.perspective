@@ -537,8 +537,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>17</integer>
-									<integer>1</integer>
+									<integer>25</integer>
+									<integer>22</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -578,7 +578,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>03B1BB120C5173CA0032C03F</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CocoaSlideShow.m</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -586,11 +586,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>03B1BB130C5173CA0032C03F</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CocoaSlideShow.m</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>03A3F7BA0C788929009AD69D</string>
+										<string>03A3F83A0C7A42A0009AD69D</string>
 										<key>history</key>
 										<array>
 											<string>036D55390C712E6D004A8236</string>
@@ -612,11 +612,11 @@
 											<string>03A3F5CB0C787159009AD69D</string>
 											<string>03A3F60E0C78734D009AD69D</string>
 											<string>03A3F63F0C7875D5009AD69D</string>
-											<string>03A3F6A00C787890009AD69D</string>
-											<string>03A3F6BA0C7879AB009AD69D</string>
 											<string>03A3F77D0C7885B8009AD69D</string>
 											<string>03A3F77E0C7885B8009AD69D</string>
-											<string>03A3F7920C788672009AD69D</string>
+											<string>03A3F8210C79080A009AD69D</string>
+											<string>03A3F82A0C7A2D4E009AD69D</string>
+											<string>03A3F6A00C787890009AD69D</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -644,6 +644,7 @@
 											<string>03A3F5530C77EA54009AD69D</string>
 											<string>03A3F5660C786A2E009AD69D</string>
 											<string>03A3F5D30C787159009AD69D</string>
+											<string>03A3F82B0C7A2D4E009AD69D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -770,14 +771,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>03A3F7AF0C7888D9009AD69D</string>
+				<string>03A3F82D0C7A2D4E009AD69D</string>
 				<string>1CA23EE50692099D00951B8B</string>
-				<string>03A3F7B00C7888D9009AD69D</string>
+				<string>03A3F82E0C7A2D4E009AD69D</string>
 				<string>03B1BB120C5173CA0032C03F</string>
-				<string>03A3F7B10C7888D9009AD69D</string>
+				<string>03A3F82F0C7A2D4E009AD69D</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 				<string>1CA23EE80692099D00951B8B</string>
-				<string>03A3F7B20C7888D9009AD69D</string>
+				<string>03A3F8300C7A2D4E009AD69D</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.buildAndRun</string>
