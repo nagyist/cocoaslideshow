@@ -85,11 +85,12 @@
 
 
 - (void)addFiles:(NSArray *)filePaths {
+
 	importDone = NO;
 
 	NSEnumerator *e = [filePaths objectEnumerator];
 	NSString *path;
-	NSArray *allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"tif", @"tiff", @"psd", @"gif", @"png", @"pdf", @"bmp", nil];
+	NSArray *allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"tif", @"tiff", @"psd", @"gif", @"png", @"bmp", nil];
 	NSArray *dirContent;
 	while(( path = [e nextObject] )) {
 		NSString *ext = [path pathExtension];
@@ -108,10 +109,9 @@
 			[container setValue:path forKey:@"path"];
 			[imagesController addObject:[container autorelease]];
 		}
-		
 	}
-	importDone = YES;
 
+	importDone = YES;
 }
 
 - (void)addDirFiles:(NSString *)dir {
@@ -151,6 +151,13 @@
     }
 	
 	return dir;
+}
+
+- (IBAction)open:(id)sender {
+	NSString *dir = [self chooseDirectory];
+	if(dir) {
+		[self setupImagesControllerWithDir:dir recursive:YES];
+	}
 }
 
 - (IBAction)setDirectory:(id)sender {

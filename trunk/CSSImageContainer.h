@@ -12,6 +12,7 @@
 @interface CSSImageContainer : NSObject {
 	NSString *path;
 	CSSBitmapImageRep *bitmap;
+	BOOL isFlagged;
 }
 
 - (NSString *)path;
