@@ -3,6 +3,8 @@
 
 #import "NSFileManager+CSS.h"
 #import "VersionChecker.h"
+#import "CSSBitmapImageRep.h"
+#import "CSSImageContainer.h"
 
 @implementation CocoaSlideShow
 
@@ -69,7 +71,22 @@
     return [rotatedImage autorelease];
 }
 
+- (BOOL)imagesControllerContainsPath:(NSString *)path {
+
+	NSEnumerator *e = [images objectEnumerator];
+	CSSImageContainer *container;
+	while(( container = [e nextObject] )) {
+		if([[container path] isEqualToString:path]) {
+			return YES;
+		}
+	}
+	return NO;
+}	
+
+
 - (void)addFiles:(NSArray *)filePaths {
+	importDone = NO;
+
 	NSEnumerator *e = [filePaths objectEnumerator];
 	NSString *path;
 	NSArray *allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"tif", @"tiff", @"psd", @"gif", @"png", @"pdf", @"bmp", nil];
@@ -86,10 +103,15 @@
 			continue;
 		}
 		
-		if(![[imagesController arrangedObjects] containsObject:path]) {
-			[imagesController addObject:path];
+		if(![self imagesControllerContainsPath:path]) {
+			CSSImageContainer *container = [[CSSImageContainer alloc] init];
+			[container setValue:path forKey:@"path"];
+			[imagesController addObject:[container autorelease]];
 		}
+		
 	}
+	importDone = YES;
+
 }
 
 - (void)addDirFiles:(NSString *)dir {
@@ -198,7 +220,10 @@
 	if(isFullScreen) {
 		return;
 	}
-	
+
+	[mainWindow makeFirstResponder:tableView];
+	//return;
+
 	[NSCursor hide];
 	//[NSCursor setHiddenUntilMouseMoves:YES];
 		
@@ -233,7 +258,9 @@
 	
     [mainWindow setContentView:[slideShowPanel contentView]];
 	
+	[self willChangeValueForKey:@"isFullScreen"];
 	isFullScreen = YES;
+	[self didChangeValueForKey:@"isFullScreen"];
 }
 
 - (IBAction)exitFullScreen:(id)sender {
@@ -252,7 +279,9 @@
 		// or the user won't see anything.
 	}
 	
+	[self willChangeValueForKey:@"isFullScreen"];
 	isFullScreen = NO;
+	[self didChangeValueForKey:@"isFullScreen"];
 }
 
 - (IBAction)toggleFullScreen:(id)sender {
@@ -419,6 +448,31 @@
 		}		
     }
     return YES;
+}
+
+- (IBAction)revealInFinder:(id)sender {
+	NSArray *selectedObjects = [imagesController selectedObjects];
+	NSString *imagePath;
+	NSEnumerator *e = [selectedObjects objectEnumerator];
+	NSString *topFolderPath;
+	
+	while( imagePath = [[e nextObject] path] ) {
+		topFolderPath = [imagePath stringByDeletingLastPathComponent];
+		[[NSWorkspace sharedWorkspace] openFile:topFolderPath];
+	}
+}
+
+- (BOOL)multipleImagesSelected {
+	return [[imagesController selectedObjects] count] > 1;
+}
+
+- (BOOL)control:(NSControl *)control textShouldBeginEditing:(NSText *)fieldEditor {
+	isSaving = YES;
+	return YES;
+}
+
+- (void)controlTextDidEndEditing:(NSNotification *)aNotification {
+	isSaving = NO;
 }
 
 @end
