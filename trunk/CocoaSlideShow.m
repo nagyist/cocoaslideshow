@@ -174,14 +174,14 @@
 		return;
 	}
 
-	NSString *sourcePath;
+	CSSImageContainer *container;
 	NSString *destPath;
-	NSEnumerator *e = [[imagesController arrangedObjects] objectEnumerator];
+	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
 	NSFileManager *fm = [NSFileManager defaultManager];
-	while(( sourcePath = [e nextObject] )) {
-		destPath = [destDirectory stringByAppendingPathComponent:[sourcePath lastPathComponent]];
-		if ([fm fileExistsAtPath:sourcePath]) {
-			[fm copyPath:sourcePath toPath:destPath handler:nil];
+	while(( container = [e nextObject] )) {
+		destPath = [destDirectory stringByAppendingPathComponent:[[container path] lastPathComponent]];
+		if ([fm fileExistsAtPath:[container path]]) {
+			[fm copyPath:[container path] toPath:destPath handler:nil];
 		}
 	}
 }
