@@ -10,17 +10,22 @@
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSPanel *slideShowPanel;
 
-	NSImage *currentImage;
+	//NSImage *currentImage;
 	NSMutableArray *images;
 
 	IBOutlet NSArrayController *imagesController;
 	IBOutlet MyImageView *imageView;
 	IBOutlet NSImageView *panelImageView;
+	IBOutlet NSTextField *userCommentTextField;
+	IBOutlet NSTableView *tableView;
 
 	RemoteControl* remoteControl;
 
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
+	
+	BOOL importDone;
+	BOOL isSaving;
 }
 
 - (IBAction)setDirectory:(id)sender;
@@ -28,11 +33,12 @@
 - (IBAction)fullScreenMode:(id)sener;
 - (IBAction)exitFullScreen:(id)sender;
 - (IBAction)toggleFullScreen:(id)sender;
-
 - (IBAction)rotateLeft:(id)sender;
 - (IBAction)rotateRight:(id)sender;
-
+- (IBAction)revealInFinder:(id)sender;
 - (IBAction)moveToTrash:(id)sender;
 - (IBAction)exportToDirectory:(id)sender;
+
+- (BOOL)multipleImagesSelected;
 
 @end

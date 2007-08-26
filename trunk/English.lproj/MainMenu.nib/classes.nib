@@ -7,6 +7,7 @@
                 exportToDirectory = id; 
                 fullScreenMode = id; 
                 moveToTrash = id; 
+                revealInFinder = id; 
                 rotateLeft = id; 
                 rotateRight = id; 
                 setDirectory = id; 
@@ -20,6 +21,8 @@
                 mainWindow = NSWindow; 
                 panelImageView = NSImageView; 
                 slideShowPanel = NSPanel; 
+                tableView = NSTableView; 
+                userCommentTextField = NSTextField; 
             }; 
             SUPERCLASS = NSObject; 
         }, 
