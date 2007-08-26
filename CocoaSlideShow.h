@@ -38,6 +38,7 @@
 - (IBAction)revealInFinder:(id)sender;
 - (IBAction)moveToTrash:(id)sender;
 - (IBAction)exportToDirectory:(id)sender;
+- (IBAction)open:(id)sender;
 
 - (BOOL)multipleImagesSelected;
 
