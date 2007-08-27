@@ -25,6 +25,7 @@
 	[images release];
 	[remoteControl autorelease];
 	[inMemoryBitmapsContainers release];
+	[mainWindow release];
 	[super dealloc];
 }
 
@@ -134,9 +135,13 @@
 }
 
 - (void)awakeFromNib {
-	remoteControl = [[[AppleRemote alloc] initWithDelegate: self] retain];
+	remoteControl = [[AppleRemote alloc] initWithDelegate: self];
 	
 	[mainWindow registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
+	
+	[[userCommentTextField cell] setSendsActionOnEndEditing:YES];
+	[[keywordsTokenField cell] setSendsActionOnEndEditing:YES];
+	[[keywordsTokenField cell] setEnabled:YES]; // TODO see why keywords are grayed otherwise
 	
 	[imageView setDelegate:self];
 }
@@ -238,11 +243,11 @@
     screenRect = [[NSScreen mainScreen] frame];
 
     // Put up a new window
-    mainWindow = [[NSWindow alloc] initWithContentRect:screenRect
-											 styleMask:NSBorderlessWindowMask
-											   backing:NSBackingStoreBuffered
-                                                 defer:NO screen:[NSScreen mainScreen]];
-
+	mainWindow = [[NSWindow alloc] initWithContentRect:screenRect
+												 styleMask:NSBorderlessWindowMask
+												   backing:NSBackingStoreBuffered
+													 defer:NO screen:[NSScreen mainScreen]];
+	
     [mainWindow setLevel:windowLevel];
 
     [mainWindow setBackgroundColor:[NSColor blackColor]];
@@ -266,6 +271,7 @@
 	[NSCursor unhide];
 	
 	[mainWindow orderOut:self];
+	
 	// Release the display(s)
 	if (CGDisplayRelease( kCGDirectMainDisplay ) != kCGErrorSuccess) {
 		NSLog( @"Couldn't release the display(s)!" );

@@ -7,6 +7,7 @@
 //
 
 #import "CSSImageContainer.h"
+#import "NSString+CSS.h"
 
 @implementation CSSImageContainer
 
@@ -27,10 +28,6 @@
 	[bitmap setPath:path];
 
 	return bitmap;
-}
-
-- (NSString *)path {
-	return path;
 }
 
 - (void)dealloc {
@@ -62,6 +59,10 @@
 - (void)revealInFinder {
 	NSString *parentDirectory = [path stringByDeletingLastPathComponent];
 	[[NSWorkspace sharedWorkspace] openFile:parentDirectory];
+}
+
+- (NSString *)path {
+	return path;
 }
 
 @end
