@@ -45,4 +45,23 @@
 	bitmap = nil;
 }
 
+- (void)copyToDirectory:(NSString *)destDirectory {
+	NSString *destPath = [destDirectory stringByAppendingPathComponent:[path lastPathComponent]];
+	NSFileManager *fm = [NSFileManager defaultManager];
+
+	if ([fm fileExistsAtPath:path]) {
+		[fm copyPath:path toPath:destPath handler:nil];
+	}
+}
+
+- (void)moveToTrash {
+	NSString *trashPath = [@"~/.Trash/" stringByAppendingPathComponent:[path lastPathComponent]];
+	[[NSFileManager defaultManager] movePath:path toPath:trashPath handler:nil];
+}
+
+- (void)revealInFinder {
+	NSString *parentDirectory = [path stringByDeletingLastPathComponent];
+	[[NSWorkspace sharedWorkspace] openFile:parentDirectory];
+}
+
 @end

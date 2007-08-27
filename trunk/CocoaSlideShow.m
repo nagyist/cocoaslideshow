@@ -10,10 +10,12 @@
 
 @implementation CocoaSlideShow
 
+// TODO fix multiple memory leaks
+
 - (id)init {
 	self = [super init];
 	images = [[NSMutableArray alloc] init];
-	inMemoryBitmapsPaths = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
+	inMemoryBitmapsContainers = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
 	isFullScreen = NO;
 	takeFilesFromDefault = YES;
 	return self;
@@ -22,7 +24,7 @@
 - (void)dealloc {
 	[images release];
 	[remoteControl autorelease];
-	[inMemoryBitmapsPaths release];
+	[inMemoryBitmapsContainers release];
 	[super dealloc];
 }
 
@@ -185,16 +187,7 @@
 		return;
 	}
 
-	CSSImageContainer *container;
-	NSString *destPath;
-	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
-	NSFileManager *fm = [NSFileManager defaultManager];
-	while(( container = [e nextObject] )) {
-		destPath = [destDirectory stringByAppendingPathComponent:[[container path] lastPathComponent]];
-		if ([fm fileExistsAtPath:[container path]]) {
-			[fm copyPath:[container path] toPath:destPath handler:nil];
-		}
-	}
+	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(copyToDirectory:) withObject:destDirectory];
 }
 
 - (void)rotate:(NSImageView *)iv clockwise:(BOOL)cw {
@@ -212,17 +205,8 @@
 }
 
 - (IBAction)moveToTrash:(id)sender {
-	NSArray *selectedObjects = [imagesController selectedObjects];
-	NSString *imagePath;
-	NSEnumerator *e = [selectedObjects objectEnumerator];
-	NSString *trashPath;
-	
+	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(moveToTrash)];
 	[imagesController removeObjectsAtArrangedObjectIndexes:[imagesController selectionIndexes]];
-
-	while( imagePath = [e nextObject] ) {
-		trashPath = [@"~/.Trash/" stringByAppendingPathComponent:[imagePath lastPathComponent]];
-		[[NSFileManager defaultManager] movePath:imagePath toPath:trashPath handler:nil];
-	}
 }
 
 - (IBAction)fullScreenMode:(id)sender {
@@ -456,15 +440,7 @@
 }
 
 - (IBAction)revealInFinder:(id)sender {
-	NSArray *selectedObjects = [imagesController selectedObjects];
-	NSString *imagePath;
-	NSEnumerator *e = [selectedObjects objectEnumerator];
-	NSString *topFolderPath;
-	
-	while( imagePath = [[e nextObject] path] ) {
-		topFolderPath = [imagePath stringByDeletingLastPathComponent];
-		[[NSWorkspace sharedWorkspace] openFile:topFolderPath];
-	}
+	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(revealInFinder)];
 }
 
 - (BOOL)multipleImagesSelected {
@@ -487,13 +463,13 @@
 	
 	CSSImageContainer *c = [[imagesController selectedObjects] lastObject];
 	
-	if(![inMemoryBitmapsPaths containsObject:c]) {
-		if([inMemoryBitmapsPaths count] == IN_MEMORY_BITMAPS) {
-			CSSImageContainer *oldContainer = [inMemoryBitmapsPaths objectAtIndex:0];
+	if(![inMemoryBitmapsContainers containsObject:c]) {
+		if([inMemoryBitmapsContainers count] == IN_MEMORY_BITMAPS) {
+			CSSImageContainer *oldContainer = [inMemoryBitmapsContainers objectAtIndex:0];
 			[oldContainer forgetBitmap];
-			[inMemoryBitmapsPaths removeObject:oldContainer];
+			[inMemoryBitmapsContainers removeObject:oldContainer];
 		}
-		[inMemoryBitmapsPaths addObject:c];	
+		[inMemoryBitmapsContainers addObject:c];	
 	}
 }
 
