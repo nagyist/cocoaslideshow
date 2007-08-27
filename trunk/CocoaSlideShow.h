@@ -10,14 +10,16 @@
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSPanel *slideShowPanel;
 
-	//NSImage *currentImage;
 	NSMutableArray *images;
+	NSMutableArray *inMemoryBitmapsPaths;
 
 	IBOutlet NSArrayController *imagesController;
 	IBOutlet MyImageView *imageView;
 	IBOutlet NSImageView *panelImageView;
 	IBOutlet NSTextField *userCommentTextField;
 	IBOutlet NSTableView *tableView;
+
+	unsigned inMemoryBitmapsNextIndex;
 
 	RemoteControl* remoteControl;
 

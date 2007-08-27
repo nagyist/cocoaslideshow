@@ -6,11 +6,14 @@
 #import "CSSBitmapImageRep.h"
 #import "CSSImageContainer.h"
 
+#define IN_MEMORY_BITMAPS 10
+
 @implementation CocoaSlideShow
 
 - (id)init {
 	self = [super init];
 	images = [[NSMutableArray alloc] init];
+	inMemoryBitmapsPaths = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
 	isFullScreen = NO;
 	takeFilesFromDefault = YES;
 	return self;
@@ -19,6 +22,7 @@
 - (void)dealloc {
 	[images release];
 	[remoteControl autorelease];
+	[inMemoryBitmapsPaths release];
 	[super dealloc];
 }
 
@@ -304,21 +308,15 @@
 }
 
 - (void)selectPreviousImage {
-	int index = [imagesController selectionIndex];
-	if(index == 0) {
-		//NSLog(@"-- can't select index below 0");
-		return;
+	if([imagesController canSelectPrevious]) {
+		[imagesController selectPrevious:self];
 	}
-	[imagesController setSelectionIndex:index - 1];
 }
 
 - (void)selectNextImage {
-	int index = [imagesController selectionIndex];
-	if(index == [[imagesController arrangedObjects] count] - 1) {
-		//NSLog(@"-- can't select index beyond bounds");
-		return;
+	if([imagesController canSelectNext]) {
+		[imagesController selectNext:self];
 	}
-	[imagesController setSelectionIndex:index + 1];
 }
 
 - (void) sendRemoteButtonEvent: (RemoteControlEventIdentifier) event pressedDown: (BOOL) pressedDown remoteControl: (RemoteControl*) remoteControl {
@@ -480,6 +478,29 @@
 
 - (void)controlTextDidEndEditing:(NSNotification *)aNotification {
 	isSaving = NO;
+}
+
+- (void) retainOnlyAFewImagesAndReleaseTheRest {
+	if([[imagesController selectedObjects] count] != 1) {
+		return;
+	}
+	
+	CSSImageContainer *c = [[imagesController selectedObjects] lastObject];
+	
+	if(![inMemoryBitmapsPaths containsObject:c]) {
+		if([inMemoryBitmapsPaths count] == IN_MEMORY_BITMAPS) {
+			CSSImageContainer *oldContainer = [inMemoryBitmapsPaths objectAtIndex:0];
+			[oldContainer forgetBitmap];
+			[inMemoryBitmapsPaths removeObject:oldContainer];
+		}
+		[inMemoryBitmapsPaths addObject:c];	
+	}
+}
+
+#pragma mark NSTableView delegate
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
+	[self retainOnlyAFewImagesAndReleaseTheRest];
 }
 
 @end
