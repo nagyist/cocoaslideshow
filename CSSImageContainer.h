@@ -16,5 +16,6 @@
 }
 
 - (NSString *)path;
+- (void)forgetBitmap;
 
 @end

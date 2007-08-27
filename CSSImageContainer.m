@@ -21,7 +21,7 @@
 
 	if(bitmap != nil) {
 		return bitmap;
-	}	
+	}
 
 	bitmap = [[CSSBitmapImageRep alloc] initWithData:[NSData dataWithContentsOfFile:path]];
 	[bitmap setPath:path];
@@ -34,9 +34,15 @@
 }
 
 - (void)dealloc {
+	NSLog(@"bitmap release %@", path);
 	[path release];
 	[bitmap release];
 	[super dealloc];
+}
+
+- (void)forgetBitmap {
+	[bitmap release];
+	bitmap = nil;
 }
 
 @end
