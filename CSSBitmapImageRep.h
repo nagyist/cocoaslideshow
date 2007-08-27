@@ -4,6 +4,7 @@
 @interface CSSBitmapImageRep:NSBitmapImageRep {
 	NSString *path;
 	NSString *userComment;
+	NSArray *keywords;
 }
 
 - (void)setPath:(NSString *)aPath;
@@ -12,6 +13,9 @@
 - (void)setUserComment:(NSString *)comment;
 - (NSString *)userComment;
 
-- (NSString *)prettySize;
+- (void)setKeywords:(NSArray *)keywords;
+- (NSArray *)keywords;
+
+- (NSString *)prettyImageSize;
 
 @end

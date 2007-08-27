@@ -18,6 +18,7 @@
 	IBOutlet NSImageView *panelImageView;
 	IBOutlet NSTextField *userCommentTextField;
 	IBOutlet NSTableView *tableView;
+	IBOutlet NSTokenField *keywordsTokenField;
 
 	unsigned inMemoryBitmapsNextIndex;
 

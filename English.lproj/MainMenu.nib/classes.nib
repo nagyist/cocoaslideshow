@@ -19,6 +19,7 @@
             OUTLETS = {
                 imageView = MyImageView; 
                 imagesController = NSArrayController; 
+                keywordsTokenField = NSTokenField; 
                 mainWindow = NSWindow; 
                 panelImageView = NSImageView; 
                 slideShowPanel = NSPanel; 
