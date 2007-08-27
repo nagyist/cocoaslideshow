@@ -11,7 +11,7 @@
 	IBOutlet NSPanel *slideShowPanel;
 
 	NSMutableArray *images;
-	NSMutableArray *inMemoryBitmapsPaths;
+	NSMutableArray *inMemoryBitmapsContainers;
 
 	IBOutlet NSArrayController *imagesController;
 	IBOutlet MyImageView *imageView;
