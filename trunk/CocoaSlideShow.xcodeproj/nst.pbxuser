@@ -160,7 +160,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 42";
 		rLen = 0;
-		rLoc = 894;
+		rLoc = 896;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 626;
@@ -170,7 +170,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 42";
 		rLen = 0;
-		rLoc = 894;
+		rLoc = 896;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 583;
@@ -190,7 +190,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 40";
 		rLen = 0;
-		rLoc = 891;
+		rLoc = 893;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 220;
@@ -220,7 +220,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 40";
 		rLen = 0;
-		rLoc = 891;
+		rLoc = 893;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 220;
@@ -759,7 +759,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 40";
 		rLen = 0;
-		rLoc = 891;
+		rLoc = 893;
 		rType = 0;
 		vrLen = 1034;
 		vrLoc = 220;
@@ -1386,7 +1386,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 740;
@@ -1406,7 +1406,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 740;
@@ -1416,7 +1416,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1426,7 +1426,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1436,7 +1436,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 608;
@@ -1456,7 +1456,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1466,7 +1466,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 608;
@@ -1486,7 +1486,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1496,7 +1496,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 608;
@@ -1516,7 +1516,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1526,7 +1526,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 608;
@@ -1536,7 +1536,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 608;
@@ -1566,7 +1566,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1596,7 +1596,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1626,7 +1626,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1656,7 +1656,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1726,7 +1726,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1756,7 +1756,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1786,7 +1786,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1866,7 +1866,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1896,7 +1896,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1956,7 +1956,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -1986,7 +1986,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 997;
 		vrLoc = 605;
@@ -2066,7 +2066,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 997;
 		vrLoc = 605;
@@ -2096,7 +2096,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2166,7 +2166,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2283,7 +2283,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2313,7 +2313,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2393,7 +2393,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2433,7 +2433,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2473,7 +2473,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2503,7 +2503,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2533,7 +2533,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2563,7 +2563,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2593,7 +2593,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2623,7 +2623,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2653,7 +2653,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2683,7 +2683,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2713,7 +2713,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2773,7 +2773,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2803,7 +2803,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2833,7 +2833,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2903,7 +2903,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -2933,7 +2933,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3003,7 +3003,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3101,7 +3101,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3132,7 +3132,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {927, 4214}}";
 			sepNavSelRange = "{19398, 101}";
-			sepNavVisRect = "{{0, 794}, {927, 700}}";
+			sepNavVisRect = "{{0, 784}, {927, 700}}";
 		};
 	};
 	0345993C0C83726100385D93 /* PBXTextBookmark */ = {
@@ -3176,7 +3176,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 41";
 		rLen = 0;
-		rLoc = 918;
+		rLoc = 920;
 		rType = 0;
 		vrLen = 713;
 		vrLoc = 651;
@@ -3203,7 +3203,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 116";
 		rLen = 0;
-		rLoc = 3971;
+		rLoc = 3993;
 		rType = 0;
 		vrLen = 835;
 		vrLoc = 3144;
@@ -3213,7 +3213,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 41";
 		rLen = 0;
-		rLoc = 918;
+		rLoc = 920;
 		rType = 0;
 		vrLen = 713;
 		vrLoc = 651;
@@ -3233,7 +3233,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3273,7 +3273,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3343,7 +3343,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 114";
 		rLen = 0;
-		rLoc = 3971;
+		rLoc = 3993;
 		rType = 0;
 		vrLen = 1141;
 		vrLoc = 2836;
@@ -3373,7 +3373,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3383,7 +3383,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 120";
 		rLen = 0;
-		rLoc = 3971;
+		rLoc = 3993;
 		rType = 0;
 		vrLen = 1109;
 		vrLoc = 2836;
@@ -3413,7 +3413,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 120";
 		rLen = 0;
-		rLoc = 3971;
+		rLoc = 3993;
 		rType = 0;
 		vrLen = 1109;
 		vrLoc = 2836;
@@ -3423,7 +3423,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 120";
 		rLen = 0;
-		rLoc = 3971;
+		rLoc = 3993;
 		rType = 0;
 		vrLen = 825;
 		vrLoc = 3120;
@@ -3433,7 +3433,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 120";
 		rLen = 0;
-		rLoc = 3971;
+		rLoc = 3993;
 		rType = 0;
 		vrLen = 825;
 		vrLoc = 3120;
@@ -3443,7 +3443,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3453,7 +3453,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 116";
 		rLen = 0;
-		rLoc = 3971;
+		rLoc = 3993;
 		rType = 0;
 		vrLen = 1028;
 		vrLoc = 2951;
@@ -3483,7 +3483,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3503,7 +3503,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 116";
 		rLen = 0;
-		rLoc = 3971;
+		rLoc = 3993;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 2950;
@@ -3513,7 +3513,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 116";
 		rLen = 0;
-		rLoc = 3971;
+		rLoc = 3993;
 		rType = 0;
 		vrLen = 1028;
 		vrLoc = 2951;
@@ -3533,7 +3533,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 132";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 3091;
@@ -3563,7 +3563,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3573,7 +3573,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 134";
 		rLen = 0;
-		rLoc = 4328;
+		rLoc = 4350;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 3091;
@@ -3603,7 +3603,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3643,7 +3643,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3653,7 +3653,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 137";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1007;
 		vrLoc = 3138;
@@ -3683,7 +3683,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3693,7 +3693,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 135";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1084;
 		vrLoc = 3138;
@@ -3723,7 +3723,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3733,7 +3733,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 139";
 		rLen = 0;
-		rLoc = 4328;
+		rLoc = 4350;
 		rType = 0;
 		vrLen = 1090;
 		vrLoc = 3138;
@@ -3763,7 +3763,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3773,7 +3773,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 139";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1090;
 		vrLoc = 3138;
@@ -3803,7 +3803,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3813,7 +3813,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 142";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1024;
 		vrLoc = 3234;
@@ -3843,7 +3843,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3853,7 +3853,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 140";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 3234;
@@ -3883,7 +3883,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3893,7 +3893,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 136";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 3234;
@@ -3923,7 +3923,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3933,7 +3933,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 135";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1065;
 		vrLoc = 3234;
@@ -3963,7 +3963,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -3973,7 +3973,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 134";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 3234;
@@ -4003,7 +4003,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4013,7 +4013,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 134";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 3234;
@@ -4043,7 +4043,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4053,7 +4053,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = off_t;
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1065;
 		vrLoc = 3234;
@@ -4083,7 +4083,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4093,7 +4093,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 134";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 3234;
@@ -4123,7 +4123,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4133,7 +4133,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 136";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 3234;
@@ -4163,7 +4163,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4173,7 +4173,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 136";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 3234;
@@ -4203,7 +4203,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4213,7 +4213,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 138";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 3234;
@@ -4243,7 +4243,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4253,7 +4253,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 138";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 3234;
@@ -4283,7 +4283,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4293,7 +4293,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 131";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1173;
 		vrLoc = 3047;
@@ -4323,7 +4323,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4333,7 +4333,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 130";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1182;
 		vrLoc = 3047;
@@ -4363,7 +4363,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4373,7 +4373,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 140";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 3498;
@@ -4403,7 +4403,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4413,7 +4413,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 139";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 901;
 		vrLoc = 3498;
@@ -4443,7 +4443,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4453,7 +4453,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 143";
 		rLen = 0;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 3498;
@@ -4483,7 +4483,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4503,7 +4503,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 129";
 		rLen = 0;
-		rLoc = 4325;
+		rLoc = 4347;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 3044;
@@ -4523,7 +4523,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 129";
 		rLen = 0;
-		rLoc = 4325;
+		rLoc = 4347;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 3044;
@@ -4563,7 +4563,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4573,7 +4573,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "return [[NSFileManager defaultManager] prettyFileSize:path];";
 		rLen = 63;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 3044;
@@ -4613,7 +4613,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "return [[NSFileManager defaultManager] prettyFileSize:path];";
 		rLen = 63;
-		rLoc = 4266;
+		rLoc = 4288;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 3044;
@@ -4663,7 +4663,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4790,7 +4790,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 115";
 		rLen = 0;
-		rLoc = 3969;
+		rLoc = 3992;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 3188;
@@ -4800,7 +4800,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4820,7 +4820,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 115";
 		rLen = 0;
-		rLoc = 3969;
+		rLoc = 3992;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 3046;
@@ -4850,7 +4850,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4890,7 +4890,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -4900,7 +4900,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 210;
@@ -4960,7 +4960,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 211;
@@ -5000,7 +5000,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 210;
@@ -5030,7 +5030,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 210;
@@ -5050,7 +5050,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 210;
@@ -5110,7 +5110,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -5160,7 +5160,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 41";
 		rLen = 0;
-		rLoc = 918;
+		rLoc = 920;
 		rType = 0;
 		vrLen = 713;
 		vrLoc = 651;
@@ -5170,7 +5170,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 121";
 		rLen = 0;
-		rLoc = 3970;
+		rLoc = 3992;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 3394;
@@ -5220,7 +5220,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 121";
 		rLen = 0;
-		rLoc = 3970;
+		rLoc = 3992;
 		rType = 0;
 		vrLen = 913;
 		vrLoc = 3349;
@@ -5230,7 +5230,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 41";
 		rLen = 0;
-		rLoc = 918;
+		rLoc = 920;
 		rType = 0;
 		vrLen = 713;
 		vrLoc = 651;
@@ -5240,7 +5240,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 121";
 		rLen = 0;
-		rLoc = 3970;
+		rLoc = 3992;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 3394;
@@ -5265,7 +5265,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 121";
 		rLen = 0;
-		rLoc = 3970;
+		rLoc = 3992;
 		rType = 0;
 		vrLen = 1081;
 		vrLoc = 3252;
@@ -5275,7 +5275,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -5285,7 +5285,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 121";
 		rLen = 0;
-		rLoc = 3970;
+		rLoc = 3992;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 3252;
@@ -5332,7 +5332,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 121";
 		rLen = 0;
-		rLoc = 3970;
+		rLoc = 3992;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 3394;
@@ -5362,7 +5362,7 @@
 		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
 		name = "CSSImageContainer.m: 65";
 		rLen = 0;
-		rLoc = 1637;
+		rLoc = 1639;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 740;
@@ -5424,6 +5424,907 @@
 		vrLen = 2879;
 		vrLoc = 5066;
 	};
+	03459AC30C8380B600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 48";
+		rLen = 0;
+		rLoc = 1387;
+		rType = 0;
+		vrLen = 945;
+		vrLoc = 896;
+	};
+	03459AC40C8380B600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 48";
+		rLen = 0;
+		rLoc = 1387;
+		rType = 0;
+		vrLen = 1431;
+		vrLoc = 412;
+	};
+	03459AC50C8380B600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2527;
+		vrLoc = 2693;
+	};
+	03459AC60C8380B600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459AC70C8380F800385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 4";
+		rLen = 0;
+		rLoc = 52;
+		rType = 0;
+		vrLen = 1234;
+		vrLoc = 0;
+	};
+	03459ACB0C83810100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 4";
+		rLen = 0;
+		rLoc = 52;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 245;
+	};
+	03459ACC0C83810100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		rLen = 14;
+		rLoc = 813;
+		rType = 0;
+	};
+	03459ACD0C83810100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 4";
+		rLen = 0;
+		rLoc = 52;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 245;
+	};
+	03459ACE0C83810100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 706;
+		vrLoc = 740;
+	};
+	03459ACF0C83810100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459AD00C83810100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 4";
+		rLen = 0;
+		rLoc = 52;
+		rType = 0;
+		vrLen = 1234;
+		vrLoc = 0;
+	};
+	03459AD10C83810100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 608;
+	};
+	03459AD20C83810100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2527;
+		vrLoc = 2693;
+	};
+	03459AD30C83810100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459AD80C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459AD90C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 34";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 1055;
+		vrLoc = 49;
+	};
+	03459ADA0C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "- (NSString *)path;";
+		rLen = 20;
+		rLoc = 317;
+		rType = 0;
+		vrLen = 365;
+		vrLoc = 0;
+	};
+	03459ADB0C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CD0C7DE4F0009AD69D /* CSSBitmapImageRep.h */;
+		name = "CSSBitmapImageRep.h: 22";
+		rLen = 0;
+		rLoc = 372;
+		rType = 0;
+		vrLen = 372;
+		vrLoc = 0;
+	};
+	03459ADC0C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 4";
+		rLen = 0;
+		rLoc = 52;
+		rType = 0;
+		vrLen = 1234;
+		vrLoc = 0;
+	};
+	03459ADD0C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 39";
+		rLen = 0;
+		rLoc = 896;
+		rType = 0;
+		vrLen = 1055;
+		vrLoc = 49;
+	};
+	03459ADE0C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CD0C7DE4F0009AD69D /* CSSBitmapImageRep.h */;
+		name = "CSSBitmapImageRep.h: 22";
+		rLen = 0;
+		rLoc = 372;
+		rType = 0;
+		vrLen = 372;
+		vrLoc = 0;
+	};
+	03459ADF0C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 4";
+		rLen = 0;
+		rLoc = 52;
+		rType = 0;
+		vrLen = 1234;
+		vrLoc = 0;
+	};
+	03459AE00C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "- (NSString *)path;";
+		rLen = 20;
+		rLoc = 317;
+		rType = 0;
+		vrLen = 365;
+		vrLoc = 0;
+	};
+	03459AE10C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 39";
+		rLen = 0;
+		rLoc = 896;
+		rType = 0;
+		vrLen = 1055;
+		vrLoc = 49;
+	};
+	03459AE20C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "- (NSString *)path;";
+		rLen = 20;
+		rLoc = 317;
+		rType = 0;
+		vrLen = 365;
+		vrLoc = 0;
+	};
+	03459AE30C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 34";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 1055;
+		vrLoc = 49;
+	};
+	03459AE40C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "- (NSString *)path;";
+		rLen = 20;
+		rLoc = 317;
+		rType = 0;
+		vrLen = 365;
+		vrLoc = 0;
+	};
+	03459AE50C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 4";
+		rLen = 0;
+		rLoc = 52;
+		rType = 0;
+		vrLen = 1234;
+		vrLoc = 0;
+	};
+	03459AE60C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CD0C7DE4F0009AD69D /* CSSBitmapImageRep.h */;
+		name = "CSSBitmapImageRep.h: 22";
+		rLen = 0;
+		rLoc = 372;
+		rType = 0;
+		vrLen = 372;
+		vrLoc = 0;
+	};
+	03459AE70C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 121";
+		rLen = 0;
+		rLoc = 3992;
+		rType = 0;
+		vrLen = 1111;
+		vrLoc = 3254;
+	};
+	03459AE80C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2527;
+		vrLoc = 2693;
+	};
+	03459AE90C83814600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459AEA0C83815600385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 121";
+		rLen = 0;
+		rLoc = 3992;
+		rType = 0;
+		vrLen = 1111;
+		vrLoc = 3254;
+	};
+	03459AEC0C83816F00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 121";
+		rLen = 0;
+		rLoc = 3992;
+		rType = 0;
+		vrLen = 797;
+		vrLoc = 3254;
+	};
+	03459AED0C83816F00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 121";
+		rLen = 0;
+		rLoc = 3992;
+		rType = 0;
+		vrLen = 797;
+		vrLoc = 3254;
+	};
+	03459AF10C83818200385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459AF20C83818200385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 101";
+		rLen = 0;
+		rLoc = 3299;
+		rType = 0;
+		vrLen = 1191;
+		vrLoc = 3044;
+	};
+	03459AF30C83818200385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2527;
+		vrLoc = 2693;
+	};
+	03459AF40C83818200385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459AF70C8381D900385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459AF80C8381D900385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 101";
+		rLen = 0;
+		rLoc = 3299;
+		rType = 0;
+		vrLen = 1191;
+		vrLoc = 3044;
+	};
+	03459AF90C8381D900385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2527;
+		vrLoc = 2693;
+	};
+	03459AFA0C8381D900385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459AFF0C83822E00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459B000C83822E00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 123";
+		rLen = 0;
+		rLoc = 4012;
+		rType = 0;
+		vrLen = 1105;
+		vrLoc = 3254;
+	};
+	03459B010C83822E00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2527;
+		vrLoc = 2693;
+	};
+	03459B020C83822E00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459B040C83827D00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 123";
+		rLen = 0;
+		rLoc = 4012;
+		rType = 0;
+		vrLen = 1105;
+		vrLoc = 3254;
+	};
+	03459B050C83827D00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 13";
+		rLen = 0;
+		rLoc = 436;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B060C83827D00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 123";
+		rLen = 0;
+		rLoc = 4012;
+		rType = 0;
+		vrLen = 1105;
+		vrLoc = 3254;
+	};
+	03459B070C83827D00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 13";
+		rLen = 0;
+		rLoc = 436;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B0A0C83828B00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 121";
+		rLen = 0;
+		rLoc = 3992;
+		rType = 0;
+		vrLen = 957;
+		vrLoc = 3396;
+	};
+	03459B0B0C83828B00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 13";
+		rLen = 0;
+		rLoc = 436;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B0C0C83828B00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 13";
+		rLen = 0;
+		rLoc = 436;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B0E0C83829100385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 13";
+		rLen = 0;
+		rLoc = 436;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B0F0C83829500385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459B100C83829500385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 13";
+		rLen = 0;
+		rLoc = 436;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B110C83829500385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2527;
+		vrLoc = 2693;
+	};
+	03459B120C83829500385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459B140C838A2C00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 11";
+		rLen = 0;
+		rLoc = 426;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B150C838A2D00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459B160C838A2D00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 11";
+		rLen = 0;
+		rLoc = 426;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B170C838A2D00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2527;
+		vrLoc = 2693;
+	};
+	03459B180C838A2D00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459B1B0C838A9900385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459B1C0C838A9900385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 11";
+		rLen = 0;
+		rLoc = 426;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B1D0C838A9900385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2527;
+		vrLoc = 2693;
+	};
+	03459B1E0C838A9900385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459B920C838D0F00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459B930C838D0F00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 13";
+		rLen = 0;
+		rLoc = 436;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B940C838D0F00385D93 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+	};
+	03459B950C838D0F00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		name = "VersionCheck.plist: 13";
+		rLen = 0;
+		rLoc = 436;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	03459B960C838D0F00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 34";
+		rLen = 0;
+		rLoc = 1039;
+		rType = 0;
+		vrLen = 1152;
+		vrLoc = 0;
+	};
+	03459B970C838D0F00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2526;
+		vrLoc = 2693;
+	};
+	03459B980C838D0F00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459B9E0C838DAA00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459B9F0C838DAA00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 35";
+		rLen = 0;
+		rLoc = 1011;
+		rType = 0;
+		vrLen = 1204;
+		vrLoc = 0;
+	};
+	03459BA00C838DAA00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2526;
+		vrLoc = 2693;
+	};
+	03459BA10C838DAA00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459BA50C838DBE00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459BA60C838DBE00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 37";
+		rLen = 0;
+		rLoc = 1049;
+		rType = 0;
+		vrLen = 1200;
+		vrLoc = 0;
+	};
+	03459BA70C838DBE00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2526;
+		vrLoc = 2693;
+	};
+	03459BA80C838DBE00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459BAC0C838DD300385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459BAD0C838DD300385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 27";
+		rLen = 0;
+		rLoc = 783;
+		rType = 0;
+		vrLen = 1200;
+		vrLoc = 0;
+	};
+	03459BAE0C838DD300385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2526;
+		vrLoc = 2693;
+	};
+	03459BAF0C838DD300385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
+	03459BB20C838E0B00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 35";
+		rLen = 0;
+		rLoc = 856;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 591;
+	};
+	03459BB30C838E0B00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 33";
+		rLen = 0;
+		rLoc = 950;
+		rType = 0;
+		vrLen = 1200;
+		vrLoc = 0;
+	};
+	03459BB40C838E0B00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0345993B0C83726100385D93 /* CGImageProperties.h */;
+		name = "CF_EXPORT const CFStringRef kCGImagePropertyIPTCKeywords  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;";
+		rLen = 101;
+		rLoc = 19398;
+		rType = 0;
+		vrLen = 2526;
+		vrLoc = 2693;
+	};
+	03459BB50C838E0B00385D93 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 034597450C83498A00385D93 /* CGImageSource.h */;
+		name = isrc;
+		rLen = 4;
+		rLoc = 6056;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 5066;
+	};
 	036D4EC00C6F741C004A8236 /* XCBreakpointsBucket */ = {
 		isa = XCBreakpointsBucket;
 		name = CocoaSlideShow;
@@ -5470,8 +6371,8 @@
 	03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1007, 1932}}";
-			sepNavSelRange = "{1387, 0}";
-			sepNavVisRect = "{{0, 304}, {1007, 582}}";
+			sepNavSelRange = "{4012, 0}";
+			sepNavVisRect = "{{0, 1350}, {1007, 582}}";
 			sepNavWindowFrame = "{{152, 77}, {1110, 801}}";
 		};
 	};
@@ -5505,9 +6406,9 @@
 	};
 	03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 571}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 582}}";
 			sepNavSelRange = "{436, 0}";
-			sepNavVisRect = "{{0, 0}, {1007, 571}}";
+			sepNavVisRect = "{{0, 0}, {1007, 582}}";
 		};
 	};
 	03B1BAFE0C51655B0032C03F /* CocoaSlideShow */ = {
@@ -5576,9 +6477,9 @@
 	};
 	03DA06470C805F0B009D508F /* CSSImageContainer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {991, 966}}";
-			sepNavSelRange = "{1637, 0}";
-			sepNavVisRect = "{{0, 378}, {991, 410}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 966}}";
+			sepNavSelRange = "{839, 0}";
+			sepNavVisRect = "{{0, 56}, {1007, 582}}";
 			sepNavWindowFrame = "{{265, -26}, {1110, 801}}";
 		};
 	};
@@ -5591,7 +6492,7 @@
 		delayBeforeContinue = 0;
 		hitCount = 1;
 		location = Foundation;
-		modificationTime = 209943955.33212;
+		modificationTime = 209945236.466313;
 		state = 1;
 		symbolName = _NSKVODeallocateLog;
 	};
@@ -6232,6 +7133,97 @@
 			03459ABD0C837DF200385D93 /* PBXTextBookmark */ = 03459ABD0C837DF200385D93 /* PBXTextBookmark */;
 			03459ABE0C837DF200385D93 /* PBXTextBookmark */ = 03459ABE0C837DF200385D93 /* PBXTextBookmark */;
 			03459ABF0C837DF200385D93 /* PBXTextBookmark */ = 03459ABF0C837DF200385D93 /* PBXTextBookmark */;
+			03459AC30C8380B600385D93 /* PBXTextBookmark */ = 03459AC30C8380B600385D93 /* PBXTextBookmark */;
+			03459AC40C8380B600385D93 /* PBXTextBookmark */ = 03459AC40C8380B600385D93 /* PBXTextBookmark */;
+			03459AC50C8380B600385D93 /* PBXTextBookmark */ = 03459AC50C8380B600385D93 /* PBXTextBookmark */;
+			03459AC60C8380B600385D93 /* PBXTextBookmark */ = 03459AC60C8380B600385D93 /* PBXTextBookmark */;
+			03459AC70C8380F800385D93 /* PBXTextBookmark */ = 03459AC70C8380F800385D93 /* PBXTextBookmark */;
+			03459ACB0C83810100385D93 /* PBXTextBookmark */ = 03459ACB0C83810100385D93 /* PBXTextBookmark */;
+			03459ACC0C83810100385D93 /* PBXTextBookmark */ = 03459ACC0C83810100385D93 /* PBXTextBookmark */;
+			03459ACD0C83810100385D93 /* PBXTextBookmark */ = 03459ACD0C83810100385D93 /* PBXTextBookmark */;
+			03459ACE0C83810100385D93 /* PBXTextBookmark */ = 03459ACE0C83810100385D93 /* PBXTextBookmark */;
+			03459ACF0C83810100385D93 /* PBXTextBookmark */ = 03459ACF0C83810100385D93 /* PBXTextBookmark */;
+			03459AD00C83810100385D93 /* PBXTextBookmark */ = 03459AD00C83810100385D93 /* PBXTextBookmark */;
+			03459AD10C83810100385D93 /* PBXTextBookmark */ = 03459AD10C83810100385D93 /* PBXTextBookmark */;
+			03459AD20C83810100385D93 /* PBXTextBookmark */ = 03459AD20C83810100385D93 /* PBXTextBookmark */;
+			03459AD30C83810100385D93 /* PBXTextBookmark */ = 03459AD30C83810100385D93 /* PBXTextBookmark */;
+			03459AD80C83814600385D93 /* PBXTextBookmark */ = 03459AD80C83814600385D93 /* PBXTextBookmark */;
+			03459AD90C83814600385D93 /* PBXTextBookmark */ = 03459AD90C83814600385D93 /* PBXTextBookmark */;
+			03459ADA0C83814600385D93 /* PBXTextBookmark */ = 03459ADA0C83814600385D93 /* PBXTextBookmark */;
+			03459ADB0C83814600385D93 /* PBXTextBookmark */ = 03459ADB0C83814600385D93 /* PBXTextBookmark */;
+			03459ADC0C83814600385D93 /* PBXTextBookmark */ = 03459ADC0C83814600385D93 /* PBXTextBookmark */;
+			03459ADD0C83814600385D93 /* PBXTextBookmark */ = 03459ADD0C83814600385D93 /* PBXTextBookmark */;
+			03459ADE0C83814600385D93 /* PBXTextBookmark */ = 03459ADE0C83814600385D93 /* PBXTextBookmark */;
+			03459ADF0C83814600385D93 /* PBXTextBookmark */ = 03459ADF0C83814600385D93 /* PBXTextBookmark */;
+			03459AE00C83814600385D93 /* PBXTextBookmark */ = 03459AE00C83814600385D93 /* PBXTextBookmark */;
+			03459AE10C83814600385D93 /* PBXTextBookmark */ = 03459AE10C83814600385D93 /* PBXTextBookmark */;
+			03459AE20C83814600385D93 /* PBXTextBookmark */ = 03459AE20C83814600385D93 /* PBXTextBookmark */;
+			03459AE30C83814600385D93 /* PBXTextBookmark */ = 03459AE30C83814600385D93 /* PBXTextBookmark */;
+			03459AE40C83814600385D93 /* PBXTextBookmark */ = 03459AE40C83814600385D93 /* PBXTextBookmark */;
+			03459AE50C83814600385D93 /* PBXTextBookmark */ = 03459AE50C83814600385D93 /* PBXTextBookmark */;
+			03459AE60C83814600385D93 /* PBXTextBookmark */ = 03459AE60C83814600385D93 /* PBXTextBookmark */;
+			03459AE70C83814600385D93 /* PBXTextBookmark */ = 03459AE70C83814600385D93 /* PBXTextBookmark */;
+			03459AE80C83814600385D93 /* PBXTextBookmark */ = 03459AE80C83814600385D93 /* PBXTextBookmark */;
+			03459AE90C83814600385D93 /* PBXTextBookmark */ = 03459AE90C83814600385D93 /* PBXTextBookmark */;
+			03459AEA0C83815600385D93 /* PBXTextBookmark */ = 03459AEA0C83815600385D93 /* PBXTextBookmark */;
+			03459AEC0C83816F00385D93 /* PBXTextBookmark */ = 03459AEC0C83816F00385D93 /* PBXTextBookmark */;
+			03459AED0C83816F00385D93 /* PBXTextBookmark */ = 03459AED0C83816F00385D93 /* PBXTextBookmark */;
+			03459AF10C83818200385D93 /* PBXTextBookmark */ = 03459AF10C83818200385D93 /* PBXTextBookmark */;
+			03459AF20C83818200385D93 /* PBXTextBookmark */ = 03459AF20C83818200385D93 /* PBXTextBookmark */;
+			03459AF30C83818200385D93 /* PBXTextBookmark */ = 03459AF30C83818200385D93 /* PBXTextBookmark */;
+			03459AF40C83818200385D93 /* PBXTextBookmark */ = 03459AF40C83818200385D93 /* PBXTextBookmark */;
+			03459AF70C8381D900385D93 /* PBXTextBookmark */ = 03459AF70C8381D900385D93 /* PBXTextBookmark */;
+			03459AF80C8381D900385D93 /* PBXTextBookmark */ = 03459AF80C8381D900385D93 /* PBXTextBookmark */;
+			03459AF90C8381D900385D93 /* PBXTextBookmark */ = 03459AF90C8381D900385D93 /* PBXTextBookmark */;
+			03459AFA0C8381D900385D93 /* PBXTextBookmark */ = 03459AFA0C8381D900385D93 /* PBXTextBookmark */;
+			03459AFF0C83822E00385D93 /* PBXTextBookmark */ = 03459AFF0C83822E00385D93 /* PBXTextBookmark */;
+			03459B000C83822E00385D93 /* PBXTextBookmark */ = 03459B000C83822E00385D93 /* PBXTextBookmark */;
+			03459B010C83822E00385D93 /* PBXTextBookmark */ = 03459B010C83822E00385D93 /* PBXTextBookmark */;
+			03459B020C83822E00385D93 /* PBXTextBookmark */ = 03459B020C83822E00385D93 /* PBXTextBookmark */;
+			03459B040C83827D00385D93 /* PBXTextBookmark */ = 03459B040C83827D00385D93 /* PBXTextBookmark */;
+			03459B050C83827D00385D93 /* PBXTextBookmark */ = 03459B050C83827D00385D93 /* PBXTextBookmark */;
+			03459B060C83827D00385D93 /* PBXTextBookmark */ = 03459B060C83827D00385D93 /* PBXTextBookmark */;
+			03459B070C83827D00385D93 /* PBXTextBookmark */ = 03459B070C83827D00385D93 /* PBXTextBookmark */;
+			03459B0A0C83828B00385D93 /* PBXTextBookmark */ = 03459B0A0C83828B00385D93 /* PBXTextBookmark */;
+			03459B0B0C83828B00385D93 /* PBXTextBookmark */ = 03459B0B0C83828B00385D93 /* PBXTextBookmark */;
+			03459B0C0C83828B00385D93 /* PBXTextBookmark */ = 03459B0C0C83828B00385D93 /* PBXTextBookmark */;
+			03459B0E0C83829100385D93 /* PBXTextBookmark */ = 03459B0E0C83829100385D93 /* PBXTextBookmark */;
+			03459B0F0C83829500385D93 /* PBXTextBookmark */ = 03459B0F0C83829500385D93 /* PBXTextBookmark */;
+			03459B100C83829500385D93 /* PBXTextBookmark */ = 03459B100C83829500385D93 /* PBXTextBookmark */;
+			03459B110C83829500385D93 /* PBXTextBookmark */ = 03459B110C83829500385D93 /* PBXTextBookmark */;
+			03459B120C83829500385D93 /* PBXTextBookmark */ = 03459B120C83829500385D93 /* PBXTextBookmark */;
+			03459B140C838A2C00385D93 /* PBXTextBookmark */ = 03459B140C838A2C00385D93 /* PBXTextBookmark */;
+			03459B150C838A2D00385D93 /* PBXTextBookmark */ = 03459B150C838A2D00385D93 /* PBXTextBookmark */;
+			03459B160C838A2D00385D93 /* PBXTextBookmark */ = 03459B160C838A2D00385D93 /* PBXTextBookmark */;
+			03459B170C838A2D00385D93 /* PBXTextBookmark */ = 03459B170C838A2D00385D93 /* PBXTextBookmark */;
+			03459B180C838A2D00385D93 /* PBXTextBookmark */ = 03459B180C838A2D00385D93 /* PBXTextBookmark */;
+			03459B1B0C838A9900385D93 /* PBXTextBookmark */ = 03459B1B0C838A9900385D93 /* PBXTextBookmark */;
+			03459B1C0C838A9900385D93 /* PBXTextBookmark */ = 03459B1C0C838A9900385D93 /* PBXTextBookmark */;
+			03459B1D0C838A9900385D93 /* PBXTextBookmark */ = 03459B1D0C838A9900385D93 /* PBXTextBookmark */;
+			03459B1E0C838A9900385D93 /* PBXTextBookmark */ = 03459B1E0C838A9900385D93 /* PBXTextBookmark */;
+			03459B920C838D0F00385D93 /* PBXTextBookmark */ = 03459B920C838D0F00385D93 /* PBXTextBookmark */;
+			03459B930C838D0F00385D93 /* PBXTextBookmark */ = 03459B930C838D0F00385D93 /* PBXTextBookmark */;
+			03459B940C838D0F00385D93 /* PBXBookmark */ = 03459B940C838D0F00385D93 /* PBXBookmark */;
+			03459B950C838D0F00385D93 /* PBXTextBookmark */ = 03459B950C838D0F00385D93 /* PBXTextBookmark */;
+			03459B960C838D0F00385D93 /* PBXTextBookmark */ = 03459B960C838D0F00385D93 /* PBXTextBookmark */;
+			03459B970C838D0F00385D93 /* PBXTextBookmark */ = 03459B970C838D0F00385D93 /* PBXTextBookmark */;
+			03459B980C838D0F00385D93 /* PBXTextBookmark */ = 03459B980C838D0F00385D93 /* PBXTextBookmark */;
+			03459B9E0C838DAA00385D93 /* PBXTextBookmark */ = 03459B9E0C838DAA00385D93 /* PBXTextBookmark */;
+			03459B9F0C838DAA00385D93 /* PBXTextBookmark */ = 03459B9F0C838DAA00385D93 /* PBXTextBookmark */;
+			03459BA00C838DAA00385D93 /* PBXTextBookmark */ = 03459BA00C838DAA00385D93 /* PBXTextBookmark */;
+			03459BA10C838DAA00385D93 /* PBXTextBookmark */ = 03459BA10C838DAA00385D93 /* PBXTextBookmark */;
+			03459BA50C838DBE00385D93 /* PBXTextBookmark */ = 03459BA50C838DBE00385D93 /* PBXTextBookmark */;
+			03459BA60C838DBE00385D93 /* PBXTextBookmark */ = 03459BA60C838DBE00385D93 /* PBXTextBookmark */;
+			03459BA70C838DBE00385D93 /* PBXTextBookmark */ = 03459BA70C838DBE00385D93 /* PBXTextBookmark */;
+			03459BA80C838DBE00385D93 /* PBXTextBookmark */ = 03459BA80C838DBE00385D93 /* PBXTextBookmark */;
+			03459BAC0C838DD300385D93 /* PBXTextBookmark */ = 03459BAC0C838DD300385D93 /* PBXTextBookmark */;
+			03459BAD0C838DD300385D93 /* PBXTextBookmark */ = 03459BAD0C838DD300385D93 /* PBXTextBookmark */;
+			03459BAE0C838DD300385D93 /* PBXTextBookmark */ = 03459BAE0C838DD300385D93 /* PBXTextBookmark */;
+			03459BAF0C838DD300385D93 /* PBXTextBookmark */ = 03459BAF0C838DD300385D93 /* PBXTextBookmark */;
+			03459BB20C838E0B00385D93 /* PBXTextBookmark */ = 03459BB20C838E0B00385D93 /* PBXTextBookmark */;
+			03459BB30C838E0B00385D93 /* PBXTextBookmark */ = 03459BB30C838E0B00385D93 /* PBXTextBookmark */;
+			03459BB40C838E0B00385D93 /* PBXTextBookmark */ = 03459BB40C838E0B00385D93 /* PBXTextBookmark */;
+			03459BB50C838E0B00385D93 /* PBXTextBookmark */ = 03459BB50C838E0B00385D93 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 03B1BB0A0C5165790032C03F /* Source Control */;
 		userBuildSettings = {
@@ -6252,9 +7244,9 @@
 	};
 	8D1107310486CEB800E47090 /* Info.plist */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 588}}";
-			sepNavSelRange = "{612, 0}";
-			sepNavVisRect = "{{0, 0}, {1007, 571}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 616}}";
+			sepNavSelRange = "{950, 0}";
+			sepNavVisRect = "{{0, 0}, {1007, 582}}";
 		};
 	};
 }

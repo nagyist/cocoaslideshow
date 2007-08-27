@@ -31,7 +31,7 @@
 }
 
 - (void)dealloc {
-	NSLog(@"bitmap release %@", path);
+	//NSLog(@"bitmap release %@", path);
 	[path release];
 	[bitmap release];
 	[super dealloc];

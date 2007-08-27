@@ -116,8 +116,8 @@
 
 - (void)dealloc {
 	[path release];
-	//[userComment release]; // TODO prevent crash
-	//[keywords release]; // TODO prevent crash
+	//[userComment release]; // FIXME uncomment and fix crash
+	//[keywords release]; // FIXME uncomment and fix crash
 	[super dealloc];
 }
 

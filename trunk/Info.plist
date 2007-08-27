@@ -31,8 +31,10 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.3</string>
 	<key>CFBundleVersion</key>
-	<string>0.2 __myBundleVersion__</string>
+	<string>__myBundleVersion__</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
