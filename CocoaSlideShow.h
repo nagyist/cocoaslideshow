@@ -14,7 +14,6 @@
 	IBOutlet NSPanel *slideShowPanel;
 
 	NSMutableArray *images;
-	NSMutableArray *inMemoryBitmapsContainers;
 
 	IBOutlet ImagesController *imagesController;
 	IBOutlet MyImageView *imageView;
@@ -22,9 +21,7 @@
 	IBOutlet NSTextField *userCommentTextField;
 	IBOutlet NSTableView *tableView;
 	IBOutlet NSTokenField *keywordsTokenField;
-
-	unsigned inMemoryBitmapsNextIndex;
-
+	
 	RemoteControl *remoteControl;
 	NSUndoManager *undoManager;
 

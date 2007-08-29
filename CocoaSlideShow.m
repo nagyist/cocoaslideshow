@@ -6,14 +6,11 @@
 #import "CSSBitmapImageRep.h"
 #import "CSSImageContainer.h"
 
-#define IN_MEMORY_BITMAPS 10
-
 @implementation CocoaSlideShow
 
 - (id)init {
 	self = [super init];
 	images = [[NSMutableArray alloc] init];
-	inMemoryBitmapsContainers = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
 	isFullScreen = NO;
 	takeFilesFromDefault = YES;
 	
@@ -28,7 +25,6 @@
 - (void)dealloc {
 	[images release];
 	[remoteControl autorelease];
-	[inMemoryBitmapsContainers release];
 	[mainWindow release];
 	[undoManager release];
 	[super dealloc];
@@ -415,27 +411,10 @@
 	isSaving = NO;
 }
 
-- (void) retainOnlyAFewImagesAndReleaseTheRest {
-	if([[imagesController selectedObjects] count] != 1) {
-		return;
-	}
-	
-	CSSImageContainer *c = [[imagesController selectedObjects] lastObject];
-	
-	if(![inMemoryBitmapsContainers containsObject:c]) {
-		if([inMemoryBitmapsContainers count] == IN_MEMORY_BITMAPS) {
-			CSSImageContainer *oldContainer = [inMemoryBitmapsContainers objectAtIndex:0];
-			[oldContainer forgetBitmap];
-			[inMemoryBitmapsContainers removeObject:oldContainer];
-		}
-		[inMemoryBitmapsContainers addObject:c];	
-	}
-}
-
 #pragma mark NSTableView delegate
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
-	[self retainOnlyAFewImagesAndReleaseTheRest];
+	[imagesController retainOnlyAFewImagesAndReleaseTheRest];
 }
 
 @end
