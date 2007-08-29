@@ -10,8 +10,6 @@
 
 @implementation CocoaSlideShow
 
-// TODO fix multiple memory leaks
-
 - (id)init {
 	self = [super init];
 	images = [[NSMutableArray alloc] init];

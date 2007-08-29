@@ -4,7 +4,6 @@
 
 @interface MyWindow : NSWindow
 {
-    id delegate;
 }
 
 -(void) setDelegate: (id) del;
