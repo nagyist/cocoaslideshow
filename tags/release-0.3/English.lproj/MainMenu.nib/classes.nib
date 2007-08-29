@@ -1,0 +1,58 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                addDirectory = id; 
+                exitFullScreen = id; 
+                exportToDirectory = id; 
+                fullScreenMode = id; 
+                moveToTrash = id; 
+                open = id; 
+                revealInFinder = id; 
+                rotateLeft = id; 
+                rotateRight = id; 
+                setDirectory = id; 
+                toggleFullScreen = id; 
+            }; 
+            CLASS = CocoaSlideShow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                imageView = MyImageView; 
+                imagesController = NSArrayController; 
+                keywordsTokenField = NSTokenField; 
+                mainWindow = NSWindow; 
+                panelImageView = NSImageView; 
+                slideShowPanel = NSPanel; 
+                tableView = NSTableView; 
+                userCommentTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = MyImageView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; }; 
+            SUPERCLASS = NSImageView; 
+        }, 
+        {
+            CLASS = MyWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {
+            ACTIONS = {checkUpdate = id; checkUpdateAndShowPanel = id; }; 
+            CLASS = SSVersionChecker; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {checkUpdate = id; checkUpdateAndShowPanel = id; }; 
+            CLASS = VersionChecker; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
