@@ -14,6 +14,7 @@
 		0338002E0C85D37700439E5A /* Flagged.png in Resources */ = {isa = PBXBuildFile; fileRef = 0338002D0C85D37700439E5A /* Flagged.png */; };
 		033800380C85D3D800439E5A /* FlagImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 033800370C85D3D800439E5A /* FlagImageTransformer.m */; };
 		033801D00C85EB7E00439E5A /* FlaggedHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 033801CF0C85EB7E00439E5A /* FlaggedHeader.png */; };
+		033804240C86084300439E5A /* ImagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033804230C86084300439E5A /* ImagesController.m */; };
 		03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 03458E590C81CA5300385D93 /* NSString+CSS.m */; };
 		0367A7FA0C56CA6600BD57E8 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367A7F90C56CA6600BD57E8 /* IOKit.framework */; };
 		036D55130C712BFC004A8236 /* HIDRemoteControlDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55120C712BFC004A8236 /* HIDRemoteControlDevice.m */; };
@@ -44,6 +45,8 @@
 		033800360C85D3D800439E5A /* FlagImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = FlagImageTransformer.h; sourceTree = "<group>"; };
 		033800370C85D3D800439E5A /* FlagImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = FlagImageTransformer.m; sourceTree = "<group>"; };
 		033801CF0C85EB7E00439E5A /* FlaggedHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlaggedHeader.png; sourceTree = "<group>"; };
+		033804220C86084300439E5A /* ImagesController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ImagesController.h; sourceTree = "<group>"; };
+		033804230C86084300439E5A /* ImagesController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ImagesController.m; sourceTree = "<group>"; };
 		03458E580C81CA5300385D93 /* NSString+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CSS.h"; sourceTree = "<group>"; };
 		03458E590C81CA5300385D93 /* NSString+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSS.m"; sourceTree = "<group>"; };
 		0367A7F90C56CA6600BD57E8 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
@@ -117,6 +120,8 @@
 				03DA06470C805F0B009D508F /* CSSImageContainer.m */,
 				03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */,
 				03B1BB100C5173B40032C03F /* CocoaSlideShow.m */,
+				033804220C86084300439E5A /* ImagesController.h */,
+				033804230C86084300439E5A /* ImagesController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				03DA06480C805F0B009D508F /* CSSImageContainer.m in Sources */,
 				03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */,
 				033800380C85D3D800439E5A /* FlagImageTransformer.m in Sources */,
+				033804240C86084300439E5A /* ImagesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

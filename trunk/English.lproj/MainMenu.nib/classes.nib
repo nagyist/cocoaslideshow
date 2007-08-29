@@ -5,25 +5,21 @@
                 addDirectory = id; 
                 exitFullScreen = id; 
                 exportToDirectory = id; 
-                flag = id; 
                 fullScreenMode = id; 
-                moveToTrash = id; 
                 open = id; 
-                removeAllFlags = id; 
+                redo = id; 
                 revealInFinder = id; 
                 rotateLeft = id; 
                 rotateRight = id; 
-                selectFlags = id; 
                 setDirectory = id; 
-                toggleFlags = id; 
                 toggleFullScreen = id; 
-                unflag = id; 
+                undo = id; 
             }; 
             CLASS = CocoaSlideShow; 
             LANGUAGE = ObjC; 
             OUTLETS = {
                 imageView = MyImageView; 
-                imagesController = NSArrayController; 
+                imagesController = ImagesController; 
                 keywordsTokenField = NSTokenField; 
                 mainWindow = NSWindow; 
                 panelImageView = NSImageView; 
@@ -34,6 +30,21 @@
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                flag = id; 
+                moveToTrash = id; 
+                remove = id; 
+                removeAllFlags = id; 
+                selectFlags = id; 
+                toggleFlags = id; 
+                unflag = id; 
+            }; 
+            CLASS = ImagesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {cocoaSlideShow = CocoaSlideShow; }; 
+            SUPERCLASS = NSArrayController; 
+        }, 
         {
             CLASS = MyImageView; 
             LANGUAGE = ObjC; 
