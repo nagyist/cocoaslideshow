@@ -4,11 +4,11 @@
 @implementation MyWindow
 
 -(void) setDelegate: (id) del {
-    delegate = del;
+    [super setDelegate:del];
 }
 
 - (id) delegate {
-    return (delegate);
+    return [super delegate];
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
@@ -20,15 +20,15 @@
 }
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
-	return [delegate draggingEntered:sender];
+	return [[self delegate] draggingEntered:sender];
 }
 
 - (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender {
-	return [delegate prepareForDragOperation:sender];
+	return [[self delegate] prepareForDragOperation:sender];
 }
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
-	return [delegate performDragOperation:sender];
+	return [[self delegate] performDragOperation:sender];
 }
 
 @end
