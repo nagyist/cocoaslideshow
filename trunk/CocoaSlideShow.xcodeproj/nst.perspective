@@ -204,7 +204,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>033809010C862D3100439E5A</string>
+						<string>033809270C862E9E00439E5A</string>
 						<key>history</key>
 						<array>
 							<string>033803520C85FE6200439E5A</string>
@@ -357,7 +357,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>033808FF0C862D3100439E5A</string>
+										<string>033809210C862E9E00439E5A</string>
 										<key>history</key>
 										<array>
 											<string>034597D50C83500D00385D93</string>
@@ -602,8 +602,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -621,14 +619,12 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>033809000C862D3100439E5A</string>
+										<string>033809260C862E9E00439E5A</string>
 										<key>history</key>
 										<array>
 											<string>034597D50C83500D00385D93</string>
 											<string>03459A550C837BB200385D93</string>
 											<string>03459A560C837BB200385D93</string>
-											<string>03459BBD0C83938D00385D93</string>
-											<string>03459BED0C83A7C100385D93</string>
 											<string>0338FFDC0C85D1C900439E5A</string>
 											<string>0338FFDD0C85D1C900439E5A</string>
 											<string>0338FFDE0C85D1C900439E5A</string>
@@ -640,9 +636,11 @@
 											<string>033807230C861CB700439E5A</string>
 											<string>0338086F0C86297500439E5A</string>
 											<string>033808D40C862CAB00439E5A</string>
-											<string>033808D50C862CAB00439E5A</string>
-											<string>033808F80C862D2A00439E5A</string>
-											<string>033808F90C862D2A00439E5A</string>
+											<string>033809060C862DC300439E5A</string>
+											<string>033809150C862E0300439E5A</string>
+											<string>033809220C862E9E00439E5A</string>
+											<string>033809230C862E9E00439E5A</string>
+											<string>033809140C862E0300439E5A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -791,6 +789,13 @@
 											<string>033808E90C862CAB00439E5A</string>
 											<string>033808EA0C862CAB00439E5A</string>
 											<string>033808FA0C862D2A00439E5A</string>
+											<string>033809090C862DC300439E5A</string>
+											<string>0338090A0C862DC300439E5A</string>
+											<string>0338090B0C862DC300439E5A</string>
+											<string>033809160C862E0300439E5A</string>
+											<string>033809170C862E0300439E5A</string>
+											<string>033809240C862E9E00439E5A</string>
+											<string>033809250C862E9E00439E5A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

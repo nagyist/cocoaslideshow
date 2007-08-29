@@ -15,6 +15,7 @@
 	takeFilesFromDefault = YES;
 	
 	undoManager = [[NSUndoManager alloc] init];
+	[undoManager setLevelsOfUndo:10];
 	
     FlagImageTransformer *ft = [[[FlagImageTransformer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:ft forName:@"FlagImageTransformer"];
