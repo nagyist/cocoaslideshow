@@ -10,8 +10,8 @@
 	030461600C75158100D70803 /* NSFileManager+CSS.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1007, 966}}";
-			sepNavSelRange = "{347, 88}";
-			sepNavVisRect = "{{0, 128}, {1007, 582}}";
+			sepNavSelRange = "{360, 25}";
+			sepNavVisRect = "{{0, 126}, {1007, 582}}";
 			sepNavWindowFrame = "{{138, -83}, {1110, 801}}";
 		};
 	};
@@ -124,7 +124,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 34";
 		rLen = 0;
-		rLoc = 746;
+		rLoc = 666;
 		rType = 0;
 		vrLen = 1120;
 		vrLoc = 203;
@@ -134,7 +134,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 34";
 		rLen = 0;
-		rLoc = 746;
+		rLoc = 666;
 		rType = 0;
 		vrLen = 1120;
 		vrLoc = 203;
@@ -144,7 +144,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 153";
 		rLen = 0;
-		rLoc = 3791;
+		rLoc = 3641;
 		rType = 0;
 		vrLen = 1120;
 		vrLoc = 4261;
@@ -154,7 +154,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 152";
 		rLen = 0;
-		rLoc = 3791;
+		rLoc = 3641;
 		rType = 0;
 		vrLen = 1345;
 		vrLoc = 4077;
@@ -174,7 +174,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: remoteControl";
 		rLen = 0;
-		rLoc = 634;
+		rLoc = 554;
 		rType = 0;
 		vrLen = 1117;
 		vrLoc = 203;
@@ -184,7 +184,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 20";
 		rLen = 0;
-		rLoc = 450;
+		rLoc = 330;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 0;
@@ -194,7 +194,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = NSUndoManager;
 		rLen = 0;
-		rLoc = 450;
+		rLoc = 330;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 0;
@@ -204,7 +204,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: isFullScreen";
 		rLen = 0;
-		rLoc = 698;
+		rLoc = 618;
 		rType = 0;
 		vrLen = 1120;
 		vrLoc = 203;
@@ -214,7 +214,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = NSUndoManager;
 		rLen = 0;
-		rLoc = 450;
+		rLoc = 330;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 0;
@@ -224,7 +224,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: isFullScreen";
 		rLen = 0;
-		rLoc = 698;
+		rLoc = 618;
 		rType = 0;
 		vrLen = 1120;
 		vrLoc = 203;
@@ -234,7 +234,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 20";
 		rLen = 0;
-		rLoc = 450;
+		rLoc = 330;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 0;
@@ -254,7 +254,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: remoteControl";
 		rLen = 0;
-		rLoc = 634;
+		rLoc = 554;
 		rType = 0;
 		vrLen = 1117;
 		vrLoc = 203;
@@ -264,7 +264,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 33";
 		rLen = 0;
-		rLoc = 829;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 0;
@@ -274,7 +274,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 278";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1375;
 		vrLoc = 7574;
@@ -284,7 +284,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 279";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1376;
 		vrLoc = 7574;
@@ -294,7 +294,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1429;
 		vrLoc = 7574;
@@ -340,7 +340,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: flag:";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1429;
 		vrLoc = 7574;
@@ -350,7 +350,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: remoteControl";
 		rLen = 0;
-		rLoc = 634;
+		rLoc = 554;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 171;
@@ -360,7 +360,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: flag:";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1429;
 		vrLoc = 7574;
@@ -370,7 +370,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: undo:";
 		rLen = 0;
-		rLoc = 776;
+		rLoc = 696;
 		rType = 0;
 		vrLen = 1103;
 		vrLoc = 171;
@@ -432,7 +432,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (IBAction)undo:(id)sender;";
 		rLen = 29;
-		rLoc = 748;
+		rLoc = 668;
 		rType = 0;
 		vrLen = 1103;
 		vrLoc = 171;
@@ -441,7 +441,7 @@
 		isa = PBXTextBookmark;
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		rLen = 0;
-		rLoc = 2147481082;
+		rLoc = 2147480424;
 		rType = 0;
 	};
 	0338035D0C85FEA200439E5A /* PBXTextBookmark */ = {
@@ -449,7 +449,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1554;
 		vrLoc = 7574;
@@ -479,7 +479,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (IBAction)undo:(id)sender;";
 		rLen = 29;
-		rLoc = 748;
+		rLoc = 668;
 		rType = 0;
 		vrLen = 1103;
 		vrLoc = 171;
@@ -489,7 +489,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: fullScreenMode:";
 		rLen = 0;
-		rLoc = 6862;
+		rLoc = 6712;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 7574;
@@ -499,7 +499,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (IBAction)undo:(id)sender;";
 		rLen = 29;
-		rLoc = 748;
+		rLoc = 668;
 		rType = 0;
 		vrLen = 1103;
 		vrLoc = 171;
@@ -509,7 +509,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: fullScreenMode:";
 		rLen = 0;
-		rLoc = 6862;
+		rLoc = 6712;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 7574;
@@ -519,7 +519,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1554;
 		vrLoc = 7574;
@@ -559,7 +559,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (IBAction)undo:(id)sender;";
 		rLen = 29;
-		rLoc = 748;
+		rLoc = 668;
 		rType = 0;
 		vrLen = 1103;
 		vrLoc = 171;
@@ -569,7 +569,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: fullScreenMode:";
 		rLen = 0;
-		rLoc = 6862;
+		rLoc = 6712;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 7574;
@@ -579,7 +579,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: fullScreenMode:";
 		rLen = 0;
-		rLoc = 6862;
+		rLoc = 6712;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 7574;
@@ -599,7 +599,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (IBAction)undo:(id)sender;";
 		rLen = 29;
-		rLoc = 748;
+		rLoc = 668;
 		rType = 0;
 		vrLen = 1103;
 		vrLoc = 171;
@@ -609,7 +609,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 292";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1291;
 		vrLoc = 7574;
@@ -619,7 +619,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1547;
 		vrLoc = 7574;
@@ -649,7 +649,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 292";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 7574;
@@ -659,7 +659,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1554;
 		vrLoc = 7574;
@@ -689,7 +689,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "- (IBAction)redo:(id)sender {";
 		rLen = 30;
-		rLoc = 6887;
+		rLoc = 6737;
 		rType = 0;
 		vrLen = 1231;
 		vrLoc = 7574;
@@ -699,7 +699,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (IBAction)undo:(id)sender;";
 		rLen = 29;
-		rLoc = 748;
+		rLoc = 668;
 		rType = 0;
 		vrLen = 1103;
 		vrLoc = 171;
@@ -709,7 +709,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "- (IBAction)redo:(id)sender {";
 		rLen = 30;
-		rLoc = 6887;
+		rLoc = 6737;
 		rType = 0;
 		vrLen = 1231;
 		vrLoc = 7574;
@@ -719,7 +719,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 39";
 		rLen = 0;
-		rLoc = 806;
+		rLoc = 726;
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 171;
@@ -739,7 +739,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1432;
 		vrLoc = 7574;
@@ -759,7 +759,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 39";
 		rLen = 0;
-		rLoc = 806;
+		rLoc = 726;
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 171;
@@ -769,7 +769,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "- (IBAction)redo:(id)sender {";
 		rLen = 30;
-		rLoc = 6887;
+		rLoc = 6737;
 		rType = 0;
 		vrLen = 1231;
 		vrLoc = 7574;
@@ -779,7 +779,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 39";
 		rLen = 0;
-		rLoc = 806;
+		rLoc = 726;
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 171;
@@ -789,7 +789,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = undoManager;
 		rLen = 11;
-		rLoc = 6919;
+		rLoc = 6769;
 		rType = 0;
 		vrLen = 1231;
 		vrLoc = 7574;
@@ -798,7 +798,7 @@
 		isa = PBXTextBookmark;
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		rLen = 1;
-		rLoc = 28;
+		rLoc = 25;
 		rType = 1;
 	};
 	033803A30C86038500439E5A /* PBXTextBookmark */ = {
@@ -806,7 +806,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 36";
 		rLen = 0;
-		rLoc = 747;
+		rLoc = 667;
 		rType = 0;
 		vrLen = 1206;
 		vrLoc = 0;
@@ -826,7 +826,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1432;
 		vrLoc = 7574;
@@ -836,7 +836,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 286";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1233;
 		vrLoc = 7574;
@@ -846,7 +846,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 36";
 		rLen = 0;
-		rLoc = 747;
+		rLoc = 667;
 		rType = 0;
 		vrLen = 1206;
 		vrLoc = 0;
@@ -866,7 +866,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1434;
 		vrLoc = 7574;
@@ -876,7 +876,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: toggleFlags:";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1226;
 		vrLoc = 8765;
@@ -886,7 +886,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 36";
 		rLen = 0;
-		rLoc = 747;
+		rLoc = 667;
 		rType = 0;
 		vrLen = 1206;
 		vrLoc = 0;
@@ -906,7 +906,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1521;
 		vrLoc = 7574;
@@ -916,7 +916,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 360";
 		rLen = 0;
-		rLoc = 7737;
+		rLoc = 7587;
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 9988;
@@ -926,7 +926,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 36";
 		rLen = 0;
-		rLoc = 747;
+		rLoc = 667;
 		rType = 0;
 		vrLen = 1206;
 		vrLoc = 0;
@@ -946,7 +946,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1521;
 		vrLoc = 7574;
@@ -956,7 +956,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 360";
 		rLen = 0;
-		rLoc = 7737;
+		rLoc = 7587;
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 9988;
@@ -976,7 +976,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1521;
 		vrLoc = 7574;
@@ -986,7 +986,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 360";
 		rLen = 0;
-		rLoc = 7737;
+		rLoc = 7587;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 9988;
@@ -1006,7 +1006,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1521;
 		vrLoc = 7574;
@@ -1016,7 +1016,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 304";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 8855;
@@ -1036,7 +1036,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1569;
 		vrLoc = 7574;
@@ -1066,7 +1066,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 295";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 8245;
@@ -1096,7 +1096,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 302";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1359;
 		vrLoc = 8846;
@@ -1116,7 +1116,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1500;
 		vrLoc = 7574;
@@ -1136,7 +1136,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = setFlagOnIndexes;
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1359;
 		vrLoc = 8846;
@@ -1156,7 +1156,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 306";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1289;
 		vrLoc = 8846;
@@ -1176,7 +1176,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1500;
 		vrLoc = 7574;
@@ -1186,7 +1186,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 320";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 8846;
@@ -1206,7 +1206,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 7574;
@@ -1216,7 +1216,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 316";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1276;
 		vrLoc = 8846;
@@ -1236,7 +1236,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 7574;
@@ -1246,7 +1246,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 322";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 8846;
@@ -1266,7 +1266,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 7574;
@@ -1276,7 +1276,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 317";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1315;
 		vrLoc = 8846;
@@ -1296,7 +1296,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 7574;
@@ -1306,7 +1306,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 320";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1345;
 		vrLoc = 8846;
@@ -1326,7 +1326,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 7574;
@@ -1336,7 +1336,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 320";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1343;
 		vrLoc = 8846;
@@ -1356,7 +1356,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 7574;
@@ -1364,16 +1364,16 @@
 	033804220C86084300439E5A /* ImagesController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1007, 582}}";
-			sepNavSelRange = "{657, 0}";
+			sepNavSelRange = "{266, 25}";
 			sepNavVisRect = "{{0, 0}, {1007, 582}}";
 			sepNavWindowFrame = "{{15, 220}, {1402, 653}}";
 		};
 	};
 	033804230C86084300439E5A /* ImagesController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 1862}}";
-			sepNavSelRange = "{3472, 0}";
-			sepNavVisRect = "{{0, 0}, {1007, 582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 2254}}";
+			sepNavSelRange = "{342, 0}";
+			sepNavVisRect = "{{0, 1672}, {1007, 582}}";
 			sepNavWindowFrame = "{{38, 199}, {1402, 653}}";
 		};
 	};
@@ -1392,7 +1392,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 318";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1342;
 		vrLoc = 8846;
@@ -1402,7 +1402,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (IBAction)removeAllFlags:(id)sender {";
 		rLen = 40;
-		rLoc = 1518;
+		rLoc = 1737;
 		rType = 0;
 		vrLen = 278;
 		vrLoc = 0;
@@ -1412,7 +1412,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 132;
 		vrLoc = 0;
@@ -1422,7 +1422,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: setFlagOnIndexes:";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1343;
 		vrLoc = 8846;
@@ -1462,7 +1462,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "[[imagesController arrangedObjects] makeObjectsPerformSelector:@selector(removeFlag)];";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1343;
 		vrLoc = 8846;
@@ -1482,7 +1482,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 321";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1291;
 		vrLoc = 8846;
@@ -1492,7 +1492,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 132;
 		vrLoc = 0;
@@ -1502,7 +1502,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 7";
 		rLen = 0;
-		rLoc = 3933;
+		rLoc = 4832;
 		rType = 0;
 		vrLen = 173;
 		vrLoc = 0;
@@ -1512,7 +1512,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 132;
 		vrLoc = 0;
@@ -1522,7 +1522,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 327";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1291;
 		vrLoc = 8846;
@@ -1542,7 +1542,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 318";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1342;
 		vrLoc = 8846;
@@ -1552,7 +1552,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 132;
 		vrLoc = 0;
@@ -1562,7 +1562,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (IBAction)removeAllFlags:(id)sender {";
 		rLen = 40;
-		rLoc = 1518;
+		rLoc = 1737;
 		rType = 0;
 		vrLen = 278;
 		vrLoc = 0;
@@ -1572,7 +1572,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags:";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 147;
 		vrLoc = 0;
@@ -1592,7 +1592,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 7574;
@@ -1602,7 +1602,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags:";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 147;
 		vrLoc = 0;
@@ -1622,7 +1622,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 300";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 8248;
@@ -1632,7 +1632,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 22";
 		rLen = 0;
-		rLoc = 1324;
+		rLoc = 1543;
 		rType = 0;
 		vrLen = 912;
 		vrLoc = 0;
@@ -1642,7 +1642,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags:";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 147;
 		vrLoc = 0;
@@ -1652,7 +1652,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 6";
 		rLen = 0;
-		rLoc = 1517;
+		rLoc = 1736;
 		rType = 0;
 		vrLen = 299;
 		vrLoc = 0;
@@ -1672,7 +1672,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 300";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 8846;
@@ -1682,7 +1682,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 23";
 		rLen = 0;
-		rLoc = 1625;
+		rLoc = 1844;
 		rType = 0;
 		vrLen = 765;
 		vrLoc = 0;
@@ -1692,7 +1692,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 301";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1176;
 		vrLoc = 8778;
@@ -1702,7 +1702,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 22";
 		rLen = 0;
-		rLoc = 1324;
+		rLoc = 1543;
 		rType = 0;
 		vrLen = 912;
 		vrLoc = 0;
@@ -1712,7 +1712,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 300";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 8248;
@@ -1722,7 +1722,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 29";
 		rLen = 0;
-		rLoc = 1517;
+		rLoc = 1736;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 0;
@@ -1742,7 +1742,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1437;
 		vrLoc = 7574;
@@ -1752,7 +1752,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 475";
 		rLen = 0;
-		rLoc = 11815;
+		rLoc = 11681;
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 13390;
@@ -1762,7 +1762,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 58";
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 502;
@@ -1771,8 +1771,8 @@
 		isa = PBXTextBookmark;
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: undoManager";
-		rLen = 3810;
-		rLoc = 124;
+		rLen = 4490;
+		rLoc = 343;
 		rType = 0;
 		vrLen = 1370;
 		vrLoc = 0;
@@ -1782,7 +1782,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags:";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 147;
 		vrLoc = 0;
@@ -1792,7 +1792,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 27";
 		rLen = 0;
-		rLoc = 1470;
+		rLoc = 1689;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 0;
@@ -1802,7 +1802,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 283";
 		rLen = 0;
-		rLoc = 6940;
+		rLoc = 6790;
 		rType = 0;
 		vrLen = 1233;
 		vrLoc = 12154;
@@ -1812,7 +1812,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "[self undoManager]";
 		rLen = 18;
-		rLoc = 1174;
+		rLoc = 1393;
 		rType = 0;
 		vrLen = 1425;
 		vrLoc = 369;
@@ -1822,7 +1822,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 475";
 		rLen = 0;
-		rLoc = 11815;
+		rLoc = 11681;
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 13390;
@@ -1832,7 +1832,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 58";
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 502;
@@ -1842,7 +1842,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (IBAction)unflag:(id)sender {";
 		rLen = 32;
-		rLoc = 959;
+		rLoc = 1178;
 		rType = 0;
 		vrLen = 1413;
 		vrLoc = 369;
@@ -1852,7 +1852,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags:";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 147;
 		vrLoc = 0;
@@ -1861,8 +1861,8 @@
 		isa = PBXTextBookmark;
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: undoManager";
-		rLen = 3810;
-		rLoc = 124;
+		rLen = 4490;
+		rLoc = 343;
 		rType = 0;
 		vrLen = 1370;
 		vrLoc = 0;
@@ -1872,7 +1872,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: undoManager";
 		rLen = 0;
-		rLoc = 217;
+		rLoc = 327;
 		rType = 0;
 		vrLen = 386;
 		vrLoc = 0;
@@ -1892,7 +1892,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 277";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1297;
 		vrLoc = 7498;
@@ -1902,7 +1902,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: undoManager";
 		rLen = 0;
-		rLoc = 217;
+		rLoc = 327;
 		rType = 0;
 		vrLen = 386;
 		vrLoc = 0;
@@ -1912,7 +1912,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 37";
 		rLen = 0;
-		rLoc = 747;
+		rLoc = 667;
 		rType = 0;
 		vrLen = 1046;
 		vrLoc = 457;
@@ -1922,7 +1922,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: undoManager";
 		rLen = 0;
-		rLoc = 217;
+		rLoc = 327;
 		rType = 0;
 		vrLen = 386;
 		vrLoc = 0;
@@ -1932,7 +1932,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 37";
 		rLen = 0;
-		rLoc = 747;
+		rLoc = 667;
 		rType = 0;
 		vrLen = 1046;
 		vrLoc = 457;
@@ -1942,7 +1942,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 38";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 746;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 0;
@@ -1962,7 +1962,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 281";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 7423;
@@ -1972,7 +1972,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 23";
 		rLen = 0;
-		rLoc = 638;
+		rLoc = 857;
 		rType = 0;
 		vrLen = 1506;
 		vrLoc = 276;
@@ -1982,7 +1982,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 38";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 746;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 0;
@@ -1992,7 +1992,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 38";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 746;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 0;
@@ -2002,7 +2002,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 23";
 		rLen = 0;
-		rLoc = 638;
+		rLoc = 857;
 		rType = 0;
 		vrLen = 1506;
 		vrLoc = 276;
@@ -2012,7 +2012,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 33";
 		rLen = 0;
-		rLoc = 829;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 0;
@@ -2032,7 +2032,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 281";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 7423;
@@ -2042,7 +2042,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = add;
 		rLen = 3;
-		rLoc = 856;
+		rLoc = 776;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 418;
@@ -2052,7 +2052,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "- (void)addFiles:(NSArray *)filePaths {";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1209;
 		vrLoc = 2656;
@@ -2062,7 +2062,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "- (IBAction)remove:(id)sender;";
 		rLen = 67;
-		rLoc = 465;
+		rLoc = 575;
 		rType = 0;
 		vrLen = 417;
 		vrLoc = 0;
@@ -2072,7 +2072,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 23";
 		rLen = 0;
-		rLoc = 638;
+		rLoc = 857;
 		rType = 0;
 		vrLen = 1501;
 		vrLoc = 276;
@@ -2082,7 +2082,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 15";
 		rLen = 0;
-		rLoc = 307;
+		rLoc = 277;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 0;
@@ -2092,7 +2092,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = add;
 		rLen = 3;
-		rLoc = 856;
+		rLoc = 776;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 418;
@@ -2102,7 +2102,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "- (void)addFiles:(NSArray *)filePaths {";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1209;
 		vrLoc = 2656;
@@ -2112,7 +2112,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "- (IBAction)remove:(id)sender;";
 		rLen = 67;
-		rLoc = 465;
+		rLoc = 575;
 		rType = 0;
 		vrLen = 417;
 		vrLoc = 0;
@@ -2122,7 +2122,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 57";
 		rLen = 0;
-		rLoc = 1937;
+		rLoc = 2156;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 523;
@@ -2142,7 +2142,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 281";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 7423;
@@ -2152,7 +2152,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 56";
 		rLen = 0;
-		rLoc = 1911;
+		rLoc = 2130;
 		rType = 0;
 		vrLen = 1408;
 		vrLoc = 523;
@@ -2172,7 +2172,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 281";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 7423;
@@ -2182,7 +2182,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 56";
 		rLen = 0;
-		rLoc = 1815;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 1420;
 		vrLoc = 523;
@@ -2202,7 +2202,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 281";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 7423;
@@ -2212,7 +2212,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 56";
 		rLen = 0;
-		rLoc = 1910;
+		rLoc = 2129;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 523;
@@ -2222,7 +2222,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = add;
 		rLen = 3;
-		rLoc = 856;
+		rLoc = 776;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 418;
@@ -2232,7 +2232,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 56";
 		rLen = 0;
-		rLoc = 1910;
+		rLoc = 2129;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 523;
@@ -2242,7 +2242,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = add;
 		rLen = 3;
-		rLoc = 856;
+		rLoc = 776;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 418;
@@ -2272,7 +2272,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 281";
 		rLen = 0;
-		rLoc = 6883;
+		rLoc = 6733;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 7423;
@@ -2302,7 +2302,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: cocoaSlideShow";
 		rLen = 0;
-		rLoc = 124;
+		rLoc = 154;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 0;
@@ -2312,7 +2312,7 @@
 		comments = "warning: no '-addFiles:' method found";
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		rLen = 1;
-		rLoc = 54;
+		rLoc = 65;
 		rType = 1;
 	};
 	033805F80C86179200439E5A /* PBXTextBookmark */ = {
@@ -2340,7 +2340,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: cocoaSlideShow";
 		rLen = 0;
-		rLoc = 183;
+		rLoc = 293;
 		rType = 0;
 		vrLen = 459;
 		vrLoc = 0;
@@ -2350,7 +2350,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: selectPreviousImage";
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 418;
@@ -2360,7 +2360,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: cocoaSlideShow";
 		rLen = 0;
-		rLoc = 183;
+		rLoc = 293;
 		rType = 0;
 		vrLen = 486;
 		vrLoc = 0;
@@ -2370,7 +2370,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 36";
 		rLen = 0;
-		rLoc = 746;
+		rLoc = 666;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -2390,7 +2390,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 10";
 		rLen = 0;
-		rLoc = 185;
+		rLoc = 295;
 		rType = 0;
 		vrLen = 486;
 		vrLoc = 0;
@@ -2410,7 +2410,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 8";
 		rLen = 0;
-		rLoc = 183;
+		rLoc = 293;
 		rType = 0;
 		vrLen = 488;
 		vrLoc = 0;
@@ -2420,7 +2420,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "IBOutlet ImagesController *imagesController;";
 		rLen = 46;
-		rLoc = 338;
+		rLoc = 294;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -2430,7 +2430,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "[[[self undoManager] prepareWithInvocationTarget:cocoaSlideShow] addFiles:[self valueForKeyPath:@\"selectedObjects.path\"]];";
 		rLen = 153;
-		rLoc = 1761;
+		rLoc = 1980;
 		rType = 0;
 		vrLen = 1439;
 		vrLoc = 526;
@@ -2440,7 +2440,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "IBOutlet ImagesController *imagesController;";
 		rLen = 46;
-		rLoc = 338;
+		rLoc = 294;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -2450,7 +2450,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "[[[self undoManager] prepareWithInvocationTarget:cocoaSlideShow] addFiles:[self valueForKeyPath:@\"selectedObjects.path\"]];";
 		rLen = 153;
-		rLoc = 1761;
+		rLoc = 1980;
 		rType = 0;
 		vrLen = 1439;
 		vrLoc = 526;
@@ -2460,7 +2460,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "IBOutlet ImagesController *imagesController;";
 		rLen = 46;
-		rLoc = 338;
+		rLoc = 294;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -2470,7 +2470,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "[[[self undoManager] prepareWithInvocationTarget:cocoaSlideShow] addFiles:[self valueForKeyPath:@\"selectedObjects.path\"]];";
 		rLen = 153;
-		rLoc = 1761;
+		rLoc = 1980;
 		rType = 0;
 		vrLen = 1439;
 		vrLoc = 526;
@@ -2480,7 +2480,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "IBOutlet ImagesController *imagesController;";
 		rLen = 46;
-		rLoc = 338;
+		rLoc = 294;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -2490,7 +2490,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "[[[self undoManager] prepareWithInvocationTarget:cocoaSlideShow] addFiles:[self valueForKeyPath:@\"selectedObjects.path\"]];";
 		rLen = 153;
-		rLoc = 1761;
+		rLoc = 1980;
 		rType = 0;
 		vrLen = 1439;
 		vrLoc = 526;
@@ -2500,7 +2500,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "IBOutlet ImagesController *imagesController;";
 		rLen = 46;
-		rLoc = 338;
+		rLoc = 294;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -2510,7 +2510,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "return [cocoaSlideShow undoManager];";
 		rLen = 38;
-		rLoc = 157;
+		rLoc = 376;
 		rType = 0;
 		vrLen = 1370;
 		vrLoc = 0;
@@ -2520,7 +2520,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = ImagesController;
 		rLen = 16;
-		rLoc = 348;
+		rLoc = 304;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -2530,7 +2530,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "[[[self undoManager] prepareWithInvocationTarget:cocoaSlideShow] addFiles:[self valueForKeyPath:@\"selectedObjects.path\"]];";
 		rLen = 153;
-		rLoc = 1761;
+		rLoc = 1980;
 		rType = 0;
 		vrLen = 1439;
 		vrLoc = 524;
@@ -2540,7 +2540,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: i";
 		rLen = 0;
-		rLoc = 124;
+		rLoc = 154;
 		rType = 0;
 		vrLen = 499;
 		vrLoc = 0;
@@ -2550,7 +2550,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "return [cocoaSlideShow undoManager];";
 		rLen = 38;
-		rLoc = 157;
+		rLoc = 376;
 		rType = 0;
 		vrLen = 1368;
 		vrLoc = 0;
@@ -2570,7 +2570,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: cocoaSlideShow";
 		rLen = 0;
-		rLoc = 124;
+		rLoc = 154;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 0;
@@ -2580,7 +2580,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 56";
 		rLen = 0;
-		rLoc = 1865;
+		rLoc = 2084;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 524;
@@ -2589,7 +2589,7 @@
 		isa = PBXTextBookmark;
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		rLen = 0;
-		rLoc = "-2147483409";
+		rLoc = "-2147483243";
 		rType = 0;
 	};
 	033806160C86179200439E5A /* PBXTextBookmark */ = {
@@ -2597,7 +2597,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 0;
@@ -2634,7 +2634,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 16";
 		rLen = 0;
-		rLoc = 467;
+		rLoc = 686;
 		rType = 0;
 		vrLen = 1368;
 		vrLoc = 0;
@@ -2644,7 +2644,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 0;
@@ -2674,7 +2674,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "[[[self undoManager] prepareWithInvocationTarget:self] toggleFlags:self];";
 		rLen = 75;
-		rLoc = 1171;
+		rLoc = 1390;
 		rType = 0;
 		vrLen = 1488;
 		vrLoc = 438;
@@ -2684,7 +2684,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 42";
 		rLen = 0;
-		rLoc = 988;
+		rLoc = 830;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 13448;
@@ -2694,7 +2694,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 39";
 		rLen = 0;
-		rLoc = 1222;
+		rLoc = 1441;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 524;
@@ -2704,7 +2704,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 42";
 		rLen = 0;
-		rLoc = 988;
+		rLoc = 830;
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 13449;
@@ -2714,7 +2714,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 40";
 		rLen = 0;
-		rLoc = 1246;
+		rLoc = 1465;
 		rType = 0;
 		vrLen = 1409;
 		vrLoc = 517;
@@ -2724,7 +2724,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 42";
 		rLen = 0;
-		rLoc = 988;
+		rLoc = 830;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 13448;
@@ -2734,7 +2734,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "[[[self undoManager] prepareWithInvocationTarget:self] toggleFlags:self];";
 		rLen = 75;
-		rLoc = 1171;
+		rLoc = 1390;
 		rType = 0;
 		vrLen = 1488;
 		vrLoc = 438;
@@ -2744,7 +2744,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 487";
 		rLen = 0;
-		rLoc = 12000;
+		rLoc = 11859;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 13448;
@@ -2754,7 +2754,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 0;
@@ -2784,7 +2784,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 42";
 		rLen = 0;
-		rLoc = 988;
+		rLoc = 830;
 		rType = 0;
 		vrLen = 1828;
 		vrLoc = 907;
@@ -2794,7 +2794,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 0;
@@ -2824,7 +2824,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 87";
 		rLen = 0;
-		rLoc = 2825;
+		rLoc = 2667;
 		rType = 0;
 		vrLen = 1201;
 		vrLoc = 2634;
@@ -2834,7 +2834,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 0;
@@ -2864,7 +2864,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (BOOL)containsPath:(NSString *)path {";
 		rLen = 40;
-		rLoc = 2359;
+		rLoc = 2578;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 608;
@@ -2874,7 +2874,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 22";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 899;
 		rType = 0;
 		vrLen = 523;
 		vrLoc = 0;
@@ -2894,7 +2894,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 124";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1298;
 		vrLoc = 3129;
@@ -2904,7 +2904,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 90";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1111;
 		vrLoc = 2634;
@@ -2914,7 +2914,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 61";
 		rLen = 0;
-		rLoc = 2502;
+		rLoc = 2721;
 		rType = 0;
 		vrLen = 1464;
 		vrLoc = 609;
@@ -2924,7 +2924,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 124";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1298;
 		vrLoc = 3129;
@@ -2934,7 +2934,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (BOOL)containsPath:(NSString *)path {";
 		rLen = 40;
-		rLoc = 2359;
+		rLoc = 2578;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 608;
@@ -2944,7 +2944,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 22";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 899;
 		rType = 0;
 		vrLen = 523;
 		vrLoc = 0;
@@ -2964,7 +2964,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 124";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1257;
 		vrLoc = 3129;
@@ -2974,7 +2974,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 523;
 		vrLoc = 0;
@@ -3004,7 +3004,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1258;
 		vrLoc = 3129;
@@ -3014,7 +3014,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 523;
 		vrLoc = 0;
@@ -3044,7 +3044,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1258;
 		vrLoc = 3129;
@@ -3054,7 +3054,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (BOOL)containsPath:(NSString *)path {";
 		rLen = 40;
-		rLoc = 2359;
+		rLoc = 2578;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 608;
@@ -3064,7 +3064,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1258;
 		vrLoc = 3129;
@@ -3074,7 +3074,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 60";
 		rLen = 0;
-		rLoc = 2465;
+		rLoc = 2684;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 608;
@@ -3084,7 +3084,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 523;
 		vrLoc = 0;
@@ -3114,7 +3114,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 60";
 		rLen = 0;
-		rLoc = 2465;
+		rLoc = 2684;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 608;
@@ -3124,7 +3124,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 523;
 		vrLoc = 0;
@@ -3154,7 +3154,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 308";
 		rLen = 0;
-		rLoc = 7737;
+		rLoc = 7587;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 8317;
@@ -3164,7 +3164,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 60";
 		rLen = 0;
-		rLoc = 2465;
+		rLoc = 2684;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 608;
@@ -3174,7 +3174,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 60";
 		rLen = 0;
-		rLoc = 2465;
+		rLoc = 2684;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 608;
@@ -3184,7 +3184,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 308";
 		rLen = 0;
-		rLoc = 7737;
+		rLoc = 7587;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 8317;
@@ -3194,7 +3194,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 61";
 		rLen = 0;
-		rLoc = 2085;
+		rLoc = 2304;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 1141;
@@ -3204,7 +3204,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 523;
 		vrLoc = 0;
@@ -3234,7 +3234,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (BOOL)multipleImagesSelected {";
 		rLen = 33;
-		rLoc = 2279;
+		rLoc = 2498;
 		rType = 0;
 		vrLen = 1380;
 		vrLoc = 1104;
@@ -3244,7 +3244,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: multipleImagesSelected";
 		rLen = 0;
-		rLoc = 602;
+		rLoc = 712;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 0;
@@ -3254,7 +3254,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: multipleImagesSelected";
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1052;
 		vrLoc = 457;
@@ -3264,7 +3264,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 336";
 		rLen = 0;
-		rLoc = 8494;
+		rLoc = 8344;
 		rType = 0;
 		vrLen = 1370;
 		vrLoc = 10388;
@@ -3274,7 +3274,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 67";
 		rLen = 0;
-		rLoc = 2190;
+		rLoc = 2409;
 		rType = 0;
 		vrLen = 1271;
 		vrLoc = 1141;
@@ -3284,7 +3284,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 12710;
+		rLoc = 12052;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 12784;
@@ -3294,7 +3294,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (BOOL)multipleImagesSelected;";
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 502;
@@ -3304,7 +3304,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: remove:";
 		rLen = 198;
-		rLoc = 1941;
+		rLoc = 2160;
 		rType = 0;
 		vrLen = 1308;
 		vrLoc = 1104;
@@ -3314,7 +3314,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 24";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 899;
 		rType = 0;
 		vrLen = 577;
 		vrLoc = 0;
@@ -3324,7 +3324,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 346";
 		rLen = 0;
-		rLoc = 8758;
+		rLoc = 8608;
 		rType = 0;
 		vrLen = 1232;
 		vrLoc = 9232;
@@ -3334,7 +3334,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 24";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 899;
 		rType = 0;
 		vrLen = 577;
 		vrLoc = 0;
@@ -3344,7 +3344,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = multipleImagesSelected;
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1050;
 		vrLoc = 457;
@@ -3354,7 +3354,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (BOOL)multipleImagesSelected {";
 		rLen = 33;
-		rLoc = 2279;
+		rLoc = 2498;
 		rType = 0;
 		vrLen = 1380;
 		vrLoc = 1104;
@@ -3364,7 +3364,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: multipleImagesSelected";
 		rLen = 0;
-		rLoc = 602;
+		rLoc = 712;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 0;
@@ -3374,7 +3374,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 336";
 		rLen = 0;
-		rLoc = 8494;
+		rLoc = 8344;
 		rType = 0;
 		vrLen = 1374;
 		vrLoc = 10388;
@@ -3384,7 +3384,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: multipleImagesSelected";
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1052;
 		vrLoc = 457;
@@ -3394,7 +3394,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 154";
 		rLen = 0;
-		rLoc = 4030;
+		rLoc = 3880;
 		rType = 0;
 		vrLen = 1278;
 		vrLoc = 4112;
@@ -3404,7 +3404,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 151";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 4362;
@@ -3414,7 +3414,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 151";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1042;
 		vrLoc = 4203;
@@ -3424,7 +3424,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 151";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1314;
 		vrLoc = 4115;
@@ -3434,7 +3434,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 0;
@@ -3464,7 +3464,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 151";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1042;
 		vrLoc = 4203;
@@ -3474,7 +3474,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 148";
 		rLen = 0;
-		rLoc = 3825;
+		rLoc = 3675;
 		rType = 0;
 		vrLen = 1314;
 		vrLoc = 4115;
@@ -3484,7 +3484,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags:";
 		rLen = 0;
-		rLoc = 456;
+		rLoc = 566;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 0;
@@ -3504,7 +3504,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 148";
 		rLen = 0;
-		rLoc = 3825;
+		rLoc = 3675;
 		rType = 0;
 		vrLen = 1314;
 		vrLoc = 4115;
@@ -3514,7 +3514,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: removeAllFlags:";
 		rLen = 0;
-		rLoc = 456;
+		rLoc = 566;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 0;
@@ -3534,7 +3534,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 0;
@@ -3554,7 +3554,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 151";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1042;
 		vrLoc = 4203;
@@ -3574,7 +3574,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 5";
 		rLen = 0;
-		rLoc = 56;
+		rLoc = 86;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 0;
@@ -3594,7 +3594,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -3614,7 +3614,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "BOOL importDone;";
 		rLen = 0;
-		rLoc = 729;
+		rLoc = 649;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 418;
@@ -3623,8 +3623,8 @@
 		isa = PBXTextBookmark;
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
-		rLen = 1121;
-		rLoc = 2505;
+		rLen = 1282;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1081;
 		vrLoc = 2369;
@@ -3634,7 +3634,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 126";
 		rLen = 0;
-		rLoc = 2979;
+		rLoc = 2821;
 		rType = 0;
 		vrLen = 1348;
 		vrLoc = 3467;
@@ -3644,7 +3644,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: addDirFiles:";
 		rLen = 0;
-		rLoc = 732;
+		rLoc = 898;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -3664,7 +3664,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 89";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1477;
 		vrLoc = 2721;
@@ -3674,7 +3674,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 83";
 		rLen = 0;
-		rLoc = 2547;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 2339;
@@ -3684,7 +3684,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: importDone";
 		rLen = 0;
-		rLoc = 729;
+		rLoc = 649;
 		rType = 0;
 		vrLen = 1034;
 		vrLoc = 457;
@@ -3694,7 +3694,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: importDone";
 		rLen = 0;
-		rLoc = 183;
+		rLoc = 293;
 		rType = 0;
 		vrLen = 627;
 		vrLoc = 0;
@@ -3704,7 +3704,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 107";
 		rLen = 0;
-		rLoc = 3453;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1081;
 		vrLoc = 2338;
@@ -3714,7 +3714,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: rotateIndividualImage:clockwise:";
 		rLen = 0;
-		rLoc = 2867;
+		rLoc = 2709;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 2793;
@@ -3724,7 +3724,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 10";
 		rLen = 0;
-		rLoc = 183;
+		rLoc = 293;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 0;
@@ -3734,7 +3734,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "BOOL importDone;";
 		rLen = 0;
-		rLoc = 729;
+		rLoc = 649;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 418;
@@ -3744,7 +3744,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 96";
 		rLen = 0;
-		rLoc = 3059;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1081;
 		vrLoc = 2338;
@@ -3754,7 +3754,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = importDone;
 		rLen = 10;
-		rLoc = 171;
+		rLoc = 201;
 		rType = 0;
 		vrLen = 627;
 		vrLoc = 0;
@@ -3774,7 +3774,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 183";
 		rLen = 0;
-		rLoc = 4685;
+		rLoc = 4535;
 		rType = 0;
 		vrLen = 1032;
 		vrLoc = 5234;
@@ -3784,7 +3784,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 122";
 		rLen = 0;
-		rLoc = 3747;
+		rLoc = 4134;
 		rType = 0;
 		vrLen = 998;
 		vrLoc = 2574;
@@ -3794,7 +3794,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 12710;
+		rLoc = 12052;
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 12794;
@@ -3804,7 +3804,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3747;
+		rLoc = 4134;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 2409;
@@ -3814,7 +3814,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 436";
 		rLen = 0;
-		rLoc = 11447;
+		rLoc = 11305;
 		rType = 0;
 		vrLen = 1243;
 		vrLoc = 11919;
@@ -3824,7 +3824,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = importDone;
 		rLen = 10;
-		rLoc = 171;
+		rLoc = 201;
 		rType = 0;
 		vrLen = 627;
 		vrLoc = 0;
@@ -3833,8 +3833,8 @@
 		isa = PBXTextBookmark;
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
-		rLen = 1121;
-		rLoc = 2505;
+		rLen = 1282;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1081;
 		vrLoc = 2369;
@@ -3844,7 +3844,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: addDirFiles:";
 		rLen = 0;
-		rLoc = 732;
+		rLoc = 898;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -3854,7 +3854,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 126";
 		rLen = 0;
-		rLoc = 2979;
+		rLoc = 2821;
 		rType = 0;
 		vrLen = 1348;
 		vrLoc = 3467;
@@ -3864,7 +3864,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 28";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 899;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -3884,7 +3884,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -3904,7 +3904,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 7";
 		rLen = 0;
-		rLoc = 120;
+		rLoc = 150;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -3914,7 +3914,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "BOOL importDone;";
 		rLen = 0;
-		rLoc = 729;
+		rLoc = 649;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 384;
@@ -3924,7 +3924,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 7";
 		rLen = 0;
-		rLoc = 120;
+		rLoc = 150;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -3944,7 +3944,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "BOOL importDone;";
 		rLen = 0;
-		rLoc = 729;
+		rLoc = 649;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 384;
@@ -3954,7 +3954,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 7";
 		rLen = 0;
-		rLoc = 120;
+		rLoc = 150;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -3964,7 +3964,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: isSaving";
 		rLen = 0;
-		rLoc = 729;
+		rLoc = 649;
 		rType = 0;
 		vrLen = 1102;
 		vrLoc = 384;
@@ -3984,7 +3984,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -3994,7 +3994,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 51";
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1024;
 		vrLoc = 198;
@@ -4003,8 +4003,8 @@
 		isa = PBXTextBookmark;
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
-		rLen = 1121;
-		rLoc = 2505;
+		rLen = 1282;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1081;
 		vrLoc = 2369;
@@ -4014,7 +4014,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 51";
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1024;
 		vrLoc = 198;
@@ -4024,7 +4024,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
 		rLen = 0;
-		rLoc = 2544;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 2409;
@@ -4044,7 +4044,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
 		rLen = 0;
-		rLoc = 2544;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 2409;
@@ -4054,7 +4054,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
 		rLen = 0;
-		rLoc = 2544;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 2409;
@@ -4064,7 +4064,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
 		rLen = 0;
-		rLoc = 2544;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 2409;
@@ -4074,7 +4074,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
 		rLen = 0;
-		rLoc = 2544;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1154;
 		vrLoc = 2286;
@@ -4084,7 +4084,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -4094,7 +4094,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
 		rLen = 0;
-		rLoc = 2544;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 2013;
@@ -4114,7 +4114,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -4124,7 +4124,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
 		rLen = 0;
-		rLoc = 2544;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 2013;
@@ -4144,7 +4144,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -4154,7 +4154,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
 		rLen = 0;
-		rLoc = 2544;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 2003;
@@ -4174,7 +4174,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 411";
 		rLen = 0;
-		rLoc = 10748;
+		rLoc = 10606;
 		rType = 0;
 		vrLen = 782;
 		vrLoc = 11469;
@@ -4182,8 +4182,8 @@
 	0338075F0C861E0300439E5A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
-		rLen = 1;
-		rLoc = 81;
+		rLen = 0;
+		rLoc = 91;
 		rType = 1;
 	};
 	033807600C861E0300439E5A /* PBXTextBookmark */ = {
@@ -4191,7 +4191,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: containsPath:";
 		rLen = 0;
-		rLoc = 2544;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 839;
 		vrLoc = 2286;
@@ -4201,7 +4201,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 411";
 		rLen = 0;
-		rLoc = 10748;
+		rLoc = 10606;
 		rType = 0;
 		vrLen = 782;
 		vrLoc = 11469;
@@ -4211,7 +4211,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 2866;
@@ -4221,7 +4221,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -4231,7 +4231,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 2613;
@@ -4251,7 +4251,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 2613;
@@ -4261,7 +4261,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 617;
 		vrLoc = 3057;
@@ -4283,7 +4283,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 617;
 		vrLoc = 3057;
@@ -4308,7 +4308,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 2613;
@@ -4318,7 +4318,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -4328,7 +4328,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 2613;
@@ -4348,7 +4348,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 617;
 		vrLoc = 3057;
@@ -4358,7 +4358,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3452;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 617;
 		vrLoc = 3057;
@@ -4368,7 +4368,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -4378,7 +4378,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 118";
 		rLen = 0;
-		rLoc = 3453;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1070;
 		vrLoc = 2613;
@@ -4398,7 +4398,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -4408,7 +4408,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 118";
 		rLen = 0;
-		rLoc = 3453;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 2613;
@@ -4428,7 +4428,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 118";
 		rLen = 0;
-		rLoc = 3453;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 2613;
@@ -4438,7 +4438,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 118";
 		rLen = 0;
-		rLoc = 3453;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 3060;
@@ -4448,7 +4448,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 118";
 		rLen = 0;
-		rLoc = 3453;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 3060;
@@ -4458,7 +4458,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -4468,7 +4468,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 119";
 		rLen = 0;
-		rLoc = 3586;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1132;
 		vrLoc = 2546;
@@ -4488,7 +4488,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 150";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 4312;
@@ -4498,7 +4498,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3472;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1132;
 		vrLoc = 2546;
@@ -4518,7 +4518,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 116";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 4387;
@@ -4528,7 +4528,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 176";
 		rLen = 0;
-		rLoc = 5463;
+		rLoc = 5313;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 5071;
@@ -4537,8 +4537,8 @@
 		isa = PBXTextBookmark;
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (IBAction)moveToTrash:(id)sender {";
-		rLen = 37;
-		rLoc = 3748;
+		rLen = 549;
+		rLoc = 4135;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 2808;
@@ -4548,7 +4548,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 7";
 		rLen = 0;
-		rLoc = 120;
+		rLoc = 150;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -4558,7 +4558,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 101";
 		rLen = 0;
-		rLoc = 3163;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1132;
 		vrLoc = 2546;
@@ -4568,7 +4568,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 7";
 		rLen = 0;
-		rLoc = 120;
+		rLoc = 150;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -4578,7 +4578,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 176";
 		rLen = 0;
-		rLoc = 5463;
+		rLoc = 5313;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 5071;
@@ -4587,8 +4587,8 @@
 		isa = PBXTextBookmark;
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (IBAction)moveToTrash:(id)sender {";
-		rLen = 37;
-		rLoc = 3748;
+		rLen = 549;
+		rLoc = 4135;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 2808;
@@ -4598,7 +4598,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: moveToTrash:";
 		rLen = 0;
-		rLoc = 531;
+		rLoc = 641;
 		rType = 0;
 		vrLen = 739;
 		vrLoc = 0;
@@ -4618,7 +4618,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 116";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 4387;
@@ -4628,7 +4628,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: moveToTrash:";
 		rLen = 0;
-		rLoc = 531;
+		rLoc = 641;
 		rType = 0;
 		vrLen = 739;
 		vrLoc = 0;
@@ -4638,7 +4638,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 51";
 		rLen = 0;
-		rLoc = 1180;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 161;
@@ -4648,7 +4648,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: moveToTrash:";
 		rLen = 0;
-		rLoc = 531;
+		rLoc = 641;
 		rType = 0;
 		vrLen = 739;
 		vrLoc = 0;
@@ -4658,7 +4658,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (IBAction)exportToDirectory:(id)sender;";
 		rLen = 42;
-		rLoc = 1109;
+		rLoc = 1029;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 160;
@@ -4678,7 +4678,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 116";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 4387;
@@ -4688,7 +4688,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (IBAction)exportToDirectory:(id)sender;";
 		rLen = 42;
-		rLoc = 1109;
+		rLoc = 1029;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 160;
@@ -4698,7 +4698,7 @@
 		comments = "error: 'imagesController' undeclared (first use in this function)";
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		rLen = 1;
-		rLoc = 128;
+		rLoc = 140;
 		rType = 1;
 	};
 	033807B30C861F2E00439E5A /* PBXTextBookmark */ = {
@@ -4706,7 +4706,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "- (IBAction)exportToDirectory:(id)sender;";
 		rLen = 42;
-		rLoc = 1109;
+		rLoc = 1029;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 160;
@@ -4716,7 +4716,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 128";
 		rLen = 0;
-		rLoc = 3911;
+		rLoc = 4810;
 		rType = 0;
 		vrLen = 1062;
 		vrLoc = 2808;
@@ -4736,7 +4736,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 116";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 4387;
@@ -4756,7 +4756,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "<#(NSFileWrapper *)doc#>";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 2918;
@@ -4766,7 +4766,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "<#(NSFileWrapper *)doc#>";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1237;
 		vrLoc = 2918;
@@ -4786,7 +4786,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 128";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 3177;
@@ -4806,7 +4806,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 116";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 4387;
@@ -4816,7 +4816,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 128";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 3177;
@@ -4826,7 +4826,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 176";
 		rLen = 0;
-		rLoc = 5463;
+		rLoc = 5313;
 		rType = 0;
 		vrLen = 1115;
 		vrLoc = 5071;
@@ -4836,7 +4836,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 128";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 3177;
@@ -4846,7 +4846,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 397";
 		rLen = 0;
-		rLoc = 11464;
+		rLoc = 11330;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 10622;
@@ -4866,7 +4866,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 117";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 4428;
@@ -4876,7 +4876,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (void)recursiveAddFiles:(NSArray *)filePaths {";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 3173;
@@ -4886,7 +4886,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 28";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 767;
 		rType = 0;
 		vrLen = 789;
 		vrLoc = 0;
@@ -4896,7 +4896,7 @@
 		comments = "warning: 'ImagesController' may not respond to '-addFiles:'";
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		rLen = 1;
-		rLoc = 93;
+		rLoc = 89;
 		rType = 1;
 	};
 	033807E60C8621C800439E5A /* PBXTextBookmark */ = {
@@ -4904,7 +4904,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: windowWillClose:";
 		rLen = 0;
-		rLoc = 10810;
+		rLoc = 10668;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 10622;
@@ -4914,7 +4914,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "- (void)recursiveAddFiles:(NSArray *)filePaths {";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 3173;
@@ -4924,7 +4924,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 28";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 767;
 		rType = 0;
 		vrLen = 789;
 		vrLoc = 0;
@@ -4934,7 +4934,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 96";
 		rLen = 0;
-		rLoc = 3170;
+		rLoc = 3020;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 2328;
@@ -4954,7 +4954,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 96";
 		rLen = 0;
-		rLoc = 3170;
+		rLoc = 3020;
 		rType = 0;
 		vrLen = 1551;
 		vrLoc = 2328;
@@ -4964,7 +4964,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 117";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 4428;
@@ -4974,7 +4974,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 96";
 		rLen = 0;
-		rLoc = 3170;
+		rLoc = 3020;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 2450;
@@ -4994,7 +4994,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 96";
 		rLen = 0;
-		rLoc = 3170;
+		rLoc = 3020;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 2656;
@@ -5003,7 +5003,7 @@
 		isa = PBXTextBookmark;
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		rLen = 0;
-		rLoc = 120;
+		rLoc = 132;
 		rType = 1;
 	};
 	033807F60C8621FC00439E5A /* PBXTextBookmark */ = {
@@ -5011,7 +5011,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 96";
 		rLen = 0;
-		rLoc = 3170;
+		rLoc = 3020;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 2656;
@@ -5021,7 +5021,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 132";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 810;
 		vrLoc = 3461;
@@ -5031,7 +5031,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 117";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 4428;
@@ -5041,7 +5041,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 96";
 		rLen = 0;
-		rLoc = 3170;
+		rLoc = 3020;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 2450;
@@ -5051,7 +5051,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 132";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 3367;
@@ -5071,7 +5071,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 117";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 4428;
@@ -5081,7 +5081,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 123";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1103;
 		vrLoc = 3367;
@@ -5101,7 +5101,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 116";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 4387;
@@ -5110,8 +5110,8 @@
 		isa = PBXTextBookmark;
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "[imagesController addFiles:dirContent];";
-		rLen = 41;
-		rLoc = 3089;
+		rLen = 49;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 2328;
@@ -5121,7 +5121,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 3935;
+		rLoc = 4834;
 		rType = 0;
 		vrLen = 1132;
 		vrLoc = 2808;
@@ -5131,7 +5131,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 28";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 767;
 		rType = 0;
 		vrLen = 789;
 		vrLoc = 0;
@@ -5141,7 +5141,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 125";
 		rLen = 0;
-		rLoc = 3745;
+		rLoc = 4132;
 		rType = 0;
 		vrLen = 1132;
 		vrLoc = 2808;
@@ -5151,7 +5151,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 176";
 		rLen = 0;
-		rLoc = 5463;
+		rLoc = 5313;
 		rType = 0;
 		vrLen = 1179;
 		vrLoc = 4819;
@@ -5161,7 +5161,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 116";
 		rLen = 0;
-		rLoc = 3473;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1132;
 		vrLoc = 2808;
@@ -5170,8 +5170,8 @@
 		isa = PBXTextBookmark;
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "[imagesController addFiles:dirContent];";
-		rLen = 41;
-		rLoc = 3089;
+		rLen = 49;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 2328;
@@ -5181,7 +5181,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 3935;
+		rLoc = 4834;
 		rType = 0;
 		vrLen = 1132;
 		vrLoc = 2808;
@@ -5191,7 +5191,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: 27";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 767;
 		rType = 0;
 		vrLen = 789;
 		vrLoc = 0;
@@ -5211,7 +5211,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 116";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 4387;
@@ -5221,7 +5221,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: addFiles:";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 767;
 		rType = 0;
 		vrLen = 739;
 		vrLoc = 0;
@@ -5231,7 +5231,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3472;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1324;
 		vrLoc = 0;
@@ -5241,7 +5241,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 30";
 		rLen = 0;
-		rLoc = 678;
+		rLoc = 598;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 0;
@@ -5250,8 +5250,8 @@
 		isa = PBXTextBookmark;
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "[imagesController addFiles:dirContent];";
-		rLen = 41;
-		rLoc = 3089;
+		rLen = 49;
+		rLoc = 2931;
 		rType = 0;
 		vrLen = 1531;
 		vrLoc = 2328;
@@ -5261,7 +5261,7 @@
 		fRef = 033804220C86084300439E5A /* ImagesController.h */;
 		name = "ImagesController.h: addFiles:";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 767;
 		rType = 0;
 		vrLen = 739;
 		vrLoc = 0;
@@ -5271,7 +5271,7 @@
 		fRef = 033804230C86084300439E5A /* ImagesController.m */;
 		name = "ImagesController.m: 115";
 		rLen = 0;
-		rLoc = 3472;
+		rLoc = 2723;
 		rType = 0;
 		vrLen = 1324;
 		vrLoc = 0;
@@ -5281,7 +5281,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 30";
 		rLen = 0;
-		rLoc = 678;
+		rLoc = 598;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 0;
@@ -5291,12 +5291,1107 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 91";
 		rLen = 0;
-		rLoc = 2978;
+		rLoc = 2820;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 0;
 	};
 	0338082C0C86232900439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	0338082E0C86235F00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 91";
+		rLen = 0;
+		rLoc = 2820;
+		rType = 0;
+		vrLen = 1098;
+		vrLoc = 0;
+	};
+	0338082F0C86236200439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4387;
+	};
+	033808300C86236200439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 91";
+		rLen = 0;
+		rLoc = 2820;
+		rType = 0;
+		vrLen = 1098;
+		vrLoc = 0;
+	};
+	033808310C86236200439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808330C8623C400439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 121";
+		rLen = 0;
+		rLoc = 3967;
+		rType = 0;
+		vrLen = 735;
+		vrLoc = 3205;
+	};
+	033808340C8623C400439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 26";
+		rLen = 0;
+		rLoc = 556;
+		rType = 0;
+		vrLen = 853;
+		vrLoc = 245;
+	};
+	033808350C8623C500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4387;
+	};
+	033808360C8623C500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 26";
+		rLen = 0;
+		rLoc = 556;
+		rType = 0;
+		vrLen = 1169;
+		vrLoc = 139;
+	};
+	033808370C8623C500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	0338083A0C86256100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4387;
+	};
+	0338083B0C86256100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 26";
+		rLen = 0;
+		rLoc = 556;
+		rType = 0;
+		vrLen = 1169;
+		vrLoc = 139;
+	};
+	0338083C0C86256100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "ImagesController.h: addFiles:";
+		rLen = 0;
+		rLoc = 767;
+		rType = 0;
+		vrLen = 739;
+		vrLoc = 0;
+	};
+	0338083D0C86256100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 26";
+		rLen = 0;
+		rLoc = 556;
+		rType = 0;
+		vrLen = 1169;
+		vrLoc = 139;
+	};
+	0338083E0C86256100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "ImagesController.h: addFiles:";
+		rLen = 0;
+		rLoc = 767;
+		rType = 0;
+		vrLen = 739;
+		vrLoc = 0;
+	};
+	0338083F0C86256100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: containsPath:";
+		rLen = 0;
+		rLoc = 2723;
+		rType = 0;
+		vrLen = 1189;
+		vrLoc = 2399;
+	};
+	033808400C86256100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808420C86273A00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: containsPath:";
+		rLen = 0;
+		rLoc = 2723;
+		rType = 0;
+		vrLen = 1189;
+		vrLoc = 2399;
+	};
+	033808430C86273E00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4387;
+	};
+	033808440C86273E00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: containsPath:";
+		rLen = 0;
+		rLoc = 2723;
+		rType = 0;
+		vrLen = 1168;
+		vrLoc = 2003;
+	};
+	033808450C86273E00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808470C86279400439E5A /* ImagesController.m:92 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 033804230C86084300439E5A /* ImagesController.m */;
+		functionName = "-addFiles:";
+		hitCount = 1;
+		lineNumber = 92;
+		location = ImagesController.ob;
+		modificationTime = 210119047.864137;
+		state = 1;
+	};
+	0338084B0C86279F00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4387;
+	};
+	0338084C0C86279F00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: containsPath:";
+		rLen = 0;
+		rLoc = 2723;
+		rType = 0;
+		vrLen = 1168;
+		vrLoc = 2003;
+	};
+	0338084D0C86279F00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808530C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 96";
+		rLen = 0;
+		rLoc = 2723;
+		rType = 0;
+		vrLen = 1058;
+		vrLoc = 2113;
+	};
+	033808540C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 71";
+		rLen = 0;
+		rLoc = 2106;
+		rType = 0;
+		vrLen = 1485;
+		vrLoc = 2264;
+	};
+	033808550C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 81";
+		rLen = 0;
+		rLoc = 2723;
+		rType = 0;
+		vrLen = 1150;
+		vrLoc = 2168;
+	};
+	033808560C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 94";
+		rLen = 0;
+		rLoc = 2931;
+		rType = 0;
+		vrLen = 1376;
+		vrLoc = 2450;
+	};
+	033808570C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 84";
+		rLen = 0;
+		rLoc = 2723;
+		rType = 0;
+		vrLen = 1073;
+		vrLoc = 2078;
+	};
+	033808580C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 94";
+		rLen = 0;
+		rLoc = 2931;
+		rType = 0;
+		vrLen = 1376;
+		vrLoc = 2450;
+	};
+	033808590C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 84";
+		rLen = 0;
+		rLoc = 2723;
+		rType = 0;
+		vrLen = 1058;
+		vrLoc = 2113;
+	};
+	0338085A0C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = isRecursive;
+		rLen = 11;
+		rLoc = 2779;
+		rType = 0;
+		vrLen = 1376;
+		vrLoc = 2450;
+	};
+	0338085B0C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 96";
+		rLen = 0;
+		rLoc = 2723;
+		rType = 0;
+		vrLen = 1058;
+		vrLoc = 2113;
+	};
+	0338085C0C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 71";
+		rLen = 0;
+		rLoc = 2106;
+		rType = 0;
+		vrLen = 1485;
+		vrLoc = 2264;
+	};
+	0338085D0C8627F100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "ImagesController.h: addFilesWithUndo:";
+		rLen = 0;
+		rLoc = 791;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 0;
+	};
+	0338086C0C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4395;
+	};
+	0338086D0C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 7";
+		rLen = 0;
+		rLoc = 168;
+		rType = 0;
+		vrLen = 1098;
+		vrLoc = 0;
+	};
+	0338086E0C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "- (void)addFilesWithUndo:(NSArray *)filePaths;";
+		rLen = 47;
+		rLoc = 767;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 0;
+	};
+	0338086F0C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 030461600C75158100D70803 /* NSFileManager+CSS.m */;
+		name = directoryContentFullPaths;
+		rLen = 25;
+		rLoc = 360;
+		rType = 0;
+		vrLen = 1203;
+		vrLoc = 185;
+	};
+	033808700C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: 'firstInsertedObject' undeclared (first use in this function)";
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		rLen = 0;
+		rLoc = 117;
+		rType = 1;
+	};
+	033808710C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "ImagesController.h: addFilesWithUndo:";
+		rLen = 0;
+		rLoc = 791;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 0;
+	};
+	033808720C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 396";
+		rLen = 0;
+		rLoc = 11322;
+		rType = 0;
+		vrLen = 1251;
+		vrLoc = 10792;
+	};
+	033808730C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 7";
+		rLen = 0;
+		rLoc = 168;
+		rType = 0;
+		vrLen = 1098;
+		vrLoc = 0;
+	};
+	033808740C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "- (void)addFilesWithUndo:(NSArray *)filePaths;";
+		rLen = 47;
+		rLoc = 767;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 0;
+	};
+	033808750C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 030461600C75158100D70803 /* NSFileManager+CSS.m */;
+		name = directoryContentFullPaths;
+		rLen = 25;
+		rLoc = 360;
+		rType = 0;
+		vrLen = 1203;
+		vrLoc = 185;
+	};
+	033808760C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 127";
+		rLen = 0;
+		rLoc = 3959;
+		rType = 0;
+		vrLen = 1327;
+		vrLoc = 2748;
+	};
+	033808770C86297500439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	0338087B0C86297E00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4395;
+	};
+	0338087C0C86297E00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 124";
+		rLen = 0;
+		rLoc = 3760;
+		rType = 0;
+		vrLen = 1328;
+		vrLoc = 2748;
+	};
+	0338087D0C86297E00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808810C86298400439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 124";
+		rLen = 0;
+		rLoc = 3760;
+		rType = 0;
+		vrLen = 1328;
+		vrLoc = 2748;
+	};
+	033808820C86298700439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4395;
+	};
+	033808830C86298700439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 124";
+		rLen = 0;
+		rLoc = 3760;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 2923;
+	};
+	033808840C86298700439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	0338088D0C862A2600439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "ImagesController.h: addFilesWithUndo:";
+		rLen = 0;
+		rLoc = 791;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 0;
+	};
+	0338088E0C862A2600439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		rLen = 0;
+		rLoc = 91;
+		rType = 1;
+	};
+	0338088F0C862A2600439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 124";
+		rLen = 0;
+		rLoc = 4029;
+		rType = 0;
+		vrLen = 1153;
+		vrLoc = 2922;
+	};
+	033808900C862A2600439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4395;
+	};
+	033808910C862A2600439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 124";
+		rLen = 0;
+		rLoc = 4029;
+		rType = 0;
+		vrLen = 1235;
+		vrLoc = 2846;
+	};
+	033808920C862A2600439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808960C862A3C00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4395;
+	};
+	033808970C862A3C00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 114";
+		rLen = 0;
+		rLoc = 3746;
+		rType = 0;
+		vrLen = 1276;
+		vrLoc = 2846;
+	};
+	033808980C862A3C00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	0338089C0C862A6000439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4395;
+	};
+	0338089D0C862A6000439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 117";
+		rLen = 0;
+		rLoc = 3880;
+		rType = 0;
+		vrLen = 1276;
+		vrLoc = 2846;
+	};
+	0338089E0C862A6000439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808A90C862B7400439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 116";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4395;
+	};
+	033808AA0C862B7400439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 109";
+		rLen = 0;
+		rLoc = 3678;
+		rType = 0;
+		vrLen = 1283;
+		vrLoc = 2504;
+	};
+	033808AB0C862B7400439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808AD0C862BBC00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 442";
+		rLen = 0;
+		rLoc = 12033;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 4387;
+	};
+	033808AE0C862BBC00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 133";
+		rLen = 0;
+		rLoc = 4671;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 2504;
+	};
+	033808AF0C862BBC00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808D30C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 421";
+		rLen = 0;
+		rLoc = 12033;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 4292;
+	};
+	033808D40C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 25";
+		rLen = 0;
+		rLoc = 537;
+		rType = 0;
+		vrLen = 963;
+		vrLoc = 0;
+	};
+	033808D50C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = inMemoryBitmapsContainers;
+		rLen = 25;
+		rLoc = 266;
+		rType = 0;
+		vrLen = 897;
+		vrLoc = 0;
+	};
+	033808D60C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 28";
+		rLen = 0;
+		rLoc = 625;
+		rType = 0;
+		vrLen = 1271;
+		vrLoc = 139;
+	};
+	033808D70C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: control reaches end of non-void function";
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		rLen = 1;
+		rLoc = 10;
+		rType = 1;
+	};
+	033808D80C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 85";
+		rLen = 0;
+		rLoc = 2784;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 2504;
+	};
+	033808D90C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 416";
+		rLen = 0;
+		rLoc = 11859;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 10986;
+	};
+	033808DA0C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "- (void) retainOnlyAFewImagesAndReleaseTheRest {";
+		rLen = 49;
+		rLoc = 4154;
+		rType = 0;
+		vrLen = 1118;
+		vrLoc = 3358;
+	};
+	033808DB0C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "ImagesController.h: retainOnlyAFewImagesAndReleaseTheRest";
+		rLen = 0;
+		rLoc = 890;
+		rType = 0;
+		vrLen = 787;
+		vrLoc = 0;
+	};
+	033808DC0C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = retain;
+		rLen = 6;
+		rLoc = 11985;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 10986;
+	};
+	033808DD0C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "- (void) retainOnlyAFewImagesAndReleaseTheRest {";
+		rLen = 49;
+		rLoc = 4154;
+		rType = 0;
+		vrLen = 1154;
+		vrLoc = 3322;
+	};
+	033808DE0C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = retain;
+		rLen = 6;
+		rLoc = 11985;
+		rType = 0;
+		vrLen = 1207;
+		vrLoc = 10984;
+	};
+	033808DF0C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 25";
+		rLen = 0;
+		rLoc = 537;
+		rType = 0;
+		vrLen = 963;
+		vrLoc = 0;
+	};
+	033808E00C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "- (void) retainOnlyAFewImagesAndReleaseTheRest {";
+		rLen = 49;
+		rLoc = 4154;
+		rType = 0;
+		vrLen = 1154;
+		vrLoc = 3322;
+	};
+	033808E10C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "ImagesController.h: inMemoryBitmapsNextIndex";
+		rLen = 0;
+		rLoc = 292;
+		rType = 0;
+		vrLen = 823;
+		vrLoc = 0;
+	};
+	033808E20C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 137";
+		rLen = 0;
+		rLoc = 4291;
+		rType = 0;
+		vrLen = 1130;
+		vrLoc = 3322;
+	};
+	033808E30C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 25";
+		rLen = 0;
+		rLoc = 537;
+		rType = 0;
+		vrLen = 963;
+		vrLoc = 0;
+	};
+	033808E40C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 8";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 1106;
+		vrLoc = 0;
+	};
+	033808E50C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = "ImagesController.h: IN_MEMORY_BITMAPS";
+		rLen = 0;
+		rLoc = 77;
+		rType = 0;
+		vrLen = 853;
+		vrLoc = 0;
+	};
+	033808E60C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 114";
+		rLen = 0;
+		rLoc = 3672;
+		rType = 0;
+		vrLen = 1324;
+		vrLoc = 0;
+	};
+	033808E70C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804220C86084300439E5A /* ImagesController.h */;
+		name = inMemoryBitmapsContainers;
+		rLen = 25;
+		rLoc = 266;
+		rType = 0;
+		vrLen = 897;
+		vrLoc = 0;
+	};
+	033808E80C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 14";
+		rLen = 0;
+		rLoc = 278;
+		rType = 0;
+		vrLen = 1041;
+		vrLoc = 0;
+	};
+	033808E90C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 8";
+		rLen = 0;
+		rLoc = 262;
+		rType = 0;
+		vrLen = 1240;
+		vrLoc = 0;
+	};
+	033808EA0C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 28";
+		rLen = 0;
+		rLoc = 625;
+		rType = 0;
+		vrLen = 1271;
+		vrLoc = 139;
+	};
+	033808EB0C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "}";
+		rLen = 2;
+		rLoc = 263;
+		rType = 0;
+		vrLen = 1142;
+		vrLoc = 0;
+	};
+	033808EC0C862CAB00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808F00C862CB600439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 421";
+		rLen = 0;
+		rLoc = 12033;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 4292;
+	};
+	033808F10C862CB600439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 10";
+		rLen = 0;
+		rLoc = 262;
+		rType = 0;
+		vrLen = 1175;
+		vrLoc = 0;
+	};
+	033808F20C862CB600439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808F70C862D2900439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 421";
+		rLen = 0;
+		rLoc = 12033;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 4292;
+	};
+	033808F80C862D2A00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 17";
+		rLen = 0;
+		rLoc = 342;
+		rType = 0;
+		vrLen = 1094;
+		vrLoc = 3577;
+	};
+	033808F90C862D2A00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		rLen = 1;
+		rLoc = 85;
+		rType = 1;
+	};
+	033808FA0C862D2A00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033804230C86084300439E5A /* ImagesController.m */;
+		name = "ImagesController.m: 17";
+		rLen = 0;
+		rLoc = 342;
+		rType = 0;
+		vrLen = 1094;
+		vrLoc = 3577;
+	};
+	033808FB0C862D2A00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 85";
+		rLen = 0;
+		rLoc = 2709;
+		rType = 0;
+		vrLen = 1672;
+		vrLoc = 1963;
+	};
+	033808FC0C862D2A00439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
+		name = NSUndoManager;
+		rLen = 13;
+		rLoc = 43785;
+		rType = 0;
+		vrLen = 4585;
+		vrLoc = 41627;
+	};
+	033808FF0C862D3100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 421";
+		rLen = 0;
+		rLoc = 12033;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 4292;
+	};
+	033809000C862D3100439E5A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 70";
+		rLen = 0;
+		rLoc = 2275;
+		rType = 0;
+		vrLen = 1672;
+		vrLoc = 1963;
+	};
+	033809010C862D3100439E5A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 033803530C85FE6200439E5A /* NSDocument.h */;
 		name = NSUndoManager;
@@ -5395,7 +6490,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 187";
 		rLen = 205;
-		rLoc = 4862;
+		rLoc = 4712;
 		rType = 0;
 		vrLen = 905;
 		vrLoc = 5259;
@@ -5415,7 +6510,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: inMemoryBitmapsContainers";
 		rLen = 0;
-		rLoc = 335;
+		rLoc = 293;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 0;
@@ -5565,6 +6660,7 @@
 		name = CocoaSlideShow;
 		objects = (
 			03DA06B30C806089009D508F /* _NSKVODeallocateLog */,
+			033808470C86279400439E5A /* ImagesController.m:92 */,
 		);
 	};
 	036D55110C712BFC004A8236 /* HIDRemoteControlDevice.h */ = {
@@ -5688,17 +6784,17 @@
 	};
 	03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 728}}";
-			sepNavSelRange = "{678, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 700}}";
+			sepNavSelRange = "{581, 0}";
 			sepNavVisRect = "{{0, 0}, {1007, 582}}";
 			sepNavWindowFrame = "{{38, 23}, {972, 829}}";
 		};
 	};
 	03B1BB100C5173B40032C03F /* CocoaSlideShow.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 6188}}";
-			sepNavSelRange = "{2978, 0}";
-			sepNavVisRect = "{{0, 0}, {1007, 582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 5894}}";
+			sepNavSelRange = "{2275, 0}";
+			sepNavVisRect = "{{0, 906}, {1007, 582}}";
 			sepNavWindowFrame = "{{111, 18}, {1110, 801}}";
 		};
 	};
@@ -5727,7 +6823,7 @@
 		delayBeforeContinue = 0;
 		hitCount = 1;
 		location = Foundation;
-		modificationTime = 210117077.326461;
+		modificationTime = 210119047.076318;
 		state = 1;
 		symbolName = _NSKVODeallocateLog;
 	};
@@ -5740,7 +6836,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 03B1BAFE0C51655B0032C03F /* CocoaSlideShow */;
 		activeTarget = 8D1107260486CEB800E47090 /* CocoaSlideShow */;
 		addToTargets = (
@@ -5748,6 +6844,7 @@
 		);
 		breakpoints = (
 			03DA06B30C806089009D508F /* _NSKVODeallocateLog */,
+			033808470C86279400439E5A /* ImagesController.m:92 */,
 		);
 		breakpointsGroup = 036D4EC00C6F741C004A8236 /* XCBreakpointsBucket */;
 		codeSenseManager = 03B1BB0B0C5165790032C03F /* Code sense */;
@@ -6363,6 +7460,115 @@
 			0338082A0C86232900439E5A /* PBXTextBookmark */ = 0338082A0C86232900439E5A /* PBXTextBookmark */;
 			0338082B0C86232900439E5A /* PBXTextBookmark */ = 0338082B0C86232900439E5A /* PBXTextBookmark */;
 			0338082C0C86232900439E5A /* PBXTextBookmark */ = 0338082C0C86232900439E5A /* PBXTextBookmark */;
+			0338082E0C86235F00439E5A /* PBXTextBookmark */ = 0338082E0C86235F00439E5A /* PBXTextBookmark */;
+			0338082F0C86236200439E5A /* PBXTextBookmark */ = 0338082F0C86236200439E5A /* PBXTextBookmark */;
+			033808300C86236200439E5A /* PBXTextBookmark */ = 033808300C86236200439E5A /* PBXTextBookmark */;
+			033808310C86236200439E5A /* PBXTextBookmark */ = 033808310C86236200439E5A /* PBXTextBookmark */;
+			033808330C8623C400439E5A /* PBXTextBookmark */ = 033808330C8623C400439E5A /* PBXTextBookmark */;
+			033808340C8623C400439E5A /* PBXTextBookmark */ = 033808340C8623C400439E5A /* PBXTextBookmark */;
+			033808350C8623C500439E5A /* PBXTextBookmark */ = 033808350C8623C500439E5A /* PBXTextBookmark */;
+			033808360C8623C500439E5A /* PBXTextBookmark */ = 033808360C8623C500439E5A /* PBXTextBookmark */;
+			033808370C8623C500439E5A /* PBXTextBookmark */ = 033808370C8623C500439E5A /* PBXTextBookmark */;
+			0338083A0C86256100439E5A /* PBXTextBookmark */ = 0338083A0C86256100439E5A /* PBXTextBookmark */;
+			0338083B0C86256100439E5A /* PBXTextBookmark */ = 0338083B0C86256100439E5A /* PBXTextBookmark */;
+			0338083C0C86256100439E5A /* PBXTextBookmark */ = 0338083C0C86256100439E5A /* PBXTextBookmark */;
+			0338083D0C86256100439E5A /* PBXTextBookmark */ = 0338083D0C86256100439E5A /* PBXTextBookmark */;
+			0338083E0C86256100439E5A /* PBXTextBookmark */ = 0338083E0C86256100439E5A /* PBXTextBookmark */;
+			0338083F0C86256100439E5A /* PBXTextBookmark */ = 0338083F0C86256100439E5A /* PBXTextBookmark */;
+			033808400C86256100439E5A /* PBXTextBookmark */ = 033808400C86256100439E5A /* PBXTextBookmark */;
+			033808420C86273A00439E5A /* PBXTextBookmark */ = 033808420C86273A00439E5A /* PBXTextBookmark */;
+			033808430C86273E00439E5A /* PBXTextBookmark */ = 033808430C86273E00439E5A /* PBXTextBookmark */;
+			033808440C86273E00439E5A /* PBXTextBookmark */ = 033808440C86273E00439E5A /* PBXTextBookmark */;
+			033808450C86273E00439E5A /* PBXTextBookmark */ = 033808450C86273E00439E5A /* PBXTextBookmark */;
+			0338084B0C86279F00439E5A /* PBXTextBookmark */ = 0338084B0C86279F00439E5A /* PBXTextBookmark */;
+			0338084C0C86279F00439E5A /* PBXTextBookmark */ = 0338084C0C86279F00439E5A /* PBXTextBookmark */;
+			0338084D0C86279F00439E5A /* PBXTextBookmark */ = 0338084D0C86279F00439E5A /* PBXTextBookmark */;
+			033808530C8627F100439E5A /* PBXTextBookmark */ = 033808530C8627F100439E5A /* PBXTextBookmark */;
+			033808540C8627F100439E5A /* PBXTextBookmark */ = 033808540C8627F100439E5A /* PBXTextBookmark */;
+			033808550C8627F100439E5A /* PBXTextBookmark */ = 033808550C8627F100439E5A /* PBXTextBookmark */;
+			033808560C8627F100439E5A /* PBXTextBookmark */ = 033808560C8627F100439E5A /* PBXTextBookmark */;
+			033808570C8627F100439E5A /* PBXTextBookmark */ = 033808570C8627F100439E5A /* PBXTextBookmark */;
+			033808580C8627F100439E5A /* PBXTextBookmark */ = 033808580C8627F100439E5A /* PBXTextBookmark */;
+			033808590C8627F100439E5A /* PBXTextBookmark */ = 033808590C8627F100439E5A /* PBXTextBookmark */;
+			0338085A0C8627F100439E5A /* PBXTextBookmark */ = 0338085A0C8627F100439E5A /* PBXTextBookmark */;
+			0338085B0C8627F100439E5A /* PBXTextBookmark */ = 0338085B0C8627F100439E5A /* PBXTextBookmark */;
+			0338085C0C8627F100439E5A /* PBXTextBookmark */ = 0338085C0C8627F100439E5A /* PBXTextBookmark */;
+			0338085D0C8627F100439E5A /* PBXTextBookmark */ = 0338085D0C8627F100439E5A /* PBXTextBookmark */;
+			0338086C0C86297500439E5A /* PBXTextBookmark */ = 0338086C0C86297500439E5A /* PBXTextBookmark */;
+			0338086D0C86297500439E5A /* PBXTextBookmark */ = 0338086D0C86297500439E5A /* PBXTextBookmark */;
+			0338086E0C86297500439E5A /* PBXTextBookmark */ = 0338086E0C86297500439E5A /* PBXTextBookmark */;
+			0338086F0C86297500439E5A /* PBXTextBookmark */ = 0338086F0C86297500439E5A /* PBXTextBookmark */;
+			033808700C86297500439E5A /* PBXTextBookmark */ = 033808700C86297500439E5A /* PBXTextBookmark */;
+			033808710C86297500439E5A /* PBXTextBookmark */ = 033808710C86297500439E5A /* PBXTextBookmark */;
+			033808720C86297500439E5A /* PBXTextBookmark */ = 033808720C86297500439E5A /* PBXTextBookmark */;
+			033808730C86297500439E5A /* PBXTextBookmark */ = 033808730C86297500439E5A /* PBXTextBookmark */;
+			033808740C86297500439E5A /* PBXTextBookmark */ = 033808740C86297500439E5A /* PBXTextBookmark */;
+			033808750C86297500439E5A /* PBXTextBookmark */ = 033808750C86297500439E5A /* PBXTextBookmark */;
+			033808760C86297500439E5A /* PBXTextBookmark */ = 033808760C86297500439E5A /* PBXTextBookmark */;
+			033808770C86297500439E5A /* PBXTextBookmark */ = 033808770C86297500439E5A /* PBXTextBookmark */;
+			0338087B0C86297E00439E5A /* PBXTextBookmark */ = 0338087B0C86297E00439E5A /* PBXTextBookmark */;
+			0338087C0C86297E00439E5A /* PBXTextBookmark */ = 0338087C0C86297E00439E5A /* PBXTextBookmark */;
+			0338087D0C86297E00439E5A /* PBXTextBookmark */ = 0338087D0C86297E00439E5A /* PBXTextBookmark */;
+			033808810C86298400439E5A /* PBXTextBookmark */ = 033808810C86298400439E5A /* PBXTextBookmark */;
+			033808820C86298700439E5A /* PBXTextBookmark */ = 033808820C86298700439E5A /* PBXTextBookmark */;
+			033808830C86298700439E5A /* PBXTextBookmark */ = 033808830C86298700439E5A /* PBXTextBookmark */;
+			033808840C86298700439E5A /* PBXTextBookmark */ = 033808840C86298700439E5A /* PBXTextBookmark */;
+			0338088D0C862A2600439E5A /* PBXTextBookmark */ = 0338088D0C862A2600439E5A /* PBXTextBookmark */;
+			0338088E0C862A2600439E5A /* PBXTextBookmark */ = 0338088E0C862A2600439E5A /* PBXTextBookmark */;
+			0338088F0C862A2600439E5A /* PBXTextBookmark */ = 0338088F0C862A2600439E5A /* PBXTextBookmark */;
+			033808900C862A2600439E5A /* PBXTextBookmark */ = 033808900C862A2600439E5A /* PBXTextBookmark */;
+			033808910C862A2600439E5A /* PBXTextBookmark */ = 033808910C862A2600439E5A /* PBXTextBookmark */;
+			033808920C862A2600439E5A /* PBXTextBookmark */ = 033808920C862A2600439E5A /* PBXTextBookmark */;
+			033808960C862A3C00439E5A /* PBXTextBookmark */ = 033808960C862A3C00439E5A /* PBXTextBookmark */;
+			033808970C862A3C00439E5A /* PBXTextBookmark */ = 033808970C862A3C00439E5A /* PBXTextBookmark */;
+			033808980C862A3C00439E5A /* PBXTextBookmark */ = 033808980C862A3C00439E5A /* PBXTextBookmark */;
+			0338089C0C862A6000439E5A /* PBXTextBookmark */ = 0338089C0C862A6000439E5A /* PBXTextBookmark */;
+			0338089D0C862A6000439E5A /* PBXTextBookmark */ = 0338089D0C862A6000439E5A /* PBXTextBookmark */;
+			0338089E0C862A6000439E5A /* PBXTextBookmark */ = 0338089E0C862A6000439E5A /* PBXTextBookmark */;
+			033808A90C862B7400439E5A /* PBXTextBookmark */ = 033808A90C862B7400439E5A /* PBXTextBookmark */;
+			033808AA0C862B7400439E5A /* PBXTextBookmark */ = 033808AA0C862B7400439E5A /* PBXTextBookmark */;
+			033808AB0C862B7400439E5A /* PBXTextBookmark */ = 033808AB0C862B7400439E5A /* PBXTextBookmark */;
+			033808AD0C862BBC00439E5A /* PBXTextBookmark */ = 033808AD0C862BBC00439E5A /* PBXTextBookmark */;
+			033808AE0C862BBC00439E5A /* PBXTextBookmark */ = 033808AE0C862BBC00439E5A /* PBXTextBookmark */;
+			033808AF0C862BBC00439E5A /* PBXTextBookmark */ = 033808AF0C862BBC00439E5A /* PBXTextBookmark */;
+			033808D30C862CAB00439E5A /* PBXTextBookmark */ = 033808D30C862CAB00439E5A /* PBXTextBookmark */;
+			033808D40C862CAB00439E5A /* PBXTextBookmark */ = 033808D40C862CAB00439E5A /* PBXTextBookmark */;
+			033808D50C862CAB00439E5A /* PBXTextBookmark */ = 033808D50C862CAB00439E5A /* PBXTextBookmark */;
+			033808D60C862CAB00439E5A /* PBXTextBookmark */ = 033808D60C862CAB00439E5A /* PBXTextBookmark */;
+			033808D70C862CAB00439E5A /* PBXTextBookmark */ = 033808D70C862CAB00439E5A /* PBXTextBookmark */;
+			033808D80C862CAB00439E5A /* PBXTextBookmark */ = 033808D80C862CAB00439E5A /* PBXTextBookmark */;
+			033808D90C862CAB00439E5A /* PBXTextBookmark */ = 033808D90C862CAB00439E5A /* PBXTextBookmark */;
+			033808DA0C862CAB00439E5A /* PBXTextBookmark */ = 033808DA0C862CAB00439E5A /* PBXTextBookmark */;
+			033808DB0C862CAB00439E5A /* PBXTextBookmark */ = 033808DB0C862CAB00439E5A /* PBXTextBookmark */;
+			033808DC0C862CAB00439E5A /* PBXTextBookmark */ = 033808DC0C862CAB00439E5A /* PBXTextBookmark */;
+			033808DD0C862CAB00439E5A /* PBXTextBookmark */ = 033808DD0C862CAB00439E5A /* PBXTextBookmark */;
+			033808DE0C862CAB00439E5A /* PBXTextBookmark */ = 033808DE0C862CAB00439E5A /* PBXTextBookmark */;
+			033808DF0C862CAB00439E5A /* PBXTextBookmark */ = 033808DF0C862CAB00439E5A /* PBXTextBookmark */;
+			033808E00C862CAB00439E5A /* PBXTextBookmark */ = 033808E00C862CAB00439E5A /* PBXTextBookmark */;
+			033808E10C862CAB00439E5A /* PBXTextBookmark */ = 033808E10C862CAB00439E5A /* PBXTextBookmark */;
+			033808E20C862CAB00439E5A /* PBXTextBookmark */ = 033808E20C862CAB00439E5A /* PBXTextBookmark */;
+			033808E30C862CAB00439E5A /* PBXTextBookmark */ = 033808E30C862CAB00439E5A /* PBXTextBookmark */;
+			033808E40C862CAB00439E5A /* PBXTextBookmark */ = 033808E40C862CAB00439E5A /* PBXTextBookmark */;
+			033808E50C862CAB00439E5A /* PBXTextBookmark */ = 033808E50C862CAB00439E5A /* PBXTextBookmark */;
+			033808E60C862CAB00439E5A /* PBXTextBookmark */ = 033808E60C862CAB00439E5A /* PBXTextBookmark */;
+			033808E70C862CAB00439E5A /* PBXTextBookmark */ = 033808E70C862CAB00439E5A /* PBXTextBookmark */;
+			033808E80C862CAB00439E5A /* PBXTextBookmark */ = 033808E80C862CAB00439E5A /* PBXTextBookmark */;
+			033808E90C862CAB00439E5A /* PBXTextBookmark */ = 033808E90C862CAB00439E5A /* PBXTextBookmark */;
+			033808EA0C862CAB00439E5A /* PBXTextBookmark */ = 033808EA0C862CAB00439E5A /* PBXTextBookmark */;
+			033808EB0C862CAB00439E5A /* PBXTextBookmark */ = 033808EB0C862CAB00439E5A /* PBXTextBookmark */;
+			033808EC0C862CAB00439E5A /* PBXTextBookmark */ = 033808EC0C862CAB00439E5A /* PBXTextBookmark */;
+			033808F00C862CB600439E5A /* PBXTextBookmark */ = 033808F00C862CB600439E5A /* PBXTextBookmark */;
+			033808F10C862CB600439E5A /* PBXTextBookmark */ = 033808F10C862CB600439E5A /* PBXTextBookmark */;
+			033808F20C862CB600439E5A /* PBXTextBookmark */ = 033808F20C862CB600439E5A /* PBXTextBookmark */;
+			033808F70C862D2900439E5A /* PBXTextBookmark */ = 033808F70C862D2900439E5A /* PBXTextBookmark */;
+			033808F80C862D2A00439E5A /* PBXTextBookmark */ = 033808F80C862D2A00439E5A /* PBXTextBookmark */;
+			033808F90C862D2A00439E5A /* PBXTextBookmark */ = 033808F90C862D2A00439E5A /* PBXTextBookmark */;
+			033808FA0C862D2A00439E5A /* PBXTextBookmark */ = 033808FA0C862D2A00439E5A /* PBXTextBookmark */;
+			033808FB0C862D2A00439E5A /* PBXTextBookmark */ = 033808FB0C862D2A00439E5A /* PBXTextBookmark */;
+			033808FC0C862D2A00439E5A /* PBXTextBookmark */ = 033808FC0C862D2A00439E5A /* PBXTextBookmark */;
+			033808FF0C862D3100439E5A /* PBXTextBookmark */ = 033808FF0C862D3100439E5A /* PBXTextBookmark */;
+			033809000C862D3100439E5A /* PBXTextBookmark */ = 033809000C862D3100439E5A /* PBXTextBookmark */;
+			033809010C862D3100439E5A /* PBXTextBookmark */ = 033809010C862D3100439E5A /* PBXTextBookmark */;
 			0338FFDC0C85D1C900439E5A = 0338FFDC0C85D1C900439E5A /* PBXTextBookmark */;
 			0338FFDD0C85D1C900439E5A = 0338FFDD0C85D1C900439E5A /* PBXTextBookmark */;
 			0338FFDE0C85D1C900439E5A = 0338FFDE0C85D1C900439E5A /* PBXTextBookmark */;

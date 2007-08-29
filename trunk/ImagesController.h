@@ -2,12 +2,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+#define IN_MEMORY_BITMAPS 10
+
 @class CocoaSlideShow;
 
 @interface ImagesController : NSArrayController
 {
 	IBOutlet CocoaSlideShow *cocoaSlideShow;
 	BOOL importDone;
+	unsigned inMemoryBitmapsNextIndex;
+	NSMutableArray *inMemoryBitmapsContainers;
 }
 
 - (NSUndoManager *)undoManager;
@@ -26,5 +30,6 @@
 - (void)selectNextImage;
 - (void)addFiles:(NSArray *)filePaths;
 - (void)addDirFiles:(NSString *)dir;
+- (void) retainOnlyAFewImagesAndReleaseTheRest;
 
 @end

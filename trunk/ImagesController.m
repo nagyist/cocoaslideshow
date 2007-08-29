@@ -4,6 +4,17 @@
 
 @implementation ImagesController
 
+- (id)init {
+	self = [super init];
+	inMemoryBitmapsContainers = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
+	return self;
+}
+
+- (void)dealloc {
+	[inMemoryBitmapsContainers release];
+	[super dealloc];
+}
+
 - (NSUndoManager *)undoManager {
 	return [cocoaSlideShow undoManager];
 }
@@ -127,6 +138,23 @@
 - (IBAction)moveToTrash:(id)sender {
 	[[self selectedObjects] makeObjectsPerformSelector:@selector(moveToTrash)];
 	[self removeObjectsAtArrangedObjectIndexes:[self selectionIndexes]];
+}
+
+- (void) retainOnlyAFewImagesAndReleaseTheRest {
+	if([[self selectedObjects] count] != 1) {
+		return;
+	}
+	
+	CSSImageContainer *c = [[self selectedObjects] lastObject];
+	
+	if(![inMemoryBitmapsContainers containsObject:c]) {
+		if([inMemoryBitmapsContainers count] == IN_MEMORY_BITMAPS) {
+			CSSImageContainer *oldContainer = [inMemoryBitmapsContainers objectAtIndex:0];
+			[oldContainer forgetBitmap];
+			[inMemoryBitmapsContainers removeObject:oldContainer];
+		}
+		[inMemoryBitmapsContainers addObject:c];	
+	}
 }
 
 @end
