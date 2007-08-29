@@ -16,6 +16,10 @@
 	inMemoryBitmapsContainers = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
 	isFullScreen = NO;
 	takeFilesFromDefault = YES;
+	
+    FlagImageTransformer *ft = [[[FlagImageTransformer alloc] init] autorelease];
+    [NSValueTransformer setValueTransformer:ft forName:@"FlagImageTransformer"];
+									
 	return self;
 }
 
@@ -139,8 +143,13 @@
 	
 	[[userCommentTextField cell] setSendsActionOnEndEditing:YES];
 	[[keywordsTokenField cell] setSendsActionOnEndEditing:YES];
-	[[keywordsTokenField cell] setEnabled:YES]; // TODO see why keywords are grayed otherwise
 	
+	NSTableColumn *flagColumn = [tableView tableColumnWithIdentifier:@"flag"];
+	NSImage *flagHeaderImage = [NSImage imageNamed:@"FlaggedHeader.png"];
+	NSImageCell *flagHeaderImageCell = [flagColumn headerCell];
+	[flagHeaderImageCell setImage:flagHeaderImage];
+	[flagColumn setHeaderCell:flagHeaderImageCell];
+		
 	[imageView setDelegate:self];
 }
 
@@ -259,6 +268,36 @@
 	[self willChangeValueForKey:@"isFullScreen"];
 	isFullScreen = YES;
 	[self didChangeValueForKey:@"isFullScreen"];
+}
+
+- (IBAction)flag:(id)sender {
+	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(flag)];
+}
+
+- (IBAction)unflag:(id)sender {
+	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(unflag)];
+}
+
+- (IBAction)toggleFlags:(id)sender {
+	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(toggleFlag)];
+}
+
+- (IBAction)removeAllFlags:(id)sender {
+	[[imagesController arrangedObjects] makeObjectsPerformSelector:@selector(removeFlag)];
+}
+
+- (IBAction)selectFlags:(id)sender {
+	NSMutableIndexSet *flaggedIndexes = [[NSMutableIndexSet alloc] init];
+	
+	NSEnumerator *e = [[imagesController arrangedObjects] objectEnumerator];
+	CSSImageContainer *container;
+	while(( container = [e nextObject] )) {
+		if([container isFlagged]) {
+			[flaggedIndexes addIndex:[images indexOfObject:container]];
+		}
+	}
+	[imagesController setSelectionIndexes:flaggedIndexes];
+	[flaggedIndexes release];
 }
 
 - (IBAction)exitFullScreen:(id)sender {

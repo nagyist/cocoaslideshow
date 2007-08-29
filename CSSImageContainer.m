@@ -42,6 +42,26 @@
 	bitmap = nil;
 }
 
+- (void)flag {
+	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isFlagged"];		
+}
+
+- (void)unflag {
+	[self setValue:[NSNumber numberWithBool:NO] forKey:@"isFlagged"];
+}
+
+- (void)toggleFlag {
+	[self setValue:[NSNumber numberWithBool:!isFlagged] forKey:@"isFlagged"];
+}
+
+- (void)removeFlag {
+	[self setValue:[NSNumber numberWithBool:NO] forKey:@"isFlagged"];	
+}
+
+- (BOOL)isFlagged {
+	return isFlagged;
+}
+
 - (void)copyToDirectory:(NSString *)destDirectory {
 	NSString *destPath = [destDirectory stringByAppendingPathComponent:[path lastPathComponent]];
 	NSFileManager *fm = [NSFileManager defaultManager];
