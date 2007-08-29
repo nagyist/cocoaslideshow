@@ -18,4 +18,10 @@
 - (NSString *)path;
 - (void)forgetBitmap;
 
+- (void)flag;
+- (void)unflag;
+- (void)toggleFlag;
+- (void)removeFlag;
+- (BOOL)isFlagged;
+
 @end

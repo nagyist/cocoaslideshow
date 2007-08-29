@@ -11,6 +11,9 @@
 		030462560C751CDF00D70803 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030462550C751CDF00D70803 /* MyImageView.m */; };
 		030463F10C75347700D70803 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 030463F00C75347700D70803 /* Credits.html */; };
 		032F081B0C542D820037F590 /* AppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 032F081A0C542D820037F590 /* AppleRemote.m */; };
+		0338002E0C85D37700439E5A /* Flagged.png in Resources */ = {isa = PBXBuildFile; fileRef = 0338002D0C85D37700439E5A /* Flagged.png */; };
+		033800380C85D3D800439E5A /* FlagImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 033800370C85D3D800439E5A /* FlagImageTransformer.m */; };
+		033801D00C85EB7E00439E5A /* FlaggedHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 033801CF0C85EB7E00439E5A /* FlaggedHeader.png */; };
 		03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 03458E590C81CA5300385D93 /* NSString+CSS.m */; };
 		0367A7FA0C56CA6600BD57E8 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367A7F90C56CA6600BD57E8 /* IOKit.framework */; };
 		036D55130C712BFC004A8236 /* HIDRemoteControlDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55120C712BFC004A8236 /* HIDRemoteControlDevice.m */; };
@@ -37,6 +40,10 @@
 		030463F00C75347700D70803 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		032F08190C542D820037F590 /* AppleRemote.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppleRemote.h; sourceTree = "<group>"; };
 		032F081A0C542D820037F590 /* AppleRemote.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppleRemote.m; sourceTree = "<group>"; };
+		0338002D0C85D37700439E5A /* Flagged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flagged.png; sourceTree = "<group>"; };
+		033800360C85D3D800439E5A /* FlagImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = FlagImageTransformer.h; sourceTree = "<group>"; };
+		033800370C85D3D800439E5A /* FlagImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = FlagImageTransformer.m; sourceTree = "<group>"; };
+		033801CF0C85EB7E00439E5A /* FlaggedHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlaggedHeader.png; sourceTree = "<group>"; };
 		03458E580C81CA5300385D93 /* NSString+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CSS.h"; sourceTree = "<group>"; };
 		03458E590C81CA5300385D93 /* NSString+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSS.m"; sourceTree = "<group>"; };
 		0367A7F90C56CA6600BD57E8 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
@@ -98,6 +105,8 @@
 				030461600C75158100D70803 /* NSFileManager+CSS.m */,
 				03458E580C81CA5300385D93 /* NSString+CSS.h */,
 				03458E590C81CA5300385D93 /* NSString+CSS.m */,
+				033800360C85D3D800439E5A /* FlagImageTransformer.h */,
+				033800370C85D3D800439E5A /* FlagImageTransformer.m */,
 				030462540C751CDF00D70803 /* MyImageView.h */,
 				030462550C751CDF00D70803 /* MyImageView.m */,
 				03A3F43F0C77D97E009AD69D /* MyWindow.h */,
@@ -165,6 +174,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0338002D0C85D37700439E5A /* Flagged.png */,
+				033801CF0C85EB7E00439E5A /* FlaggedHeader.png */,
 				03A3F55B0C786878009AD69D /* CocoaSlideShow.icns */,
 				030463F00C75347700D70803 /* Credits.html */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -231,6 +242,8 @@
 				030463F10C75347700D70803 /* Credits.html in Resources */,
 				03A3F4E70C77E3B0009AD69D /* VersionCheck.plist in Resources */,
 				03A3F55C0C786878009AD69D /* CocoaSlideShow.icns in Resources */,
+				0338002E0C85D37700439E5A /* Flagged.png in Resources */,
+				033801D00C85EB7E00439E5A /* FlaggedHeader.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +282,7 @@
 				03A305CF0C7DE4F0009AD69D /* CSSBitmapImageRep.m in Sources */,
 				03DA06480C805F0B009D508F /* CSSImageContainer.m in Sources */,
 				03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */,
+				033800380C85D3D800439E5A /* FlagImageTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

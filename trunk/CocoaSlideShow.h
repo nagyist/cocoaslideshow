@@ -5,6 +5,8 @@
 
 #import "MyImageView.h"
 
+#import "FlagImageTransformer.h"
+
 @interface CocoaSlideShow : NSObject
 {
 	IBOutlet NSWindow *mainWindow;
@@ -42,6 +44,12 @@
 - (IBAction)moveToTrash:(id)sender;
 - (IBAction)exportToDirectory:(id)sender;
 - (IBAction)open:(id)sender;
+
+- (IBAction)flag:(id)sender;
+- (IBAction)unflag:(id)sender;
+- (IBAction)selectFlags:(id)sender;
+- (IBAction)toggleFlags:(id)sender;
+- (IBAction)removeAllFlags:(id)sender;
 
 - (BOOL)multipleImagesSelected;
 
