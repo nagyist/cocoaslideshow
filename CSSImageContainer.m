@@ -12,9 +12,9 @@
 @implementation CSSImageContainer
 
 - (CSSBitmapImageRep *)bitmap {
-	BOOL importDone = [[[NSApp delegate] valueForKey:@"importDone"] boolValue];
+	BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
-	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKey:@"multipleImagesSelected"] boolValue];
+	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
 
 	if(!importDone || (multipleImagesSelected && !isSaving) ) {
 		return nil;

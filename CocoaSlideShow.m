@@ -17,9 +17,11 @@
 	isFullScreen = NO;
 	takeFilesFromDefault = YES;
 	
+	undoManager = [[NSUndoManager alloc] init];
+	
     FlagImageTransformer *ft = [[[FlagImageTransformer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:ft forName:@"FlagImageTransformer"];
-									
+	
 	return self;
 }
 
@@ -28,7 +30,12 @@
 	[remoteControl autorelease];
 	[inMemoryBitmapsContainers release];
 	[mainWindow release];
+	[undoManager release];
 	[super dealloc];
+}
+
+- (NSUndoManager *)undoManager {
+	return undoManager;
 }
 
 - (NSImage *)rotateIndividualImage:(NSImage *)image clockwise:(BOOL)clockwise {
@@ -80,59 +87,11 @@
     return [rotatedImage autorelease];
 }
 
-- (BOOL)imagesControllerContainsPath:(NSString *)path {
-
-	NSEnumerator *e = [images objectEnumerator];
-	CSSImageContainer *container;
-	while(( container = [e nextObject] )) {
-		if([[container path] isEqualToString:path]) {
-			return YES;
-		}
-	}
-	return NO;
-}	
-
-
-- (void)addFiles:(NSArray *)filePaths {
-
-	importDone = NO;
-
-	NSEnumerator *e = [filePaths objectEnumerator];
-	NSString *path;
-	NSArray *allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"tif", @"tiff", @"psd", @"gif", @"png", @"bmp", nil];
-	NSArray *dirContent;
-	while(( path = [e nextObject] )) {
-		NSString *ext = [path pathExtension];
-		
-		dirContent = [[NSFileManager defaultManager] directoryContentFullPaths:path recursive:YES];
-		if(dirContent) {
-			[self addFiles:dirContent];
-		}
-		
-		if([path hasPrefix:@"."] || ![allowedExtensions containsObject:[ext lowercaseString]]) {
-			continue;
-		}
-		
-		if(![self imagesControllerContainsPath:path]) {
-			CSSImageContainer *container = [[CSSImageContainer alloc] init];
-			[container setValue:path forKey:@"path"];
-			[imagesController addObject:[container autorelease]];
-		}
-	}
-
-	importDone = YES;
-}
-
-- (void)addDirFiles:(NSString *)dir {
-	[self addFiles:[NSArray arrayWithObject:dir]];
-}
-
 - (void)setupImagesControllerWithDir:(NSString *)dir recursive:(BOOL)isRecursive {
 	[images removeAllObjects];
 
 	NSArray *dirContent = [[NSFileManager defaultManager] directoryContentFullPaths:dir recursive:isRecursive];
-	[self addFiles:dirContent];
-
+	[imagesController addFiles:dirContent];
 	[imagesController setSelectionIndex:0];
 }
 
@@ -189,7 +148,7 @@
 - (IBAction)addDirectory:(id)sender {
 	NSString *dir = [self chooseDirectory];
 	if(dir) {
-		[self addDirFiles:dir];
+		[imagesController addDirFiles:dir];
 	}
 }
 
@@ -214,11 +173,6 @@
 - (IBAction)rotateRight:(id)sender {
 	NSImageView *iv = isFullScreen ? panelImageView : imageView;
 	[self rotate:iv clockwise:YES];
-}
-
-- (IBAction)moveToTrash:(id)sender {
-	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(moveToTrash)];
-	[imagesController removeObjectsAtArrangedObjectIndexes:[imagesController selectionIndexes]];
 }
 
 - (IBAction)fullScreenMode:(id)sender {
@@ -270,34 +224,12 @@
 	[self didChangeValueForKey:@"isFullScreen"];
 }
 
-- (IBAction)flag:(id)sender {
-	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(flag)];
+- (IBAction)undo:(id)sender {
+	[undoManager undo];
 }
 
-- (IBAction)unflag:(id)sender {
-	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(unflag)];
-}
-
-- (IBAction)toggleFlags:(id)sender {
-	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(toggleFlag)];
-}
-
-- (IBAction)removeAllFlags:(id)sender {
-	[[imagesController arrangedObjects] makeObjectsPerformSelector:@selector(removeFlag)];
-}
-
-- (IBAction)selectFlags:(id)sender {
-	NSMutableIndexSet *flaggedIndexes = [[NSMutableIndexSet alloc] init];
-	
-	NSEnumerator *e = [[imagesController arrangedObjects] objectEnumerator];
-	CSSImageContainer *container;
-	while(( container = [e nextObject] )) {
-		if([container isFlagged]) {
-			[flaggedIndexes addIndex:[images indexOfObject:container]];
-		}
-	}
-	[imagesController setSelectionIndexes:flaggedIndexes];
-	[flaggedIndexes release];
+- (IBAction)redo:(id)sender {
+	[undoManager redo];
 }
 
 - (IBAction)exitFullScreen:(id)sender {
@@ -334,18 +266,6 @@
 	[self exitFullScreen:self];
 }
 
-- (void)selectPreviousImage {
-	if([imagesController canSelectPrevious]) {
-		[imagesController selectPrevious:self];
-	}
-}
-
-- (void)selectNextImage {
-	if([imagesController canSelectNext]) {
-		[imagesController selectNext:self];
-	}
-}
-
 - (void) sendRemoteButtonEvent: (RemoteControlEventIdentifier) event pressedDown: (BOOL) pressedDown remoteControl: (RemoteControl*) remoteControl {
 	//NSLog(@"Button %d pressed down %d", event, pressedDown);
 	
@@ -379,11 +299,11 @@
 			break;			
 		case kRemoteButtonRight:	
 			buttonName = @"Right";
-			[self selectNextImage];
+			[imagesController selectNextImage];
 			break;			
 		case kRemoteButtonLeft:
 			buttonName = @"Left";
-			[self selectPreviousImage];
+			[imagesController selectPreviousImage];
 			break;			
 		case kRemoteButtonRight_Hold:
 			buttonName = @"Right holding";	
@@ -437,7 +357,7 @@
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
 	if([filenames count] > 0) {
 		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
-		[self addFiles:filenames];
+		[imagesController addFiles:filenames];
 		int numberOfImagesAfter = [[imagesController arrangedObjects] count];
 		if(numberOfImagesAfter > numberOfImagesBefore) {
 			[imagesController setSelectionIndex:numberOfImagesBefore];
@@ -473,7 +393,7 @@
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
 		
 		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
-		[self addFiles:files];
+		[imagesController addFiles:files];
 		int numberOfImagesAfter = [[imagesController arrangedObjects] count];
 		if(numberOfImagesAfter > numberOfImagesBefore) {
 			[imagesController setSelectionIndex:numberOfImagesBefore];
@@ -484,10 +404,6 @@
 
 - (IBAction)revealInFinder:(id)sender {
 	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(revealInFinder)];
-}
-
-- (BOOL)multipleImagesSelected {
-	return [[imagesController selectedObjects] count] > 1;
 }
 
 - (BOOL)control:(NSControl *)control textShouldBeginEditing:(NSText *)fieldEditor {

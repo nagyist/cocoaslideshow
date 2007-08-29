@@ -4,6 +4,7 @@
 #import "RemoteControl.h"
 
 #import "MyImageView.h"
+#import "ImagesController.h"
 
 #import "FlagImageTransformer.h"
 
@@ -15,7 +16,7 @@
 	NSMutableArray *images;
 	NSMutableArray *inMemoryBitmapsContainers;
 
-	IBOutlet NSArrayController *imagesController;
+	IBOutlet ImagesController *imagesController;
 	IBOutlet MyImageView *imageView;
 	IBOutlet NSImageView *panelImageView;
 	IBOutlet NSTextField *userCommentTextField;
@@ -24,14 +25,17 @@
 
 	unsigned inMemoryBitmapsNextIndex;
 
-	RemoteControl* remoteControl;
+	RemoteControl *remoteControl;
+	NSUndoManager *undoManager;
 
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
 	
-	BOOL importDone;
 	BOOL isSaving;
 }
+
+- (IBAction)undo:(id)sender;
+- (IBAction)redo:(id)sender;
 
 - (IBAction)setDirectory:(id)sender;
 - (IBAction)addDirectory:(id)sender;
@@ -41,16 +45,7 @@
 - (IBAction)rotateLeft:(id)sender;
 - (IBAction)rotateRight:(id)sender;
 - (IBAction)revealInFinder:(id)sender;
-- (IBAction)moveToTrash:(id)sender;
 - (IBAction)exportToDirectory:(id)sender;
 - (IBAction)open:(id)sender;
-
-- (IBAction)flag:(id)sender;
-- (IBAction)unflag:(id)sender;
-- (IBAction)selectFlags:(id)sender;
-- (IBAction)toggleFlags:(id)sender;
-- (IBAction)removeAllFlags:(id)sender;
-
-- (BOOL)multipleImagesSelected;
 
 @end
