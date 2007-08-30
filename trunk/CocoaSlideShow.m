@@ -16,7 +16,7 @@
 	
 	undoManager = [[NSUndoManager alloc] init];
 	[undoManager setLevelsOfUndo:10];
-	
+		
     FlagImageTransformer *ft = [[[FlagImageTransformer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:ft forName:@"FlagImageTransformer"];
 	
@@ -24,9 +24,10 @@
 }
 
 - (void)dealloc {
+	[mainWindow release];
+	[imagesController release];
 	[images release];
 	[remoteControl autorelease];
-	[mainWindow release];
 	[undoManager release];
 	[super dealloc];
 }
@@ -100,12 +101,14 @@
 	[[userCommentTextField cell] setSendsActionOnEndEditing:YES];
 	[[keywordsTokenField cell] setSendsActionOnEndEditing:YES];
 	
+	[imagesController setAutomaticallyPreparesContent:YES];
+	
 	NSTableColumn *flagColumn = [tableView tableColumnWithIdentifier:@"flag"];
 	NSImage *flagHeaderImage = [NSImage imageNamed:@"FlaggedHeader.png"];
 	NSImageCell *flagHeaderImageCell = [flagColumn headerCell];
 	[flagHeaderImageCell setImage:flagHeaderImage];
 	[flagColumn setHeaderCell:flagHeaderImageCell];
-		
+	
 	[imageView setDelegate:self];
 }
 

@@ -2,7 +2,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define IN_MEMORY_BITMAPS 10
+#define IN_MEMORY_BITMAPS 5
 
 @class CocoaSlideShow;
 
