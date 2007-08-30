@@ -11,6 +11,14 @@
 
 @implementation CSSImageContainer
 
+/*
+- (id)init {
+	self = [super init];
+	NSLog(@"init %@", self);
+	return self;
+}
+*/
+
 - (CSSBitmapImageRep *)bitmap {
 	BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
@@ -31,7 +39,7 @@
 }
 
 - (void)dealloc {
-	//NSLog(@"bitmap release %@", path);
+	//NSLog(@"dealloc %@", self);
 	[path release];
 	[bitmap release];
 	[super dealloc];

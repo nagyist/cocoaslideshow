@@ -4,10 +4,8 @@
 
 @implementation ImagesController
 
-- (id)init {
-	self = [super init];
+- (void)awakeFromNib {
 	inMemoryBitmapsContainers = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
-	return self;
 }
 
 - (void)dealloc {
@@ -153,7 +151,7 @@
 			[oldContainer forgetBitmap];
 			[inMemoryBitmapsContainers removeObject:oldContainer];
 		}
-		[inMemoryBitmapsContainers addObject:c];	
+		[inMemoryBitmapsContainers addObject:c];
 	}
 }
 
