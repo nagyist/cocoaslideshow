@@ -118,10 +118,10 @@
 				03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */,
 				03DA06460C805F0B009D508F /* CSSImageContainer.h */,
 				03DA06470C805F0B009D508F /* CSSImageContainer.m */,
-				03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */,
-				03B1BB100C5173B40032C03F /* CocoaSlideShow.m */,
 				033804220C86084300439E5A /* ImagesController.h */,
 				033804230C86084300439E5A /* ImagesController.m */,
+				03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */,
+				03B1BB100C5173B40032C03F /* CocoaSlideShow.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

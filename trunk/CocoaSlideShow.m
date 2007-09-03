@@ -110,6 +110,7 @@
 	[flagColumn setHeaderCell:flagHeaderImageCell];
 	
 	[imageView setDelegate:self];
+	[mainWindow setDelegate:self];
 }
 
 - (NSString *)chooseDirectory {
