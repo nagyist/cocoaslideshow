@@ -12,10 +12,20 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-	if([theEvent keyCode] == 53) { // escape key
-		[(CocoaSlideShow *)[self delegate] exitFullScreen:self];
-	} else {
-		[super keyDown:theEvent];
+	CocoaSlideShow *css = [self delegate];
+	
+	switch([theEvent keyCode]) {
+		case 53:
+			[css exitFullScreen:self];
+			break;
+		case 123:
+			[imagesController selectPreviousImage];
+			break;
+		case 124:
+			[imagesController selectNextImage];
+			break;
+		default:
+			[super keyDown:theEvent];
 	}
 }
 
