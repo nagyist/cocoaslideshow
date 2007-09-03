@@ -14,6 +14,8 @@
 - (void)keyDown:(NSEvent *)theEvent {
 	CocoaSlideShow *css = [self delegate];
 	
+	NSLog(@"-- %d %@", [theEvent keyCode], css);
+	
 	switch([theEvent keyCode]) {
 		case 53:
 			[css exitFullScreen:self];
