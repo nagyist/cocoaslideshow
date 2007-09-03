@@ -30,6 +30,6 @@
 - (void)selectNextImage;
 - (void)addFiles:(NSArray *)filePaths;
 - (void)addDirFiles:(NSString *)dir;
-- (void) retainOnlyAFewImagesAndReleaseTheRest;
+- (void)retainOnlyAFewImagesAndReleaseTheRest;
 
 @end

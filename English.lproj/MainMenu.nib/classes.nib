@@ -54,7 +54,7 @@
         {
             CLASS = MyWindow; 
             LANGUAGE = ObjC; 
-            OUTLETS = {delegate = id; }; 
+            OUTLETS = {imagesController = ImagesController; }; 
             SUPERCLASS = NSWindow; 
         }, 
         {
