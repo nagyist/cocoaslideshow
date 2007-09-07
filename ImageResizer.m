@@ -30,6 +30,7 @@
 }
 
 - (id)transformedValue:(NSImage *)value {
+	// FIXME (NST) duplicate code with CocoaSlideShow -rotateIndividualImage
 	NSSize viewSize = ((NSRect)[view bounds]).size;
 	NSSize imageSize = [value size];
 

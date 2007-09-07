@@ -42,17 +42,32 @@
 
 - (NSImage *)rotateIndividualImage:(NSImage *)image clockwise:(BOOL)clockwise {
 	// from http://swik.net/User:marc/Chipmunk+Ninja+Technical+Articles/Rotating+an+NSImage+object+in+Cocoa/zgha
+	// TODO (NST) remember the rotation angle in the same session
     
 	NSImage *existingImage = image;
     NSSize existingSize;
+
+	if(isFullScreen) {
+		// FIXME (NST) duplicate code with ImageResizer
+		NSSize viewSize = ((NSRect)[panelImageView bounds]).size;
+		NSSize imageSize = [image size];
+
+		float rx = viewSize.width / imageSize.width;
+		float ry = viewSize.height / imageSize.height;
+		float r = rx < ry ? rx : ry;
+		float w = imageSize.width * r;
+		float h = imageSize.height * r;
+
+		[image setSize:NSMakeSize(w,h)];
+	}
 
     /**
      * Get the size of the original image in its raw bitmap format.
      * The bestRepresentationForDevice: nil tells the NSImage to just
      * give us the raw image instead of it's wacky DPI-translated version.
      */
-    existingSize.width = [[existingImage bestRepresentationForDevice: nil] pixelsWide];
-    existingSize.height = [[existingImage bestRepresentationForDevice: nil] pixelsHigh];
+    existingSize.width = [image size].width;//[[existingImage bestRepresentationForDevice: nil] pixelsWide];
+    existingSize.height = [image size].height;//[[existingImage bestRepresentationForDevice: nil] pixelsHigh];
 
     NSSize newSize = NSMakeSize(existingSize.height, existingSize.width);
     NSImage *rotatedImage = [[NSImage alloc] initWithSize:newSize];
@@ -202,7 +217,7 @@
 
 	[NSCursor hide];
 	//[NSCursor setHiddenUntilMouseMoves:YES];
-		
+	
     int windowLevel;
     NSRect screenRect;
 
