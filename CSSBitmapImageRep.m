@@ -24,6 +24,10 @@
 }
 */
 
+- (NSImage *)image {
+	return [[[NSImage alloc] initWithData:[self TIFFRepresentation]] autorelease];
+}
+
 - (NSDictionary *)exif {
 	return [super valueForProperty:NSImageEXIFData];
 }

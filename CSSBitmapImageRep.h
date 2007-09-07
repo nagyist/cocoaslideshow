@@ -7,6 +7,8 @@
 	NSArray *keywords;
 }
 
+- (NSImage *)image;
+
 - (void)setPath:(NSString *)aPath;
 - (NSDictionary *)exif;
 
