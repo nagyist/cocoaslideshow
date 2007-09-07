@@ -56,7 +56,6 @@
     existingSize.height = [existingImage size].height;//[[existingImage bestRepresentationForDevice: nil] pixelsHigh];
 
     NSSize newSize = NSMakeSize(existingSize.height, existingSize.width);
-	NSLog(@"%f %f", newSize.width, newSize.height);
 
     NSImage *rotatedImage = [[NSImage alloc] initWithSize:newSize];
 
