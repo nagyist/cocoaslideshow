@@ -544,7 +544,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 39}, {184, 760}}</string>
+							<string>{{0, 73}, {184, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -577,7 +577,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>03B1BB120C5173CA0032C03F</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CocoaSlideShow.m</string>
+								<string>ImageResizer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -585,11 +585,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>03B1BB130C5173CA0032C03F</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CocoaSlideShow.m</string>
+										<string>ImageResizer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>036CB0690C90D23D00F17648</string>
+										<string>036CB0B50C90D5AC00F17648</string>
 										<key>history</key>
 										<array>
 											<string>034597D50C83500D00385D93</string>
@@ -609,19 +609,15 @@
 											<string>030D12B80C90C574002F7D43</string>
 											<string>036CAFE00C90CDC900F17648</string>
 											<string>036CAFF20C90CE1F00F17648</string>
-											<string>036CAFF30C90CE1F00F17648</string>
 											<string>036CAFF40C90CE1F00F17648</string>
-											<string>036CAFF50C90CE1F00F17648</string>
 											<string>036CAFF60C90CE1F00F17648</string>
 											<string>036CAFF70C90CE1F00F17648</string>
-											<string>036CB0280C90D02200F17648</string>
 											<string>036CB02A0C90D02200F17648</string>
-											<string>036CB0630C90D21400F17648</string>
-											<string>036CB05C0C90D20700F17648</string>
-										</array>
-										<key>nextStack</key>
-										<array>
-											<string>036CB0640C90D21400F17648</string>
+											<string>036CB0A40C90D53200F17648</string>
+											<string>036CB0A50C90D53200F17648</string>
+											<string>036CB0A60C90D53200F17648</string>
+											<string>036CB0A70C90D53200F17648</string>
+											<string>036CB0B00C90D58A00F17648</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -673,6 +669,12 @@
 											<string>036CB0300C90D02200F17648</string>
 											<string>036CB0320C90D02200F17648</string>
 											<string>036CB0460C90D0FD00F17648</string>
+											<string>036CB08D0C90D48500F17648</string>
+											<string>036CB08E0C90D48500F17648</string>
+											<string>036CB0A80C90D53200F17648</string>
+											<string>036CB0A90C90D53200F17648</string>
+											<string>036CB0AA0C90D53200F17648</string>
+											<string>036CB0AB0C90D53200F17648</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -935,15 +937,15 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>030D12D80C90C574002F7D43</string>
+				<string>036CB0740C90D36900F17648</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>030D12D90C90C574002F7D43</string>
-				<string>030D12DA0C90C574002F7D43</string>
-				<string>030D12DB0C90C574002F7D43</string>
-				<string>030D12DC0C90C574002F7D43</string>
-				<string>030D12DD0C90C574002F7D43</string>
-				<string>030D12DE0C90C574002F7D43</string>
+				<string>036CB0750C90D36900F17648</string>
+				<string>036CB0760C90D36900F17648</string>
+				<string>036CB0770C90D36900F17648</string>
+				<string>036CB0780C90D36900F17648</string>
+				<string>036CB0790C90D36900F17648</string>
+				<string>036CB07A0C90D36900F17648</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debug</string>
@@ -973,6 +975,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>036CB07A0C90D36900F17648</string>
 		<string>/Users/nst/Projects/cocoaslideshow/CocoaSlideShow.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
