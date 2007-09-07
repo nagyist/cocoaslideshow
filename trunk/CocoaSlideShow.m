@@ -19,6 +19,9 @@
 		
     FlagImageTransformer *ft = [[[FlagImageTransformer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:ft forName:@"FlagImageTransformer"];
+
+    ir = [[[ImageResizer alloc] init] autorelease];
+    [NSValueTransformer setValueTransformer:ir forName:@"ImageResizer"];
 	
 	return self;
 }
@@ -29,6 +32,7 @@
 	[images release];
 	[remoteControl autorelease];
 	[undoManager release];
+	[fullScreenWindow release];
 	[super dealloc];
 }
 
@@ -103,6 +107,8 @@
 	
 	[imagesController setAutomaticallyPreparesContent:YES];
 	
+	[ir setView:panelImageView];
+	
 	NSTableColumn *flagColumn = [tableView tableColumnWithIdentifier:@"flag"];
 	NSImage *flagHeaderImage = [NSImage imageNamed:@"FlaggedHeader.png"];
 	NSImageCell *flagHeaderImageCell = [flagColumn headerCell];
@@ -111,6 +117,14 @@
 	
 	[imageView setDelegate:self];
 	[mainWindow setDelegate:self];
+
+	NSRect screenRect = [[NSScreen mainScreen] frame];	
+	[slideShowPanel setContentSize:screenRect.size];
+    fullScreenWindow = [[NSWindow alloc] initWithContentRect:screenRect
+												 styleMask:NSBorderlessWindowMask
+												   backing:NSBackingStoreBuffered
+													 defer:NO screen:[NSScreen mainScreen]];
+	
 }
 
 - (NSString *)chooseDirectory {
@@ -177,7 +191,7 @@
 }
 
 - (IBAction)fullScreenMode:(id)sender {
-	// from http://cocoadevcentral.com/articles/000028.php
+	// inspired from http://cocoadevcentral.com/articles/000028.php
 	
 	if(isFullScreen) {
 		return;
@@ -200,15 +214,12 @@
 
     // Get the shielding window level
     windowLevel = CGShieldingWindowLevel();
-		
+	
     // Get the screen rect of our main display
     screenRect = [[NSScreen mainScreen] frame];
 
     // Put up a new window
-	mainWindow = [[NSWindow alloc] initWithContentRect:screenRect
-												 styleMask:NSBorderlessWindowMask
-												   backing:NSBackingStoreBuffered
-													 defer:NO screen:[NSScreen mainScreen]];
+	mainWindow = fullScreenWindow;
 	
     [mainWindow setLevel:windowLevel];
 
