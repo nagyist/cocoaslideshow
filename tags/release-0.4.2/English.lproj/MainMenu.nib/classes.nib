@@ -1,0 +1,74 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                addDirectory = id; 
+                exitFullScreen = id; 
+                exportToDirectory = id; 
+                fullScreenMode = id; 
+                open = id; 
+                redo = id; 
+                revealInFinder = id; 
+                rotateLeft = id; 
+                rotateRight = id; 
+                setDirectory = id; 
+                toggleFullScreen = id; 
+                undo = id; 
+            }; 
+            CLASS = CocoaSlideShow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                imageView = MyImageView; 
+                imagesController = ImagesController; 
+                keywordsTokenField = NSTokenField; 
+                mainWindow = NSWindow; 
+                panelImageView = NSImageView; 
+                slideShowPanel = NSPanel; 
+                tableView = NSTableView; 
+                userCommentTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                flag = id; 
+                moveToTrash = id; 
+                remove = id; 
+                removeAllFlags = id; 
+                selectFlags = id; 
+                toggleFlags = id; 
+                unflag = id; 
+            }; 
+            CLASS = ImagesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {cocoaSlideShow = CocoaSlideShow; }; 
+            SUPERCLASS = NSArrayController; 
+        }, 
+        {
+            CLASS = MyImageView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; }; 
+            SUPERCLASS = NSImageView; 
+        }, 
+        {
+            CLASS = MyWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {imagesController = ImagesController; }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {
+            ACTIONS = {checkUpdate = id; checkUpdateAndShowPanel = id; }; 
+            CLASS = SSVersionChecker; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {checkUpdate = id; checkUpdateAndShowPanel = id; }; 
+            CLASS = VersionChecker; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
