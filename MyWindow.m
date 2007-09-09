@@ -15,13 +15,13 @@
 	CocoaSlideShow *css = [self delegate];
 	
 	switch([theEvent keyCode]) {
-		case 53:
+		case 53: // esc
 			[css exitFullScreen:self];
 			break;
-		case 123:
+		case 123: // left
 			[imagesController selectPreviousImage];
 			break;
-		case 124:
+		case 124: // right
 			[imagesController selectNextImage];
 			break;
 		default:

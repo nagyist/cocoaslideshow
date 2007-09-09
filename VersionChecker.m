@@ -18,13 +18,13 @@ static VersionChecker *sharedInstance = nil;
 - (BOOL) version:(NSArray *)a isBiggerThan:(NSArray *)b {
     unsigned aa = [[a objectAtIndex:0] intValue];
     unsigned ab = [[a objectAtIndex:1] intValue];
-    unsigned cc = [a count] > 2 ? [[a objectAtIndex:2] intValue] : 0;
+    unsigned ac = [a count] > 2 ? [[a objectAtIndex:2] intValue] : 0;
 
     unsigned ba = [[b objectAtIndex:0] intValue];
     unsigned bb = [[b objectAtIndex:1] intValue];
     unsigned bc = [b count] > 2 ? [[b objectAtIndex:2] intValue] : 0;
 
-    return ((aa > ba) || (aa == ba && ab > bb) || (aa == ba && ab == bb && cc > bc));
+    return ((aa > ba) || (aa == ba && ab > bb) || (aa == ba && ab == bb && ac > bc));
 }
 
 - (void) checkUpdateWithDisplayingAlertIfUpToDate:(NSNumber *)displayPanelInAnyCase {
