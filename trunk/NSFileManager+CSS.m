@@ -48,19 +48,19 @@
 - (NSString *)prettyFileSize:(NSString *)path {
 	NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:path traverseLink:YES];
 	float fileSize = (float)[fileAttributes fileSize];
-	NSString *unity = @"bytes";
+	NSString *unit = @"bytes";
 	
 	if(fileSize > 1024) {
 		fileSize /= 1024;
-		unity = @"KB";
+		unit = @"KB";
 	}
 	
 	if(fileSize > 1024) {
 		fileSize /= 1024;
-		unity = @"MB";
-		return [NSString stringWithFormat:@"%0.1f %@", fileSize, unity];
+		unit = @"MB";
+		return [NSString stringWithFormat:@"%0.1f %@", fileSize, unit];
 	} else {
-		return [NSString stringWithFormat:@"%d %@", (int)fileSize, unity];	
+		return [NSString stringWithFormat:@"%d %@", (int)fileSize, unit];	
 	}
 
 }
