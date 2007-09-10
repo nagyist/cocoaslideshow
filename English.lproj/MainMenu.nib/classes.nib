@@ -12,7 +12,9 @@
                 rotateLeft = id; 
                 rotateRight = id; 
                 setDirectory = id; 
+                startSlideShow = id; 
                 toggleFullScreen = id; 
+                toggleSlideShow = id; 
                 undo = id; 
             }; 
             CLASS = CocoaSlideShow; 
