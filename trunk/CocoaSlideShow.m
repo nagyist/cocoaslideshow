@@ -120,6 +120,11 @@
 	[imageView setDelegate:self];
 	[mainWindow setDelegate:self];
 
+	NSNumber *slideShowSpeed = [[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"];
+	if (!slideShowSpeed) {
+		[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:1.0] forKey:@"SlideShowSpeed"];
+	}
+
 	NSRect screenRect = [[NSScreen mainScreen] frame];	
 	[slideShowPanel setContentSize:screenRect.size];
     fullScreenWindow = [[NSWindow alloc] initWithContentRect:screenRect
@@ -274,6 +279,32 @@
 	} else {
 		[self fullScreenMode:nil];	
 	}
+}
+
+- (void)timerNextTick {
+	if(![imagesController canSelectNext]) {
+		[timer invalidate];
+		timer = nil;
+	}
+	[imagesController selectNextImage]; 
+}
+
+- (IBAction)toggleSlideShow:(id)sender {
+	if([timer isValid]) {
+		[timer invalidate];
+		timer = nil;
+	} else {
+		timer = [NSTimer scheduledTimerWithTimeInterval:[[[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"] floatValue]
+												  target:self
+												selector:@selector(timerNextTick)
+												userInfo:NULL
+												repeats:YES];
+	}
+}
+
+- (IBAction)startSlideShow:(id)sender {
+	[self fullScreenMode:self];
+	[self toggleSlideShow:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {

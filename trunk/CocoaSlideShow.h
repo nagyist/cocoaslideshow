@@ -27,6 +27,7 @@
 	
 	RemoteControl *remoteControl;
 	NSUndoManager *undoManager;
+	NSTimer *timer;
 
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
@@ -47,5 +48,8 @@
 - (IBAction)revealInFinder:(id)sender;
 - (IBAction)exportToDirectory:(id)sender;
 - (IBAction)open:(id)sender;
+
+- (IBAction)startSlideShow:(id)sender;
+- (IBAction)toggleSlideShow:(id)sender;
 
 @end

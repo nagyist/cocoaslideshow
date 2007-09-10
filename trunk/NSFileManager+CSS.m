@@ -12,7 +12,7 @@
 @implementation NSFileManager (CSS)
 
 - (BOOL) isDirectory:(NSString *)path {
-	BOOL isDir;		
+	BOOL isDir;
 	[self fileExistsAtPath:path isDirectory:&isDir];
 	return isDir;
 }
