@@ -7,17 +7,14 @@
 #import "ImagesController.h"
 
 #import "FlagImageTransformer.h"
-#import "ImageResizer.h"
 
 @interface CocoaSlideShow : NSObject
 {
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSPanel *slideShowPanel;
-	NSWindow *fullScreenWindow;
 
 	NSMutableArray *images;
-	ImageResizer *ir;
-	
+
 	IBOutlet ImagesController *imagesController;
 	IBOutlet MyImageView *imageView;
 	IBOutlet NSImageView *panelImageView;
@@ -27,7 +24,6 @@
 	
 	RemoteControl *remoteControl;
 	NSUndoManager *undoManager;
-	NSTimer *timer;
 
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
@@ -48,8 +44,5 @@
 - (IBAction)revealInFinder:(id)sender;
 - (IBAction)exportToDirectory:(id)sender;
 - (IBAction)open:(id)sender;
-
-- (IBAction)startSlideShow:(id)sender;
-- (IBAction)toggleSlideShow:(id)sender;
 
 @end

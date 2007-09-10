@@ -12,7 +12,7 @@
 @implementation NSFileManager (CSS)
 
 - (BOOL) isDirectory:(NSString *)path {
-	BOOL isDir;
+	BOOL isDir;		
 	[self fileExistsAtPath:path isDirectory:&isDir];
 	return isDir;
 }
@@ -48,19 +48,19 @@
 - (NSString *)prettyFileSize:(NSString *)path {
 	NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:path traverseLink:YES];
 	float fileSize = (float)[fileAttributes fileSize];
-	NSString *unit = @"bytes";
+	NSString *unity = @"bytes";
 	
 	if(fileSize > 1024) {
 		fileSize /= 1024;
-		unit = @"KB";
+		unity = @"KB";
 	}
 	
 	if(fileSize > 1024) {
 		fileSize /= 1024;
-		unit = @"MB";
-		return [NSString stringWithFormat:@"%0.1f %@", fileSize, unit];
+		unity = @"MB";
+		return [NSString stringWithFormat:@"%0.1f %@", fileSize, unity];
 	} else {
-		return [NSString stringWithFormat:@"%d %@", (int)fileSize, unit];	
+		return [NSString stringWithFormat:@"%d %@", (int)fileSize, unity];	
 	}
 
 }

@@ -16,23 +16,18 @@
 	
 	undoManager = [[NSUndoManager alloc] init];
 	[undoManager setLevelsOfUndo:10];
-		
+	
     FlagImageTransformer *ft = [[[FlagImageTransformer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:ft forName:@"FlagImageTransformer"];
-
-    ir = [[[ImageResizer alloc] init] autorelease];
-    [NSValueTransformer setValueTransformer:ir forName:@"ImageResizer"];
 	
 	return self;
 }
 
 - (void)dealloc {
-	[mainWindow release];
-	[imagesController release];
 	[images release];
 	[remoteControl autorelease];
+	[mainWindow release];
 	[undoManager release];
-	[fullScreenWindow release];
 	[super dealloc];
 }
 
@@ -42,21 +37,19 @@
 
 - (NSImage *)rotateIndividualImage:(NSImage *)image clockwise:(BOOL)clockwise {
 	// from http://swik.net/User:marc/Chipmunk+Ninja+Technical+Articles/Rotating+an+NSImage+object+in+Cocoa/zgha
-	// TODO (NST) remember the rotation angle in the same session
     
 	NSImage *existingImage = image;
     NSSize existingSize;
-		
-	/**
+
+    /**
      * Get the size of the original image in its raw bitmap format.
      * The bestRepresentationForDevice: nil tells the NSImage to just
      * give us the raw image instead of it's wacky DPI-translated version.
      */
-    existingSize.width = [existingImage size].width;//[[existingImage bestRepresentationForDevice: nil] pixelsWide];
-    existingSize.height = [existingImage size].height;//[[existingImage bestRepresentationForDevice: nil] pixelsHigh];
+    existingSize.width = [[existingImage bestRepresentationForDevice: nil] pixelsWide];
+    existingSize.height = [[existingImage bestRepresentationForDevice: nil] pixelsHigh];
 
     NSSize newSize = NSMakeSize(existingSize.height, existingSize.width);
-
     NSImage *rotatedImage = [[NSImage alloc] initWithSize:newSize];
 
     [rotatedImage lockFocus];
@@ -107,31 +100,13 @@
 	[[userCommentTextField cell] setSendsActionOnEndEditing:YES];
 	[[keywordsTokenField cell] setSendsActionOnEndEditing:YES];
 	
-	[imagesController setAutomaticallyPreparesContent:YES];
-	
-	[ir setView:panelImageView];
-	
 	NSTableColumn *flagColumn = [tableView tableColumnWithIdentifier:@"flag"];
 	NSImage *flagHeaderImage = [NSImage imageNamed:@"FlaggedHeader.png"];
 	NSImageCell *flagHeaderImageCell = [flagColumn headerCell];
 	[flagHeaderImageCell setImage:flagHeaderImage];
 	[flagColumn setHeaderCell:flagHeaderImageCell];
-	
+		
 	[imageView setDelegate:self];
-	[mainWindow setDelegate:self];
-
-	NSNumber *slideShowSpeed = [[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"];
-	if (!slideShowSpeed) {
-		[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:1.0] forKey:@"SlideShowSpeed"];
-	}
-
-	NSRect screenRect = [[NSScreen mainScreen] frame];	
-	[slideShowPanel setContentSize:screenRect.size];
-    fullScreenWindow = [[NSWindow alloc] initWithContentRect:screenRect
-												 styleMask:NSBorderlessWindowMask
-												   backing:NSBackingStoreBuffered
-													 defer:NO screen:[NSScreen mainScreen]];
-	
 }
 
 - (NSString *)chooseDirectory {
@@ -198,7 +173,7 @@
 }
 
 - (IBAction)fullScreenMode:(id)sender {
-	// inspired from http://cocoadevcentral.com/articles/000028.php
+	// from http://cocoadevcentral.com/articles/000028.php
 	
 	if(isFullScreen) {
 		return;
@@ -209,7 +184,7 @@
 
 	[NSCursor hide];
 	//[NSCursor setHiddenUntilMouseMoves:YES];
-	
+		
     int windowLevel;
     NSRect screenRect;
 
@@ -221,12 +196,15 @@
 
     // Get the shielding window level
     windowLevel = CGShieldingWindowLevel();
-	
+		
     // Get the screen rect of our main display
     screenRect = [[NSScreen mainScreen] frame];
 
     // Put up a new window
-	mainWindow = fullScreenWindow;
+	mainWindow = [[NSWindow alloc] initWithContentRect:screenRect
+												 styleMask:NSBorderlessWindowMask
+												   backing:NSBackingStoreBuffered
+													 defer:NO screen:[NSScreen mainScreen]];
 	
     [mainWindow setLevel:windowLevel];
 
@@ -279,32 +257,6 @@
 	} else {
 		[self fullScreenMode:nil];	
 	}
-}
-
-- (void)timerNextTick {
-	if(![imagesController canSelectNext]) {
-		[timer invalidate];
-		timer = nil;
-	}
-	[imagesController selectNextImage]; 
-}
-
-- (IBAction)toggleSlideShow:(id)sender {
-	if([timer isValid]) {
-		[timer invalidate];
-		timer = nil;
-	} else {
-		timer = [NSTimer scheduledTimerWithTimeInterval:[[[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"] floatValue]
-												  target:self
-												selector:@selector(timerNextTick)
-												userInfo:NULL
-												repeats:YES];
-	}
-}
-
-- (IBAction)startSlideShow:(id)sender {
-	[self fullScreenMode:self];
-	[self toggleSlideShow:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {

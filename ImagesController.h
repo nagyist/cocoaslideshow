@@ -2,7 +2,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define IN_MEMORY_BITMAPS 5
+#define IN_MEMORY_BITMAPS 10
 
 @class CocoaSlideShow;
 
@@ -30,6 +30,6 @@
 - (void)selectNextImage;
 - (void)addFiles:(NSArray *)filePaths;
 - (void)addDirFiles:(NSString *)dir;
-- (void)retainOnlyAFewImagesAndReleaseTheRest;
+- (void) retainOnlyAFewImagesAndReleaseTheRest;
 
 @end

@@ -13,10 +13,7 @@
 	NSString *path;
 	CSSBitmapImageRep *bitmap;
 	BOOL isFlagged;
-	// TODO keep rotation angle
 }
-
-// TODO allow save rotated image
 
 - (NSString *)path;
 - (void)forgetBitmap;

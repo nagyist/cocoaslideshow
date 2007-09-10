@@ -16,45 +16,30 @@
 	[self exposeBinding:@"exif"];
 }
 
-/*
-- (id)init {
-	self = [super init];
-	NSLog(@"init %@", self);
-	return self;
-}
-*/
-
-- (NSImage *)image {
-	return [[[NSImage alloc] initWithData:[self TIFFRepresentation]] autorelease];
-}
-
 - (NSDictionary *)exif {
 	return [super valueForProperty:NSImageEXIFData];
 }
 
 - (NSArray *)readKeywords {
-	//NSLog(@"readKeywords %@", self);
 	CGImageSourceRef source = CGImageSourceCreateWithURL ((CFURLRef)[NSURL fileURLWithPath:path], nil);
 	NSDictionary *properties = (NSDictionary*) CGImageSourceCopyPropertiesAtIndex(source, 0, NULL);
-    CFRelease(source);
 	return [[properties objectForKey:(NSString *)kCGImagePropertyIPTCDictionary] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords];
 }
 
 - (void)setPath:(NSString *)aPath {
-	//NSLog(@"%@ setPath %@", self, aPath);
 	[self willChangeValueForKey:@"path"];
 	[path autorelease];
 	path = [aPath retain];
 	[self didChangeValueForKey:@"path"];
 
 	[self willChangeValueForKey:@"userComment"];
-	userComment = [[[self exif] valueForKey:(NSString *)kCGImagePropertyExifUserComment] retain];
+	userComment = [[self exif] valueForKey:(NSString *)kCGImagePropertyExifUserComment];
 	[self didChangeValueForKey:@"userComment"];
 	
 	[self willChangeValueForKey:@"keywords"];
 	keywords = [self readKeywords];
 	[self didChangeValueForKey:@"keywords"];
-		
+	
 	//NSLog(@"[self exif] %@", [self exif]);
 	//NSLog(@"keywords = %@", keywords);
 }
@@ -130,10 +115,9 @@
 }
 
 - (void)dealloc {
-	//NSLog(@"dealloc %@", self);
 	[path release];
-	[userComment release];
-	[keywords release];
+	//[userComment release]; // FIXME uncomment and fix crash
+	//[keywords release]; // FIXME uncomment and fix crash
 	[super dealloc];
 }
 

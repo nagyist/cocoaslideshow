@@ -4,8 +4,10 @@
 
 @implementation ImagesController
 
-- (void)awakeFromNib {
+- (id)init {
+	self = [super init];
 	inMemoryBitmapsContainers = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
+	return self;
 }
 
 - (void)dealloc {
@@ -96,10 +98,7 @@
 
 	NSEnumerator *e = [filePaths objectEnumerator];
 	NSString *path;
-	NSArray *allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"tif", @"tiff", @"psd", @"gif", @"png", @"bmp",
-														   // raw files http://en.wikipedia.org/wiki/RAW_image_format
-														   @"orf", @"raf", @"crw", @"cr2", @"kdc", @"dcr", @"mrw", @"nef", @"orf",
-														   @"dng", @"ptx", @"pef", @"arw", @"srf", @"x3f", @"erf", @"mos", @"raw", nil];
+	NSArray *allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"tif", @"tiff", @"psd", @"gif", @"png", @"bmp", nil];
 	NSArray *dirContent;
 	while(( path = [e nextObject] )) {
 		NSString *ext = [path pathExtension];
@@ -154,7 +153,7 @@
 			[oldContainer forgetBitmap];
 			[inMemoryBitmapsContainers removeObject:oldContainer];
 		}
-		[inMemoryBitmapsContainers addObject:c];
+		[inMemoryBitmapsContainers addObject:c];	
 	}
 }
 
