@@ -318,7 +318,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>037EF2960C94D33E0015A069</string>
+										<string>037EF2CA0C94D7670015A069</string>
 										<key>history</key>
 										<array>
 											<string>03459A560C837BB200385D93</string>
@@ -586,8 +586,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -605,7 +603,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>037EF2970C94D33E0015A069</string>
+										<string>037EF2CB0C94D7670015A069</string>
 										<key>history</key>
 										<array>
 											<string>034597D50C83500D00385D93</string>
@@ -623,8 +621,6 @@
 											<string>036CAFF60C90CE1F00F17648</string>
 											<string>036CAFF70C90CE1F00F17648</string>
 											<string>036CB0A60C90D53200F17648</string>
-											<string>036CB0BE0C90D6E100F17648</string>
-											<string>036CB0D70C912ABE00F17648</string>
 											<string>036CB0D80C912ABE00F17648</string>
 											<string>036CB0E20C912B1200F17648</string>
 											<string>036CB0F30C912CB300F17648</string>
@@ -636,7 +632,9 @@
 											<string>037EF1BD0C94CE470015A069</string>
 											<string>037EF27D0C94D1BB0015A069</string>
 											<string>037EF2910C94D3190015A069</string>
-											<string>037EF2870C94D2BD0015A069</string>
+											<string>037EF2B00C94D63F0015A069</string>
+											<string>037EF2BA0C94D69E0015A069</string>
+											<string>037EF2BB0C94D69E0015A069</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -678,6 +676,10 @@
 											<string>037EF23E0C94CFA50015A069</string>
 											<string>037EF2890C94D2BD0015A069</string>
 											<string>037EF2920C94D3190015A069</string>
+											<string>037EF2B20C94D63F0015A069</string>
+											<string>037EF2B30C94D63F0015A069</string>
+											<string>037EF2B40C94D63F0015A069</string>
+											<string>037EF2BC0C94D69E0015A069</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

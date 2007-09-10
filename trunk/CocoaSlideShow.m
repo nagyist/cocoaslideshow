@@ -324,10 +324,14 @@
 	switch(event) {
 		case kRemoteButtonPlus:
 			buttonName = @"Volume up";
-			if (pressedDown) pressed = @"(down)"; else pressed = @"(up)";
+			[self rotateRight:self];
+			
+			if (pressedDown) pressed = @"(down)"; else pressed = @"(up)";			
 			break;
 		case kRemoteButtonMinus:
 			buttonName = @"Volume down";
+			[self rotateLeft:self];
+			
 			if (pressedDown) pressed = @"(down)"; else pressed = @"(up)";
 			break;			
 		case kRemoteButtonMenu:
@@ -340,7 +344,13 @@
 			break;			
 		case kRemoteButtonPlay:
 			buttonName = @"Play";
-			[self rotateRight:self];
+			
+			if(isFullScreen) {
+				[self toggleSlideShow:self];
+			} else {
+				[self startSlideShow:self];
+			}
+			
 			break;			
 		case kRemoteButtonRight:	
 			buttonName = @"Right";
