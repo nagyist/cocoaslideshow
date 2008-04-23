@@ -26,5 +26,6 @@
 - (void)toggleFlag;
 - (void)removeFlag;
 - (BOOL)isFlagged;
+- (NSImage *)flagIcon;
 
 @end

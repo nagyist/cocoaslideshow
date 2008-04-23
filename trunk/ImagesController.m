@@ -96,10 +96,12 @@
 
 	NSEnumerator *e = [filePaths objectEnumerator];
 	NSString *path;
-	NSArray *allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"tif", @"tiff", @"psd", @"gif", @"png", @"bmp",
-														   // raw files http://en.wikipedia.org/wiki/RAW_image_format
-														   @"orf", @"raf", @"crw", @"cr2", @"kdc", @"dcr", @"mrw", @"nef", @"orf",
-														   @"dng", @"ptx", @"pef", @"arw", @"srf", @"x3f", @"erf", @"mos", @"raw", nil];
+   // http://developer.apple.com/documentation/Cocoa/Conceptual/CocoaDrawingGuide/Images/chapter_7_section_3.html
+	NSArray *allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"jpe", @"tif", @"tiff", @"gif", @"png", @"pct", @"pict", @"pic",
+	                                                       //@"pdf", @"eps", @"epi", @"epsf", @"epsi", @"ps",
+														   @"ico", @"icns",  @"bmp", @"bmpf",
+														   @"dng", @"cr2", @"crw", @"fpx", @"fpix", @"raf", @"dcr", @"ptng", @"pnt", @"mac", @"mrw", @"nef",
+														   @"orf", @"exr", @"psd", @"qti", @"qtif", @"hdr", @"sgi", @"srf", @"targa", @"tga", @"cur", @"xbm", nil];
 	NSArray *dirContent;
 	while(( path = [e nextObject] )) {
 		NSString *ext = [path pathExtension];
@@ -157,5 +159,14 @@
 		[inMemoryBitmapsContainers addObject:c];
 	}
 }
-
+/*
+- (NSArray *)flagged {
+	NSPredicate *p = [NSPredicate predicateWithFormat:@"flagged == YES"];
+	NSMutableArray *ma = [[self arrangedObjects] mutableCopy];
+	[ma filterUsingPredicate:p];
+	return [ma autorelease];
+}
+*/
 @end
+
+

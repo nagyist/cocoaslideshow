@@ -1,76 +1,154 @@
-{
-    IBClasses = (
-        {
-            ACTIONS = {
-                addDirectory = id; 
-                exitFullScreen = id; 
-                exportToDirectory = id; 
-                fullScreenMode = id; 
-                open = id; 
-                redo = id; 
-                revealInFinder = id; 
-                rotateLeft = id; 
-                rotateRight = id; 
-                setDirectory = id; 
-                startSlideShow = id; 
-                toggleFullScreen = id; 
-                toggleSlideShow = id; 
-                undo = id; 
-            }; 
-            CLASS = CocoaSlideShow; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                imageView = MyImageView; 
-                imagesController = ImagesController; 
-                keywordsTokenField = NSTokenField; 
-                mainWindow = NSWindow; 
-                panelImageView = NSImageView; 
-                slideShowPanel = NSPanel; 
-                tableView = NSTableView; 
-                userCommentTextField = NSTextField; 
-            }; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
-        {
-            ACTIONS = {
-                flag = id; 
-                moveToTrash = id; 
-                remove = id; 
-                removeAllFlags = id; 
-                selectFlags = id; 
-                toggleFlags = id; 
-                unflag = id; 
-            }; 
-            CLASS = ImagesController; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {cocoaSlideShow = CocoaSlideShow; }; 
-            SUPERCLASS = NSArrayController; 
-        }, 
-        {
-            CLASS = MyImageView; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {delegate = id; }; 
-            SUPERCLASS = NSImageView; 
-        }, 
-        {
-            CLASS = MyWindow; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {imagesController = ImagesController; }; 
-            SUPERCLASS = NSWindow; 
-        }, 
-        {
-            ACTIONS = {checkUpdate = id; checkUpdateAndShowPanel = id; }; 
-            CLASS = SSVersionChecker; 
-            LANGUAGE = ObjC; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {
-            ACTIONS = {checkUpdate = id; checkUpdateAndShowPanel = id; }; 
-            CLASS = VersionChecker; 
-            LANGUAGE = ObjC; 
-            SUPERCLASS = NSObject; 
-        }
-    ); 
-    IBVersion = 1; 
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBClasses</key>
+	<array>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>flag</key>
+				<string>id</string>
+				<key>moveToTrash</key>
+				<string>id</string>
+				<key>remove</key>
+				<string>id</string>
+				<key>removeAllFlags</key>
+				<string>id</string>
+				<key>selectFlags</key>
+				<string>id</string>
+				<key>toggleFlags</key>
+				<string>id</string>
+				<key>unflag</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>ImagesController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>cocoaSlideShow</key>
+				<string>CocoaSlideShow</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSArrayController</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>addDirectory</key>
+				<string>id</string>
+				<key>exitFullScreen</key>
+				<string>id</string>
+				<key>exportToDirectory</key>
+				<string>id</string>
+				<key>fullScreenMode</key>
+				<string>id</string>
+				<key>open</key>
+				<string>id</string>
+				<key>redo</key>
+				<string>id</string>
+				<key>revealInFinder</key>
+				<string>id</string>
+				<key>rotateLeft</key>
+				<string>id</string>
+				<key>rotateRight</key>
+				<string>id</string>
+				<key>setDirectory</key>
+				<string>id</string>
+				<key>startSlideShow</key>
+				<string>id</string>
+				<key>toggleFullScreen</key>
+				<string>id</string>
+				<key>toggleSlideShow</key>
+				<string>id</string>
+				<key>undo</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>CocoaSlideShow</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>imageView</key>
+				<string>MyImageView</string>
+				<key>imagesController</key>
+				<string>ImagesController</string>
+				<key>keywordsTokenField</key>
+				<string>NSTokenField</string>
+				<key>mainWindow</key>
+				<string>NSWindow</string>
+				<key>panelImageView</key>
+				<string>NSImageView</string>
+				<key>slideShowPanel</key>
+				<string>NSPanel</string>
+				<key>tableView</key>
+				<string>NSTableView</string>
+				<key>userCommentTextField</key>
+				<string>NSTextField</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>MyImageView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>delegate</key>
+				<string>id</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSImageView</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>MyWindow</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>imagesController</key>
+				<string>ImagesController</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSWindow</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>FirstResponder</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>checkUpdate</key>
+				<string>id</string>
+				<key>checkUpdateAndShowPanel</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>VersionChecker</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+	</array>
+	<key>IBVersion</key>
+	<string>1</string>
+</dict>
+</plist>

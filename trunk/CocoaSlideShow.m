@@ -17,12 +17,12 @@
 	undoManager = [[NSUndoManager alloc] init];
 	[undoManager setLevelsOfUndo:10];
 		
-    FlagImageTransformer *ft = [[[FlagImageTransformer alloc] init] autorelease];
-    [NSValueTransformer setValueTransformer:ft forName:@"FlagImageTransformer"];
-
+    //FlagImageTransformer *ft = [[[FlagImageTransformer alloc] init] autorelease];
+    //[NSValueTransformer setValueTransformer:ft forName:@"FlagImageTransformer"];
+	/*
     ir = [[[ImageResizer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:ir forName:@"ImageResizer"];
-	
+	*/
 	return self;
 }
 
@@ -109,7 +109,7 @@
 	
 	[imagesController setAutomaticallyPreparesContent:YES];
 	
-	[ir setView:panelImageView];
+	//[ir setView:panelImageView];
 	
 	NSTableColumn *flagColumn = [tableView tableColumnWithIdentifier:@"flag"];
 	NSImage *flagHeaderImage = [NSImage imageNamed:@"FlaggedHeader.png"];
@@ -448,7 +448,9 @@
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
 		
 		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
+		NSLog(@"will add files");
 		[imagesController addFiles:files];
+		NSLog(@"did add files");
 		int numberOfImagesAfter = [[imagesController arrangedObjects] count];
 		if(numberOfImagesAfter > numberOfImagesBefore) {
 			[imagesController setSelectionIndex:numberOfImagesBefore];

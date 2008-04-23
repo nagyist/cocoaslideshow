@@ -23,11 +23,11 @@
 	return self;
 }
 */
-
+/*
 - (NSImage *)image {
-	return [[[NSImage alloc] initWithData:[self TIFFRepresentation]] autorelease];
+	return [[[NSImage alloc] initWithData:[self TIFFRepresentation]] autorelease];	// FIXME: too slow!!!
 }
-
+*/
 - (NSDictionary *)exif {
 	return [super valueForProperty:NSImageEXIFData];
 }
@@ -124,6 +124,8 @@
 		NSArray *shortPathComponents = [fullPathComponents subarrayWithRange:NSMakeRange(1, [fullPathComponents count] - 1)];
 		NSString *exifPath = [shortPathComponents componentsJoinedByString:@"."];
 		return [[super valueForProperty:NSImageEXIFData] valueForKeyPath:exifPath];
+	//} else if ([keyPath isEqualToString:@"image"]) {
+	//	return [self image];
 	} else {
 		return [super valueForKeyPath:keyPath];
 	}
