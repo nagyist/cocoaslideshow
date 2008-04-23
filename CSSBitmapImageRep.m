@@ -23,11 +23,11 @@
 	return self;
 }
 */
-/*
+
 - (NSImage *)image {
 	return [[[NSImage alloc] initWithData:[self TIFFRepresentation]] autorelease];	// FIXME: too slow!!!
 }
-*/
+
 - (NSDictionary *)exif {
 	return [super valueForProperty:NSImageEXIFData];
 }
