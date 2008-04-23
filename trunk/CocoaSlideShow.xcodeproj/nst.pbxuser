@@ -93,7 +93,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 453";
 		rLen = 0;
-		rLoc = 12982;
+		rLoc = 12976;
 		rType = 0;
 		vrLen = 1471;
 		vrLoc = 12240;
@@ -163,7 +163,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 453";
 		rLen = 0;
-		rLoc = 12982;
+		rLoc = 12976;
 		rType = 0;
 		vrLen = 1471;
 		vrLoc = 12240;
@@ -193,7 +193,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 453";
 		rLen = 0;
-		rLoc = 12982;
+		rLoc = 12976;
 		rType = 0;
 		vrLen = 1471;
 		vrLoc = 12240;
@@ -313,7 +313,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 19";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 0;
@@ -322,7 +322,7 @@
 		isa = PBXTextBookmark;
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		rLen = 12;
-		rLoc = 692;
+		rLoc = 690;
 		rType = 0;
 	};
 	031AD9CF0DBF85CC00799D5C /* PBXTextBookmark */ = {
@@ -400,7 +400,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 19";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 0;
@@ -410,7 +410,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 24";
 		rLen = 12;
-		rLoc = 692;
+		rLoc = 690;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 109;
@@ -429,7 +429,7 @@
 		isa = PBXTextBookmark;
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		rLen = 12;
-		rLoc = 595;
+		rLoc = 593;
 		rType = 0;
 	};
 	031AD9DA0DBF860600799D5C /* PBXTextBookmark */ = {
@@ -437,7 +437,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 24";
 		rLen = 12;
-		rLoc = 692;
+		rLoc = 690;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 109;
@@ -457,7 +457,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 23";
 		rLen = 12;
-		rLoc = 595;
+		rLoc = 593;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 109;
@@ -467,7 +467,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 23";
 		rLen = 12;
-		rLoc = 595;
+		rLoc = 593;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 109;
@@ -476,7 +476,7 @@
 		isa = PBXTextBookmark;
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 368;
 		rType = 0;
 	};
 	031AD9E10DBF861700799D5C /* PBXTextBookmark */ = {
@@ -484,7 +484,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 23";
 		rLen = 12;
-		rLoc = 595;
+		rLoc = 593;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 109;
@@ -494,7 +494,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -504,7 +504,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -514,7 +514,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 0;
@@ -532,7 +532,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 0;
@@ -542,7 +542,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1179;
 		vrLoc = 2663;
@@ -552,7 +552,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 2663;
@@ -562,7 +562,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 742;
 		vrLoc = 0;
@@ -572,7 +572,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -582,7 +582,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 898;
 		vrLoc = 3015;
@@ -612,7 +612,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 898;
 		vrLoc = 3015;
@@ -652,7 +652,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -799,7 +799,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -869,7 +869,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -889,7 +889,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -928,7 +928,7 @@
 		isa = PBXTextBookmark;
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		rLen = 5;
-		rLoc = 525;
+		rLoc = 523;
 		rType = 0;
 	};
 	031ADA200DBF8B5C00799D5C /* PBXTextBookmark */ = {
@@ -946,7 +946,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 30";
 		rLen = 0;
-		rLoc = 548;
+		rLoc = 544;
 		rType = 0;
 		vrLen = 1099;
 		vrLoc = 912;
@@ -956,7 +956,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -966,7 +966,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 30";
 		rLen = 0;
-		rLoc = 548;
+		rLoc = 544;
 		rType = 0;
 		vrLen = 964;
 		vrLoc = 3757;
@@ -976,7 +976,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 30";
 		rLen = 0;
-		rLoc = 548;
+		rLoc = 544;
 		rType = 0;
 		vrLen = 964;
 		vrLoc = 3757;
@@ -986,7 +986,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -1006,7 +1006,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 153";
 		rLen = 0;
-		rLoc = 4714;
+		rLoc = 4710;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 3621;
@@ -1026,7 +1026,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 153";
 		rLen = 0;
-		rLoc = 4714;
+		rLoc = 4710;
 		rType = 0;
 		vrLen = 481;
 		vrLoc = 4240;
@@ -1046,7 +1046,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 153";
 		rLen = 0;
-		rLoc = 4714;
+		rLoc = 4710;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 3621;
@@ -1106,7 +1106,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 127";
 		rLen = 6;
-		rLoc = 4148;
+		rLoc = 4144;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 3720;
@@ -1116,7 +1116,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 24";
 		rLen = 6;
-		rLoc = 691;
+		rLoc = 689;
 		rType = 0;
 		vrLen = 835;
 		vrLoc = 139;
@@ -1126,7 +1126,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 19";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -1176,7 +1176,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 127";
 		rLen = 6;
-		rLoc = 4148;
+		rLoc = 4144;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 3720;
@@ -1256,7 +1256,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 127";
 		rLen = 6;
-		rLoc = 4148;
+		rLoc = 4144;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 3720;
@@ -1266,7 +1266,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 24";
 		rLen = 6;
-		rLoc = 691;
+		rLoc = 689;
 		rType = 0;
 		vrLen = 835;
 		vrLoc = 139;
@@ -1276,7 +1276,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 19";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -1336,7 +1336,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 19";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -1346,7 +1346,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 24";
 		rLen = 12;
-		rLoc = 692;
+		rLoc = 690;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 109;
@@ -1383,7 +1383,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 19";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -1393,7 +1393,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 24";
 		rLen = 12;
-		rLoc = 692;
+		rLoc = 690;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 109;
@@ -1443,7 +1443,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -1473,7 +1473,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -1503,7 +1503,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 23";
 		rLen = 12;
-		rLoc = 595;
+		rLoc = 593;
 		rType = 0;
 		vrLen = 835;
 		vrLoc = 139;
@@ -1512,7 +1512,7 @@
 		isa = PBXTextBookmark;
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 	};
 	031ADA600DBF8CB500799D5C /* PBXTextBookmark */ = {
@@ -1530,7 +1530,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 23";
 		rLen = 12;
-		rLoc = 595;
+		rLoc = 593;
 		rType = 0;
 		vrLen = 835;
 		vrLoc = 139;
@@ -1540,7 +1540,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -1550,7 +1550,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -1560,7 +1560,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -1570,7 +1570,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -1580,7 +1580,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -1590,7 +1590,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 10";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 742;
 		vrLoc = 0;
@@ -1600,7 +1600,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -1620,7 +1620,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 12";
 		rLen = 0;
-		rLoc = 199;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 536;
 		vrLoc = 0;
@@ -1630,7 +1630,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 18";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 829;
 		vrLoc = 404;
@@ -1660,7 +1660,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 127";
 		rLen = 6;
-		rLoc = 4148;
+		rLoc = 4144;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 3720;
@@ -1700,7 +1700,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 18";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 829;
 		vrLoc = 404;
@@ -1740,7 +1740,7 @@
 		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
 		name = "CSSBitmapImageRep.m: 127";
 		rLen = 6;
-		rLoc = 4148;
+		rLoc = 4144;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 3720;
@@ -1790,7 +1790,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -1810,7 +1810,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -1830,7 +1830,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -1850,7 +1850,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -1870,7 +1870,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -1890,7 +1890,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -1910,7 +1910,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -1930,7 +1930,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -1940,7 +1940,7 @@
 		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
 		name = "CocoaSlideShow.h: 11";
 		rLen = 0;
-		rLoc = 199;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 566;
 		vrLoc = 0;
@@ -1980,7 +1980,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -2050,7 +2050,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -2070,7 +2070,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -2090,7 +2090,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -2110,7 +2110,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -2160,7 +2160,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -2360,7 +2360,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 3057;
@@ -2400,7 +2400,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 112";
 		rLen = 0;
-		rLoc = 3739;
+		rLoc = 3733;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 3057;
@@ -2782,7 +2782,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 463";
 		rLen = 14;
-		rLoc = 13326;
+		rLoc = 13320;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 12687;
@@ -2869,7 +2869,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 463";
 		rLen = 14;
-		rLoc = 13326;
+		rLoc = 13320;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 12645;
@@ -2905,7 +2905,7 @@
 		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
 		name = "CocoaSlideShow.m: 463";
 		rLen = 14;
-		rLoc = 13326;
+		rLoc = 13320;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 12687;
@@ -2978,6 +2978,752 @@
 		rLoc = 129;
 		rType = 0;
 		vrLen = 717;
+		vrLoc = 0;
+	};
+	031ADB540DBFEAC800799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 9";
+		rLen = 0;
+		rLoc = 129;
+		rType = 0;
+		vrLen = 568;
+		vrLoc = 0;
+	};
+	031ADB550DBFEAC800799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB560DBFEAC800799D5C /* Threads.h */;
+		name = "Threads.h: 97";
+		rLen = 49;
+		rLoc = 2255;
+		rType = 0;
+		vrLen = 1029;
+		vrLoc = 1543;
+	};
+	031ADB560DBFEAC800799D5C /* Threads.h */ = {
+		isa = PBXFileReference;
+		name = Threads.h;
+		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/Headers/Threads.h;
+		sourceTree = "<absolute>";
+	};
+	031ADB570DBFEAC800799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB580DBFEAC800799D5C /* NSPathUtilities.h */;
+		name = "NSPathUtilities.h: 12";
+		rLen = 0;
+		rLoc = 279;
+		rType = 0;
+		vrLen = 686;
+		vrLoc = 638;
+	};
+	031ADB580DBFEAC800799D5C /* NSPathUtilities.h */ = {
+		isa = PBXFileReference;
+		name = NSPathUtilities.h;
+		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSPathUtilities.h;
+		sourceTree = "<absolute>";
+	};
+	031ADB590DBFEAC800799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 94";
+		rLen = 15;
+		rLoc = 2286;
+		rType = 0;
+		vrLen = 658;
+		vrLoc = 1994;
+	};
+	031ADB5A0DBFEAC800799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5B0DBFEAC800799D5C /* NSPathUtilities.h */;
+		name = "NSPathUtilities.h: 12";
+		rLen = 0;
+		rLoc = 279;
+		rType = 0;
+		vrLen = 686;
+		vrLoc = 638;
+	};
+	031ADB5B0DBFEAC800799D5C /* NSPathUtilities.h */ = {
+		isa = PBXFileReference;
+		name = NSPathUtilities.h;
+		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSPathUtilities.h;
+		sourceTree = "<absolute>";
+	};
+	031ADB5C0DBFEAC800799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 96";
+		rLen = 0;
+		rLoc = 2376;
+		rType = 0;
+		vrLen = 672;
+		vrLoc = 1994;
+	};
+	031ADB5D0DBFEAD400799D5C /* ImageResizer.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {977, 658}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{206, 635}";
+		};
+	};
+	031ADB5E0DBFEAD400799D5C /* ImageResizer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {977, 475}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 280}";
+		};
+	};
+	031ADB600DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 81";
+		rLen = 0;
+		rLoc = 1904;
+		rType = 0;
+		vrLen = 806;
+		vrLoc = 1860;
+	};
+	031ADB610DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 463";
+		rLen = 14;
+		rLoc = 13320;
+		rType = 0;
+		vrLen = 1029;
+		vrLoc = 12687;
+	};
+	031ADB620DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 030462540C751CDF00D70803 /* MyImageView.h */;
+		name = "MyImageView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 140;
+		vrLoc = 0;
+	};
+	031ADB630DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5E0DBFEAD400799D5C /* ImageResizer.h */;
+		name = "ImageResizer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 280;
+		vrLoc = 0;
+	};
+	031ADB640DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 0;
+	};
+	031ADB650DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 81";
+		rLen = 0;
+		rLoc = 1904;
+		rType = 0;
+		vrLen = 806;
+		vrLoc = 1860;
+	};
+	031ADB660DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 463";
+		rLen = 14;
+		rLoc = 13320;
+		rType = 0;
+		vrLen = 1029;
+		vrLoc = 12687;
+	};
+	031ADB670DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 030462540C751CDF00D70803 /* MyImageView.h */;
+		name = "MyImageView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 140;
+		vrLoc = 0;
+	};
+	031ADB680DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 0;
+	};
+	031ADB690DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5E0DBFEAD400799D5C /* ImageResizer.h */;
+		name = "ImageResizer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 280;
+		vrLoc = 0;
+	};
+	031ADB6A0DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 0;
+	};
+	031ADB6B0DBFEAE300799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 9";
+		rLen = 0;
+		rLoc = 129;
+		rType = 0;
+		vrLen = 775;
+		vrLoc = 0;
+	};
+	031ADB6C0DBFEB4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 0;
+	};
+	031ADB6D0DBFEB4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 7";
+		rLen = 0;
+		rLoc = 125;
+		rType = 0;
+		vrLen = 716;
+		vrLoc = 0;
+	};
+	031ADB6E0DBFEB4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 0;
+	};
+	031ADB6F0DBFEB4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 7";
+		rLen = 0;
+		rLoc = 125;
+		rType = 0;
+		vrLen = 716;
+		vrLoc = 0;
+	};
+	031ADB700DBFEB4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 25";
+		rLen = 0;
+		rLoc = 707;
+		rType = 0;
+		vrLen = 868;
+		vrLoc = 0;
+	};
+	031ADB710DBFEB4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 9";
+		rLen = 0;
+		rLoc = 129;
+		rType = 0;
+		vrLen = 775;
+		vrLoc = 0;
+	};
+	031ADB740DBFEB5F00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 25";
+		rLen = 0;
+		rLoc = 707;
+		rType = 0;
+		vrLen = 868;
+		vrLoc = 0;
+	};
+	031ADB750DBFEB5F00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 7";
+		rLen = 0;
+		rLoc = 125;
+		rType = 0;
+		vrLen = 716;
+		vrLoc = 0;
+	};
+	031ADB760DBFEB5F00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 25";
+		rLen = 0;
+		rLoc = 707;
+		rType = 0;
+		vrLen = 868;
+		vrLoc = 0;
+	};
+	031ADB770DBFEB5F00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 19";
+		rLen = 0;
+		rLoc = 367;
+		rType = 0;
+		vrLen = 742;
+		vrLoc = 0;
+	};
+	031ADB780DBFEB7000799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 19";
+		rLen = 0;
+		rLoc = 367;
+		rType = 0;
+		vrLen = 721;
+		vrLoc = 21;
+	};
+	031ADB790DBFEB7000799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 9";
+		rLen = 0;
+		rLoc = 129;
+		rType = 0;
+		vrLen = 758;
+		vrLoc = 0;
+	};
+	031ADB7B0DBFEB7F00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 96";
+		rLen = 0;
+		rLoc = 2376;
+		rType = 0;
+		vrLen = 674;
+		vrLoc = 1992;
+	};
+	031ADB7C0DBFEB7F00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 19";
+		rLen = 0;
+		rLoc = 367;
+		rType = 0;
+		vrLen = 534;
+		vrLoc = 0;
+	};
+	031ADB7E0DBFEB9400799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 11";
+		rLen = 0;
+		rLoc = 187;
+		rType = 0;
+		vrLen = 742;
+		vrLoc = 0;
+	};
+	031ADB7F0DBFEB9400799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 9";
+		rLen = 0;
+		rLoc = 129;
+		rType = 0;
+		vrLen = 761;
+		vrLoc = 0;
+	};
+	031ADB810DBFEBC200799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 11";
+		rLen = 0;
+		rLoc = 187;
+		rType = 0;
+		vrLen = 742;
+		vrLoc = 0;
+	};
+	031ADB820DBFEBC200799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5E0DBFEAD400799D5C /* ImageResizer.h */;
+		name = "ImageResizer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 280;
+		vrLoc = 0;
+	};
+	031ADB830DBFEBC200799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 635;
+		vrLoc = 206;
+	};
+	031ADB840DBFEBC200799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		rLen = 7;
+		rLoc = 3737;
+		rType = 0;
+	};
+	031ADB850DBFEBC200799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 11";
+		rLen = 0;
+		rLoc = 187;
+		rType = 0;
+		vrLen = 742;
+		vrLoc = 0;
+	};
+	031ADB860DBFEBC200799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 0;
+	};
+	031ADB870DBFEBC200799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5E0DBFEAD400799D5C /* ImageResizer.h */;
+		name = "ImageResizer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 280;
+		vrLoc = 0;
+	};
+	031ADB880DBFEBC200799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 635;
+		vrLoc = 206;
+	};
+	031ADB890DBFEBC200799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 112";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 1313;
+		vrLoc = 3056;
+	};
+	031ADB8A0DBFEBCF00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 112";
+		rLen = 0;
+		rLoc = 3733;
+		rType = 0;
+		vrLen = 1229;
+		vrLoc = 3140;
+	};
+	031ADB8B0DBFEBCF00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 9";
+		rLen = 0;
+		rLoc = 129;
+		rType = 0;
+		vrLen = 758;
+		vrLoc = 0;
+	};
+	031ADB8D0DBFEBFE00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 19";
+		rLen = 0;
+		rLoc = 367;
+		rType = 0;
+		vrLen = 595;
+		vrLoc = 97;
+	};
+	031ADB8E0DBFEBFE00799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 100";
+		rLen = 0;
+		rLoc = 3361;
+		rType = 0;
+		vrLen = 916;
+		vrLoc = 3056;
+	};
+	031ADB8F0DBFEC0600799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 100";
+		rLen = 0;
+		rLoc = 3361;
+		rType = 0;
+		vrLen = 1154;
+		vrLoc = 2981;
+	};
+	031ADB900DBFEC0600799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "CSSImageContainer.h: 24";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 0;
+	};
+	031ADB910DBFEC0600799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 100";
+		rLen = 0;
+		rLoc = 3361;
+		rType = 0;
+		vrLen = 1154;
+		vrLoc = 2981;
+	};
+	031ADB920DBFEC0600799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "CSSImageContainer.h: 14";
+		rLen = 6;
+		rLoc = 289;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 0;
+	};
+	031ADB930DBFEC0600799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 9";
+		rLen = 0;
+		rLoc = 129;
+		rType = 0;
+		vrLen = 761;
+		vrLoc = 0;
+	};
+	031ADB940DBFEC2000799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "CSSImageContainer.h: 14";
+		rLen = 17;
+		rLoc = 270;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 0;
+	};
+	031ADB950DBFEC2000799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		rLen = 1;
+		rLoc = 12;
+		rType = 1;
+	};
+	031ADB960DBFEC2000799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "CSSImageContainer.h: 14";
+		rLen = 17;
+		rLoc = 270;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 0;
+	};
+	031ADB970DBFEC2000799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 30";
+		rLen = 0;
+		rLoc = 544;
+		rType = 0;
+		vrLen = 623;
+		vrLoc = 0;
+	};
+	031ADB980DBFEC2000799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 9";
+		rLen = 0;
+		rLoc = 129;
+		rType = 0;
+		vrLen = 761;
+		vrLoc = 0;
+	};
+	031ADB9A0DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 30";
+		rLen = 0;
+		rLoc = 544;
+		rType = 0;
+		vrLen = 623;
+		vrLoc = 0;
+	};
+	031ADB9B0DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5E0DBFEAD400799D5C /* ImageResizer.h */;
+		name = "ImageResizer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 280;
+		vrLoc = 0;
+	};
+	031ADB9C0DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 635;
+		vrLoc = 206;
+	};
+	031ADB9D0DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "CSSImageContainer.h: 14";
+		rLen = 17;
+		rLoc = 270;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 0;
+	};
+	031ADB9E0DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 26";
+		rLen = 6;
+		rLoc = 485;
+		rType = 0;
+		vrLen = 1024;
+		vrLoc = 472;
+	};
+	031ADB9F0DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 100";
+		rLen = 0;
+		rLoc = 3361;
+		rType = 0;
+		vrLen = 1154;
+		vrLoc = 2981;
+	};
+	031ADBA00DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */;
+		name = "CSSBitmapImageRep.m: 30";
+		rLen = 0;
+		rLoc = 544;
+		rType = 0;
+		vrLen = 623;
+		vrLoc = 0;
+	};
+	031ADBA10DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5E0DBFEAD400799D5C /* ImageResizer.h */;
+		name = "ImageResizer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 280;
+		vrLoc = 0;
+	};
+	031ADBA20DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */;
+		name = "ImageResizer.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 635;
+		vrLoc = 206;
+	};
+	031ADBA30DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 81";
+		rLen = 0;
+		rLoc = 1904;
+		rType = 0;
+		vrLen = 874;
+		vrLoc = 1792;
+	};
+	031ADBA40DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06460C805F0B009D508F /* CSSImageContainer.h */;
+		name = "CSSImageContainer.h: 14";
+		rLen = 17;
+		rLoc = 270;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 0;
+	};
+	031ADBA50DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */;
+		name = "CSSImageContainer.m: 26";
+		rLen = 6;
+		rLoc = 485;
+		rType = 0;
+		vrLen = 1024;
+		vrLoc = 472;
+	};
+	031ADBA60DBFEC4100799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 24";
+		rLen = 12;
+		rLoc = 690;
+		rType = 0;
+		vrLen = 868;
+		vrLoc = 0;
+	};
+	031ADBA80DBFEC5000799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */;
+		name = "CocoaSlideShow.m: 24";
+		rLen = 12;
+		rLoc = 690;
+		rType = 0;
+		vrLen = 844;
+		vrLoc = 0;
+	};
+	031ADBA90DBFEC5000799D5C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */;
+		name = "CocoaSlideShow.h: 9";
+		rLen = 0;
+		rLoc = 129;
+		rType = 0;
+		vrLen = 758;
 		vrLoc = 0;
 	};
 	032F08190C542D820037F590 /* AppleRemote.h */ = {
@@ -3103,8 +3849,8 @@
 	03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {977, 2184}}";
-			sepNavSelRange = "{4148, 6}";
-			sepNavVisRange = "{3720, 1001}";
+			sepNavSelRange = "{544, 0}";
+			sepNavVisRange = "{0, 623}";
 			sepNavVisRect = "{{0, 1377}, {991, 399}}";
 			sepNavWindowFrame = "{{152, 77}, {1110, 801}}";
 		};
@@ -3191,27 +3937,27 @@
 	};
 	03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {949, 756}}";
+			sepNavIntBoundsRect = "{{0, 0}, {949, 784}}";
 			sepNavSelRange = "{129, 0}";
-			sepNavVisRange = "{0, 717}";
+			sepNavVisRange = "{0, 758}";
 			sepNavVisRect = "{{0, 200}, {991, 399}}";
 			sepNavWindowFrame = "{{38, 23}, {972, 829}}";
 		};
 	};
 	03B1BB100C5173B40032C03F /* CocoaSlideShow.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {977, 5026}}";
-			sepNavSelRange = "{13326, 14}";
-			sepNavVisRange = "{12687, 1029}";
+			sepNavIntBoundsRect = "{{0, 0}, {977, 3850}}";
+			sepNavSelRange = "{690, 12}";
+			sepNavVisRange = "{0, 844}";
 			sepNavVisRect = "{{0, 3252}, {991, 399}}";
 			sepNavWindowFrame = "{{111, 18}, {1110, 801}}";
 		};
 	};
 	03DA06460C805F0B009D508F /* CSSImageContainer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1199, 448}}";
-			sepNavSelRange = "{423, 0}";
-			sepNavVisRange = "{155, 386}";
+			sepNavIntBoundsRect = "{{0, 0}, {977, 475}}";
+			sepNavSelRange = "{270, 17}";
+			sepNavVisRange = "{0, 541}";
 			sepNavVisRect = "{{0, 0}, {965, 582}}";
 			sepNavWindowFrame = "{{148, -107}, {1110, 801}}";
 		};
@@ -3219,8 +3965,8 @@
 	03DA06470C805F0B009D508F /* CSSImageContainer.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {977, 1526}}";
-			sepNavSelRange = "{2619, 0}";
-			sepNavVisRange = "{1792, 869}";
+			sepNavSelRange = "{485, 6}";
+			sepNavVisRange = "{472, 1024}";
 			sepNavVisRect = "{{0, 829}, {991, 512}}";
 			sepNavWindowFrame = "{{265, -26}, {1110, 801}}";
 		};
@@ -3236,7 +3982,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = Foundation;
-		modificationTime = 230680962.865661;
+		modificationTime = 230681676.023364;
 		state = 0;
 		symbolName = _NSKVODeallocateLog;
 	};
@@ -3666,6 +4412,78 @@
 			031ADB4E0DBFE8C000799D5C /* PBXTextBookmark */ = 031ADB4E0DBFE8C000799D5C /* PBXTextBookmark */;
 			031ADB510DBFE98700799D5C /* PBXTextBookmark */ = 031ADB510DBFE98700799D5C /* PBXTextBookmark */;
 			031ADB520DBFE98700799D5C /* PBXTextBookmark */ = 031ADB520DBFE98700799D5C /* PBXTextBookmark */;
+			031ADB540DBFEAC800799D5C /* PBXTextBookmark */ = 031ADB540DBFEAC800799D5C /* PBXTextBookmark */;
+			031ADB550DBFEAC800799D5C /* PBXTextBookmark */ = 031ADB550DBFEAC800799D5C /* PBXTextBookmark */;
+			031ADB570DBFEAC800799D5C /* PBXTextBookmark */ = 031ADB570DBFEAC800799D5C /* PBXTextBookmark */;
+			031ADB590DBFEAC800799D5C /* PBXTextBookmark */ = 031ADB590DBFEAC800799D5C /* PBXTextBookmark */;
+			031ADB5A0DBFEAC800799D5C /* PBXTextBookmark */ = 031ADB5A0DBFEAC800799D5C /* PBXTextBookmark */;
+			031ADB5C0DBFEAC800799D5C /* PBXTextBookmark */ = 031ADB5C0DBFEAC800799D5C /* PBXTextBookmark */;
+			031ADB600DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB600DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB610DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB610DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB620DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB620DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB630DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB630DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB640DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB640DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB650DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB650DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB660DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB660DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB670DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB670DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB680DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB680DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB690DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB690DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB6A0DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB6A0DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB6B0DBFEAE300799D5C /* PBXTextBookmark */ = 031ADB6B0DBFEAE300799D5C /* PBXTextBookmark */;
+			031ADB6C0DBFEB4100799D5C /* PBXTextBookmark */ = 031ADB6C0DBFEB4100799D5C /* PBXTextBookmark */;
+			031ADB6D0DBFEB4100799D5C /* PBXTextBookmark */ = 031ADB6D0DBFEB4100799D5C /* PBXTextBookmark */;
+			031ADB6E0DBFEB4100799D5C /* PBXTextBookmark */ = 031ADB6E0DBFEB4100799D5C /* PBXTextBookmark */;
+			031ADB6F0DBFEB4100799D5C /* PBXTextBookmark */ = 031ADB6F0DBFEB4100799D5C /* PBXTextBookmark */;
+			031ADB700DBFEB4100799D5C /* PBXTextBookmark */ = 031ADB700DBFEB4100799D5C /* PBXTextBookmark */;
+			031ADB710DBFEB4100799D5C /* PBXTextBookmark */ = 031ADB710DBFEB4100799D5C /* PBXTextBookmark */;
+			031ADB740DBFEB5F00799D5C /* PBXTextBookmark */ = 031ADB740DBFEB5F00799D5C /* PBXTextBookmark */;
+			031ADB750DBFEB5F00799D5C /* PBXTextBookmark */ = 031ADB750DBFEB5F00799D5C /* PBXTextBookmark */;
+			031ADB760DBFEB5F00799D5C /* PBXTextBookmark */ = 031ADB760DBFEB5F00799D5C /* PBXTextBookmark */;
+			031ADB770DBFEB5F00799D5C /* PBXTextBookmark */ = 031ADB770DBFEB5F00799D5C /* PBXTextBookmark */;
+			031ADB780DBFEB7000799D5C /* PBXTextBookmark */ = 031ADB780DBFEB7000799D5C /* PBXTextBookmark */;
+			031ADB790DBFEB7000799D5C /* PBXTextBookmark */ = 031ADB790DBFEB7000799D5C /* PBXTextBookmark */;
+			031ADB7B0DBFEB7F00799D5C /* PBXTextBookmark */ = 031ADB7B0DBFEB7F00799D5C /* PBXTextBookmark */;
+			031ADB7C0DBFEB7F00799D5C /* PBXTextBookmark */ = 031ADB7C0DBFEB7F00799D5C /* PBXTextBookmark */;
+			031ADB7E0DBFEB9400799D5C /* PBXTextBookmark */ = 031ADB7E0DBFEB9400799D5C /* PBXTextBookmark */;
+			031ADB7F0DBFEB9400799D5C /* PBXTextBookmark */ = 031ADB7F0DBFEB9400799D5C /* PBXTextBookmark */;
+			031ADB810DBFEBC200799D5C /* PBXTextBookmark */ = 031ADB810DBFEBC200799D5C /* PBXTextBookmark */;
+			031ADB820DBFEBC200799D5C /* PBXTextBookmark */ = 031ADB820DBFEBC200799D5C /* PBXTextBookmark */;
+			031ADB830DBFEBC200799D5C /* PBXTextBookmark */ = 031ADB830DBFEBC200799D5C /* PBXTextBookmark */;
+			031ADB840DBFEBC200799D5C /* PBXTextBookmark */ = 031ADB840DBFEBC200799D5C /* PBXTextBookmark */;
+			031ADB850DBFEBC200799D5C /* PBXTextBookmark */ = 031ADB850DBFEBC200799D5C /* PBXTextBookmark */;
+			031ADB860DBFEBC200799D5C /* PBXTextBookmark */ = 031ADB860DBFEBC200799D5C /* PBXTextBookmark */;
+			031ADB870DBFEBC200799D5C /* PBXTextBookmark */ = 031ADB870DBFEBC200799D5C /* PBXTextBookmark */;
+			031ADB880DBFEBC200799D5C /* PBXTextBookmark */ = 031ADB880DBFEBC200799D5C /* PBXTextBookmark */;
+			031ADB890DBFEBC200799D5C /* PBXTextBookmark */ = 031ADB890DBFEBC200799D5C /* PBXTextBookmark */;
+			031ADB8A0DBFEBCF00799D5C /* PBXTextBookmark */ = 031ADB8A0DBFEBCF00799D5C /* PBXTextBookmark */;
+			031ADB8B0DBFEBCF00799D5C /* PBXTextBookmark */ = 031ADB8B0DBFEBCF00799D5C /* PBXTextBookmark */;
+			031ADB8D0DBFEBFE00799D5C /* PBXTextBookmark */ = 031ADB8D0DBFEBFE00799D5C /* PBXTextBookmark */;
+			031ADB8E0DBFEBFE00799D5C /* PBXTextBookmark */ = 031ADB8E0DBFEBFE00799D5C /* PBXTextBookmark */;
+			031ADB8F0DBFEC0600799D5C /* PBXTextBookmark */ = 031ADB8F0DBFEC0600799D5C /* PBXTextBookmark */;
+			031ADB900DBFEC0600799D5C /* PBXTextBookmark */ = 031ADB900DBFEC0600799D5C /* PBXTextBookmark */;
+			031ADB910DBFEC0600799D5C /* PBXTextBookmark */ = 031ADB910DBFEC0600799D5C /* PBXTextBookmark */;
+			031ADB920DBFEC0600799D5C /* PBXTextBookmark */ = 031ADB920DBFEC0600799D5C /* PBXTextBookmark */;
+			031ADB930DBFEC0600799D5C /* PBXTextBookmark */ = 031ADB930DBFEC0600799D5C /* PBXTextBookmark */;
+			031ADB940DBFEC2000799D5C /* PBXTextBookmark */ = 031ADB940DBFEC2000799D5C /* PBXTextBookmark */;
+			031ADB950DBFEC2000799D5C /* PBXTextBookmark */ = 031ADB950DBFEC2000799D5C /* PBXTextBookmark */;
+			031ADB960DBFEC2000799D5C /* PBXTextBookmark */ = 031ADB960DBFEC2000799D5C /* PBXTextBookmark */;
+			031ADB970DBFEC2000799D5C /* PBXTextBookmark */ = 031ADB970DBFEC2000799D5C /* PBXTextBookmark */;
+			031ADB980DBFEC2000799D5C /* PBXTextBookmark */ = 031ADB980DBFEC2000799D5C /* PBXTextBookmark */;
+			031ADB9A0DBFEC4100799D5C /* PBXTextBookmark */ = 031ADB9A0DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADB9B0DBFEC4100799D5C /* PBXTextBookmark */ = 031ADB9B0DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADB9C0DBFEC4100799D5C /* PBXTextBookmark */ = 031ADB9C0DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADB9D0DBFEC4100799D5C /* PBXTextBookmark */ = 031ADB9D0DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADB9E0DBFEC4100799D5C /* PBXTextBookmark */ = 031ADB9E0DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADB9F0DBFEC4100799D5C /* PBXTextBookmark */ = 031ADB9F0DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADBA00DBFEC4100799D5C /* PBXTextBookmark */ = 031ADBA00DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADBA10DBFEC4100799D5C /* PBXTextBookmark */ = 031ADBA10DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADBA20DBFEC4100799D5C /* PBXTextBookmark */ = 031ADBA20DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADBA30DBFEC4100799D5C /* PBXTextBookmark */ = 031ADBA30DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADBA40DBFEC4100799D5C /* PBXTextBookmark */ = 031ADBA40DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADBA50DBFEC4100799D5C /* PBXTextBookmark */ = 031ADBA50DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADBA60DBFEC4100799D5C /* PBXTextBookmark */ = 031ADBA60DBFEC4100799D5C /* PBXTextBookmark */;
+			031ADBA80DBFEC5000799D5C /* PBXTextBookmark */ = 031ADBA80DBFEC5000799D5C /* PBXTextBookmark */;
+			031ADBA90DBFEC5000799D5C /* PBXTextBookmark */ = 031ADBA90DBFEC5000799D5C /* PBXTextBookmark */;
 		};
 		sourceControlManager = 03B1BB0A0C5165790032C03F /* Source Control */;
 		userBuildSettings = {

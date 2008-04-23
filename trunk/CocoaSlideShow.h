@@ -7,6 +7,7 @@
 #import "ImagesController.h"
 
 //#import "FlagImageTransformer.h"
+#import "ImageResizer.h"
 
 @interface CocoaSlideShow : NSObject
 {
@@ -15,6 +16,7 @@
 	NSWindow *fullScreenWindow;
 
 	NSMutableArray *images;
+	ImageResizer *ir;
 	
 	IBOutlet ImagesController *imagesController;
 	IBOutlet MyImageView *imageView;

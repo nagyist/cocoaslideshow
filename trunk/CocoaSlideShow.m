@@ -19,10 +19,10 @@
 		
     //FlagImageTransformer *ft = [[[FlagImageTransformer alloc] init] autorelease];
     //[NSValueTransformer setValueTransformer:ft forName:@"FlagImageTransformer"];
-	/*
+	
     ir = [[[ImageResizer alloc] init] autorelease];
     [NSValueTransformer setValueTransformer:ir forName:@"ImageResizer"];
-	*/
+	
 	return self;
 }
 
@@ -109,7 +109,7 @@
 	
 	[imagesController setAutomaticallyPreparesContent:YES];
 	
-	//[ir setView:panelImageView];
+	[ir setView:panelImageView];
 	
 	NSTableColumn *flagColumn = [tableView tableColumnWithIdentifier:@"flag"];
 	NSImage *flagHeaderImage = [NSImage imageNamed:@"FlaggedHeader.png"];

@@ -10,6 +10,7 @@
 		030461610C75158100D70803 /* NSFileManager+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 030461600C75158100D70803 /* NSFileManager+CSS.m */; };
 		030462560C751CDF00D70803 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030462550C751CDF00D70803 /* MyImageView.m */; };
 		030463F10C75347700D70803 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 030463F00C75347700D70803 /* Credits.html */; };
+		031ADB5F0DBFEAD400799D5C /* ImageResizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */; };
 		032F081B0C542D820037F590 /* AppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 032F081A0C542D820037F590 /* AppleRemote.m */; };
 		0338002E0C85D37700439E5A /* Flagged.png in Resources */ = {isa = PBXBuildFile; fileRef = 0338002D0C85D37700439E5A /* Flagged.png */; };
 		033801D00C85EB7E00439E5A /* FlaggedHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 033801CF0C85EB7E00439E5A /* FlaggedHeader.png */; };
@@ -38,6 +39,8 @@
 		030462540C751CDF00D70803 /* MyImageView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MyImageView.h; sourceTree = "<group>"; };
 		030462550C751CDF00D70803 /* MyImageView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MyImageView.m; sourceTree = "<group>"; };
 		030463F00C75347700D70803 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		031ADB5D0DBFEAD400799D5C /* ImageResizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResizer.m; sourceTree = "<group>"; };
+		031ADB5E0DBFEAD400799D5C /* ImageResizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResizer.h; sourceTree = "<group>"; };
 		032F08190C542D820037F590 /* AppleRemote.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppleRemote.h; sourceTree = "<group>"; };
 		032F081A0C542D820037F590 /* AppleRemote.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppleRemote.m; sourceTree = "<group>"; };
 		0338002D0C85D37700439E5A /* Flagged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flagged.png; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				03A3F4BF0C77E27B009AD69D /* VersionChecker.h */,
 				03A3F4C00C77E27B009AD69D /* VersionChecker.m */,
 				031AD9AA0DBF854D00799D5C /* Remote Control */,
+				031ADB5E0DBFEAD400799D5C /* ImageResizer.h */,
+				031ADB5D0DBFEAD400799D5C /* ImageResizer.m */,
 				030462540C751CDF00D70803 /* MyImageView.h */,
 				030462550C751CDF00D70803 /* MyImageView.m */,
 				03A3F43F0C77D97E009AD69D /* MyWindow.h */,
@@ -292,6 +297,7 @@
 				03DA06480C805F0B009D508F /* CSSImageContainer.m in Sources */,
 				03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */,
 				033804240C86084300439E5A /* ImagesController.m in Sources */,
+				031ADB5F0DBFEAD400799D5C /* ImageResizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
