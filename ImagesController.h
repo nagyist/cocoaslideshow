@@ -31,5 +31,6 @@
 - (void)addFiles:(NSArray *)filePaths;
 - (void)addDirFiles:(NSString *)dir;
 - (void)retainOnlyAFewImagesAndReleaseTheRest;
+//- (NSArray *)flagged;
 
 @end

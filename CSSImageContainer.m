@@ -19,6 +19,10 @@
 }
 */
 
++ (void)initialize {
+    [self setKeys:[NSArray arrayWithObjects:@"isFlagged", nil] triggerChangeNotificationsForDependentKey:@"flagIcon"];
+}
+
 - (CSSBitmapImageRep *)bitmap {
 	BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
@@ -32,7 +36,12 @@
 		return bitmap;
 	}
 
-	bitmap = [[CSSBitmapImageRep alloc] initWithData:[NSData dataWithContentsOfFile:path]];
+	//NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://%@", path]]];
+	NSData *data = [NSData dataWithContentsOfFile:path];
+	//NSLog(@"data %d path %@", [data length], path);
+	//NSArray *reps = [NSBitmapImageRep imageRepsWithData:data];
+	//NSLog(@"-- %@", reps);
+	bitmap = [[CSSBitmapImageRep alloc] initWithData:data];
 	[bitmap setPath:path];
 
 	return bitmap;
@@ -51,7 +60,7 @@
 }
 
 - (void)flag {
-	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isFlagged"];		
+	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isFlagged"];
 }
 
 - (void)unflag {
@@ -70,6 +79,10 @@
 	return isFlagged;
 }
 
+- (NSImage *)flagIcon {
+	return isFlagged ? [NSImage imageNamed:@"Flagged.png"] : nil;
+}
+
 - (void)copyToDirectory:(NSString *)destDirectory {
 	NSString *destPath = [destDirectory stringByAppendingPathComponent:[path lastPathComponent]];
 	NSFileManager *fm = [NSFileManager defaultManager];
@@ -80,13 +93,12 @@
 }
 
 - (void)moveToTrash {
-	NSString *trashPath = [@"~/.Trash/" stringByAppendingPathComponent:[path lastPathComponent]];
+	NSString *trashPath = [[@"~/.Trash/" stringByExpandingTildeInPath] stringByAppendingPathComponent:[path lastPathComponent]];
 	[[NSFileManager defaultManager] movePath:path toPath:trashPath handler:nil];
 }
 
 - (void)revealInFinder {
-	NSString *parentDirectory = [path stringByDeletingLastPathComponent];
-	[[NSWorkspace sharedWorkspace] openFile:parentDirectory];
+	[[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:@""];
 }
 
 - (NSString *)path {
