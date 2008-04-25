@@ -3,16 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>IBFramework Version</key>
-	<string>649</string>
+	<string>652</string>
 	<key>IBLastKnownRelativeProjectPath</key>
 	<string>../CocoaSlideShow.xcodeproj</string>
 	<key>IBOldestOS</key>
 	<integer>5</integer>
 	<key>IBOpenObjects</key>
 	<array>
-		<integer>245</integer>
+		<integer>208</integer>
 		<integer>379</integer>
-		<integer>334</integer>
 		<integer>29</integer>
 	</array>
 	<key>IBSystem Version</key>
