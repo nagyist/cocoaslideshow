@@ -102,6 +102,9 @@
 														   @"ico", @"icns",  @"bmp", @"bmpf",
 														   @"dng", @"cr2", @"crw", @"fpx", @"fpix", @"raf", @"dcr", @"ptng", @"pnt", @"mac", @"mrw", @"nef",
 														   @"orf", @"exr", @"psd", @"qti", @"qtif", @"hdr", @"sgi", @"srf", @"targa", @"tga", @"cur", @"xbm", nil];
+
+	NSMutableArray *containersToAdd = [[NSMutableArray alloc] init];
+	
 	NSArray *dirContent;
 	while(( path = [e nextObject] )) {
 		NSString *ext = [path pathExtension];
@@ -114,23 +117,29 @@
 		if([path hasPrefix:@"."] || ![allowedExtensions containsObject:[ext lowercaseString]]) {
 			continue;
 		}
+	
 		
-		if(![self containsPath:path]) {
-			CSSImageContainer *container = [[CSSImageContainer alloc] init];
-			[container setValue:path forKey:@"path"];
-			
-			if(firstInsertedObject == nil) {
-				firstInsertedObject = container;
-			}
-			[self addObject:[container autorelease]];
+		
+		CSSImageContainer *container = [[CSSImageContainer alloc] init];
+		[container setValue:path forKey:@"path"];
+		
+		if(firstInsertedObject == nil) {
+			firstInsertedObject = container;
 		}
+		[containersToAdd addObject:[container autorelease]]; // TODO: don't add one by one but alltogether
+
+		
 	}
 	
+	[self addObjects:containersToAdd];
+	[containersToAdd release];
+	
 	importDone = YES;
-
+	/*
 	if(firstInsertedObject != nil) {
 		[self setSelectedObjects:[NSArray arrayWithObject:firstInsertedObject]];
 	}
+	*/
 }
 
 - (void)addDirFiles:(NSString *)dir {
