@@ -30,13 +30,12 @@
 }
 
 - (id)transformedValue:(NSImage *)value {
-	
+	/*
 	if(![[[NSApp delegate] valueForKey:@"isFullScreen"] boolValue]) {
 		NSLog(@"transformedValue exit");
 		return nil;
 	}
-	
-	NSLog(@"transformedValue");
+	*/
 	NSSize viewSize = ((NSRect)[view bounds]).size;
 	NSSize imageSize = [value size];
 

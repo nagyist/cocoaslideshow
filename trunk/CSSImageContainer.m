@@ -23,7 +23,7 @@
     [self setKeys:[NSArray arrayWithObjects:@"isFlagged", nil] triggerChangeNotificationsForDependentKey:@"flagIcon"];
 }
 
-- (CSSBitmapImageRep *)bitmap {
+- (CSSBitmapImageRep *)bitmap {	
 	BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
@@ -36,11 +36,8 @@
 		return bitmap;
 	}
 
-	//NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"file://%@", path]]];
 	NSData *data = [NSData dataWithContentsOfFile:path];
-	//NSLog(@"data %d path %@", [data length], path);
-	//NSArray *reps = [NSBitmapImageRep imageRepsWithData:data];
-	//NSLog(@"-- %@", reps);
+
 	bitmap = [[CSSBitmapImageRep alloc] initWithData:data];
 	[bitmap setPath:path];
 
@@ -48,7 +45,6 @@
 }
 
 - (void)dealloc {
-	//NSLog(@"dealloc %@", self);
 	[path release];
 	[bitmap release];
 	[super dealloc];
