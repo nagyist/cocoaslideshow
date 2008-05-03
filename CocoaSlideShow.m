@@ -200,7 +200,7 @@
 	if(isFullScreen) {
 		return;
 	}
-
+	
 	[mainWindow makeFirstResponder:tableView];
 	//return;
 
@@ -232,12 +232,12 @@
 	
     // Load our content view
     [slideShowPanel setFrame:screenRect display:YES];
-	
-    [mainWindow setContentView:[slideShowPanel contentView]];
-	
+
 	[self willChangeValueForKey:@"isFullScreen"];
 	isFullScreen = YES;
 	[self didChangeValueForKey:@"isFullScreen"];
+	
+    [mainWindow setContentView:[slideShowPanel contentView]];
 }
 
 - (IBAction)undo:(id)sender {
@@ -252,11 +252,11 @@
 	if(!isFullScreen) {
 		return;
 	}
-	
+
 	[NSCursor unhide];
 	
 	[mainWindow orderOut:self];
-	
+
 	// Release the display(s)
 	if (CGDisplayRelease( kCGDirectMainDisplay ) != kCGErrorSuccess) {
 		NSLog( @"Couldn't release the display(s)!" );
