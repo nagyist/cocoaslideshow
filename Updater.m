@@ -1,16 +1,12 @@
-#import "VersionChecker.h"
+#import "Updater.h"
 
-// TODO move this string in info.plist
-static NSString *VERSION_CHECK_URL_STRING = @"http://cocoaslideshow.googlecode.com/svn/trunk/VersionCheck.plist";
-//static NSString *VERSION_CHECK_URL_STRING = @"http://127.0.0.1/~nst/VersionCheck.plist";
+static Updater *sharedInstance = nil;
 
-static VersionChecker *sharedInstance = nil;
+@implementation Updater
 
-@implementation VersionChecker
-
-+ (VersionChecker *)sharedInstance {
++ (Updater *)sharedInstance {
     if (sharedInstance == nil) {
-        sharedInstance = [[VersionChecker alloc] init];
+        sharedInstance = [[Updater alloc] init];
     }
     return sharedInstance;
 }
@@ -18,17 +14,24 @@ static VersionChecker *sharedInstance = nil;
 - (BOOL) version:(NSArray *)a isBiggerThan:(NSArray *)b {
     unsigned aa = [[a objectAtIndex:0] intValue];
     unsigned ab = [[a objectAtIndex:1] intValue];
-    unsigned ac = [a count] > 2 ? [[a objectAtIndex:2] intValue] : 0;
+    unsigned cc = [a count] > 2 ? [[a objectAtIndex:2] intValue] : 0;
 
     unsigned ba = [[b objectAtIndex:0] intValue];
     unsigned bb = [[b objectAtIndex:1] intValue];
     unsigned bc = [b count] > 2 ? [[b objectAtIndex:2] intValue] : 0;
 
-    return ((aa > ba) || (aa == ba && ab > bb) || (aa == ba && ab == bb && ac > bc));
+    return ((aa > ba) || (aa == ba && ab > bb) || (aa == ba && ab == bb && cc > bc));
 }
 
-- (void) checkUpdateWithDisplayingAlertIfUpToDate:(NSNumber *)displayPanelInAnyCase {
-    NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
+- (BOOL) shortVersion:(NSString *)sa isBiggerThan:(NSString *)sb {
+	NSArray *a = [sa componentsSeparatedByString:@"."];
+	NSArray *b = [sb componentsSeparatedByString:@"."];
+	return [self version:a isBiggerThan:b];
+}
+
+- (void) threadCheckUpdateDisplayPanel:(BOOL)displayPanel bypassDefault:(BOOL)bypassDefault {
+
+	NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
@@ -37,25 +40,23 @@ static VersionChecker *sharedInstance = nil;
         [defaults setBool:YES forKey:@"versionCheckRunAtStartup"];
     }
 
-    if([defaults boolForKey:@"versionCheckRunAtStartup"] == NO) {
+    if(!bypassDefault && [defaults boolForKey:@"versionCheckRunAtStartup"] == NO) {
         [subPool release];
         return;
     }
 
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *currentVersionString = [infoDictionary valueForKey:@"CFBundleShortVersionString"];
+    NSArray *currentVersion = [currentVersionString componentsSeparatedByString:@"."];
 
-	if(!currentVersionString) {
-		currentVersionString = [infoDictionary valueForKey:@"CFBundleVersion"];
-		if(currentVersionString) {
-			NSArray *components = [currentVersionString componentsSeparatedByString:@" "];
-			currentVersionString = [components objectAtIndex:0];
-		}
+	NSString *urlString = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UpdaterURL"];
+	if(!urlString) {
+		NSLog(@"Can't update, no UpdaterURL in Info.plist");
+		[subPool release];
+		return;
 	}
 
-    NSArray *currentVersion = [currentVersionString componentsSeparatedByString:@"."];
-	
-    NSURL *versionCheckURL = [NSURL URLWithString:VERSION_CHECK_URL_STRING];
+    NSURL *versionCheckURL = [NSURL URLWithString:urlString];
     NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:versionCheckURL];
     if(d == nil ||
       [d valueForKey:@"LatestVersion"] == nil ||
@@ -69,14 +70,13 @@ static VersionChecker *sharedInstance = nil;
     NSArray *latestVersion = [latestVersionString componentsSeparatedByString:@"."];
     NSURL *pageURL = [NSURL URLWithString:[d valueForKey:@"PageURL"]];
     NSURL *downloadURL = [NSURL URLWithString:[d valueForKey:@"DownloadURL"]];
-    /*
-    NSLog(@"currentVersion %@", currentVersion);
-    NSLog(@"latestVersion %@", latestVersion);
-    */
+	
+	NSString *appName = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleName"];
+
     if([self version:latestVersion isBiggerThan:currentVersion] == NO) {
-        if([displayPanelInAnyCase boolValue]) {
+        if(displayPanel) {
             NSRunInformationalAlertPanel(NSLocalizedString(@"You are up to date!", nil),
-                                         [NSString stringWithFormat:NSLocalizedString(@"CocoaSlideShow %@ is the latest version available.", nil), latestVersionString],
+                                         [NSString stringWithFormat:NSLocalizedString(@"%@ %@ is the latest version available.", nil), appName, latestVersionString],
                                          NSLocalizedString(@"OK", nil),
                                          @"",
                                          @"");
@@ -85,19 +85,17 @@ static VersionChecker *sharedInstance = nil;
         return;
     }
     
-    int alertReturn = NSRunAlertPanel([NSString stringWithFormat: NSLocalizedString(@"CocoaSlideShow version %@ is available", nil), latestVersionString],
+    int alertReturn = NSRunAlertPanel([NSString stringWithFormat: NSLocalizedString(@"%@ version %@ is available!", nil), appName, latestVersionString],
                                       [NSString stringWithFormat: NSLocalizedString(@"What do you want to do?", nil), latestVersionString],
                                       NSLocalizedString(@"Download now", nil),
                                       NSLocalizedString(@"Ignore and Continue", nil),
-                                      NSLocalizedString(@"Go to website", nil));
+                                      [NSString stringWithFormat:NSLocalizedString(@"Go to %@ website", nil), appName]);
                                       
     switch (alertReturn) {
         case NSAlertDefaultReturn:
-            // download
             [[NSWorkspace sharedWorkspace] openURL:downloadURL];
             break;
         case NSAlertOtherReturn:
-            // open web site
             [[NSWorkspace sharedWorkspace] openURL:pageURL];
             break;
         default:
@@ -107,16 +105,34 @@ static VersionChecker *sharedInstance = nil;
     [subPool release];
 }
 
-- (IBAction) checkUpdate:(id)sender {
-    [NSThread detachNewThreadSelector:@selector(checkUpdateWithDisplayingAlertIfUpToDate:)
-                             toTarget:self
-                           withObject:[NSNumber numberWithBool:NO]];
+- (void) threadCheckUpdateSilentIfUptodate {
+	[self threadCheckUpdateDisplayPanel:NO bypassDefault:NO];
 }
 
-- (IBAction) checkUpdateAndShowPanel:(id)sender {
-    [NSThread detachNewThreadSelector:@selector(checkUpdateWithDisplayingAlertIfUpToDate:)
+- (void) threadCheckUpdateBypassPrefsDisplayAlertIfUptodate {
+	[self threadCheckUpdateDisplayPanel:YES bypassDefault:YES];
+}
+
+- (void) threadCheckUpdateDisplayAlertIfUptodate {
+	[self threadCheckUpdateDisplayPanel:YES bypassDefault:NO];
+}
+
+- (IBAction) checkUpdateDisplayAlertIfUptodate:(id)sender {
+    [NSThread detachNewThreadSelector:@selector(threadCheckUpdateDisplayAlertIfUptodate)
                              toTarget:self
-                           withObject:[NSNumber numberWithBool:YES]];
+                           withObject:nil];
+}
+
+- (IBAction) checkUpdateBypassPrefsDisplayAlertIfUptodate:(id)sender {
+    [NSThread detachNewThreadSelector:@selector(threadCheckUpdateBypassPrefsDisplayAlertIfUptodate)
+                             toTarget:self
+                           withObject:nil];
+}
+
+- (IBAction) checkUpdateSilentIfUpToDate:(id)sender {
+    [NSThread detachNewThreadSelector:@selector(threadCheckUpdateSilentIfUptodate)
+                             toTarget:self
+                           withObject:nil];
 }
 
 @end

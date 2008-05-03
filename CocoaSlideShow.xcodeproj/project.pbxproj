@@ -20,9 +20,9 @@
 		036D55130C712BFC004A8236 /* HIDRemoteControlDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55120C712BFC004A8236 /* HIDRemoteControlDevice.m */; };
 		036D55170C712C1B004A8236 /* RemoteControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55160C712C1B004A8236 /* RemoteControl.m */; };
 		036D5C2F0C7269D0004A8236 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036D5C2E0C7269D0004A8236 /* Carbon.framework */; };
+		037D94F50DCD2C8500E8DEB7 /* Updater.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D94F40DCD2C8500E8DEB7 /* Updater.m */; };
 		03A305CF0C7DE4F0009AD69D /* CSSBitmapImageRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */; };
 		03A3F4410C77D97E009AD69D /* MyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A3F4400C77D97E009AD69D /* MyWindow.m */; };
-		03A3F4C10C77E27B009AD69D /* VersionChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A3F4C00C77E27B009AD69D /* VersionChecker.m */; };
 		03A3F4E70C77E3B0009AD69D /* VersionCheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */; };
 		03A3F55C0C786878009AD69D /* CocoaSlideShow.icns in Resources */ = {isa = PBXBuildFile; fileRef = 03A3F55B0C786878009AD69D /* CocoaSlideShow.icns */; };
 		03B1BB110C5173B40032C03F /* CocoaSlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */; };
@@ -55,12 +55,12 @@
 		036D55150C712C1B004A8236 /* RemoteControl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = RemoteControl.h; sourceTree = "<group>"; };
 		036D55160C712C1B004A8236 /* RemoteControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = RemoteControl.m; sourceTree = "<group>"; };
 		036D5C2E0C7269D0004A8236 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		037D94F30DCD2C8500E8DEB7 /* Updater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Updater.h; sourceTree = "<group>"; };
+		037D94F40DCD2C8500E8DEB7 /* Updater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Updater.m; sourceTree = "<group>"; };
 		03A305CD0C7DE4F0009AD69D /* CSSBitmapImageRep.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSSBitmapImageRep.h; sourceTree = "<group>"; };
 		03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSSBitmapImageRep.m; sourceTree = "<group>"; };
 		03A3F43F0C77D97E009AD69D /* MyWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MyWindow.h; sourceTree = "<group>"; };
 		03A3F4400C77D97E009AD69D /* MyWindow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MyWindow.m; sourceTree = "<group>"; };
-		03A3F4BF0C77E27B009AD69D /* VersionChecker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = VersionChecker.h; sourceTree = "<group>"; };
-		03A3F4C00C77E27B009AD69D /* VersionChecker.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = VersionChecker.m; sourceTree = "<group>"; };
 		03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = VersionCheck.plist; sourceTree = "<group>"; };
 		03A3F55B0C786878009AD69D /* CocoaSlideShow.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CocoaSlideShow.icns; sourceTree = "<group>"; };
 		03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CocoaSlideShow.h; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				03A3F4BF0C77E27B009AD69D /* VersionChecker.h */,
-				03A3F4C00C77E27B009AD69D /* VersionChecker.m */,
+				037D94F30DCD2C8500E8DEB7 /* Updater.h */,
+				037D94F40DCD2C8500E8DEB7 /* Updater.m */,
 				031AD9AA0DBF854D00799D5C /* Remote Control */,
 				031ADB5E0DBFEAD400799D5C /* ImageResizer.h */,
 				031ADB5D0DBFEAD400799D5C /* ImageResizer.m */,
@@ -292,12 +292,12 @@
 				030461610C75158100D70803 /* NSFileManager+CSS.m in Sources */,
 				030462560C751CDF00D70803 /* MyImageView.m in Sources */,
 				03A3F4410C77D97E009AD69D /* MyWindow.m in Sources */,
-				03A3F4C10C77E27B009AD69D /* VersionChecker.m in Sources */,
 				03A305CF0C7DE4F0009AD69D /* CSSBitmapImageRep.m in Sources */,
 				03DA06480C805F0B009D508F /* CSSImageContainer.m in Sources */,
 				03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */,
 				033804240C86084300439E5A /* ImagesController.m in Sources */,
 				031ADB5F0DBFEAD400799D5C /* ImageResizer.m in Sources */,
+				037D94F50DCD2C8500E8DEB7 /* Updater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,7 @@
 #import "AppleRemote.h"
 
 #import "NSFileManager+CSS.h"
-#import "VersionChecker.h"
+#import "Updater.h"
 #import "CSSBitmapImageRep.h"
 #import "CSSImageContainer.h"
 
@@ -403,7 +403,7 @@
 		[self setupImagesControllerWithDir:defaultDir recursive:NO];
 	}
 	
-    [[VersionChecker sharedInstance] checkUpdate:self];
+    [[Updater sharedInstance] checkUpdateSilentIfUpToDate:self];
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
