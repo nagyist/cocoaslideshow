@@ -252,6 +252,11 @@
 	if(!isFullScreen) {
 		return;
 	}
+	
+	if([timer isValid]) {
+		[timer invalidate];
+		timer = nil;
+	}
 
 	[NSCursor unhide];
 	
@@ -445,9 +450,9 @@
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
 		
 		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
-		NSLog(@"will add files");
+		//NSLog(@"will add files");
 		[imagesController addFiles:files];
-		NSLog(@"did add files");
+		//NSLog(@"did add files");
 		int numberOfImagesAfter = [[imagesController arrangedObjects] count];
 		if(numberOfImagesAfter > numberOfImagesBefore) {
 			[imagesController setSelectionIndex:numberOfImagesBefore];
