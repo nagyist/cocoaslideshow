@@ -25,6 +25,8 @@
 	IBOutlet NSTableView *tableView;
 	IBOutlet NSTokenField *keywordsTokenField;
 	
+	NSToolbar *toolbar;
+	
 	RemoteControl *remoteControl;
 	NSUndoManager *undoManager;
 	NSTimer *timer;
