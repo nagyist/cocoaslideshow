@@ -117,8 +117,6 @@
 		if([path hasPrefix:@"."] || ![allowedExtensions containsObject:[ext lowercaseString]]) {
 			continue;
 		}
-	
-		
 		
 		CSSImageContainer *container = [[CSSImageContainer alloc] init];
 		[container setValue:path forKey:@"path"];
@@ -127,8 +125,6 @@
 			firstInsertedObject = container;
 		}
 		[containersToAdd addObject:[container autorelease]]; // TODO: don't add one by one but alltogether
-
-		
 	}
 	
 	[self addObjects:containersToAdd];

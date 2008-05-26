@@ -96,10 +96,21 @@
 	[imagesController setSelectionIndex:0];
 }
 
+
+- (void)setupToolbar {
+    toolbar = [[[NSToolbar alloc] initWithIdentifier:@"mainToolbar"] autorelease];
+    [toolbar setDelegate:self];
+    [toolbar setAllowsUserCustomization:YES];
+    [toolbar setAutosavesConfiguration:YES];
+    [mainWindow setToolbar:toolbar];
+}
+
 - (void)awakeFromNib {
 	remoteControl = [[AppleRemote alloc] initWithDelegate: self];
 	
 	[mainWindow registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
+	
+	[self setupToolbar];
 	
 	[[userCommentTextField cell] setSendsActionOnEndEditing:YES];
 	[[keywordsTokenField cell] setSendsActionOnEndEditing:YES];
