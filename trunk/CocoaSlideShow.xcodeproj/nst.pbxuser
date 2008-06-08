@@ -1173,6 +1173,84 @@
 		rLen = 0;
 		rLoc = 2147483647;
 	};
+	03B97E8D0DFC30C2006FC071 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/nst/Projects/cocoaslideshow/VersionCheck.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	03B97E8E0DFC30C2006FC071 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/nst/Projects/cocoaslideshow/VersionCheck.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	03B97E910DFC30D4006FC071 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/nst/Projects/cocoaslideshow/VersionCheck.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	03B97E920DFC3109006FC071 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/nst/Projects/cocoaslideshow/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	03B97E930DFC3109006FC071 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/nst/Projects/cocoaslideshow/VersionCheck.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	03B97E940DFC3114006FC071 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/nst/Projects/cocoaslideshow/VersionCheck.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	03B97E950DFC3114006FC071 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			DownloadURL,
+		);
+		name = /Users/nst/Projects/cocoaslideshow/VersionCheck.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
 	03CAFC090DC2362000821B6F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 031ADB5E0DBFEAD400799D5C /* ImageResizer.h */;
@@ -1481,6 +1559,13 @@
 			03B97E890DFC30AD006FC071 /* PlistBookmark */ = 03B97E890DFC30AD006FC071 /* PlistBookmark */;
 			03B97E8A0DFC30AD006FC071 /* PlistBookmark */ = 03B97E8A0DFC30AD006FC071 /* PlistBookmark */;
 			03B97E8B0DFC30AD006FC071 /* PlistBookmark */ = 03B97E8B0DFC30AD006FC071 /* PlistBookmark */;
+			03B97E8D0DFC30C2006FC071 /* PlistBookmark */ = 03B97E8D0DFC30C2006FC071 /* PlistBookmark */;
+			03B97E8E0DFC30C2006FC071 /* PlistBookmark */ = 03B97E8E0DFC30C2006FC071 /* PlistBookmark */;
+			03B97E910DFC30D4006FC071 /* PlistBookmark */ = 03B97E910DFC30D4006FC071 /* PlistBookmark */;
+			03B97E920DFC3109006FC071 /* PlistBookmark */ = 03B97E920DFC3109006FC071 /* PlistBookmark */;
+			03B97E930DFC3109006FC071 /* PlistBookmark */ = 03B97E930DFC3109006FC071 /* PlistBookmark */;
+			03B97E940DFC3114006FC071 /* PlistBookmark */ = 03B97E940DFC3114006FC071 /* PlistBookmark */;
+			03B97E950DFC3114006FC071 /* PlistBookmark */ = 03B97E950DFC3114006FC071 /* PlistBookmark */;
 			03CAFC090DC2362000821B6F = 03CAFC090DC2362000821B6F /* PBXTextBookmark */;
 			03F0D4340DC28F3B00BF6D96 = 03F0D4340DC28F3B00BF6D96 /* PBXTextBookmark */;
 			03F0D4350DC28F3B00BF6D96 = 03F0D4350DC28F3B00BF6D96 /* PBXTextBookmark */;
