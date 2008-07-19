@@ -21,6 +21,9 @@
 - (NSString *)path;
 - (void)forgetBitmap;
 
+- (NSString *)fileName;
+- (void)setFileName:(NSString *)s;
+
 - (void)flag;
 - (void)unflag;
 - (void)toggleFlag;
