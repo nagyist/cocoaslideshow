@@ -23,6 +23,20 @@
     [self setKeys:[NSArray arrayWithObjects:@"isFlagged", nil] triggerChangeNotificationsForDependentKey:@"flagIcon"];
 }
 
+- (NSString *)fileName {
+	return [path lastPathComponent];
+}
+
+- (void)setFileName:(NSString *)s {
+	NSString *newPath = [[path stringByDeletingLastPathComponent] stringByAppendingPathComponent:s];
+	
+	if([[NSFileManager defaultManager] fileExistsAtPath:newPath]) return;
+
+	if([[NSFileManager defaultManager] movePath:path toPath:newPath handler:nil]) {
+		[self setValue:newPath forKey:@"path"];
+	}
+}
+
 - (CSSBitmapImageRep *)bitmap {	
 	BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
