@@ -12,5 +12,6 @@
 @interface NSString (CSS)
 
 - (BOOL)pathIsJpeg;
+- (NSComparisonResult)numericCompare:(NSString *)aString;
 
 @end
