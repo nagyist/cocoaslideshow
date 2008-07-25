@@ -92,7 +92,6 @@
 	[images removeAllObjects];
 
 	NSArray *dirContent = [[NSFileManager defaultManager] directoryContentFullPaths:dir recursive:isRecursive];
-	NSLog(@"dirContent %@", dirContent);
 	
 	dirContent = [dirContent sortedArrayUsingSelector:@selector(numericCompare:)];
 	
