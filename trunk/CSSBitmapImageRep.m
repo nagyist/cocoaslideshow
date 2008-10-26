@@ -32,14 +32,16 @@
 	return [super valueForProperty:NSImageEXIFData];
 }
 
-// TODO: factor with readKeywords
+
 - (NSDictionary *)readGPS {
+	//NSLog(@"readKeywords %@", self);
 	CGImageSourceRef source = CGImageSourceCreateWithURL ((CFURLRef)[NSURL fileURLWithPath:path], nil);
 	NSDictionary *properties = (NSDictionary*) CGImageSourceCopyPropertiesAtIndex(source, 0, NULL);
-	// NSLog(@"-- properties: %@", properties);
+	//NSLog(@"-- properties: %@", properties);
     CFRelease(source);
-	return [properties objectForKey:@"{GPS}"];	
+	return [properties objectForKey:@"{GPS}"];
 }
+
 
 - (NSArray *)readKeywords {
 	//NSLog(@"readKeywords %@", self);
@@ -68,7 +70,8 @@
 	[self willChangeValueForKey:@"gps"];
 	gps = [self readGPS];
 	[self didChangeValueForKey:@"gps"];
-		
+	
+	
 	//NSLog(@"[self exif] %@", [self exif]);
 	//NSLog(@"keywords = %@", keywords);
 }
@@ -138,9 +141,19 @@
 	NSString *latitudeRef = [gps objectForKey:@"LatitudeRef"];
 	NSString *longitudeRef = [gps objectForKey:@"LongitudeRef"];
 	
-	if(!latitude || !longitude) return nil;
+	if(!latitude || !longitude || !latitudeRef || !longitudeRef) return nil;
 	
 	return [NSString stringWithFormat:@"%@ %@, %@ %@", [[latitude description] substringToIndex:8], latitudeRef, [[longitude description] substringToIndex:8], longitudeRef];
+}
+
+- (NSURL *)googleMapsURL {
+	NSString *latitude = [gps objectForKey:@"Latitude"];
+	NSString *longitude = [gps objectForKey:@"Longitude"];
+
+	if(!latitude || !longitude) return nil;
+	
+	NSString *s = [NSString stringWithFormat:@"http://maps.google.com/?q=%@,%@", latitude, longitude];
+	return [NSURL URLWithString:s];
 }
 
 - (NSString *)userComment {

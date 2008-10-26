@@ -21,6 +21,8 @@
 - (NSString *)path;
 - (void)forgetBitmap;
 
+- (CSSBitmapImageRep *)bitmap;
+
 - (NSString *)fileName;
 - (void)setFileName:(NSString *)s;
 
