@@ -124,7 +124,8 @@
 		if(firstInsertedObject == nil) {
 			firstInsertedObject = container;
 		}
-		[containersToAdd addObject:[container autorelease]]; // TODO: don't add one by one but alltogether
+		[containersToAdd addObject:container]; // TODO: don't add one by one but alltogether
+		//[container release]; // FIXME: leak. use objective-c 2.0 and garbage collection
 	}
 	
 	[self addObjects:containersToAdd];
