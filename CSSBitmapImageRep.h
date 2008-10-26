@@ -5,6 +5,7 @@
 	NSString *path;
 	NSString *userComment;
 	NSArray *keywords;
+	NSDictionary *gps;
 }
 
 - (NSImage *)image;
@@ -17,6 +18,8 @@
 
 - (void)setKeywords:(NSArray *)keywords;
 - (NSArray *)keywords;
+
+- (NSDictionary *)gps;
 
 - (NSString *)prettyImageSize;
 

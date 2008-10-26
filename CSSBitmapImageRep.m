@@ -32,10 +32,20 @@
 	return [super valueForProperty:NSImageEXIFData];
 }
 
+// TODO: factor with readKeywords
+- (NSDictionary *)readGPS {
+	CGImageSourceRef source = CGImageSourceCreateWithURL ((CFURLRef)[NSURL fileURLWithPath:path], nil);
+	NSDictionary *properties = (NSDictionary*) CGImageSourceCopyPropertiesAtIndex(source, 0, NULL);
+	// NSLog(@"-- properties: %@", properties);
+    CFRelease(source);
+	return [properties objectForKey:@"{GPS}"];	
+}
+
 - (NSArray *)readKeywords {
 	//NSLog(@"readKeywords %@", self);
 	CGImageSourceRef source = CGImageSourceCreateWithURL ((CFURLRef)[NSURL fileURLWithPath:path], nil);
 	NSDictionary *properties = (NSDictionary*) CGImageSourceCopyPropertiesAtIndex(source, 0, NULL);
+	//NSLog(@"-- properties: %@", properties);
     CFRelease(source);
 	return [[properties objectForKey:(NSString *)kCGImagePropertyIPTCDictionary] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords];
 }
@@ -54,6 +64,10 @@
 	[self willChangeValueForKey:@"keywords"];
 	keywords = [self readKeywords];
 	[self didChangeValueForKey:@"keywords"];
+	
+	[self willChangeValueForKey:@"gps"];
+	gps = [self readGPS];
+	[self didChangeValueForKey:@"gps"];
 		
 	//NSLog(@"[self exif] %@", [self exif]);
 	//NSLog(@"keywords = %@", keywords);
@@ -112,6 +126,21 @@
 
 - (NSArray *)keywords {
 	return keywords;
+}
+
+- (NSDictionary *)gps {
+	return gps;
+}
+
+- (NSString *)prettyGPS {
+	NSString *latitude = [gps objectForKey:@"Latitude"];
+	NSString *longitude = [gps objectForKey:@"Longitude"];
+	NSString *latitudeRef = [gps objectForKey:@"LatitudeRef"];
+	NSString *longitudeRef = [gps objectForKey:@"LongitudeRef"];
+	
+	if(!latitude || !longitude) return nil;
+	
+	return [NSString stringWithFormat:@"%@ %@, %@ %@", [[latitude description] substringToIndex:8], latitudeRef, [[longitude description] substringToIndex:8], longitudeRef];
 }
 
 - (NSString *)userComment {
