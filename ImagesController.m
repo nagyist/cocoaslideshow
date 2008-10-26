@@ -172,6 +172,16 @@
 	return [ma autorelease];
 }
 */
+
+- (IBAction)openGoogleMap:(id)sender {
+	if(![[self selectedObjects] count]) return;
+	CSSImageContainer *i = [[self selectedObjects] lastObject];
+	CSSBitmapImageRep *b = [i bitmap];
+	NSURL *url = [b googleMapsURL];
+	if(!url) return;
+	[[NSWorkspace sharedWorkspace] openURL:url];
+}
+
 @end
 
 

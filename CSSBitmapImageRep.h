@@ -23,4 +23,6 @@
 
 - (NSString *)prettyImageSize;
 
+- (NSURL *)googleMapsURL;
+
 @end

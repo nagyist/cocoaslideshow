@@ -32,5 +32,6 @@
 - (void)addDirFiles:(NSString *)dir;
 - (void)retainOnlyAFewImagesAndReleaseTheRest;
 //- (NSArray *)flagged;
+- (IBAction)openGoogleMap:(id)sender;
 
 @end

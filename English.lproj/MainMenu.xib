@@ -604,21 +604,48 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 								<reference key="NSTextColor" ref="786385819"/>
 							</object>
 						</object>
-						<object class="NSTextField" id="986862911">
+						<object class="NSTextField" id="826680900">
 							<reference key="NSNextResponder" ref="673328807"/>
 							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{17, 20}, {180, 14}}</string>
+							<string key="NSFrame">{{17, 20}, {131, 14}}</string>
 							<reference key="NSSuperview" ref="673328807"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="921380512">
+							<object class="NSTextFieldCell" key="NSCell" id="652203735">
 								<int key="NSCellFlags">69336577</int>
 								<int key="NSCellFlags2">272760832</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="26"/>
 								<string key="NSPlaceholderString">Location</string>
-								<reference key="NSControlView" ref="986862911"/>
+								<reference key="NSControlView" ref="826680900"/>
 								<reference key="NSBackgroundColor" ref="334539385"/>
-								<reference key="NSTextColor" ref="786385819"/>
+								<object class="NSColor" key="NSTextColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MCAwIDEAA</bytes>
+								</object>
+							</object>
+						</object>
+						<object class="NSButton" id="742508926">
+							<reference key="NSNextResponder" ref="673328807"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{152, 18}, {43, 16}}</string>
+							<reference key="NSSuperview" ref="673328807"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSButtonCell" key="NSCell" id="820434031">
+								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags2">134479872</int>
+								<string key="NSContents">Map</string>
+								<object class="NSFont" key="NSSupport">
+									<string key="NSName">LucidaGrande</string>
+									<double key="NSSize">9.000000e+00</double>
+									<int key="NSfFlags">3614</int>
+								</object>
+								<reference key="NSControlView" ref="742508926"/>
+								<int key="NSButtonFlags">-2038284033</int>
+								<int key="NSButtonFlags2">129</int>
+								<string key="NSAlternateContents"/>
+								<string key="NSKeyEquivalent"/>
+								<int key="NSPeriodicDelay">200</int>
+								<int key="NSPeriodicInterval">25</int>
 							</object>
 						</object>
 					</object>
@@ -1269,6 +1296,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<string>bitmap.gps.Latitude</string>
 					<string>bitmap.gps.prettyGPS</string>
 					<string>bitmap.prettyGPS</string>
+					<string>googleMapURL</string>
+					<string>googleMapsURL</string>
+					<string>bitmap.googleMapsURL</string>
 				</object>
 				<string key="NSObjectClassName">CSSImageContainer</string>
 				<bool key="NSEditable">YES</bool>
@@ -2365,10 +2395,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.bitmap.prettyGPS</string>
-						<reference key="source" ref="986862911"/>
+						<reference key="source" ref="826680900"/>
 						<reference key="destination" ref="79550871"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="986862911"/>
+							<reference key="NSSource" ref="826680900"/>
 							<reference key="NSDestination" ref="79550871"/>
 							<string key="NSLabel">value: selection.bitmap.prettyGPS</string>
 							<string key="NSBinding">value</string>
@@ -2394,6 +2424,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						</object>
 					</object>
 					<int key="connectionID">856</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openGoogleMap:</string>
+						<reference key="source" ref="79550871"/>
+						<reference key="destination" ref="742508926"/>
+					</object>
+					<int key="connectionID">859</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: selection.bitmap.googleMapsURL</string>
+						<reference key="source" ref="742508926"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="742508926"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">hidden: selection.bitmap.googleMapsURL</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">selection.bitmap.googleMapsURL</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSMultipleValuesPlaceholder</string>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNotApplicablePlaceholder</string>
+									<string>NSNullPlaceholder</string>
+									<string>NSValueTransformerName</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<reference ref="9"/>
+									<reference ref="9"/>
+									<reference ref="9"/>
+									<reference ref="9"/>
+									<string>NSIsNil</string>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">868</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2448,7 +2521,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<reference ref="939812974"/>
 							<reference ref="176635047"/>
 							<reference ref="916631972"/>
-							<reference ref="986862911"/>
+							<reference ref="826680900"/>
+							<reference ref="742508926"/>
 						</object>
 						<reference key="parent" ref="126993678"/>
 					</object>
@@ -3226,17 +3300,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">845</int>
-						<reference key="object" ref="986862911"/>
+						<reference key="object" ref="826680900"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="921380512"/>
+							<reference ref="652203735"/>
 						</object>
 						<reference key="parent" ref="673328807"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">846</int>
-						<reference key="object" ref="921380512"/>
-						<reference key="parent" ref="986862911"/>
+						<reference key="object" ref="652203735"/>
+						<reference key="parent" ref="826680900"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">857</int>
+						<reference key="object" ref="742508926"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="820434031"/>
+						</object>
+						<reference key="parent" ref="673328807"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">858</int>
+						<reference key="object" ref="820434031"/>
+						<reference key="parent" ref="742508926"/>
 					</object>
 				</object>
 			</object>
@@ -3460,6 +3548,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<string>83.ImportedFromIB2</string>
 					<string>845.IBPluginDependency</string>
 					<string>845.ImportedFromIB2</string>
+					<string>857.IBPluginDependency</string>
+					<string>858.IBPluginDependency</string>
 					<string>92.IBPluginDependency</string>
 					<string>92.ImportedFromIB2</string>
 				</object>
@@ -3530,9 +3620,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{34, 212}, {751, 486}}</string>
+					<string>{{199, 279}, {751, 486}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{34, 212}, {751, 486}}</string>
+					<string>{{199, 279}, {751, 486}}</string>
 					<reference ref="9"/>
 					<reference ref="9"/>
 					<reference ref="6"/>
@@ -3682,6 +3772,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 				</object>
 			</object>
@@ -3705,7 +3797,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">856</int>
+			<int key="maxID">868</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3812,6 +3904,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>flag:</string>
 							<string>moveToTrash:</string>
+							<string>openGoogleMap:</string>
 							<string>remove:</string>
 							<string>removeAllFlags:</string>
 							<string>selectFlags:</string>
@@ -3820,6 +3913,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
