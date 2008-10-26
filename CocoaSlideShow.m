@@ -131,10 +131,10 @@
 	[imageView setDelegate:self];
 	[mainWindow setDelegate:self];
 
-	NSNumber *slideShowSpeed = [[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"];
-	if (!slideShowSpeed) {
-		[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:1.0] forKey:@"SlideShowSpeed"];
-	}
+	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
+		[NSNumber numberWithInt:1.0], @"SlideShowSpeed",
+	    [NSNumber numberWithBool:YES], @"SlideshowIsFullscreen", nil];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 
 	NSRect screenRect = [[NSScreen mainScreen] frame];	
 	[slideShowPanel setContentSize:screenRect.size];
@@ -319,7 +319,9 @@
 }
 
 - (IBAction)startSlideShow:(id)sender {
-	[self fullScreenMode:self];
+	if([[NSUserDefaults standardUserDefaults] boolForKey:@"SlideshowIsFullscreen"]) {
+		[self fullScreenMode:self];
+	}
 	[self toggleSlideShow:self];
 }
 
