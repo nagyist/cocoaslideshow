@@ -604,33 +604,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 								<reference key="NSTextColor" ref="786385819"/>
 							</object>
 						</object>
-						<object class="NSTextField" id="245942484">
+						<object class="NSTextField" id="834925493">
 							<reference key="NSNextResponder" ref="673328807"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrame">{{17, 20}, {131, 14}}</string>
 							<reference key="NSSuperview" ref="673328807"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="290043517">
+							<object class="NSTextFieldCell" key="NSCell" id="422586352">
 								<int key="NSCellFlags">69336577</int>
 								<int key="NSCellFlags2">272760832</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="26"/>
 								<string key="NSPlaceholderString">Location</string>
-								<reference key="NSControlView" ref="245942484"/>
+								<reference key="NSControlView" ref="834925493"/>
 								<reference key="NSBackgroundColor" ref="334539385"/>
 								<object class="NSColor" key="NSTextColor">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MCAwIDEAA</bytes>
+									<bytes key="NSRGB">MCAwIDAAA</bytes>
 								</object>
 							</object>
 						</object>
-						<object class="NSButton" id="39996284">
+						<object class="NSButton" id="627535883">
 							<reference key="NSNextResponder" ref="673328807"/>
 							<int key="NSvFlags">288</int>
 							<string key="NSFrame">{{152, 18}, {43, 16}}</string>
 							<reference key="NSSuperview" ref="673328807"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="874598806">
+							<object class="NSButtonCell" key="NSCell" id="118738190">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134479872</int>
 								<string key="NSContents">Map</string>
@@ -639,7 +639,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 									<double key="NSSize">9.000000e+00</double>
 									<int key="NSfFlags">3614</int>
 								</object>
-								<reference key="NSControlView" ref="39996284"/>
+								<reference key="NSControlView" ref="627535883"/>
 								<int key="NSButtonFlags">-2038284033</int>
 								<int key="NSButtonFlags2">129</int>
 								<string key="NSAlternateContents"/>
@@ -2395,10 +2395,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.bitmap.prettyGPS</string>
-						<reference key="source" ref="245942484"/>
+						<reference key="source" ref="834925493"/>
 						<reference key="destination" ref="79550871"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="245942484"/>
+							<reference key="NSSource" ref="834925493"/>
 							<reference key="NSDestination" ref="79550871"/>
 							<string key="NSLabel">value: selection.bitmap.prettyGPS</string>
 							<string key="NSBinding">value</string>
@@ -2429,17 +2429,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<object class="IBActionConnection" key="connection">
 						<string key="label">openGoogleMap:</string>
 						<reference key="source" ref="79550871"/>
-						<reference key="destination" ref="39996284"/>
+						<reference key="destination" ref="627535883"/>
 					</object>
 					<int key="connectionID">859</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">hidden: selection.bitmap.googleMapsURL</string>
-						<reference key="source" ref="39996284"/>
+						<reference key="source" ref="627535883"/>
 						<reference key="destination" ref="79550871"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="39996284"/>
+							<reference key="NSSource" ref="627535883"/>
 							<reference key="NSDestination" ref="79550871"/>
 							<string key="NSLabel">hidden: selection.bitmap.googleMapsURL</string>
 							<string key="NSBinding">hidden</string>
@@ -2521,8 +2521,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<reference ref="939812974"/>
 							<reference ref="176635047"/>
 							<reference ref="916631972"/>
-							<reference ref="245942484"/>
-							<reference ref="39996284"/>
+							<reference ref="834925493"/>
+							<reference ref="627535883"/>
 						</object>
 						<reference key="parent" ref="126993678"/>
 					</object>
@@ -3300,31 +3300,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">845</int>
-						<reference key="object" ref="245942484"/>
+						<reference key="object" ref="834925493"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="290043517"/>
+							<reference ref="422586352"/>
 						</object>
 						<reference key="parent" ref="673328807"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">846</int>
-						<reference key="object" ref="290043517"/>
-						<reference key="parent" ref="245942484"/>
+						<reference key="object" ref="422586352"/>
+						<reference key="parent" ref="834925493"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">857</int>
-						<reference key="object" ref="39996284"/>
+						<reference key="object" ref="627535883"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="874598806"/>
+							<reference ref="118738190"/>
 						</object>
 						<reference key="parent" ref="673328807"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">858</int>
-						<reference key="object" ref="874598806"/>
-						<reference key="parent" ref="39996284"/>
+						<reference key="object" ref="118738190"/>
+						<reference key="parent" ref="627535883"/>
 					</object>
 				</object>
 			</object>
