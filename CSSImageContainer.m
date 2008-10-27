@@ -51,7 +51,7 @@
 	}
 
 	NSData *data = [NSData dataWithContentsOfFile:path];
-	bitmap = [[CSSBitmapImageRep alloc] initWithData:data];
+	[self setValue:[[[CSSBitmapImageRep alloc] initWithData:data] autorelease] forKey:@"bitmap"];
 	[bitmap setPath:path];
 
 	return bitmap;
