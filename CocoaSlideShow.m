@@ -99,7 +99,6 @@
 	[imagesController setSelectionIndex:0];
 }
 
-
 - (void)setupToolbar {
     toolbar = [[[NSToolbar alloc] initWithIdentifier:@"mainToolbar"] autorelease];
     [toolbar setDelegate:self];

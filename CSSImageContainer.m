@@ -110,7 +110,15 @@
 	[[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:@""];
 }
 
+- (void)setPath:(NSString *)aPath {
+	if(path == nil && path != aPath) {
+		[path release];
+		path = [aPath retain];
+	}
+}
+
 - (NSString *)path {
+	//NSLog(@"path %@", path);
 	return path;
 }
 
