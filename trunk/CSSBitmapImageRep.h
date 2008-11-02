@@ -6,6 +6,7 @@
 	NSString *userComment;
 	NSArray *keywords;
 	NSDictionary *gps;
+	NSDictionary *properties;
 }
 
 - (NSImage *)image;

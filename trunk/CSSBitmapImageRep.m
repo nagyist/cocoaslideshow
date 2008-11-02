@@ -32,45 +32,46 @@
 	return [super valueForProperty:NSImageEXIFData];
 }
 
+- (NSDictionary *)readProperties {
+	CGImageSourceRef source = CGImageSourceCreateWithURL ((CFURLRef)[NSURL fileURLWithPath:path], nil);
+	NSDictionary *p = (NSDictionary*) CGImageSourceCopyPropertiesAtIndex(source, 0, NULL);
+    CFRelease(source);
+	return p;
+}
 
 - (NSDictionary *)readGPS {
-	//NSLog(@"readKeywords %@", self);
-	CGImageSourceRef source = CGImageSourceCreateWithURL ((CFURLRef)[NSURL fileURLWithPath:path], nil);
-	NSDictionary *properties = (NSDictionary*) CGImageSourceCopyPropertiesAtIndex(source, 0, NULL);
-	//NSLog(@"-- properties: %@", properties);
-    CFRelease(source);
 	return [properties objectForKey:@"{GPS}"];
 }
 
-
 - (NSArray *)readKeywords {
-	//NSLog(@"readKeywords %@", self);
-	CGImageSourceRef source = CGImageSourceCreateWithURL ((CFURLRef)[NSURL fileURLWithPath:path], nil);
-	NSDictionary *properties = (NSDictionary*) CGImageSourceCopyPropertiesAtIndex(source, 0, NULL);
-	//NSLog(@"-- properties: %@", properties);
-    CFRelease(source);
 	return [[properties objectForKey:(NSString *)kCGImagePropertyIPTCDictionary] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords];
 }
 
 - (void)setPath:(NSString *)aPath {
 	//NSLog(@"%@ setPath %@", self, aPath);
+	
 	[self willChangeValueForKey:@"path"];
 	[path autorelease];
 	path = [aPath retain];
 	[self didChangeValueForKey:@"path"];
 
+	[properties release];
+	properties = [self readProperties];
+	[properties retain];
+	
 	[self willChangeValueForKey:@"userComment"];
 	userComment = [[[self exif] valueForKey:(NSString *)kCGImagePropertyExifUserComment] retain];
 	[self didChangeValueForKey:@"userComment"];
 	
 	[self willChangeValueForKey:@"keywords"];
-	keywords = [self readKeywords];
+	[keywords autorelease];
+	keywords = [[self readKeywords] retain];
 	[self didChangeValueForKey:@"keywords"];
 	
 	[self willChangeValueForKey:@"gps"];
-	gps = [self readGPS];
+	[gps autorelease];
+	gps = [[self readGPS] retain];
 	[self didChangeValueForKey:@"gps"];
-	
 	
 	//NSLog(@"[self exif] %@", [self exif]);
 	//NSLog(@"keywords = %@", keywords);
@@ -97,6 +98,10 @@
 	NSData *data = [self representationUsingType:NSJPEGFileType properties:[NSDictionary dictionaryWithObject:exifData forKey:NSImageEXIFData]];
 	[exifData release];
 	[data writeToFile:path atomically:YES];
+	
+	[properties autorelease];
+	properties = [self readProperties];
+	[properties retain];
 }
 
 - (void)setKeywords:(NSArray *)asciiKeywords {
@@ -125,6 +130,10 @@
     CFRelease(imageDestination);
     CFRelease(imageSource);
     [newImageFileData release];
+	
+	[properties autorelease];
+	properties = [self readProperties];
+	[properties retain];
 }
 
 - (NSArray *)keywords {
@@ -166,8 +175,6 @@
 		NSArray *shortPathComponents = [fullPathComponents subarrayWithRange:NSMakeRange(1, [fullPathComponents count] - 1)];
 		NSString *exifPath = [shortPathComponents componentsJoinedByString:@"."];
 		return [[super valueForProperty:NSImageEXIFData] valueForKeyPath:exifPath];
-	//} else if ([keyPath isEqualToString:@"image"]) {
-	//	return [self image];
 	} else {
 		return [super valueForKeyPath:keyPath];
 	}
@@ -177,6 +184,8 @@
 	//NSLog(@"dealloc %@", self);
 	[path release];
 	[userComment release];
+	[gps release];
+	[properties release];
 	[keywords release];
 	[super dealloc];
 }

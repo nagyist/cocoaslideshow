@@ -89,7 +89,7 @@
 }
 
 - (void)addFiles:(NSArray *)filePaths {
-
+	//NSLog(@"-- addFiles: %@", filePaths);
 	importDone = NO;
 	
 	CSSImageContainer *firstInsertedObject = nil;
