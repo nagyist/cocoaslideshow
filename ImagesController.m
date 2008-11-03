@@ -89,7 +89,7 @@
 }
 
 - (void)addFiles:(NSArray *)filePaths {
-	NSLog(@"-- addFiles: %@", filePaths);
+	//NSLog(@"-- addFiles: %@", filePaths);
 	importDone = NO;
 	
 	//CSSImageContainer *firstInsertedObject = nil;
@@ -119,7 +119,7 @@
 		[containersToAdd addObject:[CSSImageContainer containerWithPath:path]];
 	}
 	
-	NSLog(@"-- containersToAdd: %@", containersToAdd);
+	//NSLog(@"-- containersToAdd: %@", containersToAdd);
 	[self addObjects:containersToAdd];
 	
 	[containersToAdd release];
@@ -128,7 +128,7 @@
 }
 
 - (void)addDirFiles:(NSString *)dir {
-	NSLog(@"-- addDirFiles: %@", dir);
+	//NSLog(@"-- addDirFiles: %@", dir);
 	[self addFiles:[NSArray arrayWithObject:dir]];
 	[[[self undoManager] prepareWithInvocationTarget:self] remove:self];
 }
