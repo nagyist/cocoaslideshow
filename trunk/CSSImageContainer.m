@@ -111,10 +111,24 @@
 }
 
 - (void)setPath:(NSString *)aPath {
-	if(path == nil && path != aPath) {
+	NSLog(@"-- %@", aPath);
+	if(aPath == nil) {
+		NSLog(@"-- :-(");
+	}
+	if(aPath != nil && path != aPath) {
 		[path release];
 		path = [aPath retain];
 	}
+}
+
+- (id)initWithPath:(NSString *)aPath {
+	self = [super init];
+	[self setPath:aPath];
+	return self;
+}
+
++ (CSSImageContainer *)containerWithPath:(NSString *)aPath {
+	return [[[CSSImageContainer alloc] initWithPath:aPath] autorelease];
 }
 
 - (NSString *)path {

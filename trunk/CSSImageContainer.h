@@ -18,6 +18,8 @@
 
 // TODO allow save rotated image
 
++ (CSSImageContainer *)containerWithPath:(NSString *)aPath;
+
 - (NSString *)path;
 - (void)forgetBitmap;
 
