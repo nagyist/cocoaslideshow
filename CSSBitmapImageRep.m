@@ -44,6 +44,10 @@
 - (void)setPath:(NSString *)aPath {
 	//NSLog(@"%@ setPath %@", self, aPath);
 	
+	[path autorelease];
+	path = aPath;
+	[path retain];
+	
 	url = [[NSURL fileURLWithPath:aPath] retain];
 	source = CGImageSourceCreateWithURL( (CFURLRef) url, NULL);
 	if (!source) {
@@ -51,13 +55,13 @@
 		return;
     }
 	
-	//get all the metadata in the image
     NSDictionary *immutableMetadata = (NSDictionary *) CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
-	//make the metadata dictionary mutable so we can add properties to it
+	[metadata autorelease];
     metadata = [immutableMetadata mutableCopy];
     [immutableMetadata release];
 	
 	[self willChangeValueForKey:@"userComment"];
+	[userComment autorelease];
 	userComment = [[[self exif] objectForKey:(NSString *)kCGImagePropertyExifUserComment] retain];
 	[self didChangeValueForKey:@"userComment"];
 	
@@ -65,6 +69,27 @@
 	[keywords autorelease];
 	keywords = [[[self iptc] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords] retain];
 	[self didChangeValueForKey:@"keywords"];
+}
+
+- (BOOL)saveSourceWithMetadata {
+	CFStringRef UTI = CGImageSourceGetType(source);
+    NSMutableData *data = [NSMutableData data];
+    
+    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data,UTI,1,NULL);
+    if(!destination) {
+        NSLog(@"Error: could not create image destination");
+        return NO;
+    }
+    
+    CGImageDestinationAddImageFromSource(destination,source,0, (CFDictionaryRef) metadata);
+    
+    BOOL success = CGImageDestinationFinalize(destination); // write metadata into the data object
+	if(!success) {
+		NSLog(@"Error: could not finalize destination");
+		return NO;
+	}
+	
+	return [data writeToURL:url atomically:YES];	
 }
 
 - (void)setUserComment:(NSString *)comment {
@@ -82,41 +107,18 @@
 	[self didChangeValueForKey:@"userComment"];
 	
 	
-	
 	NSMutableDictionary *exifData = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
 	if(!exifData) {
 		exifData = [[NSMutableDictionary alloc] init];
 	}
 	[exifData setObject:userComment forKey:(NSString *)kCGImagePropertyExifUserComment];
-	
 	[metadata setObject:exifData forKey:(NSString *)kCGImagePropertyExifDictionary];
 	[exifData release];
 	
-	
-	
-	
-    NSMutableData *data = [NSMutableData data];
-    
-    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data,UTI,1,NULL);
-    if(!destination) {
-        NSLog(@"***Could not create image destination ***");
-        return;
-    }
-    
-    //add the image contained in the image source to the destination, overidding the old metadata with our modified metadata
-    CGImageDestinationAddImageFromSource(destination,source,0, (CFDictionaryRef) metadata);
-    
-    BOOL success = NO;
-    success = CGImageDestinationFinalize(destination); // write metadata into the data object
+	BOOL success = [self saveSourceWithMetadata];
 	if(!success) {
-		NSLog(@"can't finalize");
-		return;
+		NSLog(@"Error: can't set user comment");
 	}
-	
-	[data writeToURL:url atomically:YES];
-	
-	NSLog(@"P1: %@", metadata);
-	
 }
 
 - (void)setKeywords:(NSArray *)asciiKeywords {
@@ -132,17 +134,7 @@
 	keywords = [asciiKeywords retain];
 	[self didChangeValueForKey:@"keywords"];
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	NSMutableDictionary *iptcDict = [[self iptc] mutableCopy];
 	if(!iptcDict) {
@@ -153,41 +145,18 @@
 	[metadata setObject:iptcDict forKey:(NSString *)kCGImagePropertyIPTCDictionary];
 	[iptcDict release];
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-    NSMutableData *data = [NSMutableData data];
-    
-    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data,UTI,1,NULL);
-    if(!destination) {
-        NSLog(@"***Could not create image destination ***");
-        return;
-    }
-    
-    //add the image contained in the image source to the destination, overidding the old metadata with our modified metadata
-    CGImageDestinationAddImageFromSource(destination,source,0, (CFDictionaryRef) metadata);
-    
-    BOOL success = NO;
-    success = CGImageDestinationFinalize(destination); // write metadata into the data object
+	BOOL success = [self saveSourceWithMetadata];
 	if(!success) {
-		NSLog(@"can't finalize");
-		return;
+		NSLog(@"Error: can't set keywords");
 	}
-	
-	[data writeToURL:url atomically:YES];
-	
 }
 
 - (NSArray *)keywords {
-	return keywords;
+	return [[self iptc] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords];
+}
+
+- (NSString *)userComment {
+	return [[self exif] objectForKey:(NSString *)kCGImagePropertyExifUserComment];
 }
 
 - (NSString *)prettyGPS {
@@ -205,7 +174,7 @@
 }
 
 - (NSURL *)googleMapsURL {
-	NSDictionary *gps = [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
+	NSDictionary *gps = [self gps];
 	if(!gps) return nil;
 	
 	NSString *latitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
@@ -217,17 +186,12 @@
 	return [NSURL URLWithString:s];
 }
 
-- (NSString *)userComment {
-	return [[self exif] objectForKey:(NSString *)kCGImagePropertyExifUserComment];
-}
-
 - (NSString *)exifDateTime {
 	NSDictionary *exif = [metadata objectForKey:@"{Exif}"];
 	return [exif objectForKey:(NSString *)kCGImagePropertyExifDateTimeOriginal];
 }
 
 - (void)dealloc {
-	//NSLog(@"dealloc %@", self);
 	[path release];
 	[userComment release];
 	[keywords release];
