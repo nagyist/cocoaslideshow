@@ -4,8 +4,6 @@
 @interface CSSBitmapImageRep:NSBitmapImageRep {
 	NSString *path;
 	NSURL *url;
-	NSString *userComment;
-	NSArray *keywords;
 	CGImageSourceRef source;
 	NSMutableDictionary *metadata;
 }

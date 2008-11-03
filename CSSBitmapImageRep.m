@@ -12,10 +12,6 @@
 
 @implementation CSSBitmapImageRep
 
-+ (void)initialize {
-	[self exposeBinding:@"exif"];
-}
-
 /*
 - (id)init {
 	self = [super init];
@@ -48,10 +44,13 @@
 	path = aPath;
 	[path retain];
 	
-	url = [[NSURL fileURLWithPath:aPath] retain];
+	[url autorelease];
+	url = [NSURL fileURLWithPath:aPath];
+	[url retain];
+	
 	source = CGImageSourceCreateWithURL( (CFURLRef) url, NULL);
 	if (!source) {
-        NSLog(@"***Could not create image source ***");
+        NSLog(@"Error: could not create image source");
 		return;
     }
 	
@@ -59,29 +58,19 @@
 	[metadata autorelease];
     metadata = [immutableMetadata mutableCopy];
     [immutableMetadata release];
-	
-	[self willChangeValueForKey:@"userComment"];
-	[userComment autorelease];
-	userComment = [[[self exif] objectForKey:(NSString *)kCGImagePropertyExifUserComment] retain];
-	[self didChangeValueForKey:@"userComment"];
-	
-	[self willChangeValueForKey:@"keywords"];
-	[keywords autorelease];
-	keywords = [[[self iptc] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords] retain];
-	[self didChangeValueForKey:@"keywords"];
 }
 
 - (BOOL)saveSourceWithMetadata {
 	CFStringRef UTI = CGImageSourceGetType(source);
     NSMutableData *data = [NSMutableData data];
     
-    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data,UTI,1,NULL);
+    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data, UTI, 1, NULL);
     if(!destination) {
         NSLog(@"Error: could not create image destination");
         return NO;
     }
     
-    CGImageDestinationAddImageFromSource(destination,source,0, (CFDictionaryRef) metadata);
+    CGImageDestinationAddImageFromSource(destination, source, 0, (CFDictionaryRef)metadata);
     
     BOOL success = CGImageDestinationFinalize(destination); // write metadata into the data object
 	if(!success) {
@@ -92,26 +81,21 @@
 	return [data writeToURL:url atomically:YES];	
 }
 
-- (void)setUserComment:(NSString *)comment {
+- (BOOL)isJpeg {
 	CFStringRef UTI = CGImageSourceGetType(source); //this is the type of image (e.g., public.jpeg)
-	if(![(NSString *)UTI isEqualToString:@"public.jpeg"]) {
-		NSLog(@"bad UTI: %@", UTI);
+	return [(NSString *)UTI isEqualToString:@"public.jpeg"];
+}
+
+- (void)setUserComment:(NSString *)comment {
+	if(![self isJpeg]) {
 		return;
 	}
-	
-	NSLog(@"setUserComment %@", comment);
-	
-	[self willChangeValueForKey:@"userComment"];
-	[userComment autorelease];
-	userComment = [comment retain];
-	[self didChangeValueForKey:@"userComment"];
-	
 	
 	NSMutableDictionary *exifData = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
 	if(!exifData) {
 		exifData = [[NSMutableDictionary alloc] init];
 	}
-	[exifData setObject:userComment forKey:(NSString *)kCGImagePropertyExifUserComment];
+	[exifData setObject:comment forKey:(NSString *)kCGImagePropertyExifUserComment];
 	[metadata setObject:exifData forKey:(NSString *)kCGImagePropertyExifDictionary];
 	[exifData release];
 	
@@ -121,27 +105,16 @@
 	}
 }
 
-- (void)setKeywords:(NSArray *)asciiKeywords {
-	CFStringRef UTI = CGImageSourceGetType(source); //this is the type of image (e.g., public.jpeg)
-	if(![(NSString *)UTI isEqualToString:@"public.jpeg"]) {
-		NSLog(@"bad UTI: %@", UTI);
+- (void)setKeywords:(NSArray *)keywords {
+	if(![self isJpeg]) {
 		return;
 	}
 
-	NSLog(@"setKeywords %@", asciiKeywords);
-	[self willChangeValueForKey:@"keywords"];
-	[keywords autorelease];
-	keywords = [asciiKeywords retain];
-	[self didChangeValueForKey:@"keywords"];
-	
-		
-	
 	NSMutableDictionary *iptcDict = [[self iptc] mutableCopy];
 	if(!iptcDict) {
 		iptcDict = [[NSMutableDictionary alloc] init];
 	}
 	[iptcDict setObject:keywords forKey:(NSString *)kCGImagePropertyIPTCKeywords];
-	
 	[metadata setObject:iptcDict forKey:(NSString *)kCGImagePropertyIPTCDictionary];
 	[iptcDict release];
 	
@@ -193,8 +166,6 @@
 
 - (void)dealloc {
 	[path release];
-	[userComment release];
-	[keywords release];
 	[super dealloc];
 }
 
