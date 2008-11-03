@@ -460,18 +460,19 @@
  
     sourceDragMask = [sender draggingSourceOperationMask];
     pboard = [sender draggingPasteboard];
- 
+	
 	if ([[pboard types] containsObject:NSFilenamesPboardType]) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
 		
 		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
-		//NSLog(@"will add files");
+
+		NSLog(@"CocoaSlidesShow.m | performDragOperation | add files: %@", files);
 		[imagesController addFiles:files];
-		//NSLog(@"did add files");
+		
 		int numberOfImagesAfter = [[imagesController arrangedObjects] count];
 		if(numberOfImagesAfter > numberOfImagesBefore) {
 			[imagesController setSelectionIndex:numberOfImagesBefore];
-		}		
+		}
     }
     return YES;
 }

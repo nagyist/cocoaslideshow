@@ -50,14 +50,14 @@
 	
 	source = CGImageSourceCreateWithURL( (CFURLRef) url, NULL);
 	if (!source) {
-        NSLog(@"Error: could not create image source");
+		NSLog(@"Error: could not create image source");
 		return;
-    }
+	}
 	
-    NSDictionary *immutableMetadata = (NSDictionary *) CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
+	NSDictionary *immutableMetadata = (NSDictionary *) CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
 	[metadata autorelease];
-    metadata = [immutableMetadata mutableCopy];
-    [immutableMetadata release];
+	metadata = [immutableMetadata mutableCopy];
+	[immutableMetadata release];
 }
 
 - (BOOL)saveSourceWithMetadata {

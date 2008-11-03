@@ -89,10 +89,10 @@
 }
 
 - (void)addFiles:(NSArray *)filePaths {
-	//NSLog(@"-- addFiles: %@", filePaths);
+	NSLog(@"-- addFiles: %@", filePaths);
 	importDone = NO;
 	
-	CSSImageContainer *firstInsertedObject = nil;
+	//CSSImageContainer *firstInsertedObject = nil;
 
 	NSEnumerator *e = [filePaths objectEnumerator];
 	NSString *path;
@@ -105,42 +105,30 @@
 
 	NSMutableArray *containersToAdd = [[NSMutableArray alloc] init];
 	
-	NSArray *dirContent;
 	while(( path = [e nextObject] )) {
-		NSString *ext = [path pathExtension];
-		
-		dirContent = [[NSFileManager defaultManager] directoryContentFullPaths:path recursive:YES];
-		if(dirContent) {
+		if([[NSFileManager defaultManager] isDirectory:path]) {
+			NSArray *dirContent = [[NSFileManager defaultManager] directoryContentFullPaths:path recursive:YES];
 			[self addFiles:dirContent];
-		}
-		
-		if([path hasPrefix:@"."] || ![allowedExtensions containsObject:[ext lowercaseString]]) {
 			continue;
 		}
 		
-		CSSImageContainer *container = [[CSSImageContainer alloc] init];
-		[container setValue:path forKey:@"path"];
-		
-		if(firstInsertedObject == nil) {
-			firstInsertedObject = container;
+		if([path hasPrefix:@"."] || ![allowedExtensions containsObject:[[path pathExtension] lowercaseString]]) {
+			continue;
 		}
-		[containersToAdd addObject:container]; // TODO: don't add one by one but alltogether
-		[container release];
+
+		[containersToAdd addObject:[CSSImageContainer containerWithPath:path]];
 	}
 	
+	NSLog(@"-- containersToAdd: %@", containersToAdd);
 	[self addObjects:containersToAdd];
+	
 	[containersToAdd release];
 	
 	importDone = YES;
-	
-	/*
-	if(firstInsertedObject != nil) {
-		[self setSelectedObjects:[NSArray arrayWithObject:firstInsertedObject]];
-	}
-	*/
 }
 
 - (void)addDirFiles:(NSString *)dir {
+	NSLog(@"-- addDirFiles: %@", dir);
 	[self addFiles:[NSArray arrayWithObject:dir]];
 	[[[self undoManager] prepareWithInvocationTarget:self] remove:self];
 }
