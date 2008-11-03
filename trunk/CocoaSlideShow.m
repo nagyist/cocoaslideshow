@@ -466,7 +466,7 @@
 		
 		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
 
-		NSLog(@"CocoaSlidesShow.m | performDragOperation | add files: %@", files);
+		//NSLog(@"CocoaSlidesShow.m | performDragOperation | add files: %@", files);
 		[imagesController addFiles:files];
 		
 		int numberOfImagesAfter = [[imagesController arrangedObjects] count];

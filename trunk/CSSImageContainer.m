@@ -111,9 +111,9 @@
 }
 
 - (void)setPath:(NSString *)aPath {
-	NSLog(@"-- %@", aPath);
+	//NSLog(@"-- %@", aPath);
 	if(aPath == nil) {
-		NSLog(@"-- :-(");
+		NSLog(@"-- aPath is nil :-(");
 	}
 	if(aPath != nil && path != aPath) {
 		[path release];
