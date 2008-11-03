@@ -29,56 +29,48 @@
 }
 
 - (NSDictionary *)exif {
-	return [super valueForProperty:NSImageEXIFData];
+	return [metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary];
 }
 
-- (NSDictionary *)readProperties {
-	CGImageSourceRef source = CGImageSourceCreateWithURL ((CFURLRef)[NSURL fileURLWithPath:path], nil);
-	NSDictionary *p = (NSDictionary*) CGImageSourceCopyPropertiesAtIndex(source, 0, NULL);
-    CFRelease(source);
-	return p;
+- (NSDictionary *)iptc {
+	return [metadata objectForKey:(NSString *)kCGImagePropertyIPTCDictionary];
 }
 
-- (NSDictionary *)readGPS {
-	return [properties objectForKey:@"{GPS}"];
-}
 
-- (NSArray *)readKeywords {
-	return [[properties objectForKey:(NSString *)kCGImagePropertyIPTCDictionary] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords];
+- (NSDictionary *)gps {
+	return [metadata objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
 }
 
 - (void)setPath:(NSString *)aPath {
 	//NSLog(@"%@ setPath %@", self, aPath);
 	
-	[self willChangeValueForKey:@"path"];
-	[path autorelease];
-	path = [aPath retain];
-	[self didChangeValueForKey:@"path"];
-
-	[properties release];
-	properties = [self readProperties];
-	[properties retain];
+	url = [[NSURL fileURLWithPath:aPath] retain];
+	source = CGImageSourceCreateWithURL( (CFURLRef) url, NULL);
+	if (!source) {
+        NSLog(@"***Could not create image source ***");
+		return;
+    }
+	
+	//get all the metadata in the image
+    NSDictionary *immutableMetadata = (NSDictionary *) CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
+	//make the metadata dictionary mutable so we can add properties to it
+    metadata = [immutableMetadata mutableCopy];
+    [immutableMetadata release];
 	
 	[self willChangeValueForKey:@"userComment"];
-	userComment = [[[self exif] valueForKey:(NSString *)kCGImagePropertyExifUserComment] retain];
+	userComment = [[[self exif] objectForKey:(NSString *)kCGImagePropertyExifUserComment] retain];
 	[self didChangeValueForKey:@"userComment"];
 	
 	[self willChangeValueForKey:@"keywords"];
 	[keywords autorelease];
-	keywords = [[self readKeywords] retain];
+	keywords = [[[self iptc] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords] retain];
 	[self didChangeValueForKey:@"keywords"];
-	
-	[self willChangeValueForKey:@"gps"];
-	[gps autorelease];
-	gps = [[self readGPS] retain];
-	[self didChangeValueForKey:@"gps"];
-	
-	//NSLog(@"[self exif] %@", [self exif]);
-	//NSLog(@"keywords = %@", keywords);
 }
 
 - (void)setUserComment:(NSString *)comment {
-	if(![path pathIsJpeg]) {
+	CFStringRef UTI = CGImageSourceGetType(source); //this is the type of image (e.g., public.jpeg)
+	if(![(NSString *)UTI isEqualToString:@"public.jpeg"]) {
+		NSLog(@"bad UTI: %@", UTI);
 		return;
 	}
 	
@@ -88,24 +80,49 @@
 	[userComment autorelease];
 	userComment = [comment retain];
 	[self didChangeValueForKey:@"userComment"];
-		
-	NSMutableDictionary *exifData = [[self valueForProperty:NSImageEXIFData] mutableCopy];
+	
+	
+	
+	NSMutableDictionary *exifData = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
 	if(!exifData) {
 		exifData = [[NSMutableDictionary alloc] init];
 	}
-	[exifData setValue:userComment forKey:(NSString *)kCGImagePropertyExifUserComment];
+	[exifData setObject:userComment forKey:(NSString *)kCGImagePropertyExifUserComment];
 	
-	NSData *data = [self representationUsingType:NSJPEGFileType properties:[NSDictionary dictionaryWithObject:exifData forKey:NSImageEXIFData]];
+	[metadata setObject:exifData forKey:(NSString *)kCGImagePropertyExifDictionary];
 	[exifData release];
-	[data writeToFile:path atomically:YES];
 	
-	[properties autorelease];
-	properties = [self readProperties];
-	[properties retain];
+	
+	
+	
+    NSMutableData *data = [NSMutableData data];
+    
+    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data,UTI,1,NULL);
+    if(!destination) {
+        NSLog(@"***Could not create image destination ***");
+        return;
+    }
+    
+    //add the image contained in the image source to the destination, overidding the old metadata with our modified metadata
+    CGImageDestinationAddImageFromSource(destination,source,0, (CFDictionaryRef) metadata);
+    
+    BOOL success = NO;
+    success = CGImageDestinationFinalize(destination); // write metadata into the data object
+	if(!success) {
+		NSLog(@"can't finalize");
+		return;
+	}
+	
+	[data writeToURL:url atomically:YES];
+	
+	NSLog(@"P1: %@", metadata);
+	
 }
 
 - (void)setKeywords:(NSArray *)asciiKeywords {
-	if(![path pathIsJpeg]) {
+	CFStringRef UTI = CGImageSourceGetType(source); //this is the type of image (e.g., public.jpeg)
+	if(![(NSString *)UTI isEqualToString:@"public.jpeg"]) {
+		NSLog(@"bad UTI: %@", UTI);
 		return;
 	}
 
@@ -115,40 +132,72 @@
 	keywords = [asciiKeywords retain];
 	[self didChangeValueForKey:@"keywords"];
 	
-	NSMutableDictionary *iptcDictionary = [NSDictionary dictionaryWithObject:asciiKeywords forKey:(NSString *)kCGImagePropertyIPTCKeywords];
-	NSDictionary *newImageProperties = [NSDictionary dictionaryWithObject:iptcDictionary forKey:(NSString *)kCGImagePropertyIPTCDictionary];
-
-	NSMutableData *newImageFileData = [[NSMutableData alloc] init];
-	CGImageSourceRef imageSource = CGImageSourceCreateWithURL ((CFURLRef)[NSURL fileURLWithPath:path], nil);
-	CGImageDestinationRef imageDestination = CGImageDestinationCreateWithData((CFMutableDataRef)newImageFileData, CGImageSourceGetType(imageSource), 1, NULL);
-
-	CGImageDestinationAddImageFromSource(imageDestination, imageSource, 0, (CFDictionaryRef) newImageProperties);
-
-    if (CGImageDestinationFinalize(imageDestination))
-        [newImageFileData writeToFile:path atomically:YES];
-
-    CFRelease(imageDestination);
-    CFRelease(imageSource);
-    [newImageFileData release];
 	
-	[properties autorelease];
-	properties = [self readProperties];
-	[properties retain];
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	NSMutableDictionary *iptcDict = [[self iptc] mutableCopy];
+	if(!iptcDict) {
+		iptcDict = [[NSMutableDictionary alloc] init];
+	}
+	[iptcDict setObject:keywords forKey:(NSString *)kCGImagePropertyIPTCKeywords];
+	
+	[metadata setObject:iptcDict forKey:(NSString *)kCGImagePropertyIPTCDictionary];
+	[iptcDict release];
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    NSMutableData *data = [NSMutableData data];
+    
+    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data,UTI,1,NULL);
+    if(!destination) {
+        NSLog(@"***Could not create image destination ***");
+        return;
+    }
+    
+    //add the image contained in the image source to the destination, overidding the old metadata with our modified metadata
+    CGImageDestinationAddImageFromSource(destination,source,0, (CFDictionaryRef) metadata);
+    
+    BOOL success = NO;
+    success = CGImageDestinationFinalize(destination); // write metadata into the data object
+	if(!success) {
+		NSLog(@"can't finalize");
+		return;
+	}
+	
+	[data writeToURL:url atomically:YES];
+	
 }
 
 - (NSArray *)keywords {
 	return keywords;
 }
 
-- (NSDictionary *)gps {
-	return gps;
-}
-
 - (NSString *)prettyGPS {
-	NSString *latitude = [gps objectForKey:@"Latitude"];
-	NSString *longitude = [gps objectForKey:@"Longitude"];
-	NSString *latitudeRef = [gps objectForKey:@"LatitudeRef"];
-	NSString *longitudeRef = [gps objectForKey:@"LongitudeRef"];
+	NSDictionary *gps = [metadata objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
+	if(!gps) return nil;
+	
+	NSString *latitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
+	NSString *longitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitude];
+	NSString *latitudeRef = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitudeRef];
+	NSString *longitudeRef = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitudeRef];
 	
 	if(!latitude || !longitude || !latitudeRef || !longitudeRef) return nil;
 	
@@ -156,9 +205,12 @@
 }
 
 - (NSURL *)googleMapsURL {
-	NSString *latitude = [gps objectForKey:@"Latitude"];
-	NSString *longitude = [gps objectForKey:@"Longitude"];
-
+	NSDictionary *gps = [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
+	if(!gps) return nil;
+	
+	NSString *latitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
+	NSString *longitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitude];
+	
 	if(!latitude || !longitude) return nil;
 	
 	NSString *s = [NSString stringWithFormat:@"http://maps.google.com/?q=%@,%@", latitude, longitude];
@@ -166,33 +218,25 @@
 }
 
 - (NSString *)userComment {
-	return userComment;
+	return [[self exif] objectForKey:(NSString *)kCGImagePropertyExifUserComment];
 }
 
-- (id)valueForKeyPath:(NSString *)keyPath {
-	if([keyPath hasPrefix:@"exif."]) {	
-		NSArray *fullPathComponents = [keyPath componentsSeparatedByString: @"."];
-		NSArray *shortPathComponents = [fullPathComponents subarrayWithRange:NSMakeRange(1, [fullPathComponents count] - 1)];
-		NSString *exifPath = [shortPathComponents componentsJoinedByString:@"."];
-		return [[super valueForProperty:NSImageEXIFData] valueForKeyPath:exifPath];
-	} else {
-		return [super valueForKeyPath:keyPath];
-	}
+- (NSString *)exifDateTime {
+	NSDictionary *exif = [metadata objectForKey:@"{Exif}"];
+	return [exif objectForKey:(NSString *)kCGImagePropertyExifDateTimeOriginal];
 }
 
 - (void)dealloc {
 	//NSLog(@"dealloc %@", self);
 	[path release];
 	[userComment release];
-	[gps release];
-	[properties release];
 	[keywords release];
 	[super dealloc];
 }
 
 - (NSString *)prettyImageSize {
-	NSString *x = [self valueForKeyPath:@"exif.PixelXDimension"];
-	NSString *y = [self valueForKeyPath:@"exif.PixelYDimension"];
+	NSString *x = [[self exif] objectForKey:(NSString *)kCGImagePropertyExifPixelXDimension];
+	NSString *y = [[self exif] objectForKey:(NSString *)kCGImagePropertyExifPixelYDimension];
 	if(x && y) {
 		return [NSString stringWithFormat:@"%@x%@", x, y];
 	}

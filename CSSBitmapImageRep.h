@@ -3,10 +3,11 @@
 
 @interface CSSBitmapImageRep:NSBitmapImageRep {
 	NSString *path;
+	NSURL *url;
 	NSString *userComment;
 	NSArray *keywords;
-	NSDictionary *gps;
-	NSDictionary *properties;
+	CGImageSourceRef source;
+	NSMutableDictionary *metadata;
 }
 
 - (NSImage *)image;
@@ -19,8 +20,6 @@
 
 - (void)setKeywords:(NSArray *)keywords;
 - (NSArray *)keywords;
-
-- (NSDictionary *)gps;
 
 - (NSString *)prettyImageSize;
 
