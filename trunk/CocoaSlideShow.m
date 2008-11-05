@@ -14,6 +14,8 @@
 	isFullScreen = NO;
 	takeFilesFromDefault = YES;
 	
+	isMap = YES;
+	
 	undoManager = [[NSUndoManager alloc] init];
 	[undoManager setLevelsOfUndo:10];
 	
@@ -70,7 +72,15 @@
 		NSLog(@"error: %@", [error description]);
 	}
 	
-	[htmlString replaceOccurrencesOfString:@"__MARKERS__" withString:markers options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];	
+	NSRect frame = [[[webView mainFrame] frameView] frame];
+	NSString *width = [NSString stringWithFormat:@"%d", (int)frame.size.width - 17];
+	NSString *height = [NSString stringWithFormat:@"%d", (int)frame.size.height - 17];
+	
+	[htmlString replaceOccurrencesOfString:@"__WIDTH__" withString:width options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];
+	[htmlString replaceOccurrencesOfString:@"__HEIGHT__" withString:height options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];
+	
+	[htmlString replaceOccurrencesOfString:@"__MARKERS__" withString:markers options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];
+	
 	[[webView mainFrame] loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://maps.google.com"]];
 	return nil;
 }
