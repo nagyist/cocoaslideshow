@@ -35,6 +35,7 @@
 		037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */; };
 		03A122E30EC224F60076DF63 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A122E20EC224F60076DF63 /* MyImageView.m */; };
 		03A126B10EC2496C0076DF63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A126B00EC2496C0076DF63 /* WebKit.framework */; };
+		03A127EB0EC252140076DF63 /* gmap.html in Resources */ = {isa = PBXBuildFile; fileRef = 03A127EA0EC252140076DF63 /* gmap.html */; };
 		03A305CF0C7DE4F0009AD69D /* CSSBitmapImageRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */; };
 		03A3F4410C77D97E009AD69D /* MyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A3F4400C77D97E009AD69D /* MyWindow.m */; };
 		03A3F55C0C786878009AD69D /* CocoaSlideShow.icns in Resources */ = {isa = PBXBuildFile; fileRef = 03A3F55B0C786878009AD69D /* CocoaSlideShow.icns */; };
@@ -84,6 +85,7 @@
 		03A122E10EC224F60076DF63 /* MyImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageView.h; sourceTree = "<group>"; };
 		03A122E20EC224F60076DF63 /* MyImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImageView.m; sourceTree = "<group>"; };
 		03A126B00EC2496C0076DF63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		03A127EA0EC252140076DF63 /* gmap.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gmap.html; sourceTree = "<group>"; };
 		03A305CD0C7DE4F0009AD69D /* CSSBitmapImageRep.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSSBitmapImageRep.h; sourceTree = "<group>"; };
 		03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSSBitmapImageRep.m; sourceTree = "<group>"; };
 		03A3F43F0C77D97E009AD69D /* MyWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MyWindow.h; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				03A127EA0EC252140076DF63 /* gmap.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				03677BA50E3A45C600524B59 /* folder.png in Resources */,
 				03677BA60E3A45C600524B59 /* add.png in Resources */,
 				034FC8780EBFB09C00BE42CA /* gmap.png in Resources */,
+				03A127EB0EC252140076DF63 /* gmap.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

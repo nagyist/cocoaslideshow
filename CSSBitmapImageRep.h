@@ -22,5 +22,6 @@
 - (NSString *)prettyImageSize;
 
 - (NSURL *)googleMapsURL;
+- (NSString *)gmapMarkerWithIndex:(int)i;
 
 @end

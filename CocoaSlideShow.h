@@ -58,4 +58,6 @@
 - (IBAction)startSlideShow:(id)sender;
 - (IBAction)toggleSlideShow:(id)sender;
 
+- (IBOutlet)displayGoogleMapForSelection:(id)sender;
+
 @end
