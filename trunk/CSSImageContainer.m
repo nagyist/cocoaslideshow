@@ -37,12 +37,12 @@
 	}
 }
 
-- (CSSBitmapImageRep *)bitmap {	
-	BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
+- (CSSBitmapImageRep *)bitmap {
+	//BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
-
-	if(!importDone || (multipleImagesSelected && !isSaving) ) {
+	
+	if(/*!importDone || */(multipleImagesSelected && !isSaving) ) {
 		return nil;
 	}
 

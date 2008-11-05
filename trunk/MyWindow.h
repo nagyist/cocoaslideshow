@@ -8,6 +8,4 @@
 	IBOutlet ImagesController *imagesController;
 }
 
--(void) setDelegate: (id) del;
-
 @end

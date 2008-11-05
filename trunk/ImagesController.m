@@ -6,6 +6,13 @@
 
 - (void)awakeFromNib {
 	inMemoryBitmapsContainers = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
+
+	allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"jpe", @"tif", @"tiff", @"gif", @"png", @"pct", @"pict", @"pic",
+								  //@"pdf", @"eps", @"epi", @"epsf", @"epsi", @"ps",
+								  @"ico", @"icns",  @"bmp", @"bmpf",
+								  @"dng", @"cr2", @"crw", @"fpx", @"fpix", @"raf", @"dcr", @"ptng", @"pnt", @"mac", @"mrw", @"nef",
+								  @"orf", @"exr", @"psd", @"qti", @"qtif", @"hdr", @"sgi", @"srf", @"targa", @"tga", @"cur", @"xbm", nil];
+	[allowedExtensions retain];	
 }
 
 - (void)dealloc {
@@ -88,22 +95,21 @@
 	return [paths containsObject:path];
 }
 
+- (BOOL)extensionIsAllowed:(NSString *)path {
+	return [allowedExtensions containsObject:[[path pathExtension] lowercaseString]];
+}
+
 - (void)addFiles:(NSArray *)filePaths {
 	//NSLog(@"-- addFiles: %@", filePaths);
-	importDone = NO;
+	//importDone = NO;
 	
 	//CSSImageContainer *firstInsertedObject = nil;
 
 	NSEnumerator *e = [filePaths objectEnumerator];
 	NSString *path;
    // http://developer.apple.com/documentation/Cocoa/Conceptual/CocoaDrawingGuide/Images/chapter_7_section_3.html
-	NSArray *allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"jpe", @"tif", @"tiff", @"gif", @"png", @"pct", @"pict", @"pic",
-	                                                       //@"pdf", @"eps", @"epi", @"epsf", @"epsi", @"ps",
-														   @"ico", @"icns",  @"bmp", @"bmpf",
-														   @"dng", @"cr2", @"crw", @"fpx", @"fpix", @"raf", @"dcr", @"ptng", @"pnt", @"mac", @"mrw", @"nef",
-														   @"orf", @"exr", @"psd", @"qti", @"qtif", @"hdr", @"sgi", @"srf", @"targa", @"tga", @"cur", @"xbm", nil];
 
-	NSMutableArray *containersToAdd = [[NSMutableArray alloc] init];
+	//NSMutableArray *containersToAdd = [[NSMutableArray alloc] init];
 	
 	while(( path = [e nextObject] )) {
 		if([[NSFileManager defaultManager] isDirectory:path]) {
@@ -112,19 +118,18 @@
 			continue;
 		}
 		
-		if([path hasPrefix:@"."] || ![allowedExtensions containsObject:[[path pathExtension] lowercaseString]]) {
+		if([path hasPrefix:@"."] || ![self extensionIsAllowed:path]) {
 			continue;
 		}
 
-		[containersToAdd addObject:[CSSImageContainer containerWithPath:path]];
+		[self addObject:[CSSImageContainer containerWithPath:path]];
 	}
 	
 	//NSLog(@"-- containersToAdd: %@", containersToAdd);
-	[self addObjects:containersToAdd];
+	//[self addObjects:containersToAdd];
+	//[containersToAdd release];
 	
-	[containersToAdd release];
-	
-	importDone = YES;
+	//importDone = YES;
 }
 
 - (void)addDirFiles:(NSString *)dir {
@@ -162,6 +167,35 @@
 	return [ma autorelease];
 }
 */
+
+
+- (BOOL)atLeastOneImageWithGPSSelected {
+	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];
+	int i = 0;
+	for(i = 0; i < [a count]; i++) {
+		if([[a objectAtIndex:i] isKindOfClass:[NSDictionary class]]) {
+			return YES;
+		}
+	}
+	
+	return NO;
+}
+
+
+- (NSArray *)selectedObjectsWithGPS {
+	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];
+	NSMutableArray *aa = [[NSMutableArray alloc] initWithCapacity:[a count]];
+	
+	NSEnumerator *e = [a objectEnumerator];
+	id o;
+	while(( o = [e nextObject] )) {
+		if([o isKindOfClass:[NSDictionary class]]) {
+			[aa addObject:o];
+		}
+	}
+	
+	return [aa autorelease];
+}
 
 - (IBAction)openGoogleMap:(id)sender {
 	if(![[self selectedObjects] count]) return;

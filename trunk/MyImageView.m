@@ -11,6 +11,7 @@
 }
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
+	//NSLog(@"%s", __FUNCTION__);
 	if ([delegate respondsToSelector: @selector(draggingEntered:)]) {
 		return [delegate draggingEntered:sender];
 	}
@@ -18,6 +19,7 @@
 }
 
 - (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender {
+	//NSLog(@"%s", __FUNCTION__);
 	if ([delegate respondsToSelector: @selector(prepareForDragOperation:)]) {
 		return [delegate prepareForDragOperation:sender];
 	}
@@ -25,6 +27,7 @@
 }
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
+	//NSLog(@"%s", __FUNCTION__);
 	if ([delegate respondsToSelector: @selector(performDragOperation:)]) {
 		return [delegate performDragOperation:sender];
 	}
