@@ -12,6 +12,7 @@
 	BOOL importDone;
 	unsigned inMemoryBitmapsNextIndex;
 	NSMutableArray *inMemoryBitmapsContainers;
+	NSArray *allowedExtensions;
 }
 
 - (NSUndoManager *)undoManager;
@@ -32,6 +33,8 @@
 - (void)addDirFiles:(NSString *)dir;
 - (void)retainOnlyAFewImagesAndReleaseTheRest;
 //- (NSArray *)flagged;
+- (NSArray *)selectedObjectsWithGPS;
+- (BOOL)atLeastOneImageWithGPSSelected;
 - (IBAction)openGoogleMap:(id)sender;
 
 @end

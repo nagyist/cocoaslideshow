@@ -127,7 +127,7 @@
 	[flagHeaderImageCell setImage:flagHeaderImage];
 	[flagColumn setHeaderCell:flagHeaderImageCell];
 	
-	[imageView setDelegate:self];
+	//[imageView setDelegate:self];
 	[mainWindow setDelegate:self];
 
 	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -447,14 +447,17 @@
 #pragma mark NSDraggingDestination
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
+	//NSLog(@"%s", __FUNCTION__);
 	return NSDragOperationLink;
 }
 
 - (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender {
+	//NSLog(@"%s", __FUNCTION__);
 	return YES;
 }
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
+	//NSLog(@"%s", __FUNCTION__);
     NSPasteboard *pboard;
     NSDragOperation sourceDragMask;
  
@@ -463,7 +466,7 @@
 	
 	if ([[pboard types] containsObject:NSFilenamesPboardType]) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
-		
+
 		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
 
 		//NSLog(@"CocoaSlidesShow.m | performDragOperation | add files: %@", files);

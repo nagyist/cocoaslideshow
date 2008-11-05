@@ -10,6 +10,7 @@
 
 #define kAlwaysSelected 0
 #define kSelectedIfAtLeadOneImageSelected 1
+#define kSelectedIfAtLeastOneGPSImageSelected 2
 
 @implementation CocoaSlideShow (Toolbar)
 
@@ -89,14 +90,21 @@
 		[item setTag:kSelectedIfAtLeadOneImageSelected];
         [item setTarget:self];
 		[item setAction:@selector(moveToTrash:)];
-    }
-	
+	} else if ([itemIdentifier isEqualToString:@"gmap"]) {
+        [item setLabel:NSLocalizedString(@"Google Map", @"Toolbar item")];
+        [item setPaletteLabel:NSLocalizedString(@"Google Map", @"Toolbar customize")];
+        [item setToolTip:NSLocalizedString(@"Google Map", @"Toolbar tooltip")];
+        [item setImage:[NSImage imageNamed:@"gmap.png"]];
+		[item setTag:kSelectedIfAtLeastOneGPSImageSelected];
+        [item setTarget:self];
+		[item setAction:@selector(openGoogleMap:)];
+    }	
     return [item autorelease];
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar {
     return [NSArray arrayWithObjects:@"setDirectory", @"addFiles",
-			NSToolbarSeparatorItemIdentifier, @"flag", @"fullScreen", @"slideShow", @"rotateLeft", @"rotateRight", @"remove",
+			NSToolbarSeparatorItemIdentifier, @"flag", @"fullScreen", @"slideShow", @"gmap", @"rotateLeft", @"rotateRight", @"remove",
 			NSToolbarFlexibleSpaceItemIdentifier, @"trash", nil];
 }
 
@@ -110,7 +118,16 @@
 }
 
 - (BOOL)validateToolbarItem:(NSToolbarItem *)theItem {
-	return ([theItem tag] == kAlwaysSelected) || (([theItem tag] == kSelectedIfAtLeadOneImageSelected) && [[imagesController selectedObjects] count]);
+	//NSLog(@"-- %@", [theItem label]);
+	if([theItem tag] == kAlwaysSelected) {
+		return YES;
+	} else if ([theItem tag] == kSelectedIfAtLeadOneImageSelected) {
+		return [[imagesController selectedObjects] count];
+	} else if ([theItem tag] == kSelectedIfAtLeastOneGPSImageSelected) {
+		//return [[imagesController selectedObjectsWithGPS] count];
+		return [imagesController atLeastOneImageWithGPSSelected];
+	}
+	return NO;
 }
 
 - (void)toggleFlags:(id)sender {
@@ -123,6 +140,10 @@
 
 - (void)moveToTrash:(id)sender {
 	[imagesController moveToTrash:sender];
+}
+
+- (void)openGoogleMap:(id)sender {
+	[imagesController openGoogleMap:sender];
 }
 
 @end

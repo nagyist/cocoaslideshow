@@ -32,7 +32,6 @@
 	return [metadata objectForKey:(NSString *)kCGImagePropertyIPTCDictionary];
 }
 
-
 - (NSDictionary *)gps {
 	return [metadata objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
 }

@@ -27,6 +27,8 @@
 	IBOutlet NSTableView *tableView;
 	IBOutlet NSTokenField *keywordsTokenField;
 	
+	IBOutlet WebView *webView;
+	
 	NSToolbar *toolbar;
 	
 	RemoteControl *remoteControl;
