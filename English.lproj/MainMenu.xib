@@ -9,7 +9,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="245"/>
-			<integer value="914"/>
+			<integer value="916"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -601,13 +601,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 										<object class="NSTabViewItem" id="71982290">
 											<string key="NSIdentifier">1</string>
 											<object class="NSView" key="NSView" id="748582277">
-												<nil key="NSNextResponder"/>
+												<reference key="NSNextResponder" ref="705611117"/>
 												<int key="NSvFlags">274</int>
 												<object class="NSMutableArray" key="NSSubviews">
 													<bool key="EncodedWithXMLCoder">YES</bool>
 													<object class="NSImageView" id="505970529">
 														<reference key="NSNextResponder" ref="748582277"/>
-														<int key="NSvFlags">268</int>
+														<int key="NSvFlags">274</int>
 														<object class="NSMutableSet" key="NSDragTypes">
 															<bool key="EncodedWithXMLCoder">YES</bool>
 															<object class="NSMutableArray" key="set.sortedObjects">
@@ -635,6 +635,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 													</object>
 												</object>
 												<string key="NSFrame">{{10, 33}, {552, 354}}</string>
+												<reference key="NSSuperview" ref="705611117"/>
 											</object>
 											<string key="NSLabel">Image</string>
 											<reference key="NSColor" ref="334539385"/>
@@ -643,24 +644,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 										<object class="NSTabViewItem" id="1063074501">
 											<string key="NSIdentifier">2</string>
 											<object class="NSView" key="NSView" id="403829393">
-												<reference key="NSNextResponder" ref="705611117"/>
+												<nil key="NSNextResponder"/>
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{10, 33}, {552, 354}}</string>
-												<reference key="NSSuperview" ref="705611117"/>
 											</object>
 											<string key="NSLabel">Map</string>
 											<reference key="NSColor" ref="334539385"/>
 											<reference key="NSTabView" ref="705611117"/>
 										</object>
 									</object>
-									<reference key="NSSelectedTabViewItem" ref="1063074501"/>
+									<reference key="NSSelectedTabViewItem" ref="71982290"/>
 									<reference key="NSFont" ref="910942605"/>
 									<int key="NSTvFlags">0</int>
 									<bool key="NSAllowTruncatedLabels">YES</bool>
 									<bool key="NSDrawsBackground">YES</bool>
 									<object class="NSMutableArray" key="NSSubviews">
 										<bool key="EncodedWithXMLCoder">YES</bool>
-										<reference ref="403829393"/>
+										<reference ref="748582277"/>
 									</object>
 								</object>
 							</object>

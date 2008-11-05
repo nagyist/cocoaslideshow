@@ -41,8 +41,9 @@
 	//BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
+	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
 	
-	if(isSaving) {
+	if(isSaving || (multipleImagesSelected && !isMap)) {
 		return nil;
 	}
 

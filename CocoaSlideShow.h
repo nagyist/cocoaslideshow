@@ -37,7 +37,7 @@
 
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
-	
+	BOOL isMap;
 	BOOL isSaving;
 }
 
