@@ -8,7 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="916"/>
+			<integer value="245"/>
+			<integer value="914"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -600,7 +601,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 										<object class="NSTabViewItem" id="71982290">
 											<string key="NSIdentifier">1</string>
 											<object class="NSView" key="NSView" id="748582277">
-												<reference key="NSNextResponder" ref="705611117"/>
+												<nil key="NSNextResponder"/>
 												<int key="NSvFlags">274</int>
 												<object class="NSMutableArray" key="NSSubviews">
 													<bool key="EncodedWithXMLCoder">YES</bool>
@@ -634,7 +635,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 													</object>
 												</object>
 												<string key="NSFrame">{{10, 33}, {552, 354}}</string>
-												<reference key="NSSuperview" ref="705611117"/>
 											</object>
 											<string key="NSLabel">Image</string>
 											<reference key="NSColor" ref="334539385"/>
@@ -643,23 +643,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 										<object class="NSTabViewItem" id="1063074501">
 											<string key="NSIdentifier">2</string>
 											<object class="NSView" key="NSView" id="403829393">
-												<nil key="NSNextResponder"/>
+												<reference key="NSNextResponder" ref="705611117"/>
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{10, 33}, {552, 354}}</string>
+												<reference key="NSSuperview" ref="705611117"/>
 											</object>
 											<string key="NSLabel">Map</string>
 											<reference key="NSColor" ref="334539385"/>
 											<reference key="NSTabView" ref="705611117"/>
 										</object>
 									</object>
-									<reference key="NSSelectedTabViewItem" ref="71982290"/>
+									<reference key="NSSelectedTabViewItem" ref="1063074501"/>
 									<reference key="NSFont" ref="910942605"/>
 									<int key="NSTvFlags">0</int>
 									<bool key="NSAllowTruncatedLabels">YES</bool>
 									<bool key="NSDrawsBackground">YES</bool>
 									<object class="NSMutableArray" key="NSSubviews">
 										<bool key="EncodedWithXMLCoder">YES</bool>
-										<reference ref="748582277"/>
+										<reference ref="403829393"/>
 									</object>
 								</object>
 							</object>
@@ -1362,7 +1363,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="721645386">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1396,6 +1397,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						</object>
 					</object>
 					<string key="NSFrameSize">{640, 480}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
@@ -2513,7 +2515,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<reference key="source" ref="166783046"/>
 						<reference key="destination" ref="403829393"/>
 					</object>
-					<int key="connectionID">949</int>
+					<int key="connectionID">951</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3915,7 +3917,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">949</int>
+			<int key="maxID">951</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

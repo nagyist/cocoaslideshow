@@ -42,7 +42,7 @@
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
 	
-	if(/*!importDone || */(multipleImagesSelected && !isSaving) ) {
+	if(isSaving) {
 		return nil;
 	}
 

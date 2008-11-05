@@ -97,7 +97,9 @@
         [item setImage:[NSImage imageNamed:@"gmap.png"]];
 		[item setTag:kSelectedIfAtLeastOneGPSImageSelected];
         [item setTarget:self];
-		[item setAction:@selector(openGoogleMap:)];
+		//[item setAction:@selector(openGoogleMap:)];
+		[item setAction:@selector(displayGoogleMapForSelection:)];
+	
     }	
     return [item autorelease];
 }
@@ -125,7 +127,7 @@
 		return [[imagesController selectedObjects] count];
 	} else if ([theItem tag] == kSelectedIfAtLeastOneGPSImageSelected) {
 		//return [[imagesController selectedObjectsWithGPS] count];
-		return [imagesController atLeastOneImageWithGPSSelected];
+		return YES;//[imagesController atLeastOneImageWithGPSSelected];
 	}
 	return NO;
 }

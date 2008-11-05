@@ -132,7 +132,7 @@
 }
 
 - (NSString *)prettyGPS {
-	NSDictionary *gps = [metadata objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
+	NSDictionary *gps = [self gps];
 	if(!gps) return nil;
 	
 	NSString *latitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
@@ -156,6 +156,20 @@
 	
 	NSString *s = [NSString stringWithFormat:@"http://maps.google.com/?q=%@,%@", latitude, longitude];
 	return [NSURL URLWithString:s];
+}
+
+- (NSString *)gmapMarkerWithIndex:(int)i {
+	NSDictionary *gps = [self gps];
+	if(!gps) return @"";
+	NSString *marker = [NSString stringWithFormat:@"marker%d", i];
+	NSNumber *latitude = [gps objectForKey:@"Latitude"];
+	NSNumber *longitude = [gps objectForKey:@"Longitude"];
+	
+	return [NSString stringWithFormat:@"\nvar %@ = new GMarker(new GLatLng(%@,%@), {title: \"test\"});\n \
+			map.addOverlay(%@);\n \
+			GEvent.addListener(%@, \"click\", function() { %@.openInfoWindowHtml(\"xxx\") });\n \
+			bounds.extend(%@.getLatLng());\n\n",
+			marker, latitude, longitude, marker, marker, marker, marker];
 }
 
 - (NSString *)exifDateTime {

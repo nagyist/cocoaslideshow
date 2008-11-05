@@ -37,6 +37,63 @@
 	return undoManager;
 }
 
+
+- (IBOutlet)displayGoogleMapForSelection:(id)sender {
+	
+	NSMutableString *markers = [[NSMutableString alloc] init];
+	
+	int count = 1;
+	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
+	CSSImageContainer *cssImageContainer = nil;
+	CSSBitmapImageRep *b = nil;
+	NSString *s;
+	while((cssImageContainer = [e nextObject])) {
+		NSLog(@" marker %d", count);
+		b = [cssImageContainer bitmap];
+		NSLog(@"b: %d", b != nil);
+		s = [b gmapMarkerWithIndex:count];
+		if(s) {
+			[markers appendString:s];
+			count++;
+		} else {
+			NSLog(@"no marker");
+		}
+	}
+	
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gmap" ofType:@"html"];
+	
+	NSError *error = nil;
+	NSStringEncoding encoding = NSUTF8StringEncoding;
+	
+	NSMutableString *htmlString = [NSMutableString stringWithContentsOfFile:filePath usedEncoding:&encoding error:&error];
+	if(error) {
+		NSLog(@"error: %@", [error description]);
+	}
+	
+	[htmlString replaceOccurrencesOfString:@"__MARKERS__" withString:markers options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];	
+	[[webView mainFrame] loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://maps.google.com"]];
+	return nil;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - (NSImage *)rotateIndividualImage:(NSImage *)image clockwise:(BOOL)clockwise {
 	// from http://swik.net/User:marc/Chipmunk+Ninja+Technical+Articles/Rotating+an+NSImage+object+in+Cocoa/zgha
 	// TODO (NST) remember the rotation angle in the same session
@@ -141,6 +198,11 @@
 												 styleMask:NSBorderlessWindowMask
 												   backing:NSBackingStoreBuffered
 													 defer:NO screen:[NSScreen mainScreen]];
+	
+	
+	[self displayGoogleMapForSelection:self];
+	
+	
 	
 }
 
