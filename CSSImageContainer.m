@@ -48,8 +48,10 @@
 	}
 
 	if(bitmap != nil) {
+		//NSLog(@"return bitmap");
 		return bitmap;
 	}
+	NSLog(@"read and return bitmap");
 
 	NSData *data = [NSData dataWithContentsOfFile:path];
 	[self setValue:[[[CSSBitmapImageRep alloc] initWithData:data] autorelease] forKey:@"bitmap"];

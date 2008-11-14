@@ -96,7 +96,7 @@
         [item setToolTip:NSLocalizedString(@"Google Map", @"Toolbar tooltip")];
         [item setImage:[NSImage imageNamed:@"gmap.png"]];
 		[item setTag:kSelectedIfAtLeastOneGPSImageSelected];
-        [item setTarget:self];
+        [item setTarget:mapController];
 		//[item setAction:@selector(openGoogleMap:)];
 		[item setAction:@selector(displayGoogleMapForSelection:)];
 	
@@ -126,8 +126,7 @@
 	} else if ([theItem tag] == kSelectedIfAtLeadOneImageSelected) {
 		return [[imagesController selectedObjects] count];
 	} else if ([theItem tag] == kSelectedIfAtLeastOneGPSImageSelected) {
-		//return [[imagesController selectedObjectsWithGPS] count];
-		return YES;//[imagesController atLeastOneImageWithGPSSelected];
+		return YES;
 	}
 	return NO;
 }

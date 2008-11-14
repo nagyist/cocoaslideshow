@@ -33,6 +33,7 @@
 		037D95D10DCDD89C00E8DEB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037D95CF0DCDD89C00E8DEB7 /* MainMenu.xib */; };
 		037D95D40DCDD8BB00E8DEB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */; };
 		037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */; };
+		039B5A590ECE281600D7C02C /* CSSMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039B5A580ECE281600D7C02C /* CSSMapController.m */; };
 		03A122E30EC224F60076DF63 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A122E20EC224F60076DF63 /* MyImageView.m */; };
 		03A126B10EC2496C0076DF63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A126B00EC2496C0076DF63 /* WebKit.framework */; };
 		03A127EB0EC252140076DF63 /* gmap.html in Resources */ = {isa = PBXBuildFile; fileRef = 03A127EA0EC252140076DF63 /* gmap.html */; };
@@ -82,6 +83,8 @@
 		037D95D30DCDD8BB00E8DEB7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		037D96170DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CocoaSlideShow+Toolbar.h"; sourceTree = "<group>"; };
 		037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CocoaSlideShow+Toolbar.m"; sourceTree = "<group>"; };
+		039B5A570ECE281600D7C02C /* CSSMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapController.h; sourceTree = "<group>"; };
+		039B5A580ECE281600D7C02C /* CSSMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSMapController.m; sourceTree = "<group>"; };
 		03A122E10EC224F60076DF63 /* MyImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageView.h; sourceTree = "<group>"; };
 		03A122E20EC224F60076DF63 /* MyImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImageView.m; sourceTree = "<group>"; };
 		03A126B00EC2496C0076DF63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
@@ -157,6 +160,8 @@
 				03B1BB100C5173B40032C03F /* CocoaSlideShow.m */,
 				037D96170DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.h */,
 				037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */,
+				039B5A570ECE281600D7C02C /* CSSMapController.h */,
+				039B5A580ECE281600D7C02C /* CSSMapController.m */,
 				0304615F0C75158100D70803 /* NSFileManager+CSS.h */,
 				030461600C75158100D70803 /* NSFileManager+CSS.m */,
 				03458E580C81CA5300385D93 /* NSString+CSS.h */,
@@ -354,6 +359,7 @@
 				037D94F50DCD2C8500E8DEB7 /* Updater.m in Sources */,
 				037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */,
 				03A122E30EC224F60076DF63 /* MyImageView.m in Sources */,
+				039B5A590ECE281600D7C02C /* CSSMapController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
