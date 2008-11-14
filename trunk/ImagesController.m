@@ -168,6 +168,7 @@
 }
 */
 
+#pragma mark GPS
 
 - (BOOL)atLeastOneImageWithGPSSelected {
 	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];
@@ -180,7 +181,6 @@
 	
 	return NO;
 }
-
 
 - (NSArray *)selectedObjectsWithGPS {
 	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];

@@ -1,7 +1,6 @@
 /* CocoaSlideShow */
 
 #import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
 
 #import "RemoteControl.h"
 
@@ -10,6 +9,7 @@
 
 //#import "FlagImageTransformer.h"
 #import "ImageResizer.h"
+#import "CSSMapController.h"
 
 @interface CocoaSlideShow : NSObject
 {
@@ -17,6 +17,7 @@
 	IBOutlet NSPanel *slideShowPanel;
 	NSWindow *fullScreenWindow;
 
+	IBOutlet CSSMapController *mapController;
 	NSMutableArray *images;
 	ImageResizer *ir;
 	
@@ -27,7 +28,9 @@
 	IBOutlet NSTableView *tableView;
 	IBOutlet NSTokenField *keywordsTokenField;
 	
-	IBOutlet WebView *webView;
+	IBOutlet NSTabView *tabView;
+	IBOutlet NSTabViewItem *imageTabViewItem;
+	IBOutlet NSTabViewItem *mapTabViewItem;
 	
 	NSToolbar *toolbar;
 	
@@ -37,7 +40,6 @@
 
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
-	BOOL isMap;
 	BOOL isSaving;
 }
 
@@ -58,6 +60,7 @@
 - (IBAction)startSlideShow:(id)sender;
 - (IBAction)toggleSlideShow:(id)sender;
 
-- (IBOutlet)displayGoogleMapForSelection:(id)sender;
+- (IBAction)displayGoogleMapForSelection:(id)sender;
+
 
 @end
