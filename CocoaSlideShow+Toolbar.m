@@ -9,7 +9,7 @@
 #import "CocoaSlideShow+Toolbar.h"
 
 #define kAlwaysSelected 0
-#define kSelectedIfAtLeadOneImageSelected 1
+#define kSelectedIfAtLeastOneImageSelected 1
 #define kSelectedIfAtLeastOneGPSImageSelected 2
 
 @implementation CocoaSlideShow (Toolbar)
@@ -39,7 +39,7 @@
         [item setPaletteLabel:NSLocalizedString(@"Flag", @"Toolbar customize")];
         [item setToolTip:NSLocalizedString(@"Flag", @"Toolbar tooltip")];
         [item setImage:[NSImage imageNamed:@"flag.png"]];
-		[item setTag:kSelectedIfAtLeadOneImageSelected];
+		[item setTag:kSelectedIfAtLeastOneImageSelected];
         [item setTarget:self];
         [item setAction:@selector(toggleFlags:)];
 	} else if ([itemIdentifier isEqualToString:@"fullScreen"]) {
@@ -63,7 +63,7 @@
         [item setPaletteLabel:NSLocalizedString(@"Rotate Left", @"Toolbar customize")];
         [item setToolTip:NSLocalizedString(@"Rotate Left", @"Toolbar tooltip")];
         [item setImage:[NSImage imageNamed:@"left.png"]];
-		[item setTag:kSelectedIfAtLeadOneImageSelected];
+		[item setTag:kSelectedIfAtLeastOneImageSelected];
         [item setTarget:self];
 		[item setAction:@selector(rotateLeft:)];
 	} else if ([itemIdentifier isEqualToString:@"rotateRight"]) {
@@ -71,7 +71,7 @@
         [item setPaletteLabel:NSLocalizedString(@"Rotate Right", @"Toolbar customize")];
         [item setToolTip:NSLocalizedString(@"Rotate Right", @"Toolbar tooltip")];
         [item setImage:[NSImage imageNamed:@"right.png"]];
-		[item setTag:kSelectedIfAtLeadOneImageSelected];
+		[item setTag:kSelectedIfAtLeastOneImageSelected];
         [item setTarget:self];
 		[item setAction:@selector(rotateRight:)];
 	} else if ([itemIdentifier isEqualToString:@"remove"]) {
@@ -79,7 +79,7 @@
         [item setPaletteLabel:NSLocalizedString(@"Remove", @"Toolbar customize")];
         [item setToolTip:NSLocalizedString(@"Remove", @"Toolbar tooltip")];
         [item setImage:[NSImage imageNamed:@"remove.png"]];
-		[item setTag:kSelectedIfAtLeadOneImageSelected];
+		[item setTag:kSelectedIfAtLeastOneImageSelected];
         [item setTarget:self];
 		[item setAction:@selector(remove:)];
 	} else if ([itemIdentifier isEqualToString:@"trash"]) {
@@ -87,7 +87,7 @@
         [item setPaletteLabel:NSLocalizedString(@"Trash", @"Toolbar customize")];
         [item setToolTip:NSLocalizedString(@"Trash", @"Toolbar tooltip")];
         [item setImage:[NSImage imageNamed:@"trash.png"]];
-		[item setTag:kSelectedIfAtLeadOneImageSelected];
+		[item setTag:kSelectedIfAtLeastOneImageSelected];
         [item setTarget:self];
 		[item setAction:@selector(moveToTrash:)];
 	} else if ([itemIdentifier isEqualToString:@"gmap"]) {
@@ -121,10 +121,11 @@
 	//NSLog(@"-- %@", [theItem label]);
 	if([theItem tag] == kAlwaysSelected) {
 		return YES;
-	} else if ([theItem tag] == kSelectedIfAtLeadOneImageSelected) {
+	} else if ([theItem tag] == kSelectedIfAtLeastOneImageSelected) {
 		return [[imagesController selectedObjects] count];
 	} else if ([theItem tag] == kSelectedIfAtLeastOneGPSImageSelected) {
-		return YES;
+		//return [[imagesController selectedObjectsWithGPS] count];
+		return [imagesController atLeastOneImageWithGPSSelected];
 	}
 	return NO;
 }
