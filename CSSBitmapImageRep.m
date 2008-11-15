@@ -86,10 +86,13 @@
 }
 
 - (void)setUserComment:(NSString *)comment {
+	//NSLog(@"set user comment: %@", comment);
 	if(![self isJpeg]) {
 		return;
 	}
 	
+	[self willChangeValueForKey:@"exif"];
+	[self willChangeValueForKey:@"userComment"];
 	NSMutableDictionary *exifData = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
 	if(!exifData) {
 		exifData = [[NSMutableDictionary alloc] init];
@@ -97,6 +100,8 @@
 	[exifData setObject:comment forKey:(NSString *)kCGImagePropertyExifUserComment];
 	[metadata setObject:exifData forKey:(NSString *)kCGImagePropertyExifDictionary];
 	[exifData release];
+	[self didChangeValueForKey:@"userComment"];
+	[self didChangeValueForKey:@"exif"];
 	
 	BOOL success = [self saveSourceWithMetadata];
 	if(!success) {
@@ -105,10 +110,12 @@
 }
 
 - (void)setKeywords:(NSArray *)keywords {
+	//NSLog(@"set user keywords: %@", keywords);
 	if(![self isJpeg]) {
 		return;
 	}
 
+	[self willChangeValueForKey:@"keywords"];
 	NSMutableDictionary *iptcDict = [[self iptc] mutableCopy];
 	if(!iptcDict) {
 		iptcDict = [[NSMutableDictionary alloc] init];
@@ -116,6 +123,7 @@
 	[iptcDict setObject:keywords forKey:(NSString *)kCGImagePropertyIPTCKeywords];
 	[metadata setObject:iptcDict forKey:(NSString *)kCGImagePropertyIPTCDictionary];
 	[iptcDict release];
+	[self didChangeValueForKey:@"keywords"];
 	
 	BOOL success = [self saveSourceWithMetadata];
 	if(!success) {
