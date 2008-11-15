@@ -165,11 +165,16 @@
 	NSNumber *latitude = [gps objectForKey:@"Latitude"];
 	NSNumber *longitude = [gps objectForKey:@"Longitude"];
 	
+//	return [NSString stringWithFormat:@"\nvar %@ = new GMarker(new GLatLng(%@,%@), {title: \"test\"});\n \
+//			map.addOverlay(%@);\n \
+//			GEvent.addListener(%@, \"click\", function() { %@.openInfoWindowHtml(\"xxx\") });\n \
+//			bounds.extend(%@.getLatLng());\n\n",
+//			marker, latitude, longitude, marker, marker, marker, marker];
+
 	return [NSString stringWithFormat:@"\nvar %@ = new GMarker(new GLatLng(%@,%@), {title: \"test\"});\n \
 			map.addOverlay(%@);\n \
-			GEvent.addListener(%@, \"click\", function() { %@.openInfoWindowHtml(\"xxx\") });\n \
 			bounds.extend(%@.getLatLng());\n\n",
-			marker, latitude, longitude, marker, marker, marker, marker];
+			marker, latitude, longitude, marker, marker, marker, marker];	
 }
 
 - (NSString *)exifDateTime {
