@@ -8,7 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="914"/>
+			<integer value="324"/>
+			<integer value="917"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -539,6 +540,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 											</object>
 											<string key="NSFrame">{{1, 17}, {153, 367}}</string>
 											<reference key="NSSuperview" ref="116417072"/>
+											<reference key="NSNextKeyView" ref="711982702"/>
 											<reference key="NSDocView" ref="711982702"/>
 											<reference key="NSBGColor" ref="399793602"/>
 											<int key="NScvFlags">4</int>
@@ -571,6 +573,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 											</object>
 											<string key="NSFrame">{{1, 0}, {153, 17}}</string>
 											<reference key="NSSuperview" ref="116417072"/>
+											<reference key="NSNextKeyView" ref="1008560665"/>
 											<reference key="NSDocView" ref="1008560665"/>
 											<reference key="NSBGColor" ref="399793602"/>
 											<int key="NScvFlags">4</int>
@@ -579,6 +582,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 									</object>
 									<string key="NSFrameSize">{170, 400}</string>
 									<reference key="NSSuperview" ref="301182071"/>
+									<reference key="NSNextKeyView" ref="853597008"/>
 									<int key="NSsFlags">50</int>
 									<reference key="NSVScroller" ref="375592847"/>
 									<reference key="NSHScroller" ref="436869913"/>
@@ -597,7 +601,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 										<object class="NSTabViewItem" id="71982290">
 											<string key="NSIdentifier">1</string>
 											<object class="NSView" key="NSView" id="748582277">
-												<nil key="NSNextResponder"/>
+												<reference key="NSNextResponder" ref="705611117"/>
 												<int key="NSvFlags">274</int>
 												<object class="NSMutableArray" key="NSSubviews">
 													<bool key="EncodedWithXMLCoder">YES</bool>
@@ -616,7 +620,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 																<string>NeXT TIFF v4.0 pasteboard type</string>
 															</object>
 														</object>
-														<string key="NSFrame">{{-6, -6}, {559, 360}}</string>
+														<string key="NSFrame">{{-6, -6}, {579, 406}}</string>
 														<reference key="NSSuperview" ref="748582277"/>
 														<bool key="NSEnabled">YES</bool>
 														<object class="NSImageCell" key="NSCell" id="709636507">
@@ -630,7 +634,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 														<bool key="NSEditable">YES</bool>
 													</object>
 												</object>
-												<string key="NSFrame">{{10, 33}, {552, 354}}</string>
+												<string key="NSFrameSize">{572, 400}</string>
+												<reference key="NSSuperview" ref="705611117"/>
 											</object>
 											<string key="NSLabel">Image</string>
 											<reference key="NSColor" ref="334539385"/>
@@ -639,24 +644,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 										<object class="NSTabViewItem" id="1063074501">
 											<string key="NSIdentifier">2</string>
 											<object class="NSView" key="NSView" id="403829393">
-												<reference key="NSNextResponder" ref="705611117"/>
+												<nil key="NSNextResponder"/>
 												<int key="NSvFlags">256</int>
 												<string key="NSFrame">{{10, 33}, {552, 354}}</string>
-												<reference key="NSSuperview" ref="705611117"/>
 											</object>
 											<string key="NSLabel">Map</string>
 											<reference key="NSColor" ref="334539385"/>
 											<reference key="NSTabView" ref="705611117"/>
 										</object>
 									</object>
-									<reference key="NSSelectedTabViewItem" ref="1063074501"/>
+									<reference key="NSSelectedTabViewItem" ref="71982290"/>
 									<reference key="NSFont" ref="910942605"/>
-									<int key="NSTvFlags">0</int>
+									<int key="NSTvFlags">6</int>
 									<bool key="NSAllowTruncatedLabels">YES</bool>
 									<bool key="NSDrawsBackground">YES</bool>
 									<object class="NSMutableArray" key="NSSubviews">
 										<bool key="EncodedWithXMLCoder">YES</bool>
-										<reference ref="403829393"/>
+										<reference ref="748582277"/>
 									</object>
 								</object>
 							</object>
@@ -1201,7 +1205,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 								</object>
 								<object class="NSMenuItem" id="465289356">
 									<reference key="NSMenu" ref="57018649"/>
-									<string key="NSTitle">Google Map</string>
+									<string key="NSTitle">Toogle Google Map</string>
 									<string key="NSKeyEquiv">g</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -1619,7 +1623,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 			<object class="NSCustomObject" id="989533130">
 				<string key="NSClassName">Updater</string>
 			</object>
-			<object class="NSCustomObject" id="107654733">
+			<object class="NSCustomObject" id="984904353">
 				<string key="NSClassName">CSSMapController</string>
 			</object>
 		</object>
@@ -2404,14 +2408,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<int key="connectionID">888</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">openGoogleMap:</string>
-						<reference key="source" ref="79550871"/>
-						<reference key="destination" ref="465289356"/>
-					</object>
-					<int key="connectionID">889</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.SlideshowIsFullscreen</string>
 						<reference key="source" ref="678611092"/>
@@ -2534,7 +2530,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">webView</string>
-						<reference key="source" ref="107654733"/>
+						<reference key="source" ref="984904353"/>
 						<reference key="destination" ref="403829393"/>
 					</object>
 					<int key="connectionID">956</int>
@@ -2543,17 +2539,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">mapController</string>
 						<reference key="source" ref="166783046"/>
-						<reference key="destination" ref="107654733"/>
+						<reference key="destination" ref="984904353"/>
 					</object>
 					<int key="connectionID">957</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">imagesController</string>
-						<reference key="source" ref="107654733"/>
+						<reference key="source" ref="984904353"/>
 						<reference key="destination" ref="79550871"/>
 					</object>
 					<int key="connectionID">958</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">toggleGoogleMap:</string>
+						<reference key="source" ref="166783046"/>
+						<reference key="destination" ref="465289356"/>
+					</object>
+					<int key="connectionID">959</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3472,7 +3476,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">955</int>
-						<reference key="object" ref="107654733"/>
+						<reference key="object" ref="984904353"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</object>
@@ -3768,9 +3772,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{265, 91}, {751, 486}}</string>
+					<string>{{36, 163}, {751, 486}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{265, 91}, {751, 486}}</string>
+					<string>{{36, 163}, {751, 486}}</string>
 					<reference ref="9"/>
 					<reference ref="9"/>
 					<reference ref="8"/>
@@ -3807,7 +3811,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{304, 569}, {232, 233}}</string>
+					<string>{{304, 569}, {245, 233}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3962,7 +3966,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">958</int>
+			<int key="maxID">960</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4015,11 +4019,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<string>setDirectory:</string>
 							<string>startSlideShow:</string>
 							<string>toggleFullScreen:</string>
+							<string>toggleGoogleMap:</string>
 							<string>toggleSlideShow:</string>
 							<string>undo:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>

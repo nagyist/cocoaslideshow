@@ -30,18 +30,4 @@
 	}
 }
 
-- (void)mouseDown:(NSEvent *)theEvent {
-	NSLog(@"-- mouseDown");
-	[[self nextResponder] mouseDown:theEvent];
-}
-/*
-- (void)mouseUp:(NSEvent *)theEvent {
-	//NSLog(@"-- mouseUp");
-	CocoaSlideShow *css = [self delegate];
-	if([css mapNeedsResizing]) {
-		[css displayGoogleMapForSelection:self];
-	}
-	[[self nextResponder] mouseUp:theEvent];
-}
-*/
 @end
