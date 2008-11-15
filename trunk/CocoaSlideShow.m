@@ -336,14 +336,14 @@
 }
 
 
-- (void)hideGoogleMap:(id)sender {
+- (void)hideGoogleMap {
 	NSLog(@"hideGoogleMap");
 	[tabView selectTabViewItem:imageTabViewItem];
 	[imagesController removeObserver:mapController forKeyPath:@"selectedObjects"];
 	[mapController clearMap];
 }
 
-- (void)showGoogleMap:(id)sender {
+- (void)showGoogleMap {
 	NSLog(@"showGoogleMap");
 	[tabView selectTabViewItem:mapTabViewItem];
 	[imagesController addObserver:mapController forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
@@ -352,9 +352,9 @@
 
 - (IBAction)toggleGoogleMap:(id)sender {
 	if([tabView selectedTabViewItem] == mapTabViewItem) {
-		[self hideGoogleMap:self];
+		[self hideGoogleMap];
 	} else {
-		[self showGoogleMap:self];
+		[self showGoogleMap];
 	}
 }
 
