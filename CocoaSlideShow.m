@@ -37,28 +37,10 @@
 	return undoManager;
 }
 
-
-
 - (BOOL)isMap {
 	//NSLog(@"isMap: %d", [tabView selectedTabViewItem] == mapTabViewItem);
 	return [tabView selectedTabViewItem] == mapTabViewItem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - (NSImage *)rotateIndividualImage:(NSImage *)image clockwise:(BOOL)clockwise {
 	// from http://swik.net/User:marc/Chipmunk+Ninja+Technical+Articles/Rotating+an+NSImage+object+in+Cocoa/zgha
@@ -351,6 +333,29 @@
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
 	[self exitFullScreen:self];
+}
+
+
+- (void)hideGoogleMap:(id)sender {
+	NSLog(@"hideGoogleMap");
+	[tabView selectTabViewItem:imageTabViewItem];
+	[imagesController removeObserver:mapController forKeyPath:@"selectedObjects"];
+	[mapController clearMap];
+}
+
+- (void)showGoogleMap:(id)sender {
+	NSLog(@"showGoogleMap");
+	[tabView selectTabViewItem:mapTabViewItem];
+	[imagesController addObserver:mapController forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
+	[mapController displayGoogleMapForSelection:self];
+}
+
+- (IBAction)toggleGoogleMap:(id)sender {
+	if([tabView selectedTabViewItem] == mapTabViewItem) {
+		[self hideGoogleMap:self];
+	} else {
+		[self showGoogleMap:self];
+	}
 }
 
 - (void) sendRemoteButtonEvent: (RemoteControlEventIdentifier) event pressedDown: (BOOL) pressedDown remoteControl: (RemoteControl*) remoteControl {

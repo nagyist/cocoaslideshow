@@ -96,10 +96,8 @@
         [item setToolTip:NSLocalizedString(@"Google Map", @"Toolbar tooltip")];
         [item setImage:[NSImage imageNamed:@"gmap.png"]];
 		[item setTag:kSelectedIfAtLeastOneGPSImageSelected];
-        [item setTarget:mapController];
-		//[item setAction:@selector(openGoogleMap:)];
-		[item setAction:@selector(displayGoogleMapForSelection:)];
-	
+        [item setTarget:self];
+		[item setAction:@selector(toggleGoogleMap:)];	
     }	
     return [item autorelease];
 }

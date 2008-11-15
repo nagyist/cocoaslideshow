@@ -40,10 +40,11 @@
 - (CSSBitmapImageRep *)bitmap {
 	//BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
-	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
-	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
+	//BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
+	//BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
 	
-	if(isSaving || (multipleImagesSelected && !isMap)) {
+	//NSLog(@"%d %d", multipleImagesSelected, isMap);
+	if(isSaving) {
 		return nil;
 	}
 
@@ -51,7 +52,7 @@
 		//NSLog(@"return bitmap");
 		return bitmap;
 	}
-	NSLog(@"read and return bitmap");
+	//NSLog(@"read and return bitmap %@", path);
 
 	NSData *data = [NSData dataWithContentsOfFile:path];
 	[self setValue:[[[CSSBitmapImageRep alloc] initWithData:data] autorelease] forKey:@"bitmap"];

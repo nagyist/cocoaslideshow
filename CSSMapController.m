@@ -10,7 +10,26 @@
 #import "CSSImageContainer.h"
 
 @implementation CSSMapController
+/*
+- (void)awakeFromNib {
+	[imagesController addObserver:self forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
+}
 
+- (void)dealloc {
+	[imagesController unbind:@"selectedObjects"];
+	[super dealloc];
+}
+*/
+
+- (void)clearMap {
+	[[webView mainFrame] loadRequest:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+	if(object == imagesController && [keyPath isEqualToString:@"selectedObjects"]) {
+		[self displayGoogleMapForSelection:self];
+	}
+}
 
 - (BOOL)mapNeedsResizing {
 	return mapNeedsResizing;
