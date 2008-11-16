@@ -10,16 +10,6 @@
 #import "CSSImageContainer.h"
 
 @implementation CSSMapController
-/*
-- (void)awakeFromNib {
-	[imagesController addObserver:self forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
-}
-
-- (void)dealloc {
-	[imagesController unbind:@"selectedObjects"];
-	[super dealloc];
-}
-*/
 
 - (void)clearMap {
 	[[webView mainFrame] loadRequest:nil];
@@ -84,7 +74,7 @@
 	
 	mapNeedsResizing = NO;
 	
-	return nil;
+	[markers release];
 }
 
 

@@ -146,9 +146,6 @@
 												 styleMask:NSBorderlessWindowMask
 												   backing:NSBackingStoreBuffered
 													 defer:NO screen:[NSScreen mainScreen]];
-	
-	
-	//[self displayGoogleMapForSelection:self];
 }
 
 - (NSString *)chooseDirectory {
@@ -335,16 +332,15 @@
 	[self exitFullScreen:self];
 }
 
-
 - (void)hideGoogleMap {
-	NSLog(@"hideGoogleMap");
+	//NSLog(@"hideGoogleMap");
 	[tabView selectTabViewItem:imageTabViewItem];
 	[imagesController removeObserver:mapController forKeyPath:@"selectedObjects"];
 	[mapController clearMap];
 }
 
 - (void)showGoogleMap {
-	NSLog(@"showGoogleMap");
+	//NSLog(@"showGoogleMap");
 	[tabView selectTabViewItem:mapTabViewItem];
 	[imagesController addObserver:mapController forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
 	[mapController displayGoogleMapForSelection:self];

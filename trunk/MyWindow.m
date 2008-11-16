@@ -26,7 +26,7 @@
 			[imagesController selectNextImage];
 			break;
 		default:
-			[[self nextResponder] keyDown:theEvent];
+			[super keyDown:theEvent];
 	}
 }
 
