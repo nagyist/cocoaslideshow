@@ -40,11 +40,11 @@
 - (CSSBitmapImageRep *)bitmap {
 	//BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
-	//BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
-	//BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
+	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
+	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
+	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:@"MultipleSelectionAllowsEdition"];
 	
-	//NSLog(@"%d %d", multipleImagesSelected, isMap);
-	if(isSaving) {
+	if(isSaving || (!readOnMultiSelect && multipleImagesSelected && !isMap)) {
 		return nil;
 	}
 
