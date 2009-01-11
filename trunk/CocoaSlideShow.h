@@ -62,4 +62,7 @@
 
 - (IBAction)toggleGoogleMap:(id)sender;
 
+- (void)invalidateTimer;
+- (NSUndoManager *)undoManager;
+
 @end

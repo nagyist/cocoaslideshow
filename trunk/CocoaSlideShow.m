@@ -265,15 +265,19 @@
 	[undoManager redo];
 }
 
+- (void)invalidateTimer {
+	if([timer isValid]) {
+		[timer invalidate];
+		timer = nil;
+	}	
+}
+
 - (IBAction)exitFullScreen:(id)sender {
 	if(!isFullScreen) {
 		return;
 	}
 	
-	if([timer isValid]) {
-		[timer invalidate];
-		timer = nil;
-	}
+	[self invalidateTimer];
 
 	[NSCursor unhide];
 	
@@ -302,16 +306,14 @@
 
 - (void)timerNextTick {
 	if(![imagesController canSelectNext]) {
-		[timer invalidate];
-		timer = nil;
+		[self invalidateTimer];
 	}
 	[imagesController selectNextImage]; 
 }
 
 - (IBAction)toggleSlideShow:(id)sender {
 	if([timer isValid]) {
-		[timer invalidate];
-		timer = nil;
+		[self invalidateTimer];
 	} else {
 		timer = [NSTimer scheduledTimerWithTimeInterval:[[[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"] floatValue]
 												  target:self

@@ -20,9 +20,11 @@
 			[css exitFullScreen:self];
 			break;
 		case 123: // left
+			[css invalidateTimer];
 			[imagesController selectPreviousImage];
 			break;
 		case 124: // right
+			[css invalidateTimer];
 			[imagesController selectNextImage];
 			break;
 		default:
