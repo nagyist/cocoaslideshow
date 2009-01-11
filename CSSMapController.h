@@ -18,7 +18,7 @@
 }
 
 
-- (IBOutlet)displayGoogleMapForSelection:(id)sender;
+- (IBAction)displayGoogleMapForSelection:(id)sender;
 - (void)setMapNeedsResizing:(BOOL)flag;
 - (void)clearMap;
 

@@ -29,7 +29,7 @@
 	mapNeedsResizing = YES;
 }
 
-- (IBOutlet)displayGoogleMapForSelection:(id)sender {
+- (IBAction)displayGoogleMapForSelection:(id)sender {
 	
 	NSMutableString *markers = [[NSMutableString alloc] init];
 	
