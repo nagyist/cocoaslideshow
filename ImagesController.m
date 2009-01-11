@@ -1,6 +1,7 @@
 #import "ImagesController.h"
 #import "CSSImageContainer.h"
 #import "NSFileManager+CSS.h"
+#import "CocoaSlideShow.h"
 
 @implementation ImagesController
 
@@ -73,6 +74,7 @@
 }
 
 - (void)selectPreviousImage {
+	
 	if([self canSelectPrevious]) {
 		[[[self undoManager] prepareWithInvocationTarget:self] selectNext:self];
 		[self selectPrevious:self];
@@ -80,6 +82,7 @@
 }
 
 - (void)selectNextImage {
+
 	if([self canSelectNext]) {
 		[[[self undoManager] prepareWithInvocationTarget:self] selectPrevious:self];
 		[self selectNext:self];
