@@ -66,6 +66,7 @@
     CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data, UTI, 1, NULL);
     if(!destination) {
         NSLog(@"Error: could not create image destination");
+		CFRelease(destination);
         return NO;
     }
     
@@ -74,9 +75,11 @@
     BOOL success = CGImageDestinationFinalize(destination); // write metadata into the data object
 	if(!success) {
 		NSLog(@"Error: could not finalize destination");
+		CFRelease(destination);
 		return NO;
 	}
 	
+	CFRelease(destination);
 	return [data writeToURL:url atomically:YES];	
 }
 
