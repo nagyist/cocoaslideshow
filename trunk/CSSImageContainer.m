@@ -68,8 +68,10 @@
 }
 
 - (void)forgetBitmap {
-	[bitmap release];
-	bitmap = nil;
+	if(bitmap) {
+		[bitmap release];
+		bitmap = nil;
+	}
 }
 
 - (void)flag {
