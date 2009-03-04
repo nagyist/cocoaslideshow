@@ -55,10 +55,12 @@
 	//NSLog(@"read and return bitmap %@", path);
 
 	NSData *data = [NSData dataWithContentsOfFile:path];
-	[self setValue:[[[CSSBitmapImageRep alloc] initWithData:data] autorelease] forKey:@"bitmap"];
+	CSSBitmapImageRep *bitmapImageRep = [[[CSSBitmapImageRep alloc] initWithData:data] autorelease];
+	if(!bitmapImageRep) return nil;
+	
+	[self setValue:bitmapImageRep forKey:@"bitmap"];
 	[bitmap setPath:path];
-
-	return bitmap;
+	return bitmap;	
 }
 
 - (void)dealloc {

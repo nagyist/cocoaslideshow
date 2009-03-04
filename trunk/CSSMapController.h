@@ -13,13 +13,10 @@
 
 @interface CSSMapController : NSObject {
 	IBOutlet WebView *webView;
-	BOOL mapNeedsResizing;
 	IBOutlet ImagesController *imagesController;
 }
 
-
 - (IBAction)displayGoogleMapForSelection:(id)sender;
-- (void)setMapNeedsResizing:(BOOL)flag;
 - (void)clearMap;
 
 @end

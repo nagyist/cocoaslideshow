@@ -12,6 +12,7 @@
 
 - (void)setPath:(NSString *)aPath;
 - (NSDictionary *)exif;
+- (NSDictionary *)gps;
 
 - (void)setUserComment:(NSString *)comment;
 - (NSString *)userComment;
@@ -22,6 +23,6 @@
 - (NSString *)prettyImageSize;
 
 - (NSURL *)googleMapsURL;
-- (NSString *)gmapMarkerWithIndex:(int)i;
+//- (NSString *)gmapMarkerWithIndex:(int)i;
 
 @end

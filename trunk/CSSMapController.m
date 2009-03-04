@@ -21,62 +21,46 @@
 	}
 }
 
-- (BOOL)mapNeedsResizing {
-	return mapNeedsResizing;
-}
-
-- (void)setMapNeedsResizing:(BOOL)flag {
-	mapNeedsResizing = YES;
-}
-
 - (IBAction)displayGoogleMapForSelection:(id)sender {
+
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gmap" ofType:@"html"];
 	
-	NSMutableString *markers = [[NSMutableString alloc] init];
+	NSURL *url = [NSURL fileURLWithPath:filePath];
+	NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+	[webView setFrameLoadDelegate:self];
+	[[webView mainFrame] loadRequest:request];
+}
+#pragma mark WebFrameLoadDelegate
+
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
 	
-	int count = 1;
 	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
 	CSSImageContainer *cssImageContainer = nil;
 	CSSBitmapImageRep *b = nil;
-	NSString *s;
+	NSDictionary *gps = nil;
 	while((cssImageContainer = [e nextObject])) {
-		//NSLog(@" marker %d", count);
+//		NSLog(@"-- path: %@", [cssImageContainer path]);
+		
 		b = [cssImageContainer bitmap];
-		//NSLog(@"b: %d", b != nil);
-		s = [b gmapMarkerWithIndex:count];
-		if(s) {
-			[markers appendString:s];
-			count++;
-		} else {
-			NSLog(@"no marker");
-		}
+		
+		gps = [b gps];
+//		NSLog(@"gps: %@", gps);
+		if(!gps) continue;
+		
+		NSNumber *latitude = [gps objectForKey:@"Latitude"];
+		NSNumber *longitude = [gps objectForKey:@"Longitude"];
+		if(!latitude || !longitude) continue;
+		
+		NSString *filePath = [cssImageContainer path];
+		NSString *fileName = [filePath lastPathComponent];
+		NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:YES];
+		NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
+		
+		NSString *js = [NSString stringWithFormat:@"addPoint(%@, %@, \"%@\", \"%@\", \"%@\");", latitude, longitude, fileName, filePath, fileModDateString];
+//		NSLog(@"-- js:%@", js);
+		[webView stringByEvaluatingJavaScriptFromString:js];
 	}
-	
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gmap" ofType:@"html"];
-	
-	NSError *error = nil;
-	NSStringEncoding encoding = NSUTF8StringEncoding;
-	
-	NSMutableString *htmlString = [NSMutableString stringWithContentsOfFile:filePath usedEncoding:&encoding error:&error];
-	if(error) {
-		NSLog(@"error: %@", [error description]);
-	}
-	
-	NSRect frame = [[[webView mainFrame] frameView] frame];
-	NSString *width = [NSString stringWithFormat:@"%d", (int)frame.size.width - 17];
-	NSString *height = [NSString stringWithFormat:@"%d", (int)frame.size.height - 17];
-	
-	[htmlString replaceOccurrencesOfString:@"__WIDTH__" withString:width options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];
-	[htmlString replaceOccurrencesOfString:@"__HEIGHT__" withString:height options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];
-	
-	[htmlString replaceOccurrencesOfString:@"__MARKERS__" withString:markers options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];
-	
-	[[webView mainFrame] loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://maps.google.com"]];
-	
-	mapNeedsResizing = NO;
-	
-	[markers release];
 }
-
-
 
 @end
