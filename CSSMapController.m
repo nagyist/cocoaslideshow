@@ -6,6 +6,8 @@
 //  Copyright 2008 Sen:te. All rights reserved.
 //
 
+// TODO: remember map style
+
 #import "CSSMapController.h"
 #import "CSSImageContainer.h"
 
@@ -31,6 +33,7 @@
 	[webView setFrameLoadDelegate:self];
 	[[webView mainFrame] loadRequest:request];
 }
+
 #pragma mark WebFrameLoadDelegate
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
@@ -61,6 +64,9 @@
 //		NSLog(@"-- js:%@", js);
 		[webView stringByEvaluatingJavaScriptFromString:js];
 	}
+
+	[webView stringByEvaluatingJavaScriptFromString:@"center();"];
+	
 }
 
 @end
