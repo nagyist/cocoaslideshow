@@ -3,12 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>LatestVersion</key>
-	<string>0.5</string>
+	<string>0.5.1</string>
 	<key>PageURL</key>
 	<string>http://code.google.com/p/cocoaslideshow/</string>
 	<key>DownloadURL</key>
-	<string>http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5.app.zip</string>
-	<key>New item</key>
-	<string></string>
+	<string>http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_1.app.zip</string>
 </dict>
 </plist>
