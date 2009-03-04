@@ -20,13 +20,16 @@
 
 		map.setCenter(new GLatLng(0, 0), 1);
 		
-		map.removeMapType(G_HYBRID_MAP);
 		map.addMapType(G_PHYSICAL_MAP);
 		map.setMapType(G_PHYSICAL_MAP);
 		
 		map.addControl(new GLargeMapControl());
 		map.addControl(new GMapTypeControl());
     }
+
+//	function setMapStyle(style) {
+//		map.setMapType(style); // G_PHYSICAL_MAP, ...
+//	}
 
 	function addPoint(lat, long, name, path, date) {
 		count++;
@@ -45,7 +48,9 @@
 		map.addOverlay(marker);
 		
 		bounds.extend(marker.getLatLng());
-		
+	}
+
+	function center() {
 		map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds));
 	}
 
