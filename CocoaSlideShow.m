@@ -431,11 +431,6 @@
 	
 }
 
-/*
-- (IBAction)displayGoogleMapForSelection:(id)sender {
-	[mapController displayGoogleMapForSelection:sender];
-}
-*/
 #pragma mark NSApplication Delegates
 
 - (void)applicationWillBecomeActive:(NSNotification *)aNotification {
@@ -457,15 +452,7 @@
 	}
 	
     [[Updater sharedInstance] checkUpdateSilentIfUpToDate:self];
-	
-	[[ NSNotificationCenter defaultCenter] addObserver:self
-											  selector:@selector(windowDidResize:)
-												  name:NSWindowDidResizeNotification
-												object:mainWindow];
-}
 
-- (void)windowDidResize:(NSNotification *)notif {
-	[mapController setMapNeedsResizing:YES];
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
