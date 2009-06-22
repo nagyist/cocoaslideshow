@@ -53,7 +53,19 @@
 		
 		NSNumber *latitude = [gps objectForKey:@"Latitude"];
 		NSNumber *longitude = [gps objectForKey:@"Longitude"];
+
+		NSString *latitudeRef = [gps objectForKey:@"LatitudeRef"];
+		NSString *longitudeRef = [gps objectForKey:@"LongitudeRef"];
+		
 		if(!latitude || !longitude) continue;
+
+		if(latitudeRef && longitudeRef) {
+			BOOL invertedLatitude = [latitudeRef isEqualToString:@"S"];
+			BOOL invertedLongitude = [longitudeRef isEqualToString:@"W"];
+
+			if(invertedLatitude) latitude = [NSNumber numberWithDouble:[latitude doubleValue]*-1.0];
+			if(invertedLongitude) longitude = [NSNumber numberWithDouble:[longitude doubleValue]*-1.0];
+		}
 		
 		NSString *filePath = [cssImageContainer path];
 		NSString *fileName = [filePath lastPathComponent];

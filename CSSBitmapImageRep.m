@@ -20,7 +20,7 @@
 }
 */
 
-- (NSImage *)image {
+- (NSImage *)image { // FIXME: use CGImageSourceGetCount() and get best representation
 	return [[[NSImage alloc] initWithData:[self TIFFRepresentation]] autorelease];	// FIXME: too slow!!!
 }
 
