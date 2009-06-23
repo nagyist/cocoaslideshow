@@ -187,6 +187,32 @@
 	return [exif objectForKey:(NSString *)kCGImagePropertyExifDateTimeOriginal];
 }
 
+- (NSString *)prettyLatitude {
+	NSDictionary *gps = [self gps];
+	
+	if(!gps) return nil;
+	
+	NSNumber *latitude = [gps objectForKey:@"Latitude"];
+	NSString *latitudeRef = [gps objectForKey:@"LatitudeRef"];
+	
+	if(!latitude) return nil;
+	
+	return [latitudeRef isEqualToString:@"S"] ? [@"-" stringByAppendingFormat:@"%@", latitude] : [latitude description];
+}
+
+- (NSString *)prettyLongitude {
+	NSDictionary *gps = [self gps];
+	
+	if(!gps) return nil;
+	
+	NSNumber *longitude = [gps objectForKey:@"Longitude"];
+	NSString *longitudeRef = [gps objectForKey:@"LongitudeRef"];
+	
+	if(!longitude) return nil;
+	
+	return [longitudeRef isEqualToString:@"W"] ? [@"-" stringByAppendingFormat:@"%@", longitude] : [longitude description];
+}
+
 - (void)dealloc {
 	[path release];
 	[super dealloc];

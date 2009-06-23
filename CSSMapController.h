@@ -19,4 +19,8 @@
 - (IBAction)displayGoogleMapForSelection:(id)sender;
 - (void)clearMap;
 
+- (IBAction)exportKMLToFile:(id)sender;
+- (NSString*)generateKML;
+- (NSString *)chooseFile;
+
 @end
