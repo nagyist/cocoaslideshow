@@ -14,6 +14,11 @@
 - (NSDictionary *)exif;
 - (NSDictionary *)gps;
 
+- (NSString *)exifDateTime;
+
+- (NSString *)prettyLatitude;
+- (NSString *)prettyLongitude;
+
 - (void)setUserComment:(NSString *)comment;
 - (NSString *)userComment;
 
