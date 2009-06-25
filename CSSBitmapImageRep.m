@@ -29,7 +29,7 @@
 	[theImage addRepresentation:bitmapRep];
 	[bitmapRep release];
 	
-	return theImage;
+	return [theImage autorelease];
 }
 
 - (NSDictionary *)exif {
