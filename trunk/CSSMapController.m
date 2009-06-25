@@ -11,6 +11,7 @@
 #import "CSSMapController.h"
 #import "CSSImageContainer.h"
 #import "CSSBitmapImageRep.h"
+#import "CocoaSlideShow.h"
 
 @implementation CSSMapController
 
@@ -43,9 +44,7 @@
 	CSSImageContainer *cssImageContainer = nil;
 	CSSBitmapImageRep *b = nil;
 	
-	while((cssImageContainer = [e nextObject])) {
-		//		NSLog(@"-- path: %@", [cssImageContainer path]);
-		
+	while((cssImageContainer = [e nextObject])) {		
 		b = [cssImageContainer bitmap];
 		
 		NSString *filePath = [cssImageContainer path];
@@ -53,8 +52,13 @@
 		NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:YES];
 		NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
 		
-		NSString *js = [NSString stringWithFormat:@"addPoint(%@, %@, \"%@\", \"%@\", \"%@\");", [b prettyLatitude], [b prettyLongitude], fileName, filePath, fileModDateString];
-		NSLog(@"-- js:%@", js);
+		NSString *latitude = [b prettyLatitude];
+		NSString *longitude = [b prettyLongitude];
+		
+		if(!latitude || !longitude) continue;
+		
+		NSString *js = [NSString stringWithFormat:@"addPoint(%@, %@, \"%@\", \"%@\", \"%@\");", latitude, longitude, fileName, filePath, fileModDateString];
+		//NSLog(@"-- js:%@", js);
 		[webView stringByEvaluatingJavaScriptFromString:js];
 	}
 	
@@ -64,21 +68,39 @@
 
 #pragma KML File Export
 
-- (NSString*) generateKML {
+- (NSString*)generateKML {
+	
+	[(CocoaSlideShow *)[NSApp delegate] setBitmapLoadingIsAllowed:YES];
 	
 	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
 	CSSImageContainer *cssImageContainer = nil;
-	CSSBitmapImageRep *b = nil;
+	//CSSBitmapImageRep *b = nil;
 	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
 	
 	NSMutableString *placemarkString = [[[NSMutableString alloc] init] autorelease];
 	
 	while((cssImageContainer = [e nextObject])) {
-		b = [cssImageContainer bitmap];
+		
+		NSString *latitude = [cssImageContainer valueForKey:@"cachedLatitude"];
+		NSString *longitude = [cssImageContainer valueForKey:@"cachedLongitude"];
+		NSString *timestamp = [cssImageContainer valueForKey:@"cachedTimestamp"];
+		
+		if(!latitude || !longitude) {
+			[cssImageContainer loadBitmap];
+			latitude = [cssImageContainer valueForKey:@"cachedLatitude"];
+			longitude = [cssImageContainer valueForKey:@"cachedLongitude"];
+			timestamp = [cssImageContainer valueForKey:@"cachedTimestamp"];
+		}
+
+		if(!latitude || !longitude) {
+			continue;
+		}
 		
 		[placemarkString appendFormat:@"    <Placemark><name>%@</name><timestamp><when>%@</when></timestamp><Point><coordinates>%@,%@</coordinates></Point></Placemark>\n",
-		 [[cssImageContainer path] lastPathComponent], [b exifDateTime], [b prettyLongitude], [b prettyLatitude]];
+		 [[cssImageContainer path] lastPathComponent], timestamp, longitude, latitude];
 	}
+	
+	[(CocoaSlideShow *)[NSApp delegate] setBitmapLoadingIsAllowed:NO];
 	
 	return [NSString stringWithFormat:XMLContainer, placemarkString];
 }

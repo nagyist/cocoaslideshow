@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		030461610C75158100D70803 /* NSFileManager+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 030461600C75158100D70803 /* NSFileManager+CSS.m */; };
 		030463F10C75347700D70803 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 030463F00C75347700D70803 /* Credits.html */; };
-		031ADB5F0DBFEAD400799D5C /* ImageResizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 031ADB5D0DBFEAD400799D5C /* ImageResizer.m */; };
 		032F081B0C542D820037F590 /* AppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 032F081A0C542D820037F590 /* AppleRemote.m */; };
 		033804240C86084300439E5A /* ImagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033804230C86084300439E5A /* ImagesController.m */; };
 		03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 03458E590C81CA5300385D93 /* NSString+CSS.m */; };
@@ -51,8 +50,6 @@
 		0304615F0C75158100D70803 /* NSFileManager+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CSS.h"; sourceTree = "<group>"; };
 		030461600C75158100D70803 /* NSFileManager+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CSS.m"; sourceTree = "<group>"; };
 		030463F00C75347700D70803 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
-		031ADB5D0DBFEAD400799D5C /* ImageResizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResizer.m; sourceTree = "<group>"; };
-		031ADB5E0DBFEAD400799D5C /* ImageResizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResizer.h; sourceTree = "<group>"; };
 		032F08190C542D820037F590 /* AppleRemote.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppleRemote.h; sourceTree = "<group>"; };
 		032F081A0C542D820037F590 /* AppleRemote.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppleRemote.m; sourceTree = "<group>"; };
 		033804220C86084300439E5A /* ImagesController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ImagesController.h; sourceTree = "<group>"; };
@@ -144,16 +141,14 @@
 				037D94F30DCD2C8500E8DEB7 /* Updater.h */,
 				037D94F40DCD2C8500E8DEB7 /* Updater.m */,
 				031AD9AA0DBF854D00799D5C /* Remote Control */,
-				031ADB5E0DBFEAD400799D5C /* ImageResizer.h */,
-				031ADB5D0DBFEAD400799D5C /* ImageResizer.m */,
 				03A122E10EC224F60076DF63 /* MyImageView.h */,
 				03A122E20EC224F60076DF63 /* MyImageView.m */,
 				03A3F43F0C77D97E009AD69D /* MyWindow.h */,
 				03A3F4400C77D97E009AD69D /* MyWindow.m */,
-				03A305CD0C7DE4F0009AD69D /* CSSBitmapImageRep.h */,
-				03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */,
 				03DA06460C805F0B009D508F /* CSSImageContainer.h */,
 				03DA06470C805F0B009D508F /* CSSImageContainer.m */,
+				03A305CD0C7DE4F0009AD69D /* CSSBitmapImageRep.h */,
+				03A305CE0C7DE4F0009AD69D /* CSSBitmapImageRep.m */,
 				033804220C86084300439E5A /* ImagesController.h */,
 				033804230C86084300439E5A /* ImagesController.m */,
 				03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */,
@@ -355,7 +350,6 @@
 				03DA06480C805F0B009D508F /* CSSImageContainer.m in Sources */,
 				03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */,
 				033804240C86084300439E5A /* ImagesController.m in Sources */,
-				031ADB5F0DBFEAD400799D5C /* ImageResizer.m in Sources */,
 				037D94F50DCD2C8500E8DEB7 /* Updater.m in Sources */,
 				037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */,
 				03A122E30EC224F60076DF63 /* MyImageView.m in Sources */,
@@ -444,6 +438,8 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;

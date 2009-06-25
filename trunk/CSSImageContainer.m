@@ -8,6 +8,7 @@
 
 #import "CSSImageContainer.h"
 #import "NSString+CSS.h"
+#import "CocoaSlideShow.h"
 
 @implementation CSSImageContainer
 
@@ -37,14 +38,34 @@
 	}
 }
 
+- (void)loadBitmap {
+	if(bitmap) return;
+	
+	NSData *data = [NSData dataWithContentsOfFile:path];
+	NSLog(@"-- will load bitmap with data %d", data != nil);
+	CSSBitmapImageRep *bitmapImageRep = [[[CSSBitmapImageRep alloc] initWithData:data] autorelease];
+	NSLog(@"-- did load bitmap %d", bitmapImageRep != nil);
+
+	[bitmapImageRep setContainer:self];
+	[bitmapImageRep setPath:path];
+	
+	[self setValue:bitmapImageRep forKey:@"bitmap"];
+}
+
 - (CSSBitmapImageRep *)bitmap {
+	if(bitmap) return bitmap;
+	
 	//BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
 	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
 	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:@"MultipleSelectionAllowsEdition"];
 	
-	if(isSaving || (!readOnMultiSelect && multipleImagesSelected && !isMap)) {
+	BOOL bitmapLoadingIsAllowed = [(CocoaSlideShow *)[NSApp delegate] bitmapLoadingIsAllowed];
+	NSLog(@"-- %d %d", [(CocoaSlideShow *)[NSApp delegate] bitmapLoadingIsAllowed], bitmap != nil);
+	
+	//NSLog(@"-- %d %d %d %d", isSaving, multipleImagesSelected, isMap, readOnMultiSelect);
+	if(!bitmapLoadingIsAllowed && (isSaving || (!readOnMultiSelect && multipleImagesSelected && !isMap))) {
 		return nil;
 	}
 
@@ -54,12 +75,10 @@
 	}
 	//NSLog(@"read and return bitmap %@", path);
 
-	NSData *data = [NSData dataWithContentsOfFile:path];
-	CSSBitmapImageRep *bitmapImageRep = [[[CSSBitmapImageRep alloc] initWithData:data] autorelease];
-	if(!bitmapImageRep) return nil;
+	[self loadBitmap];
 	
-	[self setValue:bitmapImageRep forKey:@"bitmap"];
-	[bitmap setPath:path];
+	NSLog(@"-- self:%@ path:%@ bitmapPath:%@ setValue:%@", self, path, [bitmap path], bitmap);
+	
 	return bitmap;	
 }
 
@@ -122,6 +141,7 @@
 	//NSLog(@"-- %@", aPath);
 	if(aPath == nil) {
 		NSLog(@"-- aPath is nil :-(");
+		return;
 	}
 	if(aPath != nil && path != aPath) {
 		[path release];

@@ -9,19 +9,27 @@
 #import "CSSBitmapImageRep.h"
 #import "NSString+CSS.h"
 #import "NSFileManager+CSS.h"
+#import "CSSImageContainer.h"
 
 @implementation CSSBitmapImageRep
 
-/*
-- (id)init {
-	self = [super init];
-	NSLog(@"init %@", self);
-	return self;
+- (void)setContainer:(CSSImageContainer *)aContainer {
+	container = aContainer; // weak ref
 }
-*/
 
-- (NSImage *)image { // FIXME: use CGImageSourceGetCount() and get best representation
-	return [[[NSImage alloc] initWithData:[self TIFFRepresentation]] autorelease];	// FIXME: too slow!!!
+- (NSString *)path {
+	return path;
+}
+
+- (NSImage *)image {
+	CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL);
+	NSBitmapImageRep *bitmapRep = [[NSBitmapImageRep alloc] initWithCGImage:imageRef];
+	CFRelease(imageRef);
+	NSImage *theImage = [[NSImage alloc] init];
+	[theImage addRepresentation:bitmapRep];
+	[bitmapRep release];
+	
+	return theImage;
 }
 
 - (NSDictionary *)exif {
@@ -57,6 +65,10 @@
 	[metadata autorelease];
 	metadata = [immutableMetadata mutableCopy];
 	[immutableMetadata release];
+	
+	[container setValue:[self prettyLatitude] forKey:@"cachedLatitude"];
+	[container setValue:[self prettyLongitude] forKey:@"cachedLongitude"];
+	[container setValue:[self exifDateTime] forKey:@"cachedTimestamp"];
 }
 
 - (BOOL)saveSourceWithMetadata {
@@ -214,6 +226,8 @@
 }
 
 - (void)dealloc {
+	if(source)
+		CFRelease(source);
 	[path release];
 	[super dealloc];
 }
