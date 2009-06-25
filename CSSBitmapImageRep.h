@@ -1,12 +1,18 @@
 #import <Cocoa/Cocoa.h>
 
+@class CSSImageContainer;
 
 @interface CSSBitmapImageRep:NSBitmapImageRep {
 	NSString *path;
 	NSURL *url;
 	CGImageSourceRef source;
 	NSMutableDictionary *metadata;
+	CSSImageContainer *container; // weak ref
 }
+
+- (void)setContainer:(CSSImageContainer *)aContainer;
+
+- (NSString *)path;
 
 - (NSImage *)image;
 

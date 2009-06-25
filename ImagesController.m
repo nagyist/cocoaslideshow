@@ -175,6 +175,7 @@
 
 - (BOOL)atLeastOneImageWithGPSSelected {
 	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];
+	
 	int i = 0;
 	for(i = 0; i < [a count]; i++) {
 		if([[a objectAtIndex:i] isKindOfClass:[NSDictionary class]]) {

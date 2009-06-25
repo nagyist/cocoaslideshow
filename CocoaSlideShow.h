@@ -7,8 +7,6 @@
 #import "MyImageView.h"
 #import "ImagesController.h"
 
-//#import "FlagImageTransformer.h"
-#import "ImageResizer.h"
 #import "CSSMapController.h"
 
 @interface CocoaSlideShow : NSObject
@@ -19,7 +17,6 @@
 
 	IBOutlet CSSMapController *mapController;
 	NSMutableArray *images;
-	ImageResizer *ir;
 	
 	IBOutlet ImagesController *imagesController;
 	IBOutlet MyImageView *imageView;
@@ -41,7 +38,12 @@
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
 	BOOL isSaving;
+	
+	BOOL bitmapLoadingIsAllowed;
 }
+
+- (BOOL)bitmapLoadingIsAllowed;
+- (void)setBitmapLoadingIsAllowed:(BOOL)flag;
 
 - (IBAction)undo:(id)sender;
 - (IBAction)redo:(id)sender;

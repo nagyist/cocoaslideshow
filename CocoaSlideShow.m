@@ -16,11 +16,16 @@
 		
 	undoManager = [[NSUndoManager alloc] init];
 	[undoManager setLevelsOfUndo:10];
-	
-    ir = [[[ImageResizer alloc] init] autorelease];
-    [NSValueTransformer setValueTransformer:ir forName:@"ImageResizer"];
-	
+
 	return self;
+}
+
+- (BOOL)bitmapLoadingIsAllowed {
+	return bitmapLoadingIsAllowed;
+}
+
+- (void)setBitmapLoadingIsAllowed:(BOOL)flag {
+	bitmapLoadingIsAllowed = flag;
 }
 
 - (void)dealloc {
@@ -123,8 +128,6 @@
 	[[keywordsTokenField cell] setSendsActionOnEndEditing:YES];
 	
 	[imagesController setAutomaticallyPreparesContent:YES];
-	
-	[ir setView:panelImageView];
 	
 	NSTableColumn *flagColumn = [tableView tableColumnWithIdentifier:@"flag"];
 	NSImage *flagHeaderImage = [NSImage imageNamed:@"FlaggedHeader.png"];

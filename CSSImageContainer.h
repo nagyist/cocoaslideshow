@@ -13,14 +13,22 @@
 	NSString *path;
 	CSSBitmapImageRep *bitmap;
 	BOOL isFlagged;
+	
+	NSString *cachedLatitude;
+	NSString *cachedLongitude;
+	NSString *cachedTimestamp;
+	
 	// TODO keep rotation angle
 }
 
 // TODO allow save rotated image
 
+
 + (CSSImageContainer *)containerWithPath:(NSString *)aPath;
 
 - (NSString *)path;
+
+- (void)loadBitmap;
 - (void)forgetBitmap;
 
 - (CSSBitmapImageRep *)bitmap;
