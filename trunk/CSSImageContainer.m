@@ -42,9 +42,9 @@
 	if(bitmap) return;
 	
 	NSData *data = [NSData dataWithContentsOfFile:path];
-	NSLog(@"-- will load bitmap with data %d", data != nil);
+	//NSLog(@"-- will load bitmap with data %d", data != nil);
 	CSSBitmapImageRep *bitmapImageRep = [[[CSSBitmapImageRep alloc] initWithData:data] autorelease];
-	NSLog(@"-- did load bitmap %d", bitmapImageRep != nil);
+	//NSLog(@"-- did load bitmap %d", bitmapImageRep != nil);
 
 	[bitmapImageRep setContainer:self];
 	[bitmapImageRep setPath:path];
@@ -62,7 +62,7 @@
 	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:@"MultipleSelectionAllowsEdition"];
 	
 	BOOL bitmapLoadingIsAllowed = [(CocoaSlideShow *)[NSApp delegate] bitmapLoadingIsAllowed];
-	NSLog(@"-- %d %d", [(CocoaSlideShow *)[NSApp delegate] bitmapLoadingIsAllowed], bitmap != nil);
+	//NSLog(@"-- %d %d", [(CocoaSlideShow *)[NSApp delegate] bitmapLoadingIsAllowed], bitmap != nil);
 	
 	//NSLog(@"-- %d %d %d %d", isSaving, multipleImagesSelected, isMap, readOnMultiSelect);
 	if(!bitmapLoadingIsAllowed && (isSaving || (!readOnMultiSelect && multipleImagesSelected && !isMap))) {
@@ -77,7 +77,7 @@
 
 	[self loadBitmap];
 	
-	NSLog(@"-- self:%@ path:%@ bitmapPath:%@ setValue:%@", self, path, [bitmap path], bitmap);
+	//NSLog(@"-- self:%@ path:%@ bitmapPath:%@ setValue:%@", self, path, [bitmap path], bitmap);
 	
 	return bitmap;	
 }
