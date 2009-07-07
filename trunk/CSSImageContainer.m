@@ -20,6 +20,42 @@
 }
 */
 
+- (NSString *)cachedLatitude {
+	return cachedLatitude;
+}
+
+- (NSString *)cachedLongitude {
+	return cachedLongitude;
+}
+
+- (NSString *)cachedTimestamp {
+	return cachedTimestamp;
+}
+
+- (void)setCachedLatitude:(NSString *)s {
+	if([s isEqualToString:cachedLatitude]) return;
+	
+	[cachedLatitude release];
+	cachedLatitude = s;
+	[cachedLatitude retain];
+}
+
+- (void)setCachedLongitude:(NSString *)s {
+	if([s isEqualToString:cachedLongitude]) return;
+	
+	[cachedLongitude release];
+	cachedLongitude = s;
+	[cachedLongitude retain];
+}
+
+- (void)setCachedTimestamp:(NSString *)s {
+	if([s isEqualToString:cachedTimestamp]) return;
+	
+	[cachedTimestamp release];
+	cachedTimestamp = s;
+	[cachedTimestamp retain];	
+}
+
 + (void)initialize {
     [self setKeys:[NSArray arrayWithObjects:@"isFlagged", nil] triggerChangeNotificationsForDependentKey:@"flagIcon"];
 }
@@ -38,60 +74,91 @@
 	}
 }
 
-- (void)loadBitmap {
+- (void)loadNewBitmap {
 	if(bitmap) return;
 	
 	NSData *data = [NSData dataWithContentsOfFile:path];
-	//NSLog(@"-- will load bitmap with data %d", data != nil);
-	CSSBitmapImageRep *bitmapImageRep = [[[CSSBitmapImageRep alloc] initWithData:data] autorelease];
-	//NSLog(@"-- did load bitmap %d", bitmapImageRep != nil);
 
-	[bitmapImageRep setContainer:self];
+	CSSBitmapImageRep *bitmapImageRep = [[CSSBitmapImageRep alloc] initWithData:data];
+	[bitmapImageRep setContainer:self]; // TODO: unelegant..
 	[bitmapImageRep setPath:path];
-	
-	[self setValue:bitmapImageRep forKey:@"bitmap"];
+
+	[self willChangeValueForKey:@"bitmap"];
+	[bitmap autorelease];
+	bitmap = bitmapImageRep;
+
+	[self didChangeValueForKey:@"bitmap"];
 }
 
+/*
+ x observes b
+ 
+ b is cached
+ 
+ def b:
+	 willChangeValueForKey:b		# this makes the observers call b again -> infinite loop
+	 load b
+	 didChangeValueForKey:b
+*/
+
 - (CSSBitmapImageRep *)bitmap {
-	if(bitmap) return bitmap;
+	if(isLoadingCache || bitmap) return bitmap;
 	
-	//BOOL importDone = [[[NSApp delegate] valueForKeyPath:@"imagesController.importDone"] boolValue];
 	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
 	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
 	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:@"MultipleSelectionAllowsEdition"];
 	
 	BOOL bitmapLoadingIsAllowed = [(CocoaSlideShow *)[NSApp delegate] bitmapLoadingIsAllowed];
-	//NSLog(@"-- %d %d", [(CocoaSlideShow *)[NSApp delegate] bitmapLoadingIsAllowed], bitmap != nil);
-	
-	//NSLog(@"-- %d %d %d %d", isSaving, multipleImagesSelected, isMap, readOnMultiSelect);
+
 	if(!bitmapLoadingIsAllowed && (isSaving || (!readOnMultiSelect && multipleImagesSelected && !isMap))) {
 		return nil;
 	}
-
-	if(bitmap != nil) {
-		//NSLog(@"return bitmap");
-		return bitmap;
+	
+	NSData *data = [NSData dataWithContentsOfFile:path];
+	
+	CSSBitmapImageRep *bitmapImageRep = [[CSSBitmapImageRep alloc] initWithData:data];
+	[bitmapImageRep setContainer:self]; // FIXME: unelegant..
+	[bitmapImageRep setPath:path];
+		
+	if(!isLoadingCache) {
+		isLoadingCache = YES;
 	}
-	//NSLog(@"read and return bitmap %@", path);
+	
+	[self willChangeValueForKey:@"bitmap"];
+	[bitmap release];
+	bitmap = bitmapImageRep;
+	[self didChangeValueForKey:@"bitmap"];
 
-	[self loadBitmap];
+	if(isLoadingCache) {
+		isLoadingCache = NO;
+	}
 	
-	//NSLog(@"-- self:%@ path:%@ bitmapPath:%@ setValue:%@", self, path, [bitmap path], bitmap);
-	
-	return bitmap;	
+	return bitmap;
 }
 
 - (void)dealloc {
+	NSLog(@"-- dealloc %@", path);
+	[cachedLatitude release];
+	[cachedLongitude release];
+	[cachedTimestamp release];
+	
 	[path release];
+	[self willChangeValueForKey:@"bitmap"];
 	[bitmap release];
+	[self didChangeValueForKey:@"bitmap"];
 	[super dealloc];
 }
 
 - (void)forgetBitmap {
+	NSLog(@"-- forgetBitmap %@", [self path]);
+
 	if(bitmap) {
+		NSLog(@"-- release %@", path);
+		[self willChangeValueForKey:@"bitmap"];
 		[bitmap release];
 		bitmap = nil;
+		[self didChangeValueForKey:@"bitmap"];
 	}
 }
 

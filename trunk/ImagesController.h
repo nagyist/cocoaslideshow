@@ -5,6 +5,7 @@
 #define IN_MEMORY_BITMAPS 5
 
 @class CocoaSlideShow;
+@class CSSImageContainer;
 
 @interface ImagesController : NSArrayController
 {
@@ -33,7 +34,7 @@
 - (void)addDirFiles:(NSString *)dir;
 - (void)retainOnlyAFewImagesAndReleaseTheRest;
 //- (NSArray *)flagged;
-- (NSArray *)selectedObjectsWithGPS;
+//- (NSArray *)selectedObjectsWithGPS;
 - (BOOL)atLeastOneImageWithGPSSelected;
 - (IBAction)openGoogleMap:(id)sender;
 

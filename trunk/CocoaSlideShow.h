@@ -42,6 +42,8 @@
 	BOOL bitmapLoadingIsAllowed;
 }
 
+//- (void)removeObservationForContainer:(CSSImageContainer *)container;
+
 - (BOOL)bitmapLoadingIsAllowed;
 - (void)setBitmapLoadingIsAllowed:(BOOL)flag;
 

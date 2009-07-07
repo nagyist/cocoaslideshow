@@ -14,6 +14,8 @@
 	CSSBitmapImageRep *bitmap;
 	BOOL isFlagged;
 	
+	BOOL isLoadingCache;
+	
 	NSString *cachedLatitude;
 	NSString *cachedLongitude;
 	NSString *cachedTimestamp;
@@ -23,12 +25,19 @@
 
 // TODO allow save rotated image
 
+- (NSString *)cachedLatitude;
+- (NSString *)cachedLongitude;
+- (NSString *)cachedTimestamp;
+
+- (void)setCachedLatitude:(NSString *)s;
+- (void)setCachedLongitude:(NSString *)s;
+- (void)setCachedTimestamp:(NSString *)s;
 
 + (CSSImageContainer *)containerWithPath:(NSString *)aPath;
 
 - (NSString *)path;
 
-- (void)loadBitmap;
+- (void)loadNewBitmap;
 - (void)forgetBitmap;
 
 - (CSSBitmapImageRep *)bitmap;

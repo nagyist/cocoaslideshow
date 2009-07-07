@@ -146,11 +146,14 @@
 	[self removeObjectsAtArrangedObjectIndexes:[self selectionIndexes]];
 }
 
-- (void) retainOnlyAFewImagesAndReleaseTheRest {
+- (void)retainOnlyAFewImagesAndReleaseTheRest {
+	
 	if([[self selectedObjects] count] != 1) {
 		return;
 	}
-	
+
+	//NSLog(@"-- retainOnlyAFewImagesAndReleaseTheRest");
+
 	CSSImageContainer *c = [[self selectedObjects] lastObject];
 	
 	if(![inMemoryBitmapsContainers containsObject:c]) {
@@ -174,18 +177,26 @@
 #pragma mark GPS
 
 - (BOOL)atLeastOneImageWithGPSSelected {
-	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];
+	// try in cache first
+	NSArray *a = [[self selectedObjects] valueForKeyPath:@"cachedLatitude"];
+	if([a count] > 0) {
+		//NSLog(@"-- atLeastOneImageWithGPSSelected use cache");
+		return YES;
+	}
 	
-	int i = 0;
-	for(i = 0; i < [a count]; i++) {
-		if([[a objectAtIndex:i] isKindOfClass:[NSDictionary class]]) {
+	NSEnumerator *e = [[self selectedObjects] objectEnumerator];
+	CSSImageContainer *container;
+	while((container = [e nextObject])) {
+		if([[container valueForKeyPath:@"bitmap.gps"] isKindOfClass:[NSDictionary class]]) {
+			//NSLog(@"-- atLeastOneImageWithGPSSelected");
 			return YES;
 		}
 	}
-	
+		
+	//NSLog(@"-- atLeastOneImageWithGPSSelected NO");
 	return NO;
 }
-
+/*
 - (NSArray *)selectedObjectsWithGPS {
 	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];
 	NSMutableArray *aa = [[NSMutableArray alloc] initWithCapacity:[a count]];
@@ -200,7 +211,7 @@
 	
 	return [aa autorelease];
 }
-
+*/
 - (IBAction)openGoogleMap:(id)sender {
 	if(![[self selectedObjects] count]) return;
 	CSSImageContainer *i = [[self selectedObjects] lastObject];
