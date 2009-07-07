@@ -19,6 +19,11 @@
 
 	return self;
 }
+//
+//- (void)removeObservationForContainer:(CSSImageContainer *)container {
+//	NSLog(@"-- removeObservationForContainer: 0x%08x", container);
+//	[container removeObserver:imagesController forKeyPath:@"bitmap"];
+//}
 
 - (BOOL)bitmapLoadingIsAllowed {
 	return bitmapLoadingIsAllowed;
@@ -431,7 +436,6 @@
 	}
 	
 	//NSLog(@"buttonName %@", buttonName);
-	
 }
 
 #pragma mark NSApplication Delegates
@@ -528,6 +532,7 @@
 #pragma mark NSTableView delegate
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
+	NSLog(@"-- tableViewSelectionDidChange"); // FIXME: don't load everything when select all
 	[imagesController retainOnlyAFewImagesAndReleaseTheRest];
 }
 

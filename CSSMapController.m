@@ -42,24 +42,35 @@
 	
 	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
 	CSSImageContainer *cssImageContainer = nil;
-	CSSBitmapImageRep *b = nil;
+	//CSSBitmapImageRep *b = nil;
 	
 	while((cssImageContainer = [e nextObject])) {		
-		b = [cssImageContainer bitmap];
 		
 		NSString *filePath = [cssImageContainer path];
 		NSString *fileName = [filePath lastPathComponent];
 		NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:YES];
 		NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
 		
-		NSString *latitude = [b prettyLatitude];
-		NSString *longitude = [b prettyLongitude];
+		NSString *latitude = [cssImageContainer cachedLatitude];
+		NSString *longitude = [cssImageContainer cachedLongitude];
+
+		if(!latitude || !longitude) {
+			[cssImageContainer loadNewBitmap];
+			
+			latitude = [cssImageContainer cachedLatitude];
+			longitude = [cssImageContainer cachedLongitude];			
+		}
 		
-		if(!latitude || !longitude) continue;
+		if(!latitude || !longitude) {
+			//[cssImageContainer forgetBitmap]; // FIXME: does trigger KVO issue
+			continue;
+		}
 		
 		NSString *js = [NSString stringWithFormat:@"addPoint(%@, %@, \"%@\", \"%@\", \"%@\");", latitude, longitude, fileName, filePath, fileModDateString];
 		//NSLog(@"-- js:%@", js);
 		[webView stringByEvaluatingJavaScriptFromString:js];
+				
+		[imagesController retainOnlyAFewImagesAndReleaseTheRest];
 	}
 	
 	[webView stringByEvaluatingJavaScriptFromString:@"center();"];
@@ -81,15 +92,16 @@
 	
 	while((cssImageContainer = [e nextObject])) {
 		
-		NSString *latitude = [cssImageContainer valueForKey:@"cachedLatitude"];
-		NSString *longitude = [cssImageContainer valueForKey:@"cachedLongitude"];
-		NSString *timestamp = [cssImageContainer valueForKey:@"cachedTimestamp"];
+		NSString *latitude = [cssImageContainer cachedLatitude];
+		NSString *longitude = [cssImageContainer cachedLongitude];
+		NSString *timestamp = [cssImageContainer cachedTimestamp];
 		
 		if(!latitude || !longitude) {
-			[cssImageContainer loadBitmap];
-			latitude = [cssImageContainer valueForKey:@"cachedLatitude"];
-			longitude = [cssImageContainer valueForKey:@"cachedLongitude"];
-			timestamp = [cssImageContainer valueForKey:@"cachedTimestamp"];
+			//NSLog(@"--3");
+			[cssImageContainer loadNewBitmap];
+			latitude = [cssImageContainer cachedLatitude];
+			longitude = [cssImageContainer cachedLongitude];
+			timestamp = [cssImageContainer cachedTimestamp];
 		}
 
 		if(!latitude || !longitude) {

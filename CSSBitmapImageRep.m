@@ -23,8 +23,13 @@
 
 - (NSImage *)image {
 	CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL);
+	if(!imageRef) return nil;
+
 	NSBitmapImageRep *bitmapRep = [[NSBitmapImageRep alloc] initWithCGImage:imageRef];
+	if(!bitmapRep) return nil;
+	
 	CFRelease(imageRef);
+	
 	NSImage *theImage = [[NSImage alloc] init];
 	[theImage addRepresentation:bitmapRep];
 	[bitmapRep release];
@@ -55,20 +60,21 @@
 	url = [NSURL fileURLWithPath:aPath];
 	[url retain];
 	
-	source = CGImageSourceCreateWithURL( (CFURLRef) url, NULL);
+	source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
 	if (!source) {
 		NSLog(@"Error: could not create image source");
 		return;
 	}
 	
-	NSDictionary *immutableMetadata = (NSDictionary *) CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
+	CFDictionaryRef metadataRef = CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
+	NSDictionary *immutableMetadata = (NSDictionary *) metadataRef;
 	[metadata autorelease];
 	metadata = [immutableMetadata mutableCopy];
-	[immutableMetadata release];
+	CFRelease(metadataRef);
 	
-	[container setValue:[self prettyLatitude] forKey:@"cachedLatitude"];
-	[container setValue:[self prettyLongitude] forKey:@"cachedLongitude"];
-	[container setValue:[self exifDateTime] forKey:@"cachedTimestamp"];
+	[container setCachedLatitude:[self prettyLatitude]];
+	[container setCachedLongitude:[self prettyLongitude]];
+	[container setCachedTimestamp:[self exifDateTime]];
 }
 
 - (BOOL)saveSourceWithMetadata {

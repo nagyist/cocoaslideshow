@@ -7,6 +7,7 @@
 	NSURL *url;
 	CGImageSourceRef source;
 	NSMutableDictionary *metadata;
+	
 	CSSImageContainer *container; // weak ref
 }
 
