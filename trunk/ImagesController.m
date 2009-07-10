@@ -194,7 +194,6 @@
 	return NO;
 }
 
-
 - (IBAction)openGoogleMap:(id)sender {
 	if(![[self selectedObjects] count]) return;
 	CSSImageContainer *i = [[self selectedObjects] lastObject];

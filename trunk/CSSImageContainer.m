@@ -17,6 +17,48 @@
     [self setKeys:[NSArray arrayWithObjects:@"isFlagged", nil] triggerChangeNotificationsForDependentKey:@"flagIcon"];
 }
 
+- (void)setPath:(NSString *)aPath {
+	if(aPath == nil) {
+		NSLog(@"-- aPath is nil :-(");
+		return;
+	}
+	
+	if(path != aPath) {
+		[path release];
+		path = [aPath retain];
+	}
+}
+
+- (NSString *)path {
+	return path;
+}
+
+- (id)initWithPath:(NSString *)aPath {
+	self = [super init];
+	[self setPath:aPath];
+	return self;
+}
+
++ (CSSImageContainer *)containerWithPath:(NSString *)aPath {
+	return [[[CSSImageContainer alloc] initWithPath:aPath] autorelease];
+}
+
+- (void)dealloc {
+	//NSLog(@"-- dealloc %@", path);
+	
+	[UTI release];
+	[path release];
+	
+	if(source) {
+		CFRelease(source);
+		source = nil;
+	}
+	[path release];
+	[metadata release];
+
+	[super dealloc];
+}
+
 - (NSMutableDictionary *)metadata {
 	if(!sourceRead) [self loadSource];
 	return metadata;
@@ -229,31 +271,28 @@
 }
 
 - (NSArray *)keywords {
-	//if(!sourceRead) [self loadSource];
-
 	return [[self iptc] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords];
 }
 
 - (NSString *)userComment {
-	//if(!sourceRead) [self loadSource];
-
 	return [[self exif] objectForKey:(NSString *)kCGImagePropertyExifUserComment];
 }
 
 - (NSString *)prettyGPS {
-	//if(!sourceRead) [self loadSource];
-
 	NSDictionary *gps = [self gps];
 	if(!gps) return nil;
 	
-	NSString *latitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
-	NSString *longitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitude];
+	NSString *latitude = [[gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude] description];
+	NSString *longitude = [[gps objectForKey:(NSString *)kCGImagePropertyGPSLongitude] description];
 	NSString *latitudeRef = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitudeRef];
 	NSString *longitudeRef = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitudeRef];
 	
 	if(!latitude || !longitude || !latitudeRef || !longitudeRef) return nil;
 	
-	return [NSString stringWithFormat:@"%@ %@, %@ %@", [latitude description], latitudeRef, [longitude description], longitudeRef];
+	NSString *trimedLatitude = [latitude length] > 8 ? [latitude substringToIndex:8] : latitude;
+	NSString *trimedLongitude = [longitude length] > 8 ? [longitude substringToIndex:8] : longitude;
+	
+	return [NSString stringWithFormat:@"%@ %@, %@ %@", trimedLatitude, latitudeRef, trimedLongitude, longitudeRef];
 }
 
 - (NSImage *)image {
@@ -264,8 +303,6 @@
 		source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
 	}
 	
-	//sourceRead = source != nil;
-
 	if (!source) {
 		CGImageSourceStatus status = CGImageSourceGetStatus(source);
 		NSLog(@"Error: could not create image source. Status: %d", status);
@@ -292,27 +329,17 @@
 	return [theImage autorelease];
 }
 
-
 - (NSURL *)googleMapsURL {
-//	if(!sourceRead) [self readSource];
-
-	NSDictionary *gps = [self gps];
-	if(!gps) return nil;
+	NSString *latitude = [self prettyLatitude];
+	NSString *longitude = [self prettyLongitude];
 	
-	NSString *latitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
-	NSString *longitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitude];
-	
-	if(!latitude || !longitude) return nil;
+	if([latitude length] == 0 || [longitude length] == 0) return nil;
 	
 	NSString *s = [NSString stringWithFormat:@"http://maps.google.com/?q=%@,%@", latitude, longitude];
 	return [NSURL URLWithString:s];
 }
 
-
-
 - (NSString *)prettyImageSize {
-	if(!sourceRead) [self loadSource];
-
 	NSString *x = [[self exif] objectForKey:(NSString *)kCGImagePropertyExifPixelXDimension];
 	NSString *y = [[self exif] objectForKey:(NSString *)kCGImagePropertyExifPixelYDimension];
 	if(x && y) {
@@ -323,22 +350,6 @@
 
 - (NSString *)prettyFileSize {
 	return [[NSFileManager defaultManager] prettyFileSize:path];	
-}
-
-- (void)dealloc {
-	//NSLog(@"-- dealloc %@", path);
-	
-	[UTI release];
-	[path release];
-	
-	if(source) {
-		CFRelease(source);
-		source = nil;
-	}
-	[path release];
-	[metadata release];
-
-	[super dealloc];
 }
 
 - (void)flag {
@@ -381,33 +392,6 @@
 
 - (void)revealInFinder {
 	[[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:@""];
-}
-
-- (void)setPath:(NSString *)aPath {
-	//NSLog(@"-- %@", aPath);
-	if(aPath == nil) {
-		NSLog(@"-- aPath is nil :-(");
-		return;
-	}
-	if(aPath != nil && path != aPath) {
-		[path release];
-		path = [aPath retain];
-	}
-}
-
-- (id)initWithPath:(NSString *)aPath {
-	self = [super init];
-	[self setPath:aPath];
-	return self;
-}
-
-+ (CSSImageContainer *)containerWithPath:(NSString *)aPath {
-	return [[[CSSImageContainer alloc] initWithPath:aPath] autorelease];
-}
-
-- (NSString *)path {
-	//NSLog(@"path %@", path);
-	return path;
 }
 
 @end
