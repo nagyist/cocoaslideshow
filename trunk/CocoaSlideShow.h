@@ -42,10 +42,14 @@
 	BOOL bitmapLoadingIsAllowed;
 }
 
+- (BOOL)isFullScreen;
+
 //- (void)removeObservationForContainer:(CSSImageContainer *)container;
 
+- (ImagesController *)imagesController;
+
 - (BOOL)bitmapLoadingIsAllowed;
-- (void)setBitmapLoadingIsAllowed:(BOOL)flag;
+//- (void)setBitmapLoadingIsAllowed:(BOOL)flag;
 
 - (IBAction)undo:(id)sender;
 - (IBAction)redo:(id)sender;

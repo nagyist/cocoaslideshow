@@ -3,8 +3,6 @@
 
 #import "NSFileManager+CSS.h"
 #import "Updater.h"
-#import "CSSBitmapImageRep.h"
-#import "CSSImageContainer.h"
 
 @implementation CocoaSlideShow
 
@@ -19,19 +17,18 @@
 
 	return self;
 }
-//
-//- (void)removeObservationForContainer:(CSSImageContainer *)container {
-//	NSLog(@"-- removeObservationForContainer: 0x%08x", container);
-//	[container removeObserver:imagesController forKeyPath:@"bitmap"];
-//}
+
+- (ImagesController *)imagesController {
+	return imagesController;
+}
 
 - (BOOL)bitmapLoadingIsAllowed {
 	return bitmapLoadingIsAllowed;
 }
-
-- (void)setBitmapLoadingIsAllowed:(BOOL)flag {
-	bitmapLoadingIsAllowed = flag;
-}
+//
+//- (void)setBitmapLoadingIsAllowed:(BOOL)flag {
+//	bitmapLoadingIsAllowed = flag;
+//}
 
 - (void)dealloc {
 	[mainWindow release];
@@ -203,6 +200,10 @@
 	}
 
 	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(copyToDirectory:) withObject:destDirectory];
+}
+
+- (BOOL)isFullScreen {
+	return isFullScreen;
 }
 
 - (void)rotate:(NSImageView *)iv clockwise:(BOOL)cw {
@@ -532,8 +533,11 @@
 #pragma mark NSTableView delegate
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
-	NSLog(@"-- tableViewSelectionDidChange"); // FIXME: don't load everything when select all
-	[imagesController retainOnlyAFewImagesAndReleaseTheRest];
+	//[imagesController forgetUnusedBitmaps];
+	
+	if([[imagesController selectedObjects] count] == 0 && [tabView selectedTabViewItem] == mapTabViewItem) {
+		[self hideGoogleMap];
+	}
 }
 
 @end

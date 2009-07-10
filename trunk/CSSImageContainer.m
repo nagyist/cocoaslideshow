@@ -9,55 +9,77 @@
 #import "CSSImageContainer.h"
 #import "NSString+CSS.h"
 #import "CocoaSlideShow.h"
+#import "NSFileManager+CSS.h"
 
 @implementation CSSImageContainer
 
-/*
-- (id)init {
-	self = [super init];
-	NSLog(@"init %@", self);
-	return self;
-}
-*/
-
-- (NSString *)cachedLatitude {
-	return cachedLatitude;
-}
-
-- (NSString *)cachedLongitude {
-	return cachedLongitude;
-}
-
-- (NSString *)cachedTimestamp {
-	return cachedTimestamp;
-}
-
-- (void)setCachedLatitude:(NSString *)s {
-	if([s isEqualToString:cachedLatitude]) return;
-	
-	[cachedLatitude release];
-	cachedLatitude = s;
-	[cachedLatitude retain];
-}
-
-- (void)setCachedLongitude:(NSString *)s {
-	if([s isEqualToString:cachedLongitude]) return;
-	
-	[cachedLongitude release];
-	cachedLongitude = s;
-	[cachedLongitude retain];
-}
-
-- (void)setCachedTimestamp:(NSString *)s {
-	if([s isEqualToString:cachedTimestamp]) return;
-	
-	[cachedTimestamp release];
-	cachedTimestamp = s;
-	[cachedTimestamp retain];	
-}
-
 + (void)initialize {
     [self setKeys:[NSArray arrayWithObjects:@"isFlagged", nil] triggerChangeNotificationsForDependentKey:@"flagIcon"];
+}
+
+- (NSMutableDictionary *)metadata {
+	if(!sourceRead) [self loadSource];
+	return metadata;
+}
+
+- (NSString *)exifDateTime {
+	NSDictionary *exif = [[self metadata] objectForKey:(NSString *)kCGImagePropertyExifDictionary];
+	return [exif objectForKey:(NSString *)kCGImagePropertyExifDateTimeOriginal];
+}
+
+- (NSString *)prettyLatitude {
+	NSDictionary *gps = [self gps];
+	
+	if(!gps) return @"";
+	
+	NSNumber *latitude = [gps objectForKey:@"Latitude"];
+	NSString *latitudeRef = [gps objectForKey:@"LatitudeRef"];
+	
+	if(!latitude) return @"";
+	
+	return [latitudeRef isEqualToString:@"S"] ? [@"-" stringByAppendingFormat:@"%@", latitude] : [latitude description];
+}
+
+- (NSString *)prettyLongitude {
+	NSDictionary *gps = [self gps];
+	
+	if(!gps) return @"";
+	
+	NSNumber *longitude = [gps objectForKey:@"Longitude"];
+	NSString *longitudeRef = [gps objectForKey:@"LongitudeRef"];
+	
+	if(!longitude) return @"";
+	
+	return [longitudeRef isEqualToString:@"W"] ? [@"-" stringByAppendingFormat:@"%@", longitude] : [longitude description];
+}
+
+- (BOOL)loadSource {
+	NSURL *url = [NSURL fileURLWithPath:path];
+	source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
+	CGImageSourceStatus status = CGImageSourceGetStatus(source);
+	
+	if (!source) {
+		NSLog(@"Error: could not create image source. Status: %d", status);
+		return NO;
+	}
+
+	sourceRead = YES;
+	
+	// fill caches
+	
+	CFDictionaryRef metadataRef = CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
+	NSDictionary *immutableMetadata = (NSDictionary *) metadataRef;
+	[metadata autorelease];
+	metadata = [immutableMetadata mutableCopy];
+	CFRelease(metadataRef);
+
+	[self setValue:(NSString *)CGImageSourceGetType(source) forKey:@"UTI"];
+	
+	[self willChangeValueForKey:@"isJpeg"];
+	isJpeg = [UTI isEqualToString:@"public.jpeg"];
+	[self didChangeValueForKey:@"isJpeg"];
+    
+	return YES;
 }
 
 - (NSString *)fileName {
@@ -74,92 +96,249 @@
 	}
 }
 
-- (void)loadNewBitmap {
-	if(bitmap) return;
-	
-	NSData *data = [NSData dataWithContentsOfFile:path];
-
-	CSSBitmapImageRep *bitmapImageRep = [[CSSBitmapImageRep alloc] initWithData:data];
-	[bitmapImageRep setContainer:self]; // TODO: unelegant..
-	[bitmapImageRep setPath:path];
-
-	[self willChangeValueForKey:@"bitmap"];
-	[bitmap autorelease];
-	bitmap = bitmapImageRep;
-
-	[self didChangeValueForKey:@"bitmap"];
+- (NSString *)latitude {
+	return [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
 }
 
-/*
- x observes b
- 
- b is cached
- 
- def b:
-	 willChangeValueForKey:b		# this makes the observers call b again -> infinite loop
-	 load b
-	 didChangeValueForKey:b
-*/
+- (NSString *)longitude {
+	return [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSLongitude];
+}
 
-- (CSSBitmapImageRep *)bitmap {
-	if(isLoadingCache || bitmap) return bitmap;
-	
-	BOOL isSaving = [[[NSApp delegate] valueForKey:@"isSaving"] boolValue];
-	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
-	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
-	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:@"MultipleSelectionAllowsEdition"];
-	
-	BOOL bitmapLoadingIsAllowed = [(CocoaSlideShow *)[NSApp delegate] bitmapLoadingIsAllowed];
+- (NSString *)latitudeRef {
+	return [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSLatitudeRef];
+}
 
-	if(!bitmapLoadingIsAllowed && (isSaving || (!readOnMultiSelect && multipleImagesSelected && !isMap))) {
-		return nil;
+- (NSString *)longitudeRef {
+	return [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSLongitudeRef];
+}
+
+- (NSDictionary *)exif {
+	return [[self metadata] objectForKey:(NSString *)kCGImagePropertyExifDictionary];
+}
+
+- (NSDictionary *)iptc {
+	return [[self metadata] objectForKey:(NSString *)kCGImagePropertyIPTCDictionary];
+}
+
+- (NSDictionary *)gps {
+	return [[self metadata] objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
+}
+
+- (BOOL)saveSourceWithMetadata {
+
+	if(!source) {
+		NSURL *url = [NSURL fileURLWithPath:path];
+		source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
 	}
 	
-	NSData *data = [NSData dataWithContentsOfFile:path];
-	
-	CSSBitmapImageRep *bitmapImageRep = [[CSSBitmapImageRep alloc] initWithData:data];
-	[bitmapImageRep setContainer:self]; // FIXME: unelegant..
-	[bitmapImageRep setPath:path];
-		
-	if(!isLoadingCache) {
-		isLoadingCache = YES;
+	if(!source) {
+		CGImageSourceStatus status = CGImageSourceGetStatus(source);
+		NSLog(@"Error: could not create image source. Status: %d", status);
+		return NO;
 	}
 	
-	[self willChangeValueForKey:@"bitmap"];
-	[bitmap release];
-	bitmap = bitmapImageRep;
-	[self didChangeValueForKey:@"bitmap"];
+	NSData *data = [NSMutableData data];
+    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data, (CFStringRef)UTI, 1, NULL);
+    if(!destination) {
+        NSLog(@"Error: could not create image destination");
+		CFRelease(destination);
+		if(source) {
+			CFRelease(source);
+			source = nil;
+		}
+        return NO;
+    }
+    
+    CGImageDestinationAddImageFromSource(destination, source, 0, (CFDictionaryRef)metadata);
+    BOOL success = CGImageDestinationFinalize(destination); // write metadata into the data object
+	if(!success) {
+		NSLog(@"Error: could not finalize destination");
+		CFRelease(destination);
+		if(source) {
+			CFRelease(source);
+			source = nil;
+		}
+		return NO;
+	}
+	
+	CFRelease(destination);
+	if(source) {
+		CFRelease(source);
+		source = nil;
+	}
+	
+	NSURL *url = [NSURL fileURLWithPath:path];
+	NSError *error = nil;
+	success = [data writeToURL:url options:NSAtomicWrite error:&error];
 
-	if(isLoadingCache) {
-		isLoadingCache = NO;
+	if(error) {
+		NSLog(@"-- error: can't write data: %@", [error localizedDescription]);
 	}
 	
-	return bitmap;
+	return success;
+}
+
+- (BOOL)isJpeg {
+	return isJpeg;
+}
+
+- (void)setUserComment:(NSString *)comment {
+	if(![self isJpeg]) return;
+
+	if(!sourceRead) [self loadSource];
+	
+	[self willChangeValueForKey:@"userComment"];
+	[self willChangeValueForKey:@"exif"];
+	NSMutableDictionary *exifData = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
+	if(!exifData) {
+		exifData = [[NSMutableDictionary alloc] init];
+	}
+	[exifData setObject:comment forKey:(NSString *)kCGImagePropertyExifUserComment];
+	[metadata setObject:exifData forKey:(NSString *)kCGImagePropertyExifDictionary];
+	[exifData release];
+	[self didChangeValueForKey:@"exif"];
+	[self didChangeValueForKey:@"userComment"];
+	
+	BOOL success = [self saveSourceWithMetadata];
+	if(!success) {
+		NSLog(@"Error: can't set user comment");
+	}
+	
+	return;
+}
+
+- (void)setKeywords:(NSArray *)keywords {
+	if(![self isJpeg]) return;
+
+	if(!sourceRead) [self loadSource];
+
+	[self willChangeValueForKey:@"keywords"];
+	NSMutableDictionary *iptcDict = [[self iptc] mutableCopy];
+	if(!iptcDict) {
+		iptcDict = [[NSMutableDictionary alloc] init];
+	}
+	[iptcDict setObject:keywords forKey:(NSString *)kCGImagePropertyIPTCKeywords];
+	[metadata setObject:iptcDict forKey:(NSString *)kCGImagePropertyIPTCDictionary];
+	[iptcDict release];
+	[self didChangeValueForKey:@"keywords"];
+	
+	BOOL success = [self saveSourceWithMetadata];
+	if(!success) {
+		NSLog(@"Error: can't set keywords");
+	}
+}
+
+- (NSArray *)keywords {
+	//if(!sourceRead) [self loadSource];
+
+	return [[self iptc] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords];
+}
+
+- (NSString *)userComment {
+	//if(!sourceRead) [self loadSource];
+
+	return [[self exif] objectForKey:(NSString *)kCGImagePropertyExifUserComment];
+}
+
+- (NSString *)prettyGPS {
+	//if(!sourceRead) [self loadSource];
+
+	NSDictionary *gps = [self gps];
+	if(!gps) return nil;
+	
+	NSString *latitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
+	NSString *longitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitude];
+	NSString *latitudeRef = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitudeRef];
+	NSString *longitudeRef = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitudeRef];
+	
+	if(!latitude || !longitude || !latitudeRef || !longitudeRef) return nil;
+	
+	return [NSString stringWithFormat:@"%@ %@, %@ %@", [latitude description], latitudeRef, [longitude description], longitudeRef];
+}
+
+- (NSImage *)image {
+	//if(![[NSApp delegate] isFullScreen]) return nil;
+	
+	if(!source) {
+		NSURL *url = [NSURL fileURLWithPath:path];
+		source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
+	}
+	
+	//sourceRead = source != nil;
+
+	if (!source) {
+		CGImageSourceStatus status = CGImageSourceGetStatus(source);
+		NSLog(@"Error: could not create image source. Status: %d", status);
+		return NO;
+	}
+	
+	CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL);
+	if(source) {
+		CFRelease(source);
+		source = nil;
+	}
+
+	if(!imageRef) return nil;
+
+	NSBitmapImageRep *bitmapRep = [[NSBitmapImageRep alloc] initWithCGImage:imageRef];
+	if(!bitmapRep) return nil;
+	
+	CFRelease(imageRef);
+	
+	NSImage *theImage = [[NSImage alloc] init];
+	[theImage addRepresentation:bitmapRep];
+	[bitmapRep release];
+	
+	return [theImage autorelease];
+}
+
+
+- (NSURL *)googleMapsURL {
+//	if(!sourceRead) [self readSource];
+
+	NSDictionary *gps = [self gps];
+	if(!gps) return nil;
+	
+	NSString *latitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
+	NSString *longitude = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitude];
+	
+	if(!latitude || !longitude) return nil;
+	
+	NSString *s = [NSString stringWithFormat:@"http://maps.google.com/?q=%@,%@", latitude, longitude];
+	return [NSURL URLWithString:s];
+}
+
+
+
+- (NSString *)prettyImageSize {
+	if(!sourceRead) [self loadSource];
+
+	NSString *x = [[self exif] objectForKey:(NSString *)kCGImagePropertyExifPixelXDimension];
+	NSString *y = [[self exif] objectForKey:(NSString *)kCGImagePropertyExifPixelYDimension];
+	if(x && y) {
+		return [NSString stringWithFormat:@"%@x%@", x, y];
+	}
+	return nil;
+}
+
+- (NSString *)prettyFileSize {
+	return [[NSFileManager defaultManager] prettyFileSize:path];	
 }
 
 - (void)dealloc {
-	NSLog(@"-- dealloc %@", path);
-	[cachedLatitude release];
-	[cachedLongitude release];
-	[cachedTimestamp release];
+	//NSLog(@"-- dealloc %@", path);
 	
+	[UTI release];
 	[path release];
-	[self willChangeValueForKey:@"bitmap"];
-	[bitmap release];
-	[self didChangeValueForKey:@"bitmap"];
-	[super dealloc];
-}
-
-- (void)forgetBitmap {
-	NSLog(@"-- forgetBitmap %@", [self path]);
-
-	if(bitmap) {
-		NSLog(@"-- release %@", path);
-		[self willChangeValueForKey:@"bitmap"];
-		[bitmap release];
-		bitmap = nil;
-		[self didChangeValueForKey:@"bitmap"];
+	
+	if(source) {
+		CFRelease(source);
+		source = nil;
 	}
+	[path release];
+	[metadata release];
+
+	[super dealloc];
 }
 
 - (void)flag {

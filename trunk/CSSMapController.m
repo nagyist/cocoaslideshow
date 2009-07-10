@@ -10,7 +10,6 @@
 
 #import "CSSMapController.h"
 #import "CSSImageContainer.h"
-#import "CSSBitmapImageRep.h"
 #import "CocoaSlideShow.h"
 
 @implementation CSSMapController
@@ -51,15 +50,8 @@
 		NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:YES];
 		NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
 		
-		NSString *latitude = [cssImageContainer cachedLatitude];
-		NSString *longitude = [cssImageContainer cachedLongitude];
-
-		if(!latitude || !longitude) {
-			[cssImageContainer loadNewBitmap];
-			
-			latitude = [cssImageContainer cachedLatitude];
-			longitude = [cssImageContainer cachedLongitude];			
-		}
+		NSString *latitude = [cssImageContainer prettyLatitude];
+		NSString *longitude = [cssImageContainer prettyLongitude];
 		
 		if(!latitude || !longitude) {
 			//[cssImageContainer forgetBitmap]; // FIXME: does trigger KVO issue
@@ -70,7 +62,7 @@
 		//NSLog(@"-- js:%@", js);
 		[webView stringByEvaluatingJavaScriptFromString:js];
 				
-		[imagesController retainOnlyAFewImagesAndReleaseTheRest];
+		//[imagesController forgetUnusedBitmaps];
 	}
 	
 	[webView stringByEvaluatingJavaScriptFromString:@"center();"];
@@ -81,7 +73,7 @@
 
 - (NSString*)generateKML {
 	
-	[(CocoaSlideShow *)[NSApp delegate] setBitmapLoadingIsAllowed:YES];
+	//[(CocoaSlideShow *)[NSApp delegate] setBitmapLoadingIsAllowed:YES];
 	
 	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
 	CSSImageContainer *cssImageContainer = nil;
@@ -92,17 +84,17 @@
 	
 	while((cssImageContainer = [e nextObject])) {
 		
-		NSString *latitude = [cssImageContainer cachedLatitude];
-		NSString *longitude = [cssImageContainer cachedLongitude];
-		NSString *timestamp = [cssImageContainer cachedTimestamp];
+		NSString *latitude = [cssImageContainer prettyLongitude];
+		NSString *longitude = [cssImageContainer prettyLongitude];
+		NSString *timestamp = [cssImageContainer exifDateTime];
 		
-		if(!latitude || !longitude) {
-			//NSLog(@"--3");
-			[cssImageContainer loadNewBitmap];
-			latitude = [cssImageContainer cachedLatitude];
-			longitude = [cssImageContainer cachedLongitude];
-			timestamp = [cssImageContainer cachedTimestamp];
-		}
+//		if(!latitude || !longitude) {
+//			//NSLog(@"--3");
+//			[cssImageContainer loadNewBitmap];
+//			latitude = [cssImageContainer cachedLatitude];
+//			longitude = [cssImageContainer cachedLongitude];
+//			timestamp = [cssImageContainer cachedTimestamp];
+//		}
 
 		if(!latitude || !longitude) {
 			continue;
@@ -112,7 +104,7 @@
 		 [[cssImageContainer path] lastPathComponent], timestamp, longitude, latitude];
 	}
 	
-	[(CocoaSlideShow *)[NSApp delegate] setBitmapLoadingIsAllowed:NO];
+	//[(CocoaSlideShow *)[NSApp delegate] setBitmapLoadingIsAllowed:NO];
 	
 	return [NSString stringWithFormat:XMLContainer, placemarkString];
 }

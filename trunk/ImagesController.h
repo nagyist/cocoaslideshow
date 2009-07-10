@@ -16,6 +16,7 @@
 	NSArray *allowedExtensions;
 }
 
+- (void)bitmapWasLoadedInContainer:(CSSImageContainer *)c;
 - (NSUndoManager *)undoManager;
 - (NSIndexSet *)flaggedIndexes;
 - (void)flagIndexes:(NSIndexSet *)indexSet;
@@ -32,7 +33,7 @@
 - (void)selectNextImage;
 - (void)addFiles:(NSArray *)filePaths;
 - (void)addDirFiles:(NSString *)dir;
-- (void)retainOnlyAFewImagesAndReleaseTheRest;
+//- (void)forgetUnusedBitmaps;
 //- (NSArray *)flagged;
 //- (NSArray *)selectedObjectsWithGPS;
 - (BOOL)atLeastOneImageWithGPSSelected;
