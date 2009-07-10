@@ -33,9 +33,6 @@
 - (void)selectNextImage;
 - (void)addFiles:(NSArray *)filePaths;
 - (void)addDirFiles:(NSString *)dir;
-//- (void)forgetUnusedBitmaps;
-//- (NSArray *)flagged;
-//- (NSArray *)selectedObjectsWithGPS;
 - (BOOL)atLeastOneImageWithGPSSelected;
 - (IBAction)openGoogleMap:(id)sender;
 

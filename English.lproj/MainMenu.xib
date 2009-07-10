@@ -9,8 +9,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="2"/>
-			<integer value="380"/>
-			<integer value="29"/>
+			<integer value="324"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1215,9 +1214,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 								</object>
 								<object class="NSMenuItem" id="465289356">
 									<reference key="NSMenu" ref="57018649"/>
-									<string key="NSTitle">Toogle Google Map</string>
+									<string key="NSTitle">Toogle Google Maps</string>
 									<string key="NSKeyEquiv">g</string>
 									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="235389030"/>
+									<reference key="NSMixedImage" ref="634931129"/>
+								</object>
+								<object class="NSMenuItem" id="491639466">
+									<reference key="NSMenu" ref="57018649"/>
+									<string key="NSTitle">Open in Google Maps</string>
+									<string key="NSKeyEquiv">g</string>
+									<int key="NSKeyEquivModMask">1572864</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="235389030"/>
 									<reference key="NSMixedImage" ref="634931129"/>
@@ -1225,8 +1233,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 								<object class="NSMenuItem" id="764540621">
 									<reference key="NSMenu" ref="57018649"/>
 									<string key="NSTitle">Export KML File</string>
-									<string key="NSKeyEquiv">g</string>
-									<int key="NSKeyEquivModMask">1572864</int>
+									<string key="NSKeyEquiv">k</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="235389030"/>
 									<reference key="NSMixedImage" ref="634931129"/>
@@ -1314,6 +1322,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<string>image</string>
 					<string>exifDateTime</string>
 					<string>isJpeg</string>
+					<string>gps</string>
 				</object>
 				<string key="NSObjectClassName">CSSImageContainer</string>
 				<bool key="NSEditable">YES</bool>
@@ -1391,7 +1400,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="629326575">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1589,7 +1598,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						</object>
 					</object>
 					<string key="NSFrameSize">{261, 144}</string>
-					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
@@ -2568,6 +2576,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					</object>
 					<int key="connectionID">1003</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openGoogleMap:</string>
+						<reference key="source" ref="79550871"/>
+						<reference key="destination" ref="491639466"/>
+					</object>
+					<int key="connectionID">1005</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: selection.gps</string>
+						<reference key="source" ref="491639466"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="491639466"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">enabled: selection.gps</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">selection.gps</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1007</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3059,6 +3091,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<reference ref="288869391"/>
 							<reference ref="465289356"/>
 							<reference ref="764540621"/>
+							<reference ref="491639466"/>
 						</object>
 						<reference key="parent" ref="902595984"/>
 					</object>
@@ -3494,6 +3527,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<reference key="object" ref="764540621"/>
 						<reference key="parent" ref="57018649"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1004</int>
+						<reference key="object" ref="491639466"/>
+						<reference key="parent" ref="57018649"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -3504,6 +3542,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<string>-2.IBPluginDependency</string>
 					<string>-3.IBPluginDependency</string>
 					<string>-3.ImportedFromIB2</string>
+					<string>1004.IBPluginDependency</string>
 					<string>103.IBPluginDependency</string>
 					<string>103.ImportedFromIB2</string>
 					<string>106.IBPluginDependency</string>
@@ -3756,6 +3795,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
@@ -3846,7 +3886,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{304, 549}, {245, 253}}</string>
+					<string>{{304, 529}, {259, 273}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4021,7 +4061,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1003</int>
+			<int key="maxID">1007</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
