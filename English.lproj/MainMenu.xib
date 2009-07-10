@@ -8,8 +8,9 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="972"/>
 			<integer value="2"/>
+			<integer value="380"/>
+			<integer value="29"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1302,6 +1303,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>bitmap.image</string>
 					<string>bitmap.data</string>
+					<string>bitmap.TIFFRepresentation</string>
+					<string>path</string>
+					<string>prettyFileSize</string>
+					<string>prettyImageSize</string>
+					<string>exif.DateTimeOriginal</string>
+					<string>prettyGPS</string>
+					<string>userComment</string>
+					<string>keywords</string>
+					<string>image</string>
+					<string>exifDateTime</string>
+					<string>isJpeg</string>
 				</object>
 				<string key="NSObjectClassName">CSSImageContainer</string>
 				<bool key="NSEditable">YES</bool>
@@ -1368,7 +1380,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 			<object class="NSWindowTemplate" id="356387959">
 				<int key="NSWindowStyleMask">3</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{391, 519}, {261, 164}}</string>
+				<string key="NSWindowRect">{{391, 539}, {261, 144}}</string>
 				<int key="NSWTFlags">1886912512</int>
 				<string key="NSWindowTitle">Preferences</string>
 				<object class="NSMutableString" key="NSWindowClass">
@@ -1379,7 +1391,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<object class="NSView" key="NSWindowView" id="629326575">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1413,7 +1425,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<object class="NSButton" id="837371183">
 							<reference key="NSNextResponder" ref="629326575"/>
 							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{76, 12}, {109, 32}}</string>
+							<string key="NSFrame">{{66, 12}, {109, 32}}</string>
 							<reference key="NSSuperview" ref="629326575"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="104622622">
@@ -1436,7 +1448,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<object class="NSTextField" id="1005073065">
 							<reference key="NSNextResponder" ref="629326575"/>
 							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{17, 124}, {114, 17}}</string>
+							<string key="NSFrame">{{17, 104}, {114, 17}}</string>
 							<reference key="NSSuperview" ref="629326575"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="1065689410">
@@ -1452,7 +1464,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<object class="NSTextField" id="717715061">
 							<reference key="NSNextResponder" ref="629326575"/>
 							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{136, 122}, {33, 22}}</string>
+							<string key="NSFrame">{{136, 102}, {33, 22}}</string>
 							<reference key="NSSuperview" ref="629326575"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="705398800">
@@ -1540,7 +1552,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<object class="NSTextField" id="256035618">
 							<reference key="NSNextResponder" ref="629326575"/>
 							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{174, 124}, {55, 17}}</string>
+							<string key="NSFrame">{{174, 104}, {55, 17}}</string>
 							<reference key="NSSuperview" ref="629326575"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="1025100881">
@@ -1556,7 +1568,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<object class="NSButton" id="678611092">
 							<reference key="NSNextResponder" ref="629326575"/>
 							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{18, 98}, {181, 18}}</string>
+							<string key="NSFrame">{{18, 78}, {181, 18}}</string>
 							<reference key="NSSuperview" ref="629326575"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="833258977">
@@ -1575,30 +1587,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 								<int key="NSPeriodicInterval">25</int>
 							</object>
 						</object>
-						<object class="NSButton" id="492284557">
-							<reference key="NSNextResponder" ref="629326575"/>
-							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{18, 78}, {225, 18}}</string>
-							<reference key="NSSuperview" ref="629326575"/>
-							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="765152567">
-								<int key="NSCellFlags">67239424</int>
-								<int key="NSCellFlags2">0</int>
-								<string key="NSContents">Multiple selection allows edition</string>
-								<reference key="NSSupport" ref="910942605"/>
-								<reference key="NSControlView" ref="492284557"/>
-								<int key="NSButtonFlags">1211912703</int>
-								<int key="NSButtonFlags2">2</int>
-								<reference key="NSNormalImage" ref="832107096"/>
-								<reference key="NSAlternateImage" ref="1071946238"/>
-								<string key="NSAlternateContents"/>
-								<string key="NSKeyEquivalent"/>
-								<int key="NSPeriodicDelay">200</int>
-								<int key="NSPeriodicInterval">25</int>
-							</object>
-						</object>
 					</object>
-					<string key="NSFrameSize">{261, 164}</string>
+					<string key="NSFrameSize">{261, 144}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
@@ -1857,44 +1848,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<int key="connectionID">416</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: selection.path.pathIsJpeg</string>
-						<reference key="source" ref="764525267"/>
-						<reference key="destination" ref="79550871"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="764525267"/>
-							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">enabled: selection.path.pathIsJpeg</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">selection.path.pathIsJpeg</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">538</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">open:</string>
 						<reference key="source" ref="166783046"/>
 						<reference key="destination" ref="1009918376"/>
 					</object>
 					<int key="connectionID">550</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: selection.path.pathIsJpeg</string>
-						<reference key="source" ref="657115581"/>
-						<reference key="destination" ref="79550871"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="657115581"/>
-							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">enabled: selection.path.pathIsJpeg</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">selection.path.pathIsJpeg</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">566</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2126,15 +2085,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: selection.bitmap.googleMapsURL</string>
+						<string key="label">enabled: selection.googleMapsURL</string>
 						<reference key="source" ref="465289356"/>
 						<reference key="destination" ref="79550871"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="465289356"/>
 							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">enabled: selection.bitmap.googleMapsURL</string>
+							<string key="NSLabel">enabled: selection.googleMapsURL</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">selection.bitmap.googleMapsURL</string>
+							<string key="NSKeyPath">selection.googleMapsURL</string>
 							<object class="NSDictionary" key="NSOptions">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMutableArray" key="dict.sortedKeys">
@@ -2336,22 +2295,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<int key="connectionID">965</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.MultipleSelectionAllowsEdition</string>
-						<reference key="source" ref="492284557"/>
-						<reference key="destination" ref="861663604"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="492284557"/>
-							<reference key="NSDestination" ref="861663604"/>
-							<string key="NSLabel">value: values.MultipleSelectionAllowsEdition</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.MultipleSelectionAllowsEdition</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">971</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">exportKMLToFile:</string>
 						<reference key="source" ref="984904353"/>
@@ -2361,128 +2304,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: selection.bitmap.image</string>
-						<reference key="source" ref="802579853"/>
-						<reference key="destination" ref="79550871"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="802579853"/>
-							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">value: selection.bitmap.image</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">selection.bitmap.image</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">977</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: selection.bitmap.exif.DateTimeOriginal</string>
-						<reference key="source" ref="916631972"/>
-						<reference key="destination" ref="79550871"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="916631972"/>
-							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">value: selection.bitmap.exif.DateTimeOriginal</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">selection.bitmap.exif.DateTimeOriginal</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSMultipleValuesPlaceholder</string>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNotApplicablePlaceholder</string>
-									<string>NSNullPlaceholder</string>
-									<string>NSRaisesForNotApplicableKeys</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>Date</string>
-									<string>Date</string>
-									<string>Date</string>
-									<string>Date</string>
-									<reference ref="6"/>
-								</object>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">978</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: selection.bitmap.userComment</string>
-						<reference key="source" ref="764525267"/>
-						<reference key="destination" ref="79550871"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="764525267"/>
-							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">value: selection.bitmap.userComment</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">selection.bitmap.userComment</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNullPlaceholder</string>
-									<string>NSRaisesForNotApplicableKeys</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>EXIF User Comment</string>
-									<string>EXIF User Comment</string>
-									<reference ref="6"/>
-								</object>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">979</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: selection.bitmap.keywords</string>
-						<reference key="source" ref="657115581"/>
-						<reference key="destination" ref="79550871"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="657115581"/>
-							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">value: selection.bitmap.keywords</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">selection.bitmap.keywords</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNullPlaceholder</string>
-									<string>NSRaisesForNotApplicableKeys</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>IPTC Keywords</string>
-									<string>IPTC Keywords</string>
-									<reference ref="6"/>
-								</object>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">980</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: selection.bitmap.prettyFileSize</string>
+						<string key="label">value: selection.prettyFileSize</string>
 						<reference key="source" ref="1031619790"/>
 						<reference key="destination" ref="79550871"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="1031619790"/>
 							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">value: selection.bitmap.prettyFileSize</string>
+							<string key="NSLabel">value: selection.prettyFileSize</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">selection.bitmap.prettyFileSize</string>
+							<string key="NSKeyPath">selection.prettyFileSize</string>
 							<object class="NSDictionary" key="NSOptions">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMutableArray" key="dict.sortedKeys">
@@ -2505,19 +2335,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">981</int>
+					<int key="connectionID">989</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: selection.bitmap.prettyImageSize</string>
+						<string key="label">value: selection.prettyImageSize</string>
 						<reference key="source" ref="176635047"/>
 						<reference key="destination" ref="79550871"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="176635047"/>
 							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">value: selection.bitmap.prettyImageSize</string>
+							<string key="NSLabel">value: selection.prettyImageSize</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">selection.bitmap.prettyImageSize</string>
+							<string key="NSKeyPath">selection.prettyImageSize</string>
 							<object class="NSDictionary" key="NSOptions">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMutableArray" key="dict.sortedKeys">
@@ -2540,19 +2370,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">982</int>
+					<int key="connectionID">990</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: selection.bitmap.prettyGPS</string>
+						<string key="label">value: selection.prettyGPS</string>
 						<reference key="source" ref="988949378"/>
 						<reference key="destination" ref="79550871"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="988949378"/>
 							<reference key="NSDestination" ref="79550871"/>
-							<string key="NSLabel">value: selection.bitmap.prettyGPS</string>
+							<string key="NSLabel">value: selection.prettyGPS</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">selection.bitmap.prettyGPS</string>
+							<string key="NSKeyPath">selection.prettyGPS</string>
 							<object class="NSDictionary" key="NSOptions">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMutableArray" key="dict.sortedKeys">
@@ -2575,7 +2405,168 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">983</int>
+					<int key="connectionID">992</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: selection.userComment</string>
+						<reference key="source" ref="764525267"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="764525267"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">value: selection.userComment</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">selection.userComment</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNullPlaceholder</string>
+									<string>NSRaisesForNotApplicableKeys</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>EXIF User Comment</string>
+									<string>EXIF User Comment</string>
+									<reference ref="6"/>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">993</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: selection.keywords</string>
+						<reference key="source" ref="657115581"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="657115581"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">value: selection.keywords</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">selection.keywords</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNullPlaceholder</string>
+									<string>NSRaisesForNotApplicableKeys</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>IPTC Keywords</string>
+									<string>IPTC Keywords</string>
+									<reference ref="6"/>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">994</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: selection.image</string>
+						<reference key="source" ref="802579853"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="802579853"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">value: selection.image</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">selection.image</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">995</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: selection.exifDateTime</string>
+						<reference key="source" ref="916631972"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="916631972"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">value: selection.exifDateTime</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">selection.exifDateTime</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSMultipleValuesPlaceholder</string>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNotApplicablePlaceholder</string>
+									<string>NSNullPlaceholder</string>
+									<string>NSRaisesForNotApplicableKeys</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>Date</string>
+									<string>Date</string>
+									<string>Date</string>
+									<string>Date</string>
+									<reference ref="6"/>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">996</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: isFullScreen</string>
+						<reference key="source" ref="802579853"/>
+						<reference key="destination" ref="166783046"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="802579853"/>
+							<reference key="NSDestination" ref="166783046"/>
+							<string key="NSLabel">enabled: isFullScreen</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">isFullScreen</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1001</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: selection.isJpeg</string>
+						<reference key="source" ref="764525267"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="764525267"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">enabled: selection.isJpeg</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">selection.isJpeg</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1002</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: selection.isJpeg</string>
+						<reference key="source" ref="657115581"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="657115581"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">enabled: selection.isJpeg</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">selection.isJpeg</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1003</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3185,7 +3176,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<reference ref="717715061"/>
 							<reference ref="256035618"/>
 							<reference ref="678611092"/>
-							<reference ref="492284557"/>
 							<reference ref="388620126"/>
 							<reference ref="837371183"/>
 						</object>
@@ -3500,20 +3490,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">967</int>
-						<reference key="object" ref="492284557"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="765152567"/>
-						</object>
-						<reference key="parent" ref="629326575"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">968</int>
-						<reference key="object" ref="765152567"/>
-						<reference key="parent" ref="492284557"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">972</int>
 						<reference key="object" ref="764540621"/>
 						<reference key="parent" ref="57018649"/>
@@ -3771,9 +3747,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<string>931.IBPluginDependency</string>
 					<string>932.IBPluginDependency</string>
 					<string>955.IBPluginDependency</string>
-					<string>967.IBPluginDependency</string>
-					<string>967.ImportedFromIB2</string>
-					<string>968.IBPluginDependency</string>
 					<string>972.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
@@ -3835,8 +3808,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{39, 52}, {751, 486}}</string>
-					<string>{{39, 52}, {751, 486}}</string>
+					<string>{{55, 195}, {751, 486}}</string>
+					<string>{{55, 195}, {751, 486}}</string>
 					<reference ref="9"/>
 					<reference ref="9"/>
 					<reference ref="8"/>
@@ -3890,8 +3863,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{63, 325}, {261, 164}}</string>
-					<string>{{63, 325}, {261, 164}}</string>
+					<string>{{63, 345}, {261, 144}}</string>
+					<string>{{63, 345}, {261, 144}}</string>
 					<reference ref="9"/>
 					<reference ref="8"/>
 					<string>{3.40282e+38, 3.40282e+38}</string>
@@ -4026,9 +3999,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<reference ref="9"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -4051,7 +4021,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">983</int>
+			<int key="maxID">1003</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -146,25 +146,28 @@
 	[self removeObjectsAtArrangedObjectIndexes:[self selectionIndexes]];
 }
 
-- (void)retainOnlyAFewImagesAndReleaseTheRest {
-	
-	if([[self selectedObjects] count] != 1) {
-		return;
-	}
-
-	//NSLog(@"-- retainOnlyAFewImagesAndReleaseTheRest");
-
-	CSSImageContainer *c = [[self selectedObjects] lastObject];
-	
+- (void)bitmapWasLoadedInContainer:(CSSImageContainer *)c {
 	if(![inMemoryBitmapsContainers containsObject:c]) {
-		if([inMemoryBitmapsContainers count] == IN_MEMORY_BITMAPS) {
-			CSSImageContainer *oldContainer = [inMemoryBitmapsContainers objectAtIndex:0];
-			[oldContainer forgetBitmap];
-			[inMemoryBitmapsContainers removeObject:oldContainer];
-		}
 		[inMemoryBitmapsContainers addObject:c];
 	}
 }
+/*
+- (void)forgetUnusedBitmaps {
+	
+	int i;
+	int count = [inMemoryBitmapsContainers count];
+	for(i = count-1; i > 1; i--) {
+		CSSImageContainer *c = [inMemoryBitmapsContainers objectAtIndex:i];
+		if(c->bitmap == nil) {
+			//NSLog(@"-- skip %@", [c path]);
+			continue;
+		}
+		[c forgetBitmap];
+		[inMemoryBitmapsContainers removeObject:c];
+	}
+}
+ */
+
 /*
 - (NSArray *)flagged {
 	NSPredicate *p = [NSPredicate predicateWithFormat:@"flagged == YES"];
@@ -177,46 +180,25 @@
 #pragma mark GPS
 
 - (BOOL)atLeastOneImageWithGPSSelected {
-	// try in cache first
-	NSArray *a = [[self selectedObjects] valueForKeyPath:@"cachedLatitude"];
-	if([a count] > 0) {
-		//NSLog(@"-- atLeastOneImageWithGPSSelected use cache");
-		return YES;
-	}
 	
 	NSEnumerator *e = [[self selectedObjects] objectEnumerator];
-	CSSImageContainer *container;
+	CSSImageContainer *container = nil;
+
 	while((container = [e nextObject])) {
-		if([[container valueForKeyPath:@"bitmap.gps"] isKindOfClass:[NSDictionary class]]) {
+		if([[container valueForKeyPath:@"gps"] isKindOfClass:[NSDictionary class]]) {
 			//NSLog(@"-- atLeastOneImageWithGPSSelected");
 			return YES;
 		}
 	}
-		
-	//NSLog(@"-- atLeastOneImageWithGPSSelected NO");
+
 	return NO;
 }
-/*
-- (NSArray *)selectedObjectsWithGPS {
-	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];
-	NSMutableArray *aa = [[NSMutableArray alloc] initWithCapacity:[a count]];
-	
-	NSEnumerator *e = [a objectEnumerator];
-	id o;
-	while(( o = [e nextObject] )) {
-		if([o isKindOfClass:[NSDictionary class]]) {
-			[aa addObject:o];
-		}
-	}
-	
-	return [aa autorelease];
-}
-*/
+
+
 - (IBAction)openGoogleMap:(id)sender {
 	if(![[self selectedObjects] count]) return;
 	CSSImageContainer *i = [[self selectedObjects] lastObject];
-	CSSBitmapImageRep *b = [i bitmap];
-	NSURL *url = [b googleMapsURL];
+	NSURL *url = [i googleMapsURL];
 	if(!url) return;
 	[[NSWorkspace sharedWorkspace] openURL:url];
 }

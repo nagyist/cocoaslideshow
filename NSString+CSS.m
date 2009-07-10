@@ -11,10 +11,6 @@
 
 @implementation NSString (CSS)
 
-- (BOOL)pathIsJpeg {
-	return ([[[self pathExtension] lowercaseString] isEqualToString:@"jpg"] || [[[self pathExtension] lowercaseString] isEqualToString:@"jpeg"]);
-}
-
 - (NSComparisonResult)numericCompare:(NSString *)aString {
 	return [self compare:aString options:NSNumericSearch | NSCaseInsensitiveSearch];
 }

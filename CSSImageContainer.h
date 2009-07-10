@@ -7,40 +7,48 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "CSSBitmapImageRep.h"
 
 @interface CSSImageContainer : NSObject {
+
+@protected
+	
+	CGImageSourceRef source;
+	NSMutableDictionary *metadata;
+	BOOL sourceRead; // read source once
+	
+	NSString *UTI; //this is the type of image (e.g., public.jpeg)
 	NSString *path;
-	CSSBitmapImageRep *bitmap;
 	BOOL isFlagged;
 	
 	BOOL isLoadingCache;
 	
-	NSString *cachedLatitude;
-	NSString *cachedLongitude;
-	NSString *cachedTimestamp;
-	
-	// TODO keep rotation angle
+	BOOL isJpeg;
 }
 
-// TODO allow save rotated image
+- (NSString *)exifDateTime;
 
-- (NSString *)cachedLatitude;
-- (NSString *)cachedLongitude;
-- (NSString *)cachedTimestamp;
+- (NSString *)prettyLatitude;
+- (NSString *)prettyLongitude;
 
-- (void)setCachedLatitude:(NSString *)s;
-- (void)setCachedLongitude:(NSString *)s;
-- (void)setCachedTimestamp:(NSString *)s;
+- (BOOL)loadSource;
+
+- (NSImage *)image;
+
+
+- (NSString *)path;
+- (NSImage *)image;
+
+- (NSDictionary *)exif;
+- (NSDictionary *)gps;
 
 + (CSSImageContainer *)containerWithPath:(NSString *)aPath;
 
 - (NSString *)path;
 
-- (void)loadNewBitmap;
-- (void)forgetBitmap;
+//- (void)loadNewBitmap;
+//- (void)forgetBitmap;
 
-- (CSSBitmapImageRep *)bitmap;
+- (NSURL *)googleMapsURL;
 
 - (NSString *)fileName;
 - (void)setFileName:(NSString *)s;
