@@ -32,6 +32,7 @@
 		037D95D10DCDD89C00E8DEB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037D95CF0DCDD89C00E8DEB7 /* MainMenu.xib */; };
 		037D95D40DCDD8BB00E8DEB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */; };
 		037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */; };
+		037F66C21008E7FD0071E2A9 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037F66C11008E7FD0071E2A9 /* Defaults.plist */; };
 		039B5A590ECE281600D7C02C /* CSSMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039B5A580ECE281600D7C02C /* CSSMapController.m */; };
 		03A122E30EC224F60076DF63 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A122E20EC224F60076DF63 /* MyImageView.m */; };
 		03A126B10EC2496C0076DF63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A126B00EC2496C0076DF63 /* WebKit.framework */; };
@@ -79,6 +80,7 @@
 		037D95D30DCDD8BB00E8DEB7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		037D96170DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CocoaSlideShow+Toolbar.h"; sourceTree = "<group>"; };
 		037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CocoaSlideShow+Toolbar.m"; sourceTree = "<group>"; };
+		037F66C11008E7FD0071E2A9 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		039B5A570ECE281600D7C02C /* CSSMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapController.h; sourceTree = "<group>"; };
 		039B5A580ECE281600D7C02C /* CSSMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSMapController.m; sourceTree = "<group>"; };
 		03A122E10EC224F60076DF63 /* MyImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageView.h; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				03A127EA0EC252140076DF63 /* gmap.html */,
+				037F66C11008E7FD0071E2A9 /* Defaults.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				03677BA60E3A45C600524B59 /* add.png in Resources */,
 				034FC8780EBFB09C00BE42CA /* gmap.png in Resources */,
 				03A127EB0EC252140076DF63 /* gmap.html in Resources */,
+				037F66C21008E7FD0071E2A9 /* Defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

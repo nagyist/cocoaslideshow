@@ -12,7 +12,16 @@
 #import "CSSImageContainer.h"
 #import "CocoaSlideShow.h"
 
+NSString *const G_NORMAL_MAP = @"G_NORMAL_MAP";
+NSString *const G_HYBRID_MAP = @"G_HYBRID_MAP";
+NSString *const G_SATELLITE_MAP = @"G_SATELLITE_MAP";
+NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
+
 @implementation CSSMapController
+
+- (NSArray *)mapStyles {
+	return [NSArray arrayWithObjects:G_PHYSICAL_MAP, G_NORMAL_MAP, G_SATELLITE_MAP, G_HYBRID_MAP, nil];
+}
 
 - (void)clearMap {
 	[[webView mainFrame] loadRequest:nil];
@@ -42,6 +51,13 @@
 	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
 	CSSImageContainer *cssImageContainer = nil;
 	
+	NSString *mapStyle = [[NSUserDefaults standardUserDefaults] stringForKey:@"mapStyle"];
+	if(!mapStyle || ![[self mapStyles] containsObject:mapStyle]) {
+		mapStyle = G_PHYSICAL_MAP;
+		[[NSUserDefaults standardUserDefaults] setValue:mapStyle forKey:@"mapStyle"];
+	}
+	[webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"setMapStyle(%@);", mapStyle]];
+
 	while((cssImageContainer = [e nextObject])) {		
 		
 		NSString *filePath = [cssImageContainer path];

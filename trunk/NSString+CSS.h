@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString* const G_HYBRID_MAP;
+extern NSString* const G_PHYSICAL_MAP;
+extern NSString* const G_SATELLITE_MAP;
+extern NSString* const G_NORMAL_MAP;
 
 @interface NSString (CSS)
 
