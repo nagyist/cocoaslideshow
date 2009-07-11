@@ -1580,13 +1580,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<object class="NSButton" id="919716813">
 							<reference key="NSNextResponder" ref="629326575"/>
 							<int key="NSvFlags">256</int>
-							<string key="NSFrame">{{18, 66}, {188, 18}}</string>
+							<string key="NSFrame">{{18, 66}, {198, 18}}</string>
 							<reference key="NSSuperview" ref="629326575"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="544250552">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">0</int>
-								<string key="NSContents">Multiple selection can edit</string>
+								<string key="NSContents">Can edit multiple metadata</string>
 								<reference key="NSSupport" ref="910942605"/>
 								<reference key="NSControlView" ref="919716813"/>
 								<int key="NSButtonFlags">1211912703</int>
@@ -2710,7 +2710,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 						<string key="label">contentValues: mapStyles.prettyMapStyle</string>
 						<reference key="source" ref="48439136"/>
 						<reference key="destination" ref="984904353"/>
-						<object class="NSNibBindingConnector" key="connector" id="851941259">
+						<object class="NSNibBindingConnector" key="connector" id="88303553">
 							<reference key="NSSource" ref="48439136"/>
 							<reference key="NSDestination" ref="984904353"/>
 							<string key="NSLabel">contentValues: mapStyles.prettyMapStyle</string>
@@ -2733,7 +2733,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<string key="NSLabel">selectedObject: values.mapStyle</string>
 							<string key="NSBinding">selectedObject</string>
 							<string key="NSKeyPath">values.mapStyle</string>
-							<reference key="NSPreviousConnector" ref="851941259"/>
+							<reference key="NSPreviousConnector" ref="88303553"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
