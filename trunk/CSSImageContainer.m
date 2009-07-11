@@ -308,37 +308,7 @@
 
 - (NSImage *)image {
 	//if(![[NSApp delegate] isFullScreen]) return nil;
-	
-	if(!source) {
-		NSURL *url = [NSURL fileURLWithPath:path];
-		source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
-		//NSLog(@"-- image %@", path);
-	}
-	
-	if (!source) {
-		CGImageSourceStatus status = CGImageSourceGetStatus(source);
-		NSLog(@"Error: could not create image source. Status: %d", status);
-		return NO;
-	}
-	
-	CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL);
-	if(source) {
-		CFRelease(source);
-		source = nil;
-	}
-
-	if(!imageRef) return nil;
-
-	NSBitmapImageRep *bitmapRep = [[NSBitmapImageRep alloc] initWithCGImage:imageRef];
-	if(!bitmapRep) return nil;
-	
-	CFRelease(imageRef);
-	
-	NSImage *theImage = [[NSImage alloc] init];
-	[theImage addRepresentation:bitmapRep];
-	[bitmapRep release];
-	
-	return [theImage autorelease];
+	return [[[NSImage alloc] initByReferencingFile:path] autorelease];
 }
 
 - (NSURL *)googleMapsURL {
