@@ -11,7 +11,7 @@
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {
-	NSLog(@"-- mouseDown: %@", self);
+	//NSLog(@"-- mouseDown: %@", self);
 	
 	NSArray *selectedObjects = [[NSApp delegate] valueForKeyPath:@"imagesController.selectedObjects"];
 	if([selectedObjects count] != 1) return;

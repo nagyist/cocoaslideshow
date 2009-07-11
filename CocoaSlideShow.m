@@ -25,10 +25,6 @@
 - (BOOL)bitmapLoadingIsAllowed {
 	return bitmapLoadingIsAllowed;
 }
-//
-//- (void)setBitmapLoadingIsAllowed:(BOOL)flag {
-//	bitmapLoadingIsAllowed = flag;
-//}
 
 - (void)dealloc {
 	[mainWindow release];
@@ -45,7 +41,6 @@
 }
 
 - (BOOL)isMap {
-	//NSLog(@"isMap: %d", [tabView selectedTabViewItem] == mapTabViewItem);
 	return [tabView selectedTabViewItem] == mapTabViewItem;
 }
 

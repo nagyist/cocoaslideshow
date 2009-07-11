@@ -44,8 +44,6 @@
 
 - (BOOL)isFullScreen;
 
-//- (void)removeObservationForContainer:(CSSImageContainer *)container;
-
 - (ImagesController *)imagesController;
 
 - (BOOL)bitmapLoadingIsAllowed;
