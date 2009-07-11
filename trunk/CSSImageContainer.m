@@ -96,6 +96,15 @@
 }
 
 - (BOOL)loadSource {
+	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
+	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
+	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:@"MultipleSelectionAllowsEdition"];
+
+	if(!readOnMultiSelect && multipleImagesSelected && !isMap) {
+		return nil;
+    }
+	
+	NSLog(@"-- loadSource %@", path);
 	NSURL *url = [NSURL fileURLWithPath:path];
 	source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
 	CGImageSourceStatus status = CGImageSourceGetStatus(source);
@@ -301,6 +310,7 @@
 	if(!source) {
 		NSURL *url = [NSURL fileURLWithPath:path];
 		source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
+		//NSLog(@"-- image %@", path);
 	}
 	
 	if (!source) {
