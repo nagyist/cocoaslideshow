@@ -29,10 +29,10 @@
 		036D55170C712C1B004A8236 /* RemoteControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55160C712C1B004A8236 /* RemoteControl.m */; };
 		036D5C2F0C7269D0004A8236 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036D5C2E0C7269D0004A8236 /* Carbon.framework */; };
 		037D94F50DCD2C8500E8DEB7 /* Updater.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D94F40DCD2C8500E8DEB7 /* Updater.m */; };
-		037D95D10DCDD89C00E8DEB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037D95CF0DCDD89C00E8DEB7 /* MainMenu.xib */; };
 		037D95D40DCDD8BB00E8DEB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */; };
 		037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */; };
 		037F66C21008E7FD0071E2A9 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037F66C11008E7FD0071E2A9 /* Defaults.plist */; };
+		037F672D1008EDAE0071E2A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 037F672C1008EDAE0071E2A9 /* Localizable.strings */; };
 		039B5A590ECE281600D7C02C /* CSSMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039B5A580ECE281600D7C02C /* CSSMapController.m */; };
 		03A122E30EC224F60076DF63 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A122E20EC224F60076DF63 /* MyImageView.m */; };
 		03A126B10EC2496C0076DF63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A126B00EC2496C0076DF63 /* WebKit.framework */; };
@@ -76,11 +76,13 @@
 		036D5C2E0C7269D0004A8236 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		037D94F30DCD2C8500E8DEB7 /* Updater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Updater.h; sourceTree = "<group>"; };
 		037D94F40DCD2C8500E8DEB7 /* Updater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Updater.m; sourceTree = "<group>"; };
-		037D95D00DCDD89C00E8DEB7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		037D95D30DCDD8BB00E8DEB7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		037D96170DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CocoaSlideShow+Toolbar.h"; sourceTree = "<group>"; };
 		037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CocoaSlideShow+Toolbar.m"; sourceTree = "<group>"; };
 		037F66C11008E7FD0071E2A9 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		037F672A1008EDA90071E2A9 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		037F67341008EDB60071E2A9 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
+		037F67A11008F41E0071E2A9 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		039B5A570ECE281600D7C02C /* CSSMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapController.h; sourceTree = "<group>"; };
 		039B5A580ECE281600D7C02C /* CSSMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSMapController.m; sourceTree = "<group>"; };
 		03A122E10EC224F60076DF63 /* MyImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageView.h; sourceTree = "<group>"; };
@@ -199,7 +201,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				037D95CF0DCDD89C00E8DEB7 /* MainMenu.xib */,
 			);
 			name = CocoaSlideShow;
 			sourceTree = "<group>";
@@ -236,6 +237,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				03A127EA0EC252140076DF63 /* gmap.html */,
 				037F66C11008E7FD0071E2A9 /* Defaults.plist */,
+				037F672C1008EDAE0071E2A9 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -296,7 +298,6 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				030463F10C75347700D70803 /* Credits.html in Resources */,
 				03A3F55C0C786878009AD69D /* CocoaSlideShow.icns in Resources */,
-				037D95D10DCDD89C00E8DEB7 /* MainMenu.xib in Resources */,
 				037D95D40DCDD8BB00E8DEB7 /* MainMenu.xib in Resources */,
 				034CA91D0DEB72CD00460991 /* Flagged.png in Resources */,
 				034CA91E0DEB72CD00460991 /* FlaggedHeader.png in Resources */,
@@ -312,6 +313,7 @@
 				034FC8780EBFB09C00BE42CA /* gmap.png in Resources */,
 				03A127EB0EC252140076DF63 /* gmap.html in Resources */,
 				037F66C21008E7FD0071E2A9 /* Defaults.plist in Resources */,
+				037F672D1008EDAE0071E2A9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,20 +360,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		037D95CF0DCDD89C00E8DEB7 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				037D95D00DCDD89C00E8DEB7 /* English */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
 		037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				037D95D30DCDD8BB00E8DEB7 /* English */,
+				037F67A11008F41E0071E2A9 /* French */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		037F672C1008EDAE0071E2A9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				037F672A1008EDA90071E2A9 /* English */,
+				037F67341008EDB60071E2A9 /* French */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
