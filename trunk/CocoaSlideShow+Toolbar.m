@@ -125,7 +125,6 @@
 	} else if ([theItem tag] == kSelectedIfAtLeastOneImageSelected) {
 		return [[imagesController selectedObjects] count];
 	} else if ([theItem tag] == kSelectedIfAtLeastOneGPSImageSelected) {
-		//return [[imagesController selectedObjectsWithGPS] count];
 		return [imagesController atLeastOneImageWithGPSSelected];
 	} else if ([theItem tag] == kSelectedIfGPSOrCanGoBackToImage) {
 		return [[NSApp delegate] isMap] || [imagesController atLeastOneImageWithGPSSelected];

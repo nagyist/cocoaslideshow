@@ -46,7 +46,6 @@
 - (void)dealloc {
 	//NSLog(@"-- dealloc %@", path);
 	
-	//[UTI release];
 	[path release];
 	
 	if(source) {
@@ -104,7 +103,7 @@
 		return nil;
     }
 	
-	NSLog(@"-- loadSource %@", path);
+	//NSLog(@"-- loadSource %@", path);
 	NSURL *url = [NSURL fileURLWithPath:path];
 	source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
 	

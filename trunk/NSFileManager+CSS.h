@@ -11,7 +11,7 @@
 
 @interface NSFileManager (CSS)
 
-- (BOOL) isDirectory:(NSString *)path;
+- (BOOL)isDirectory:(NSString *)path;
 - (NSArray *)directoryContentFullPaths:(NSString*)dirPath recursive:(BOOL)isRecursive;
 - (NSString *)prettyFileSize:(NSString *)path;
 

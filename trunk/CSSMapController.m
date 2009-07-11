@@ -41,7 +41,6 @@
 	
 	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
 	CSSImageContainer *cssImageContainer = nil;
-	//CSSBitmapImageRep *b = nil;
 	
 	while((cssImageContainer = [e nextObject])) {		
 		
@@ -54,15 +53,12 @@
 		NSString *longitude = [cssImageContainer prettyLongitude];
 		
 		if(!latitude || !longitude) {
-			//[cssImageContainer forgetBitmap]; // FIXME: does trigger KVO issue
 			continue;
 		}
 		
 		NSString *js = [NSString stringWithFormat:@"addPoint(%@, %@, \"%@\", \"%@\", \"%@\");", latitude, longitude, fileName, filePath, fileModDateString];
 		//NSLog(@"-- js:%@", js);
 		[webView stringByEvaluatingJavaScriptFromString:js];
-				
-		//[imagesController forgetUnusedBitmaps];
 	}
 	
 	[webView stringByEvaluatingJavaScriptFromString:@"center();"];
@@ -73,11 +69,8 @@
 
 - (NSString*)generateKML {
 	
-	//[(CocoaSlideShow *)[NSApp delegate] setBitmapLoadingIsAllowed:YES];
-	
 	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
 	CSSImageContainer *cssImageContainer = nil;
-	//CSSBitmapImageRep *b = nil;
 	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
 	
 	NSMutableString *placemarkString = [[[NSMutableString alloc] init] autorelease];
