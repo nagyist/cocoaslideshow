@@ -93,11 +93,11 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	
 	while((cssImageContainer = [e nextObject])) {
 		
-		NSString *latitude = [cssImageContainer prettyLongitude];
+		NSString *latitude = [cssImageContainer prettyLatitude];
 		NSString *longitude = [cssImageContainer prettyLongitude];
 		NSString *timestamp = [cssImageContainer exifDateTime];
 		
-		if(!latitude || !longitude) {
+		if([latitude length] == 0 || [longitude length] == 0) {
 			continue;
 		}
 		
