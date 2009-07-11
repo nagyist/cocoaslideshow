@@ -88,14 +88,6 @@
 		NSString *longitude = [cssImageContainer prettyLongitude];
 		NSString *timestamp = [cssImageContainer exifDateTime];
 		
-//		if(!latitude || !longitude) {
-//			//NSLog(@"--3");
-//			[cssImageContainer loadNewBitmap];
-//			latitude = [cssImageContainer cachedLatitude];
-//			longitude = [cssImageContainer cachedLongitude];
-//			timestamp = [cssImageContainer cachedTimestamp];
-//		}
-
 		if(!latitude || !longitude) {
 			continue;
 		}
@@ -103,9 +95,7 @@
 		[placemarkString appendFormat:@"    <Placemark><name>%@</name><timestamp><when>%@</when></timestamp><Point><coordinates>%@,%@</coordinates></Point></Placemark>\n",
 		 [[cssImageContainer path] lastPathComponent], timestamp, longitude, latitude];
 	}
-	
-	//[(CocoaSlideShow *)[NSApp delegate] setBitmapLoadingIsAllowed:NO];
-	
+		
 	return [NSString stringWithFormat:XMLContainer, placemarkString];
 }
 
