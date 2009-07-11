@@ -451,6 +451,9 @@
 		[self setupImagesControllerWithDir:defaultDir recursive:NO];
 	}
 	
+	NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"]];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+	
     [[Updater sharedInstance] checkUpdateSilentIfUpToDate:self];
 
 }
