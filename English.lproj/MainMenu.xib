@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
+			<integer value="917"/>
 			<integer value="324"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -1221,7 +1221,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 									<reference key="NSOnImage" ref="235389030"/>
 									<reference key="NSMixedImage" ref="634931129"/>
 								</object>
-								<object class="NSMenuItem" id="491639466">
+								<object class="NSMenuItem" id="722908239">
 									<reference key="NSMenu" ref="57018649"/>
 									<string key="NSTitle">Open in Google Maps</string>
 									<string key="NSKeyEquiv">g</string>
@@ -2580,25 +2580,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					<object class="IBActionConnection" key="connection">
 						<string key="label">openGoogleMap:</string>
 						<reference key="source" ref="79550871"/>
-						<reference key="destination" ref="491639466"/>
+						<reference key="destination" ref="722908239"/>
 					</object>
 					<int key="connectionID">1005</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: selection.gps</string>
-						<reference key="source" ref="491639466"/>
+						<reference key="source" ref="722908239"/>
 						<reference key="destination" ref="79550871"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="491639466"/>
+							<reference key="NSSource" ref="722908239"/>
 							<reference key="NSDestination" ref="79550871"/>
 							<string key="NSLabel">enabled: selection.gps</string>
 							<string key="NSBinding">enabled</string>
 							<string key="NSKeyPath">selection.gps</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSIsNotNil</string>
+							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">1007</int>
+					<int key="connectionID">1008</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3091,7 +3095,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<reference ref="288869391"/>
 							<reference ref="465289356"/>
 							<reference ref="764540621"/>
-							<reference ref="491639466"/>
+							<reference ref="722908239"/>
 						</object>
 						<reference key="parent" ref="902595984"/>
 					</object>
@@ -3529,7 +3533,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1004</int>
-						<reference key="object" ref="491639466"/>
+						<reference key="object" ref="722908239"/>
 						<reference key="parent" ref="57018649"/>
 					</object>
 				</object>
@@ -4061,7 +4065,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1007</int>
+			<int key="maxID">1008</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

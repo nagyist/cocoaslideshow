@@ -49,7 +49,7 @@
 - (ImagesController *)imagesController;
 
 - (BOOL)bitmapLoadingIsAllowed;
-//- (void)setBitmapLoadingIsAllowed:(BOOL)flag;
+- (BOOL)isMap;
 
 - (IBAction)undo:(id)sender;
 - (IBAction)redo:(id)sender;
