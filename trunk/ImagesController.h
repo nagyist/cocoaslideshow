@@ -2,8 +2,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define IN_MEMORY_BITMAPS 5
-
 @class CocoaSlideShow;
 @class CSSImageContainer;
 
@@ -16,7 +14,6 @@
 	NSArray *allowedExtensions;
 }
 
-- (void)bitmapWasLoadedInContainer:(CSSImageContainer *)c;
 - (NSUndoManager *)undoManager;
 - (NSIndexSet *)flaggedIndexes;
 - (void)flagIndexes:(NSIndexSet *)indexSet;

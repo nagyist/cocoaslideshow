@@ -6,7 +6,6 @@
 @implementation ImagesController
 
 - (void)awakeFromNib {
-	inMemoryBitmapsContainers = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
 
 	allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"jpe", @"tif", @"tiff", @"gif", @"png", @"pct", @"pict", @"pic",
 								  //@"pdf", @"eps", @"epi", @"epsf", @"epsi", @"ps",
@@ -18,6 +17,7 @@
 
 - (void)dealloc {
 	[inMemoryBitmapsContainers release];
+	[allowedExtensions release];
 	[super dealloc];
 }
 
@@ -145,28 +145,6 @@
 	[[self selectedObjects] makeObjectsPerformSelector:@selector(moveToTrash)];
 	[self removeObjectsAtArrangedObjectIndexes:[self selectionIndexes]];
 }
-
-- (void)bitmapWasLoadedInContainer:(CSSImageContainer *)c {
-	if(![inMemoryBitmapsContainers containsObject:c]) {
-		[inMemoryBitmapsContainers addObject:c];
-	}
-}
-/*
-- (void)forgetUnusedBitmaps {
-	
-	int i;
-	int count = [inMemoryBitmapsContainers count];
-	for(i = count-1; i > 1; i--) {
-		CSSImageContainer *c = [inMemoryBitmapsContainers objectAtIndex:i];
-		if(c->bitmap == nil) {
-			//NSLog(@"-- skip %@", [c path]);
-			continue;
-		}
-		[c forgetBitmap];
-		[inMemoryBitmapsContainers removeObject:c];
-	}
-}
- */
 
 /*
 - (NSArray *)flagged {

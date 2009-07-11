@@ -1309,9 +1309,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 			<object class="NSArrayController" id="79550871">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>bitmap.image</string>
-					<string>bitmap.data</string>
-					<string>bitmap.TIFFRepresentation</string>
 					<string>path</string>
 					<string>prettyFileSize</string>
 					<string>prettyImageSize</string>

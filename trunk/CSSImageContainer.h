@@ -9,19 +9,13 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CSSImageContainer : NSObject {
-
-@protected
-	
+	NSString *path;
 	CGImageSourceRef source;
 	NSMutableDictionary *metadata;
-	BOOL sourceRead; // read source once
-	
-	NSString *UTI; //this is the type of image (e.g., public.jpeg)
-	NSString *path;
+
+	BOOL sourceRead;
 	BOOL isFlagged;
-	
 	BOOL isLoadingCache;
-	
 	BOOL isJpeg;
 }
 
