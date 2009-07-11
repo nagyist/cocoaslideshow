@@ -124,10 +124,11 @@
 	metadata = [immutableMetadata mutableCopy];
 	CFRelease(metadataRef);
 
+	NSString *UTI = (NSString *)CGImageSourceGetType(source);
+
 	CFRelease(source);
 	source = nil;
 	
-	NSString *UTI = (NSString *)CGImageSourceGetType(source);
 	[self willChangeValueForKey:@"isJpeg"];
 	isJpeg = [UTI isEqualToString:@"public.jpeg"];
 	[self didChangeValueForKey:@"isJpeg"];
