@@ -46,7 +46,7 @@
 - (void)dealloc {
 	//NSLog(@"-- dealloc %@", path);
 	
-	[UTI release];
+	//[UTI release];
 	[path release];
 	
 	if(source) {
@@ -107,25 +107,27 @@
 	NSLog(@"-- loadSource %@", path);
 	NSURL *url = [NSURL fileURLWithPath:path];
 	source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
-	CGImageSourceStatus status = CGImageSourceGetStatus(source);
 	
 	if (!source) {
+		CGImageSourceStatus status = CGImageSourceGetStatus(source);
 		NSLog(@"Error: could not create image source. Status: %d", status);
 		return NO;
 	}
-
+	
 	sourceRead = YES;
 	
 	// fill caches
 	
 	CFDictionaryRef metadataRef = CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
-	NSDictionary *immutableMetadata = (NSDictionary *) metadataRef;
+	NSDictionary *immutableMetadata = (NSDictionary *)metadataRef;
 	[metadata autorelease];
 	metadata = [immutableMetadata mutableCopy];
 	CFRelease(metadataRef);
 
-	[self setValue:(NSString *)CGImageSourceGetType(source) forKey:@"UTI"];
+	CFRelease(source);
+	source = nil;
 	
+	NSString *UTI = (NSString *)CGImageSourceGetType(source);
 	[self willChangeValueForKey:@"isJpeg"];
 	isJpeg = [UTI isEqualToString:@"public.jpeg"];
 	[self didChangeValueForKey:@"isJpeg"];
@@ -189,7 +191,7 @@
 	}
 	
 	NSData *data = [NSMutableData data];
-    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data, (CFStringRef)UTI, 1, NULL);
+    CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data, (CFStringRef)@"public.jpeg", 1, NULL);
     if(!destination) {
         NSLog(@"Error: could not create image destination");
 		CFRelease(destination);
