@@ -146,6 +146,16 @@
 												 styleMask:NSBorderlessWindowMask
 												   backing:NSBackingStoreBuffered
 													 defer:NO screen:[NSScreen mainScreen]];
+
+#ifndef NSAppKitVersionNumber10_5
+#define NSAppKitVersionNumber10_5 949
+#endif
+
+	unsigned int _NSImageScaleProportionallyUpOrDown = 3;
+	
+	if (NSAppKitVersionNumber >= NSAppKitVersionNumber10_5) {
+		[panelImageView setImageScaling:_NSImageScaleProportionallyUpOrDown];
+	}
 }
 
 - (NSString *)chooseDirectory {
@@ -455,7 +465,6 @@
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	
     [[Updater sharedInstance] checkUpdateSilentIfUpToDate:self];
-
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
