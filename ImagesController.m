@@ -103,16 +103,8 @@
 }
 
 - (void)addFiles:(NSArray *)filePaths {
-	//NSLog(@"-- addFiles: %@", filePaths);
-	//importDone = NO;
-	
-	//CSSImageContainer *firstInsertedObject = nil;
-
 	NSEnumerator *e = [filePaths objectEnumerator];
 	NSString *path;
-   // http://developer.apple.com/documentation/Cocoa/Conceptual/CocoaDrawingGuide/Images/chapter_7_section_3.html
-
-	//NSMutableArray *containersToAdd = [[NSMutableArray alloc] init];
 	
 	while(( path = [e nextObject] )) {
 		if([[NSFileManager defaultManager] isDirectory:path]) {
@@ -127,12 +119,6 @@
 
 		[self addObject:[CSSImageContainer containerWithPath:path]];
 	}
-	
-	//NSLog(@"-- containersToAdd: %@", containersToAdd);
-	//[self addObjects:containersToAdd];
-	//[containersToAdd release];
-	
-	//importDone = YES;
 }
 
 - (void)addDirFiles:(NSString *)dir {
@@ -163,10 +149,7 @@
 	CSSImageContainer *container = nil;
 
 	while((container = [e nextObject])) {
-		if([[container valueForKeyPath:@"gps"] isKindOfClass:[NSDictionary class]]) {
-			//NSLog(@"-- atLeastOneImageWithGPSSelected");
-			return YES;
-		}
+		if([container gps] != nil) return YES;
 	}
 
 	return NO;

@@ -28,7 +28,6 @@
 
 - (NSImage *)image;
 
-
 - (NSString *)path;
 - (NSImage *)image;
 
@@ -38,9 +37,6 @@
 + (CSSImageContainer *)containerWithPath:(NSString *)aPath;
 
 - (NSString *)path;
-
-//- (void)loadNewBitmap;
-//- (void)forgetBitmap;
 
 - (NSURL *)googleMapsURL;
 

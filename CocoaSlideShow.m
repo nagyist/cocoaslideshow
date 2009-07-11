@@ -223,7 +223,6 @@
 	}
 	
 	[mainWindow makeFirstResponder:tableView];
-	//return;
 
 	[NSCursor hide];
 	//[NSCursor setHiddenUntilMouseMoves:YES];
@@ -339,14 +338,12 @@
 }
 
 - (void)hideGoogleMap {
-	//NSLog(@"hideGoogleMap");
 	[tabView selectTabViewItem:imageTabViewItem];
 	[imagesController removeObserver:mapController forKeyPath:@"selectedObjects"];
 	[mapController clearMap];
 }
 
 - (void)showGoogleMap {
-	//NSLog(@"showGoogleMap");
 	[tabView selectTabViewItem:mapTabViewItem];
 	[imagesController addObserver:mapController forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
 	[mapController displayGoogleMapForSelection:self];
@@ -527,10 +524,8 @@
 
 #pragma mark NSTableView delegate
 
-- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
-	//[imagesController forgetUnusedBitmaps];
-	
-	if([[imagesController selectedObjects] count] == 0 && [tabView selectedTabViewItem] == mapTabViewItem) {
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {	
+	if([tabView selectedTabViewItem] == mapTabViewItem && [[imagesController selectedObjects] count] == 0) {
 		[self hideGoogleMap];
 	}
 }
