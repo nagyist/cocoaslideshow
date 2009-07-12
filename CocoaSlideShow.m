@@ -2,12 +2,13 @@
 #import "AppleRemote.h"
 
 #import "NSFileManager+CSS.h"
-#import "Updater.h"
+#import <Sparkle/SUUpdater.h>
 
 @implementation CocoaSlideShow
 
 - (id)init {
 	self = [super init];
+	
 	images = [[NSMutableArray alloc] init];
 	isFullScreen = NO;
 	takeFilesFromDefault = YES;
@@ -464,7 +465,7 @@
 	NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"]];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	
-    [[Updater sharedInstance] checkUpdateSilentIfUpToDate:self];
+    [[SUUpdater sharedUpdater] checkForUpdatesInBackground];
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {

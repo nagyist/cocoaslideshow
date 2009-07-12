@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>CocoaSlideShow Changelog</title>
+        <link>http://cocoaslideshow.googlecode.com/svn/trunk/appcast/appcast.xml</link>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+        
+        <item>
+            <title>Version 0.5.4 (1 bug fixed; 1 new feature)</title>
+            <sparkle:releaseNotesLink>
+			     http://cocoaslideshow.googlecode.com/svn/trunk/appcast/0.5.4.html
+            </sparkle:releaseNotesLink>
+            <pubDate>Sun, 12 Jul 2009 17:15:11 +0000</pubDate>
+            <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_3.app.zip" sparkle:version="0.5.4" length="574590" type="application/octet-stream" sparkle:dsaSignature="MCwCFC1sf5lTLF2Rz1gfwIx7BmDTBdAMAhR/FOndry7tWEEXS0xdj4VuIAZ7bg=="/>
+        </item>
+        <!--
+        <item>
+            <title>Version 1.5 (8 bugs fixed; 2 new features)</title>
+            <sparkle:releaseNotesLink>
+							http://you.com/app/1.5.html
+						</sparkle:releaseNotesLink>
+            <pubDate>Wed, 01 Jan 2006 12:20:11 +0000</pubDate>
+            <enclosure url="http://you.com/app/Your Great App 1.5.zip" sparkle:version="1.5" length="1472893" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCS7wBOxy8A48bmRmVP7pckaKDWogIUW2EgLuRHYhmDiWQIvob5qylNd/A="/>
+        </item>
+        
+        <item>
+            <title>Version 1.4 (5 bugs fixed; 2 new features)</title>
+            <sparkle:releaseNotesLink>
+							http://you.com/app/1.4.html
+						</sparkle:releaseNotesLink>
+            <pubDate>Wed, 25 Dec 2005 12:20:11 +0000</pubDate>
+            <enclosure url="http://you.com/app/Your Great App 1.4.zip" sparkle:version="241" sparkle:shortVersionString="1.4" sparkle:dsaSignature="MC0CFBfeCa1JyW30nbkBwainOzrN6EQuAh=" length="1472349" type="application/octet-stream"/>
+        </item>
+        -->
+        
+    </channel>
+</rss>
