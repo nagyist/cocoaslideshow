@@ -1,11 +1,11 @@
 #import "ImagesController.h"
 #import "CSSImageContainer.h"
 #import "NSFileManager+CSS.h"
-#import "CocoaSlideShow.h"
 
 @implementation ImagesController
 
 - (void)awakeFromNib {
+	inMemoryBitmapsContainers = [[NSMutableArray alloc] initWithCapacity:IN_MEMORY_BITMAPS];
 
 	allowedExtensions = [NSArray arrayWithObjects:@"jpg", @"jpeg", @"jpe", @"tif", @"tiff", @"gif", @"png", @"pct", @"pict", @"pic",
 								  //@"pdf", @"eps", @"epi", @"epsf", @"epsi", @"ps",
@@ -17,7 +17,6 @@
 
 - (void)dealloc {
 	[inMemoryBitmapsContainers release];
-	[allowedExtensions release];
 	[super dealloc];
 }
 
@@ -74,7 +73,6 @@
 }
 
 - (void)selectPreviousImage {
-	
 	if([self canSelectPrevious]) {
 		[[[self undoManager] prepareWithInvocationTarget:self] selectNext:self];
 		[self selectPrevious:self];
@@ -82,7 +80,6 @@
 }
 
 - (void)selectNextImage {
-
 	if([self canSelectNext]) {
 		[[[self undoManager] prepareWithInvocationTarget:self] selectPrevious:self];
 		[self selectNext:self];
@@ -103,21 +100,18 @@
 }
 
 - (void)addFiles:(NSArray *)filePaths {
+	//NSLog(@"-- addFiles: %@", filePaths);
+	//importDone = NO;
+	
+	//CSSImageContainer *firstInsertedObject = nil;
+
 	NSEnumerator *e = [filePaths objectEnumerator];
 	NSString *path;
-	
-	NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
-	
-	unsigned int count = 0;
+   // http://developer.apple.com/documentation/Cocoa/Conceptual/CocoaDrawingGuide/Images/chapter_7_section_3.html
+
+	//NSMutableArray *containersToAdd = [[NSMutableArray alloc] init];
 	
 	while(( path = [e nextObject] )) {
-		count++;
-		
-		if(count % 500 == 0) {
-			[subPool release];
-			subPool = [[NSAutoreleasePool alloc] init];
-		}
-		
 		if([[NSFileManager defaultManager] isDirectory:path]) {
 			NSArray *dirContent = [[NSFileManager defaultManager] directoryContentFullPaths:path recursive:YES];
 			[self addFiles:dirContent];
@@ -131,7 +125,11 @@
 		[self addObject:[CSSImageContainer containerWithPath:path]];
 	}
 	
-	[subPool release];
+	//NSLog(@"-- containersToAdd: %@", containersToAdd);
+	//[self addObjects:containersToAdd];
+	//[containersToAdd release];
+	
+	//importDone = YES;
 }
 
 - (void)addDirFiles:(NSString *)dir {
@@ -145,6 +143,22 @@
 	[self removeObjectsAtArrangedObjectIndexes:[self selectionIndexes]];
 }
 
+- (void) retainOnlyAFewImagesAndReleaseTheRest {
+	if([[self selectedObjects] count] != 1) {
+		return;
+	}
+	
+	CSSImageContainer *c = [[self selectedObjects] lastObject];
+	
+	if(![inMemoryBitmapsContainers containsObject:c]) {
+		if([inMemoryBitmapsContainers count] == IN_MEMORY_BITMAPS) {
+			CSSImageContainer *oldContainer = [inMemoryBitmapsContainers objectAtIndex:0];
+			[oldContainer forgetBitmap];
+			[inMemoryBitmapsContainers removeObject:oldContainer];
+		}
+		[inMemoryBitmapsContainers addObject:c];
+	}
+}
 /*
 - (NSArray *)flagged {
 	NSPredicate *p = [NSPredicate predicateWithFormat:@"flagged == YES"];
@@ -157,21 +171,37 @@
 #pragma mark GPS
 
 - (BOOL)atLeastOneImageWithGPSSelected {
-	
-	NSEnumerator *e = [[self selectedObjects] objectEnumerator];
-	CSSImageContainer *container = nil;
-
-	while((container = [e nextObject])) {
-		if([container gps] != nil) return YES;
+	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];
+	int i = 0;
+	for(i = 0; i < [a count]; i++) {
+		if([[a objectAtIndex:i] isKindOfClass:[NSDictionary class]]) {
+			return YES;
+		}
 	}
-
+	
 	return NO;
+}
+
+- (NSArray *)selectedObjectsWithGPS {
+	NSArray *a = [[self selectedObjects] valueForKeyPath:@"bitmap.gps"];
+	NSMutableArray *aa = [[NSMutableArray alloc] initWithCapacity:[a count]];
+	
+	NSEnumerator *e = [a objectEnumerator];
+	id o;
+	while(( o = [e nextObject] )) {
+		if([o isKindOfClass:[NSDictionary class]]) {
+			[aa addObject:o];
+		}
+	}
+	
+	return [aa autorelease];
 }
 
 - (IBAction)openGoogleMap:(id)sender {
 	if(![[self selectedObjects] count]) return;
 	CSSImageContainer *i = [[self selectedObjects] lastObject];
-	NSURL *url = [i googleMapsURL];
+	CSSBitmapImageRep *b = [i bitmap];
+	NSURL *url = [b googleMapsURL];
 	if(!url) return;
 	[[NSWorkspace sharedWorkspace] openURL:url];
 }

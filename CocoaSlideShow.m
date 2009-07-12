@@ -3,6 +3,8 @@
 
 #import "NSFileManager+CSS.h"
 #import "Updater.h"
+#import "CSSBitmapImageRep.h"
+#import "CSSImageContainer.h"
 
 @implementation CocoaSlideShow
 
@@ -14,16 +16,11 @@
 		
 	undoManager = [[NSUndoManager alloc] init];
 	[undoManager setLevelsOfUndo:10];
-
+	
+    ir = [[[ImageResizer alloc] init] autorelease];
+    [NSValueTransformer setValueTransformer:ir forName:@"ImageResizer"];
+	
 	return self;
-}
-
-- (ImagesController *)imagesController {
-	return imagesController;
-}
-
-- (BOOL)bitmapLoadingIsAllowed {
-	return bitmapLoadingIsAllowed;
 }
 
 - (void)dealloc {
@@ -41,6 +38,7 @@
 }
 
 - (BOOL)isMap {
+	//NSLog(@"isMap: %d", [tabView selectedTabViewItem] == mapTabViewItem);
 	return [tabView selectedTabViewItem] == mapTabViewItem;
 }
 
@@ -126,6 +124,8 @@
 	
 	[imagesController setAutomaticallyPreparesContent:YES];
 	
+	[ir setView:panelImageView];
+	
 	NSTableColumn *flagColumn = [tableView tableColumnWithIdentifier:@"flag"];
 	NSImage *flagHeaderImage = [NSImage imageNamed:@"FlaggedHeader.png"];
 	NSImageCell *flagHeaderImageCell = [flagColumn headerCell];
@@ -146,16 +146,6 @@
 												 styleMask:NSBorderlessWindowMask
 												   backing:NSBackingStoreBuffered
 													 defer:NO screen:[NSScreen mainScreen]];
-
-#ifndef NSAppKitVersionNumber10_5
-#define NSAppKitVersionNumber10_5 949
-#endif
-
-	unsigned int _NSImageScaleProportionallyUpOrDown = 3;
-	
-	if (NSAppKitVersionNumber >= NSAppKitVersionNumber10_5) {
-		[panelImageView setImageScaling:_NSImageScaleProportionallyUpOrDown];
-	}
 }
 
 - (NSString *)chooseDirectory {
@@ -207,10 +197,6 @@
 	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(copyToDirectory:) withObject:destDirectory];
 }
 
-- (BOOL)isFullScreen {
-	return isFullScreen;
-}
-
 - (void)rotate:(NSImageView *)iv clockwise:(BOOL)cw {
 	[iv setImage:[self rotateIndividualImage:[iv image] clockwise:cw]];
 }
@@ -233,6 +219,7 @@
 	}
 	
 	[mainWindow makeFirstResponder:tableView];
+	//return;
 
 	[NSCursor hide];
 	//[NSCursor setHiddenUntilMouseMoves:YES];
@@ -278,19 +265,15 @@
 	[undoManager redo];
 }
 
-- (void)invalidateTimer {
-	if([timer isValid]) {
-		[timer invalidate];
-		timer = nil;
-	}	
-}
-
 - (IBAction)exitFullScreen:(id)sender {
 	if(!isFullScreen) {
 		return;
 	}
 	
-	[self invalidateTimer];
+	if([timer isValid]) {
+		[timer invalidate];
+		timer = nil;
+	}
 
 	[NSCursor unhide];
 	
@@ -319,14 +302,16 @@
 
 - (void)timerNextTick {
 	if(![imagesController canSelectNext]) {
-		[self invalidateTimer];
+		[timer invalidate];
+		timer = nil;
 	}
 	[imagesController selectNextImage]; 
 }
 
 - (IBAction)toggleSlideShow:(id)sender {
 	if([timer isValid]) {
-		[self invalidateTimer];
+		[timer invalidate];
+		timer = nil;
 	} else {
 		timer = [NSTimer scheduledTimerWithTimeInterval:[[[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"] floatValue]
 												  target:self
@@ -348,12 +333,14 @@
 }
 
 - (void)hideGoogleMap {
+	//NSLog(@"hideGoogleMap");
 	[tabView selectTabViewItem:imageTabViewItem];
 	[imagesController removeObserver:mapController forKeyPath:@"selectedObjects"];
 	[mapController clearMap];
 }
 
 - (void)showGoogleMap {
+	//NSLog(@"showGoogleMap");
 	[tabView selectTabViewItem:mapTabViewItem];
 	[imagesController addObserver:mapController forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
 	[mapController displayGoogleMapForSelection:self];
@@ -439,8 +426,14 @@
 	}
 	
 	//NSLog(@"buttonName %@", buttonName);
+	
 }
 
+/*
+- (IBAction)displayGoogleMapForSelection:(id)sender {
+	[mapController displayGoogleMapForSelection:sender];
+}
+*/
 #pragma mark NSApplication Delegates
 
 - (void)applicationWillBecomeActive:(NSNotification *)aNotification {
@@ -461,10 +454,16 @@
 		[self setupImagesControllerWithDir:defaultDir recursive:NO];
 	}
 	
-	NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"]];
-	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-	
     [[Updater sharedInstance] checkUpdateSilentIfUpToDate:self];
+	
+	[[ NSNotificationCenter defaultCenter] addObserver:self
+											  selector:@selector(windowDidResize:)
+												  name:NSWindowDidResizeNotification
+												object:mainWindow];
+}
+
+- (void)windowDidResize:(NSNotification *)notif {
+	[mapController setMapNeedsResizing:YES];
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
@@ -536,10 +535,8 @@
 
 #pragma mark NSTableView delegate
 
-- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {	
-	if([tabView selectedTabViewItem] == mapTabViewItem && [[imagesController selectedObjects] count] == 0) {
-		[self hideGoogleMap];
-	}
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
+	[imagesController retainOnlyAFewImagesAndReleaseTheRest];
 }
 
 @end

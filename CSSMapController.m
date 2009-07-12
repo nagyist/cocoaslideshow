@@ -6,22 +6,10 @@
 //  Copyright 2008 Sen:te. All rights reserved.
 //
 
-// TODO: remember map style
-
 #import "CSSMapController.h"
 #import "CSSImageContainer.h"
-#import "CocoaSlideShow.h"
-
-NSString *const G_NORMAL_MAP = @"G_NORMAL_MAP";
-NSString *const G_HYBRID_MAP = @"G_HYBRID_MAP";
-NSString *const G_SATELLITE_MAP = @"G_SATELLITE_MAP";
-NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 
 @implementation CSSMapController
-
-- (NSArray *)mapStyles {
-	return [NSArray arrayWithObjects:G_PHYSICAL_MAP, G_NORMAL_MAP, G_SATELLITE_MAP, G_HYBRID_MAP, nil];
-}
 
 - (void)clearMap {
 	[[webView mainFrame] loadRequest:nil];
@@ -33,100 +21,62 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	}
 }
 
-- (IBAction)displayGoogleMapForSelection:(id)sender {
+- (BOOL)mapNeedsResizing {
+	return mapNeedsResizing;
+}
 
+- (void)setMapNeedsResizing:(BOOL)flag {
+	mapNeedsResizing = YES;
+}
+
+- (IBOutlet)displayGoogleMapForSelection:(id)sender {
+	
+	NSMutableString *markers = [[NSMutableString alloc] init];
+	
+	int count = 1;
+	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
+	CSSImageContainer *cssImageContainer = nil;
+	CSSBitmapImageRep *b = nil;
+	NSString *s;
+	while((cssImageContainer = [e nextObject])) {
+		//NSLog(@" marker %d", count);
+		b = [cssImageContainer bitmap];
+		//NSLog(@"b: %d", b != nil);
+		s = [b gmapMarkerWithIndex:count];
+		if(s) {
+			[markers appendString:s];
+			count++;
+		} else {
+			NSLog(@"no marker");
+		}
+	}
+	
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gmap" ofType:@"html"];
 	
-	NSURL *url = [NSURL fileURLWithPath:filePath];
-	NSURLRequest *request = [NSURLRequest requestWithURL:url];
-
-	[webView setFrameLoadDelegate:self];
-	[[webView mainFrame] loadRequest:request];
-}
-
-#pragma mark WebFrameLoadDelegate
-
-- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
-	
-	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
-	CSSImageContainer *cssImageContainer = nil;
-	
-	NSString *mapStyle = [[NSUserDefaults standardUserDefaults] stringForKey:@"mapStyle"];
-	if(!mapStyle || ![[self mapStyles] containsObject:mapStyle]) {
-		mapStyle = G_PHYSICAL_MAP;
-		[[NSUserDefaults standardUserDefaults] setValue:mapStyle forKey:@"mapStyle"];
-	}
-	[webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"setMapStyle(%@);", mapStyle]];
-
-	while((cssImageContainer = [e nextObject])) {		
-		
-		NSString *filePath = [cssImageContainer path];
-		NSString *fileName = [filePath lastPathComponent];
-		NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:YES];
-		NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
-		
-		NSString *latitude = [cssImageContainer prettyLatitude];
-		NSString *longitude = [cssImageContainer prettyLongitude];
-		
-		if(!latitude || !longitude) {
-			continue;
-		}
-		
-		NSString *js = [NSString stringWithFormat:@"addPoint(%@, %@, \"%@\", \"%@\", \"%@\");", latitude, longitude, fileName, filePath, fileModDateString];
-		//NSLog(@"-- js:%@", js);
-		[webView stringByEvaluatingJavaScriptFromString:js];
-	}
-	
-	[webView stringByEvaluatingJavaScriptFromString:@"center();"];
-	
-}
-
-#pragma KML File Export
-
-- (NSString*)generateKML {
-	
-	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
-	CSSImageContainer *cssImageContainer = nil;
-	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
-	
-	NSMutableString *placemarkString = [[[NSMutableString alloc] init] autorelease];
-	
-	while((cssImageContainer = [e nextObject])) {
-		
-		NSString *latitude = [cssImageContainer prettyLatitude];
-		NSString *longitude = [cssImageContainer prettyLongitude];
-		NSString *timestamp = [cssImageContainer exifDateTime];
-		
-		if([latitude length] == 0 || [longitude length] == 0) {
-			continue;
-		}
-		
-		[placemarkString appendFormat:@"    <Placemark><name>%@</name><timestamp><when>%@</when></timestamp><Point><coordinates>%@,%@</coordinates></Point></Placemark>\n",
-		 [[cssImageContainer path] lastPathComponent], timestamp, longitude, latitude];
-	}
-		
-	return [NSString stringWithFormat:XMLContainer, placemarkString];
-}
-
-- (IBAction)exportKMLToFile:(id)sender {
-	NSString *destFile = [self chooseFile];
-	
-	if(!destFile) return;
-	
 	NSError *error = nil;
-	[[self generateKML] writeToFile:destFile atomically:YES encoding:NSUTF8StringEncoding error:&error];
-	if(error) [NSAlert alertWithError:error];
+	NSStringEncoding encoding = NSUTF8StringEncoding;
+	
+	NSMutableString *htmlString = [NSMutableString stringWithContentsOfFile:filePath usedEncoding:&encoding error:&error];
+	if(error) {
+		NSLog(@"error: %@", [error description]);
+	}
+	
+	NSRect frame = [[[webView mainFrame] frameView] frame];
+	NSString *width = [NSString stringWithFormat:@"%d", (int)frame.size.width - 17];
+	NSString *height = [NSString stringWithFormat:@"%d", (int)frame.size.height - 17];
+	
+	[htmlString replaceOccurrencesOfString:@"__WIDTH__" withString:width options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];
+	[htmlString replaceOccurrencesOfString:@"__HEIGHT__" withString:height options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];
+	
+	[htmlString replaceOccurrencesOfString:@"__MARKERS__" withString:markers options:NSCaseInsensitiveSearch range:NSMakeRange(0, [htmlString length])];
+	
+	[[webView mainFrame] loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://maps.google.com"]];
+	
+	mapNeedsResizing = NO;
+	
+	[markers release];
 }
 
-- (NSString *)chooseFile {
-    NSSavePanel *sPanel = [NSSavePanel savePanel];
-	
-	[sPanel setRequiredFileType:@"kml"];
-	[sPanel setCanCreateDirectories:YES];
-	
-	int runResult = [sPanel runModalForDirectory:NSHomeDirectory() file:@""];
-	
-	return (runResult == NSOKButton) ? [sPanel filename] : nil;
-}
+
 
 @end
