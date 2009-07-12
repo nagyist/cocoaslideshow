@@ -14,7 +14,7 @@
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSPanel *slideShowPanel;
 	NSWindow *fullScreenWindow;
-
+	
 	IBOutlet CSSMapController *mapController;
 	NSMutableArray *images;
 	
@@ -38,15 +38,12 @@
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
 	BOOL isSaving;
-	
-	BOOL bitmapLoadingIsAllowed;
 }
 
 - (BOOL)isFullScreen;
 
 - (ImagesController *)imagesController;
 
-- (BOOL)bitmapLoadingIsAllowed;
 - (BOOL)isMap;
 
 - (IBAction)undo:(id)sender;
