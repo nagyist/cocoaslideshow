@@ -18,7 +18,7 @@
     function initialize() {
 		map	= new GMap2(document.getElementById("map_canvas"));
 
-		//map.setCenter(new GLatLng(0, 0), 1);
+		map.setCenter(new GLatLng(0, 0), 1);
 		
 		map.addMapType(G_PHYSICAL_MAP);
 		map.setMapType(G_PHYSICAL_MAP);
@@ -27,9 +27,9 @@
 		map.addControl(new GMapTypeControl());
     }
 
-	function setMapStyle(style) {
-		map.setMapType(style); // G_NORMAL_MAP, G_HYBRID_MAP, G_SATELLITE_MAP, G_PHYSICAL_MAP
-	}
+//	function setMapStyle(style) {
+//		map.setMapType(style); // G_PHYSICAL_MAP, ...
+//	}
 
 	function addPoint(lat, long, name, path, date) {
 		count++;

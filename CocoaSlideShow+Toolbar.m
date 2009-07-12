@@ -11,7 +11,6 @@
 #define kAlwaysSelected 0
 #define kSelectedIfAtLeastOneImageSelected 1
 #define kSelectedIfAtLeastOneGPSImageSelected 2
-#define kSelectedIfGPSOrCanGoBackToImage 3
 
 @implementation CocoaSlideShow (Toolbar)
 
@@ -96,7 +95,7 @@
         [item setPaletteLabel:NSLocalizedString(@"Google Map", @"Toolbar customize")];
         [item setToolTip:NSLocalizedString(@"Google Map", @"Toolbar tooltip")];
         [item setImage:[NSImage imageNamed:@"gmap.png"]];
-		[item setTag:kSelectedIfGPSOrCanGoBackToImage];
+		[item setTag:kSelectedIfAtLeastOneGPSImageSelected];
         [item setTarget:self];
 		[item setAction:@selector(toggleGoogleMap:)];	
     }	
@@ -125,9 +124,8 @@
 	} else if ([theItem tag] == kSelectedIfAtLeastOneImageSelected) {
 		return [[imagesController selectedObjects] count];
 	} else if ([theItem tag] == kSelectedIfAtLeastOneGPSImageSelected) {
+		//return [[imagesController selectedObjectsWithGPS] count];
 		return [imagesController atLeastOneImageWithGPSSelected];
-	} else if ([theItem tag] == kSelectedIfGPSOrCanGoBackToImage) {
-		return [[NSApp delegate] isMap] || [imagesController atLeastOneImageWithGPSSelected];
 	}
 	return NO;
 }

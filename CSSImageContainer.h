@@ -7,38 +7,23 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CSSBitmapImageRep.h"
 
 @interface CSSImageContainer : NSObject {
 	NSString *path;
-	CGImageSourceRef source;
-	NSMutableDictionary *metadata;
-
-	BOOL sourceRead;
+	CSSBitmapImageRep *bitmap;
 	BOOL isFlagged;
-	BOOL isLoadingCache;
-	BOOL isJpeg;
+	// TODO keep rotation angle
 }
 
-- (NSString *)exifDateTime;
-
-- (NSString *)prettyLatitude;
-- (NSString *)prettyLongitude;
-
-- (BOOL)loadSource;
-
-- (NSImage *)image;
-
-- (NSString *)path;
-- (NSImage *)image;
-
-- (NSDictionary *)exif;
-- (NSDictionary *)gps;
+// TODO allow save rotated image
 
 + (CSSImageContainer *)containerWithPath:(NSString *)aPath;
 
 - (NSString *)path;
+- (void)forgetBitmap;
 
-- (NSURL *)googleMapsURL;
+- (CSSBitmapImageRep *)bitmap;
 
 - (NSString *)fileName;
 - (void)setFileName:(NSString *)s;
