@@ -10,15 +10,15 @@
             <title>Version 0.5.4 (1 bug fixed; 1 new feature)</title>
             <description><![CDATA[
             	<h4>New features</h4>
-            	<code>
+            	<pre>
             	- updates with Sparkle
             	- test
-            	</code>
+            	</pre>
             	
             	<h4>Bug fixes</h4>
-            	<code>
+            	<pre>
             	- crash on setting new default directory
-            	</code>
+            	</pre>
             ]]></description>
             <pubDate>Sun, 12 Jul 2009 17:15:11 +0000</pubDate>
             <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_3.app.zip" sparkle:version="0.5.4" length="574590" type="application/octet-stream" sparkle:dsaSignature="MCwCFC1sf5lTLF2Rz1gfwIx7BmDTBdAMAhR/FOndry7tWEEXS0xdj4VuIAZ7bg=="/>
