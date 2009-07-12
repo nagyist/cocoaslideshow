@@ -228,6 +228,22 @@
 
 - (IBAction)fullScreenMode:(id)sender {
 	// inspired from http://cocoadevcentral.com/articles/000028.php
+	// inspired from http://developer.apple.com/samplecode/Video_Hardware_Info/listing3.html
+	
+	int i;
+	CGDisplayCount displayCount;
+    CGDisplayCount MAXDISPLAYS = 8;
+    CGDirectDisplayID displays[MAXDISPLAYS];
+    
+    CGGetOnlineDisplayList(MAXDISPLAYS, displays, &displayCount);
+    
+    for(i = 0; i < displayCount; i++) {
+		CGDirectDisplayID displayID = displays[i];
+		boolean_t isMain = CGDisplayIsMain(displayID);
+		NSLog(@"-- %d isMain: %d", displayID, isMain);
+	}
+	
+	// TODO: captude main display (line 261)
 	
 	if(isFullScreen) {
 		return;
@@ -245,6 +261,7 @@
     if (CGDisplayCapture( kCGDirectMainDisplay ) != kCGErrorSuccess) {
         NSLog( @"Couldn't capture the main display!" );
         // Note: you'll probably want to display a proper error dialog here
+		return;
     }
 
     // Get the shielding window level
