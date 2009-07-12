@@ -23,10 +23,6 @@
 	return imagesController;
 }
 
-- (BOOL)bitmapLoadingIsAllowed {
-	return bitmapLoadingIsAllowed;
-}
-
 - (void)dealloc {
 	[mainWindow release];
 	[imagesController release];
@@ -141,12 +137,12 @@
 	    [NSNumber numberWithBool:YES], @"SlideshowIsFullscreen", nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 
-	NSRect screenRect = [[NSScreen mainScreen] frame];	
-	[slideShowPanel setContentSize:screenRect.size];
-    fullScreenWindow = [[NSWindow alloc] initWithContentRect:screenRect
-												 styleMask:NSBorderlessWindowMask
-												   backing:NSBackingStoreBuffered
-													 defer:NO screen:[NSScreen mainScreen]];
+//	NSRect screenRect = [[NSScreen mainScreen] frame];	
+//	[slideShowPanel setContentSize:screenRect.size];
+//    fullScreenWindow = [[NSWindow alloc] initWithContentRect:screenRect
+//												 styleMask:NSBorderlessWindowMask
+//												   backing:NSBackingStoreBuffered
+//													 defer:NO screen:[NSScreen mainScreen]];
 
 #ifndef NSAppKitVersionNumber10_5
 #define NSAppKitVersionNumber10_5 949
@@ -229,57 +225,48 @@
 - (IBAction)fullScreenMode:(id)sender {
 	// inspired from http://cocoadevcentral.com/articles/000028.php
 	// inspired from http://developer.apple.com/samplecode/Video_Hardware_Info/listing3.html
-	
-	int i;
-	CGDisplayCount displayCount;
-    CGDisplayCount MAXDISPLAYS = 8;
-    CGDirectDisplayID displays[MAXDISPLAYS];
-    
-    CGGetOnlineDisplayList(MAXDISPLAYS, displays, &displayCount);
-    
-    for(i = 0; i < displayCount; i++) {
-		CGDirectDisplayID displayID = displays[i];
-		boolean_t isMain = CGDisplayIsMain(displayID);
-		NSLog(@"-- %d isMain: %d", displayID, isMain);
-	}
-	
-	// TODO: captude main display (line 261)
-	
+
 	if(isFullScreen) {
 		return;
 	}
+	
+	NSScreen *screen = [[tableView window] screen];
+	NSLog(@"-- screen %@ %@", [tableView window], screen);
+	
+	CGDirectDisplayID displayID = (CGDirectDisplayID)[[[screen deviceDescription] objectForKey:@"NSScreenNumber"] longValue];
+	NSLog(@"-- will capture %d", displayID);
 	
 	[mainWindow makeFirstResponder:tableView];
 
 	[NSCursor hide];
 	//[NSCursor setHiddenUntilMouseMoves:YES];
 	
-    int windowLevel;
-    NSRect screenRect;
-
-    // Capture the main display
-    if (CGDisplayCapture( kCGDirectMainDisplay ) != kCGErrorSuccess) {
-        NSLog( @"Couldn't capture the main display!" );
-        // Note: you'll probably want to display a proper error dialog here
+	CGDisplayErr err = CGDisplayCapture(displayID);
+    if (err != kCGErrorSuccess) {
+        NSLog(@"Couldn't capture the display!"); // TODO: show user dialog
 		return;
     }
 
-    // Get the shielding window level
-    windowLevel = CGShieldingWindowLevel();
-	
-    // Get the screen rect of our main display
-    screenRect = [[NSScreen mainScreen] frame];
+	if(fullScreenWindow) {
+		[fullScreenWindow release];
+	}
 
-    // Put up a new window
+	fullScreenWindow = [[NSWindow alloc] initWithContentRect:[screen frame]
+												   styleMask:NSBorderlessWindowMask
+													 backing:NSBackingStoreBuffered
+													   defer:NO
+													  screen:screen];
 	mainWindow = fullScreenWindow;
 	
-    [mainWindow setLevel:windowLevel];
-
+    [mainWindow setLevel:CGShieldingWindowLevel()];
     [mainWindow setBackgroundColor:[NSColor blackColor]];
     [mainWindow makeKeyAndOrderFront:nil];
 	
+	NSLog(@"-- mainWindow is on screen %@", screen);
+	
     // Load our content view
-    [slideShowPanel setFrame:screenRect display:YES];
+	[slideShowPanel setContentSize:[screen frame].size];
+    [slideShowPanel setFrame:[screen frame] display:YES];
 
 	[self willChangeValueForKey:@"isFullScreen"];
 	isFullScreen = YES;
@@ -307,7 +294,7 @@
 	if(!isFullScreen) {
 		return;
 	}
-	
+		
 	[self invalidateTimer];
 
 	[NSCursor unhide];
@@ -315,7 +302,7 @@
 	[mainWindow orderOut:self];
 
 	// Release the display(s)
-	if (CGDisplayRelease( kCGDirectMainDisplay ) != kCGErrorSuccess) {
+	if (CGReleaseAllDisplays() != kCGErrorSuccess) {
 		NSLog( @"Couldn't release the display(s)!" );
 		// Note: if you display an error dialog here, make sure you set
 		// its window level to the same one as the shield window level,
