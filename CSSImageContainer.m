@@ -45,13 +45,12 @@
 
 - (void)dealloc {
 	//NSLog(@"-- dealloc %@", path);
-	
-	[path release];
-	
+
 	if(source) {
 		CFRelease(source);
 		source = nil;
 	}
+
 	[path release];
 	[metadata release];
 
