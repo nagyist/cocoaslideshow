@@ -12,6 +12,12 @@
             	<h4>New features</h4>
             	<code>
             	- updates with Sparkle
+            	- test
+            	</code>
+            	
+            	<h4>Bug fixes</h4>
+            	<code>
+            	- crash on setting new default directory
             	</code>
             ]]></description>
             <pubDate>Sun, 12 Jul 2009 17:15:11 +0000</pubDate>
