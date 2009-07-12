@@ -1,13 +1,13 @@
 /* CocoaSlideShow */
 
 #import <Cocoa/Cocoa.h>
-
 #import "RemoteControl.h"
 
 #import "MyImageView.h"
 #import "ImagesController.h"
 
-#import "CSSMapController.h"
+//#import "FlagImageTransformer.h"
+#import "ImageResizer.h"
 
 @interface CocoaSlideShow : NSObject
 {
@@ -15,8 +15,8 @@
 	IBOutlet NSPanel *slideShowPanel;
 	NSWindow *fullScreenWindow;
 
-	IBOutlet CSSMapController *mapController;
 	NSMutableArray *images;
+	ImageResizer *ir;
 	
 	IBOutlet ImagesController *imagesController;
 	IBOutlet MyImageView *imageView;
@@ -24,10 +24,6 @@
 	IBOutlet NSTextField *userCommentTextField;
 	IBOutlet NSTableView *tableView;
 	IBOutlet NSTokenField *keywordsTokenField;
-	
-	IBOutlet NSTabView *tabView;
-	IBOutlet NSTabViewItem *imageTabViewItem;
-	IBOutlet NSTabViewItem *mapTabViewItem;
 	
 	NSToolbar *toolbar;
 	
@@ -37,17 +33,9 @@
 
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
-	BOOL isSaving;
 	
-	BOOL bitmapLoadingIsAllowed;
+	BOOL isSaving;
 }
-
-- (BOOL)isFullScreen;
-
-- (ImagesController *)imagesController;
-
-- (BOOL)bitmapLoadingIsAllowed;
-- (BOOL)isMap;
 
 - (IBAction)undo:(id)sender;
 - (IBAction)redo:(id)sender;
@@ -65,10 +53,5 @@
 
 - (IBAction)startSlideShow:(id)sender;
 - (IBAction)toggleSlideShow:(id)sender;
-
-- (IBAction)toggleGoogleMap:(id)sender;
-
-- (void)invalidateTimer;
-- (NSUndoManager *)undoManager;
 
 @end

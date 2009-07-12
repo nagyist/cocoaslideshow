@@ -3,6 +3,8 @@
 
 #import "NSFileManager+CSS.h"
 #import "Updater.h"
+#import "CSSBitmapImageRep.h"
+#import "CSSImageContainer.h"
 
 @implementation CocoaSlideShow
 
@@ -11,19 +13,14 @@
 	images = [[NSMutableArray alloc] init];
 	isFullScreen = NO;
 	takeFilesFromDefault = YES;
-		
+	
 	undoManager = [[NSUndoManager alloc] init];
 	[undoManager setLevelsOfUndo:10];
-
+	
+    ir = [[[ImageResizer alloc] init] autorelease];
+    [NSValueTransformer setValueTransformer:ir forName:@"ImageResizer"];
+	
 	return self;
-}
-
-- (ImagesController *)imagesController {
-	return imagesController;
-}
-
-- (BOOL)bitmapLoadingIsAllowed {
-	return bitmapLoadingIsAllowed;
 }
 
 - (void)dealloc {
@@ -38,10 +35,6 @@
 
 - (NSUndoManager *)undoManager {
 	return undoManager;
-}
-
-- (BOOL)isMap {
-	return [tabView selectedTabViewItem] == mapTabViewItem;
 }
 
 - (NSImage *)rotateIndividualImage:(NSImage *)image clockwise:(BOOL)clockwise {
@@ -106,6 +99,7 @@
 	[imagesController setSelectionIndex:0];
 }
 
+
 - (void)setupToolbar {
     toolbar = [[[NSToolbar alloc] initWithIdentifier:@"mainToolbar"] autorelease];
     [toolbar setDelegate:self];
@@ -126,19 +120,21 @@
 	
 	[imagesController setAutomaticallyPreparesContent:YES];
 	
+	[ir setView:panelImageView];
+	
 	NSTableColumn *flagColumn = [tableView tableColumnWithIdentifier:@"flag"];
 	NSImage *flagHeaderImage = [NSImage imageNamed:@"FlaggedHeader.png"];
 	NSImageCell *flagHeaderImageCell = [flagColumn headerCell];
 	[flagHeaderImageCell setImage:flagHeaderImage];
 	[flagColumn setHeaderCell:flagHeaderImageCell];
 	
-	//[imageView setDelegate:self];
+	[imageView setDelegate:self];
 	[mainWindow setDelegate:self];
 
-	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
-		[NSNumber numberWithInt:1.0], @"SlideShowSpeed",
-	    [NSNumber numberWithBool:YES], @"SlideshowIsFullscreen", nil];
-	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+	NSNumber *slideShowSpeed = [[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"];
+	if (!slideShowSpeed) {
+		[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:1.0] forKey:@"SlideShowSpeed"];
+	}
 
 	NSRect screenRect = [[NSScreen mainScreen] frame];	
 	[slideShowPanel setContentSize:screenRect.size];
@@ -146,16 +142,7 @@
 												 styleMask:NSBorderlessWindowMask
 												   backing:NSBackingStoreBuffered
 													 defer:NO screen:[NSScreen mainScreen]];
-
-#ifndef NSAppKitVersionNumber10_5
-#define NSAppKitVersionNumber10_5 949
-#endif
-
-	unsigned int _NSImageScaleProportionallyUpOrDown = 3;
 	
-	if (NSAppKitVersionNumber >= NSAppKitVersionNumber10_5) {
-		[panelImageView setImageScaling:_NSImageScaleProportionallyUpOrDown];
-	}
 }
 
 - (NSString *)chooseDirectory {
@@ -207,10 +194,6 @@
 	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(copyToDirectory:) withObject:destDirectory];
 }
 
-- (BOOL)isFullScreen {
-	return isFullScreen;
-}
-
 - (void)rotate:(NSImageView *)iv clockwise:(BOOL)cw {
 	[iv setImage:[self rotateIndividualImage:[iv image] clockwise:cw]];
 }
@@ -233,6 +216,7 @@
 	}
 	
 	[mainWindow makeFirstResponder:tableView];
+	//return;
 
 	[NSCursor hide];
 	//[NSCursor setHiddenUntilMouseMoves:YES];
@@ -278,19 +262,15 @@
 	[undoManager redo];
 }
 
-- (void)invalidateTimer {
-	if([timer isValid]) {
-		[timer invalidate];
-		timer = nil;
-	}	
-}
-
 - (IBAction)exitFullScreen:(id)sender {
 	if(!isFullScreen) {
 		return;
 	}
 	
-	[self invalidateTimer];
+	if([timer isValid]) {
+		[timer invalidate];
+		timer = nil;
+	}
 
 	[NSCursor unhide];
 	
@@ -319,14 +299,16 @@
 
 - (void)timerNextTick {
 	if(![imagesController canSelectNext]) {
-		[self invalidateTimer];
+		[timer invalidate];
+		timer = nil;
 	}
 	[imagesController selectNextImage]; 
 }
 
 - (IBAction)toggleSlideShow:(id)sender {
 	if([timer isValid]) {
-		[self invalidateTimer];
+		[timer invalidate];
+		timer = nil;
 	} else {
 		timer = [NSTimer scheduledTimerWithTimeInterval:[[[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"] floatValue]
 												  target:self
@@ -337,34 +319,12 @@
 }
 
 - (IBAction)startSlideShow:(id)sender {
-	if([[NSUserDefaults standardUserDefaults] boolForKey:@"SlideshowIsFullscreen"]) {
-		[self fullScreenMode:self];
-	}
+	[self fullScreenMode:self];
 	[self toggleSlideShow:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
 	[self exitFullScreen:self];
-}
-
-- (void)hideGoogleMap {
-	[tabView selectTabViewItem:imageTabViewItem];
-	[imagesController removeObserver:mapController forKeyPath:@"selectedObjects"];
-	[mapController clearMap];
-}
-
-- (void)showGoogleMap {
-	[tabView selectTabViewItem:mapTabViewItem];
-	[imagesController addObserver:mapController forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
-	[mapController displayGoogleMapForSelection:self];
-}
-
-- (IBAction)toggleGoogleMap:(id)sender {
-	if([tabView selectedTabViewItem] == mapTabViewItem) {
-		[self hideGoogleMap];
-	} else {
-		[self showGoogleMap];
-	}
 }
 
 - (void) sendRemoteButtonEvent: (RemoteControlEventIdentifier) event pressedDown: (BOOL) pressedDown remoteControl: (RemoteControl*) remoteControl {
@@ -439,6 +399,7 @@
 	}
 	
 	//NSLog(@"buttonName %@", buttonName);
+	
 }
 
 #pragma mark NSApplication Delegates
@@ -460,9 +421,6 @@
 		}
 		[self setupImagesControllerWithDir:defaultDir recursive:NO];
 	}
-	
-	NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"]];
-	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	
     [[Updater sharedInstance] checkUpdateSilentIfUpToDate:self];
 }
@@ -488,35 +446,31 @@
 #pragma mark NSDraggingDestination
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
-	//NSLog(@"%s", __FUNCTION__);
 	return NSDragOperationLink;
 }
 
 - (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender {
-	//NSLog(@"%s", __FUNCTION__);
 	return YES;
 }
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
-	//NSLog(@"%s", __FUNCTION__);
     NSPasteboard *pboard;
     NSDragOperation sourceDragMask;
  
     sourceDragMask = [sender draggingSourceOperationMask];
     pboard = [sender draggingPasteboard];
-	
+ 
 	if ([[pboard types] containsObject:NSFilenamesPboardType]) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
-
-		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
-
-		//NSLog(@"CocoaSlidesShow.m | performDragOperation | add files: %@", files);
-		[imagesController addFiles:files];
 		
+		int numberOfImagesBefore = [[imagesController arrangedObjects] count];
+		//NSLog(@"will add files");
+		[imagesController addFiles:files];
+		//NSLog(@"did add files");
 		int numberOfImagesAfter = [[imagesController arrangedObjects] count];
 		if(numberOfImagesAfter > numberOfImagesBefore) {
 			[imagesController setSelectionIndex:numberOfImagesBefore];
-		}
+		}		
     }
     return YES;
 }
@@ -536,10 +490,8 @@
 
 #pragma mark NSTableView delegate
 
-- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {	
-	if([tabView selectedTabViewItem] == mapTabViewItem && [[imagesController selectedObjects] count] == 0) {
-		[self hideGoogleMap];
-	}
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
+	[imagesController retainOnlyAFewImagesAndReleaseTheRest];
 }
 
 @end

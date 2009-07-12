@@ -2,8 +2,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+#define IN_MEMORY_BITMAPS 5
+
 @class CocoaSlideShow;
-@class CSSImageContainer;
 
 @interface ImagesController : NSArrayController
 {
@@ -11,7 +12,6 @@
 	BOOL importDone;
 	unsigned inMemoryBitmapsNextIndex;
 	NSMutableArray *inMemoryBitmapsContainers;
-	NSArray *allowedExtensions;
 }
 
 - (NSUndoManager *)undoManager;
@@ -30,7 +30,7 @@
 - (void)selectNextImage;
 - (void)addFiles:(NSArray *)filePaths;
 - (void)addDirFiles:(NSString *)dir;
-- (BOOL)atLeastOneImageWithGPSSelected;
-- (IBAction)openGoogleMap:(id)sender;
+- (void)retainOnlyAFewImagesAndReleaseTheRest;
+//- (NSArray *)flagged;
 
 @end

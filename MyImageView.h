@@ -4,8 +4,7 @@
 
 @interface MyImageView : NSImageView
 {
-    IBOutlet id delegate;
-	BOOL isDraggingFromSelf;
+    id delegate;
 }
 
 -(void) setDelegate: (id) del;

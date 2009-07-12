@@ -11,16 +11,12 @@
 
 @implementation NSString (CSS)
 
-- (NSComparisonResult)numericCompare:(NSString *)aString {
-	return [self compare:aString options:NSNumericSearch | NSCaseInsensitiveSearch];
+- (BOOL)pathIsJpeg {
+	return ([[[self pathExtension] lowercaseString] isEqualToString:@"jpg"] || [[[self pathExtension] lowercaseString] isEqualToString:@"jpeg"]);
 }
 
-- (NSString *)prettyMapStyle {
-	if ([self isEqualToString:G_HYBRID_MAP]) return NSLocalizedString(@"Hybrid", @"");
-	if ([self isEqualToString:G_NORMAL_MAP]) return NSLocalizedString(@"Street", @"");
-	if ([self isEqualToString:G_PHYSICAL_MAP]) return NSLocalizedString(@"Physical", @"");
-	if ([self isEqualToString:G_SATELLITE_MAP]) return NSLocalizedString(@"Satellite", @"");
-	return @"Unknown";
+- (NSComparisonResult)numericCompare:(NSString *)aString {
+	return [self compare:aString options:NSNumericSearch | NSCaseInsensitiveSearch];
 }
 
 @end
