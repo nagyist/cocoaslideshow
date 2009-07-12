@@ -8,9 +8,12 @@
         
         <item>
             <title>Version 0.5.4 (1 bug fixed; 1 new feature)</title>
-            <sparkle:releaseNotesLink>
-			     http://cocoaslideshow.googlecode.com/svn/trunk/appcast/0_5_4.html
-            </sparkle:releaseNotesLink>
+            <description><![CDATA[
+            	<h4>New features</h4>
+            	<code>
+            	- updates with Sparkle
+            	</code>
+            ]]></description>
             <pubDate>Sun, 12 Jul 2009 17:15:11 +0000</pubDate>
             <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_3.app.zip" sparkle:version="0.5.4" length="574590" type="application/octet-stream" sparkle:dsaSignature="MCwCFC1sf5lTLF2Rz1gfwIx7BmDTBdAMAhR/FOndry7tWEEXS0xdj4VuIAZ7bg=="/>
         </item>
