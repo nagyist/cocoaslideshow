@@ -106,7 +106,18 @@
 	NSEnumerator *e = [filePaths objectEnumerator];
 	NSString *path;
 	
+	NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
+	
+	unsigned int count = 0;
+	
 	while(( path = [e nextObject] )) {
+		count++;
+		
+		if(count % 500 == 0) {
+			[subPool release];
+			subPool = [[NSAutoreleasePool alloc] init];
+		}
+		
 		if([[NSFileManager defaultManager] isDirectory:path]) {
 			NSArray *dirContent = [[NSFileManager defaultManager] directoryContentFullPaths:path recursive:YES];
 			[self addFiles:dirContent];
@@ -119,6 +130,8 @@
 
 		[self addObject:[CSSImageContainer containerWithPath:path]];
 	}
+	
+	[subPool release];
 }
 
 - (void)addDirFiles:(NSString *)dir {
