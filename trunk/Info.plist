@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UpdaterURL</key>
-	<string>http://cocoaslideshow.googlecode.com/svn/trunk/VersionCheck.plist</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDocumentTypes</key>
@@ -33,13 +31,15 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleShortVersionString</key>
-	<string>0.5.3</string>
 	<key>CFBundleVersion</key>
-	<string>__myBundleVersion__</string>
+	<string>0.5.3</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>http://cocoaslideshow.googlecode.com/svn/trunk/appcast/appcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>css_dsa_pub.pem</string>
 </dict>
 </plist>

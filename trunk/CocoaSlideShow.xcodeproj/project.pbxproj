@@ -28,11 +28,14 @@
 		036D55130C712BFC004A8236 /* HIDRemoteControlDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55120C712BFC004A8236 /* HIDRemoteControlDevice.m */; };
 		036D55170C712C1B004A8236 /* RemoteControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55160C712C1B004A8236 /* RemoteControl.m */; };
 		036D5C2F0C7269D0004A8236 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036D5C2E0C7269D0004A8236 /* Carbon.framework */; };
-		037D94F50DCD2C8500E8DEB7 /* Updater.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D94F40DCD2C8500E8DEB7 /* Updater.m */; };
 		037D95D40DCDD8BB00E8DEB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */; };
 		037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */; };
 		037F66C21008E7FD0071E2A9 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037F66C11008E7FD0071E2A9 /* Defaults.plist */; };
 		037F672D1008EDAE0071E2A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 037F672C1008EDAE0071E2A9 /* Localizable.strings */; };
+		037F69C1100A29BC0071E2A9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037F69C0100A29BC0071E2A9 /* Sparkle.framework */; };
+		037F6A21100A2BA00071E2A9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037F69C0100A29BC0071E2A9 /* Sparkle.framework */; };
+		037F6A5B100A2C8B0071E2A9 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 037F69C0100A29BC0071E2A9 /* Sparkle.framework */; };
+		037F6B27100A34130071E2A9 /* css_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 037F6B26100A34130071E2A9 /* css_dsa_pub.pem */; };
 		039B5A590ECE281600D7C02C /* CSSMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039B5A580ECE281600D7C02C /* CSSMapController.m */; };
 		03A122E30EC224F60076DF63 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A122E20EC224F60076DF63 /* MyImageView.m */; };
 		03A126B10EC2496C0076DF63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A126B00EC2496C0076DF63 /* WebKit.framework */; };
@@ -45,6 +48,20 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		037F6A2B100A2BB60071E2A9 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				037F6A5B100A2C8B0071E2A9 /* Sparkle.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0304615F0C75158100D70803 /* NSFileManager+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CSS.h"; sourceTree = "<group>"; };
@@ -83,6 +100,8 @@
 		037F672A1008EDA90071E2A9 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		037F67341008EDB60071E2A9 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		037F67A11008F41E0071E2A9 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		037F69C0100A29BC0071E2A9 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		037F6B26100A34130071E2A9 /* css_dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = css_dsa_pub.pem; sourceTree = "<group>"; };
 		039B5A570ECE281600D7C02C /* CSSMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapController.h; sourceTree = "<group>"; };
 		039B5A580ECE281600D7C02C /* CSSMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSMapController.m; sourceTree = "<group>"; };
 		03A122E10EC224F60076DF63 /* MyImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageView.h; sourceTree = "<group>"; };
@@ -117,6 +136,8 @@
 				0367A7FA0C56CA6600BD57E8 /* IOKit.framework in Frameworks */,
 				036D5C2F0C7269D0004A8236 /* Carbon.framework in Frameworks */,
 				03A126B10EC2496C0076DF63 /* WebKit.framework in Frameworks */,
+				037F69C1100A29BC0071E2A9 /* Sparkle.framework in Frameworks */,
+				037F6A21100A2BA00071E2A9 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +188,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				037F69C0100A29BC0071E2A9 /* Sparkle.framework */,
 				03A126B00EC2496C0076DF63 /* WebKit.framework */,
 				036D5C2E0C7269D0004A8236 /* Carbon.framework */,
 				0367A7F90C56CA6600BD57E8 /* IOKit.framework */,
@@ -218,6 +240,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				037F6B26100A34130071E2A9 /* css_dsa_pub.pem */,
 				034FC8770EBFB09C00BE42CA /* gmap.png */,
 				03677B950E3A45C500524B59 /* right.png */,
 				03677B960E3A45C500524B59 /* slideshow.png */,
@@ -261,7 +284,7 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				8D1107290486CEB800E47090 /* Resources */,
-				036D58AB0C717863004A8236 /* ShellScript */,
+				037F6A2B100A2BB60071E2A9 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,26 +337,11 @@
 				03A127EB0EC252140076DF63 /* gmap.html in Resources */,
 				037F66C21008E7FD0071E2A9 /* Defaults.plist in Resources */,
 				037F672D1008EDAE0071E2A9 /* Localizable.strings in Resources */,
+				037F6B27100A34130071E2A9 /* css_dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		036D58AB0C717863004A8236 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /usr/bin/python;
-			shellScript = "#!/usr/bin/python\n\nimport os\nimport datetime\n\nscript_path = '%s/%s' % (os.environ['BUILT_PRODUCTS_DIR'], os.environ['INFOPLIST_PATH'])\ndate = datetime.datetime.now().strftime(\"%Y-%m-%d\")\ncommon_svn_paths = ['/usr/bin/svnversion', '/usr/local/bin/svnversion', '/opt/local/bin/svnversion']\n\nsvn_path = None\nfor path in common_svn_paths:\n    if os.path.exists(path):\n        svn_path = path\n\nversion_list = [date]\n\nif svn_path:\n    revision = os.popen('%s -n .' % svn_path).read()\n    version_list.append(\"(%s)\" % revision)\n\nf = open(script_path, 'r')\nversion_string = ' '.join(version_list)\nnew_lines = map(lambda s:s.replace('__myBundleVersion__', version_string), f.readlines());\nf.close()\n\nf = open(script_path, 'w')\nf.writelines(new_lines)\nf.close()\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
@@ -350,7 +358,6 @@
 				03DA06480C805F0B009D508F /* CSSImageContainer.m in Sources */,
 				03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */,
 				033804240C86084300439E5A /* ImagesController.m in Sources */,
-				037D94F50DCD2C8500E8DEB7 /* Updater.m in Sources */,
 				037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */,
 				03A122E30EC224F60076DF63 /* MyImageView.m in Sources */,
 				039B5A590ECE281600D7C02C /* CSSMapController.m in Sources */,
@@ -396,8 +403,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -420,8 +429,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;

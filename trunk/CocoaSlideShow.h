@@ -10,7 +10,7 @@
 #import "CSSMapController.h"
 
 @interface CocoaSlideShow : NSObject
-{
+{	
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSPanel *slideShowPanel;
 	NSWindow *fullScreenWindow;
