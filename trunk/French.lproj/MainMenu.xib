@@ -548,6 +548,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 											</object>
 											<string key="NSFrame">{{1, 17}, {153, 367}}</string>
 											<reference key="NSSuperview" ref="116417072"/>
+											<reference key="NSNextKeyView" ref="711982702"/>
 											<reference key="NSDocView" ref="711982702"/>
 											<reference key="NSBGColor" ref="399793602"/>
 											<int key="NScvFlags">4</int>
@@ -580,6 +581,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 											</object>
 											<string key="NSFrame">{{1, 0}, {153, 17}}</string>
 											<reference key="NSSuperview" ref="116417072"/>
+											<reference key="NSNextKeyView" ref="1008560665"/>
 											<reference key="NSDocView" ref="1008560665"/>
 											<reference key="NSBGColor" ref="399793602"/>
 											<int key="NScvFlags">4</int>
@@ -588,6 +590,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 									</object>
 									<string key="NSFrameSize">{170, 400}</string>
 									<reference key="NSSuperview" ref="301182071"/>
+									<reference key="NSNextKeyView" ref="853597008"/>
 									<int key="NSsFlags">50</int>
 									<reference key="NSVScroller" ref="375592847"/>
 									<reference key="NSHScroller" ref="436869913"/>
@@ -1336,9 +1339,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 				<string key="NSWindowRect">{{608, 106}, {640, 480}}</string>
 				<int key="NSWTFlags">1886912512</int>
 				<string key="NSWindowTitle">Panel</string>
-				<object class="NSMutableString" key="NSWindowClass">
-					<characters key="NS.bytes">NSPanel</characters>
-				</object>
+				<string key="NSWindowClass">CSSBorderlessWindow</string>
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
@@ -4286,6 +4287,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
+					<string key="className">CSSBorderlessWindow</string>
+					<string key="superclassName">NSWindow</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">CSSBorderlessWindow.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">CSSMapController</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="actions">
@@ -4395,7 +4404,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 							<string>CSSMapController</string>
 							<string>NSTabViewItem</string>
 							<string>NSImageView</string>
-							<string>NSPanel</string>
+							<string>CSSBorderlessWindow</string>
 							<string>NSTabView</string>
 							<string>NSTableView</string>
 							<string>NSTextField</string>
