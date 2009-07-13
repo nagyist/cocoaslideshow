@@ -9,11 +9,13 @@
 
 #import "CSSMapController.h"
 
+@class CSSBorderlessWindow;
+
 @interface CocoaSlideShow : NSObject
 {	
 	IBOutlet NSWindow *mainWindow;
-	IBOutlet NSPanel *slideShowPanel;
-	NSWindow *fullScreenWindow;
+	IBOutlet CSSBorderlessWindow *slideShowPanel;
+	//NSWindow *fullScreenWindow;
 	
 	IBOutlet CSSMapController *mapController;
 	NSMutableArray *images;

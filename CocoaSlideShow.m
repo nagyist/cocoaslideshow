@@ -4,6 +4,10 @@
 #import "NSFileManager+CSS.h"
 #import <Sparkle/SUUpdater.h>
 
+#import "CSSBorderlessWindow.h"
+
+#import <Carbon/Carbon.h>
+
 @implementation CocoaSlideShow
 
 - (id)init {
@@ -29,7 +33,7 @@
 	[images release];
 	[remoteControl autorelease];
 	[undoManager release];
-	[fullScreenWindow release];
+	//[fullScreenWindow release];
 	[super dealloc];
 }
 
@@ -136,7 +140,7 @@
 		[NSNumber numberWithInt:1.0], @"SlideShowSpeed",
 	    [NSNumber numberWithBool:YES], @"SlideshowIsFullscreen", nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-
+	
 //	NSRect screenRect = [[NSScreen mainScreen] frame];	
 //	[slideShowPanel setContentSize:screenRect.size];
 //    fullScreenWindow = [[NSWindow alloc] initWithContentRect:screenRect
@@ -233,46 +237,21 @@
 	NSScreen *screen = [[tableView window] screen];
 	NSLog(@"-- screen %@ %@", [tableView window], screen);
 	
-	CGDirectDisplayID displayID = (CGDirectDisplayID)[[[screen deviceDescription] objectForKey:@"NSScreenNumber"] longValue];
-	NSLog(@"-- will capture %d", displayID);
-	
 	[mainWindow makeFirstResponder:tableView];
 
-	[NSCursor hide];
-	//[NSCursor setHiddenUntilMouseMoves:YES];
-	
-	CGDisplayErr err = CGDisplayCapture(displayID);
-    if (err != kCGErrorSuccess) {
-        NSLog(@"Couldn't capture the display!"); // TODO: show user dialog
-		return;
-    }
+	//[NSCursor hide];
+	[NSCursor setHiddenUntilMouseMoves:YES];
 
-	if(fullScreenWindow) {
-		[fullScreenWindow release];
-	}
-
-	fullScreenWindow = [[NSWindow alloc] initWithContentRect:[screen frame]
-												   styleMask:NSBorderlessWindowMask
-													 backing:NSBackingStoreBuffered
-													   defer:NO
-													  screen:screen];
-	mainWindow = fullScreenWindow;
-	
-    [mainWindow setLevel:CGShieldingWindowLevel()];
-    [mainWindow setBackgroundColor:[NSColor blackColor]];
-    [mainWindow makeKeyAndOrderFront:nil];
+	SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
 	
 	NSLog(@"-- mainWindow is on screen %@", screen);
 	
-    // Load our content view
 	[slideShowPanel setContentSize:[screen frame].size];
     [slideShowPanel setFrame:[screen frame] display:YES];
 
 	[self willChangeValueForKey:@"isFullScreen"];
 	isFullScreen = YES;
 	[self didChangeValueForKey:@"isFullScreen"];
-	
-    [mainWindow setContentView:[slideShowPanel contentView]];
 }
 
 - (IBAction)undo:(id)sender {
@@ -294,21 +273,23 @@
 	if(!isFullScreen) {
 		return;
 	}
-		
+	
+	SetSystemUIMode(kUIModeNormal, 0);
+	
 	[self invalidateTimer];
 
 	[NSCursor unhide];
 	
-	[mainWindow orderOut:self];
-
-	// Release the display(s)
-	if (CGReleaseAllDisplays() != kCGErrorSuccess) {
-		NSLog( @"Couldn't release the display(s)!" );
-		// Note: if you display an error dialog here, make sure you set
-		// its window level to the same one as the shield window level,
-		// or the user won't see anything.
-	}
-	
+	[slideShowPanel orderOut:self];
+//
+//	// Release the display(s)
+//	if (CGReleaseAllDisplays() != kCGErrorSuccess) {
+//		NSLog( @"Couldn't release the display(s)!" );
+//		// Note: if you display an error dialog here, make sure you set
+//		// its window level to the same one as the shield window level,
+//		// or the user won't see anything.
+//	}
+//	
 	[self willChangeValueForKey:@"isFullScreen"];
 	isFullScreen = NO;
 	[self didChangeValueForKey:@"isFullScreen"];
