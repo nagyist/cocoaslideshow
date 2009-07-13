@@ -12,12 +12,12 @@
 <h2>New features</h2>
 <pre>
 - updates with Sparkle
-- test
 </pre>
 
 <h2>Bug fixes</h2>
 <pre>
-- crash on setting new default directory
+- don't crash when setting a new default directory
+- fullscreen can use any display, not only the first one
 </pre>
             ]]></description>
             <pubDate>Sun, 12 Jul 2009 17:15:11 +0000</pubDate>
