@@ -33,7 +33,7 @@
 	[images release];
 	[remoteControl autorelease];
 	[undoManager release];
-	//[fullScreenWindow release];
+
 	[super dealloc];
 }
 
@@ -141,13 +141,6 @@
 	    [NSNumber numberWithBool:YES], @"SlideshowIsFullscreen", nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	
-//	NSRect screenRect = [[NSScreen mainScreen] frame];	
-//	[slideShowPanel setContentSize:screenRect.size];
-//    fullScreenWindow = [[NSWindow alloc] initWithContentRect:screenRect
-//												 styleMask:NSBorderlessWindowMask
-//												   backing:NSBackingStoreBuffered
-//													 defer:NO screen:[NSScreen mainScreen]];
-
 #ifndef NSAppKitVersionNumber10_5
 #define NSAppKitVersionNumber10_5 949
 #endif
@@ -227,25 +220,15 @@
 }
 
 - (IBAction)fullScreenMode:(id)sender {
-	// inspired from http://cocoadevcentral.com/articles/000028.php
-	// inspired from http://developer.apple.com/samplecode/Video_Hardware_Info/listing3.html
-
-	if(isFullScreen) {
-		return;
-	}
 	
-	NSScreen *screen = [[tableView window] screen];
-	NSLog(@"-- screen %@ %@", [tableView window], screen);
-	
-	[mainWindow makeFirstResponder:tableView];
+	if(isFullScreen) return;
 
-	//[NSCursor hide];
 	[NSCursor setHiddenUntilMouseMoves:YES];
 
 	SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
-	
-	NSLog(@"-- mainWindow is on screen %@", screen);
-	
+		
+	NSScreen *screen = [mainWindow screen];
+
 	[slideShowPanel setContentSize:[screen frame].size];
     [slideShowPanel setFrame:[screen frame] display:YES];
 
@@ -270,9 +253,8 @@
 }
 
 - (IBAction)exitFullScreen:(id)sender {
-	if(!isFullScreen) {
-		return;
-	}
+
+	if(!isFullScreen) return;
 	
 	SetSystemUIMode(kUIModeNormal, 0);
 	
@@ -281,15 +263,7 @@
 	[NSCursor unhide];
 	
 	[slideShowPanel orderOut:self];
-//
-//	// Release the display(s)
-//	if (CGReleaseAllDisplays() != kCGErrorSuccess) {
-//		NSLog( @"Couldn't release the display(s)!" );
-//		// Note: if you display an error dialog here, make sure you set
-//		// its window level to the same one as the shield window level,
-//		// or the user won't see anything.
-//	}
-//	
+
 	[self willChangeValueForKey:@"isFullScreen"];
 	isFullScreen = NO;
 	[self didChangeValueForKey:@"isFullScreen"];
