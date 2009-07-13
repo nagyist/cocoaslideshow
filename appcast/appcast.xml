@@ -7,9 +7,9 @@
         <language>en</language>
         
         <item>
-            <title>Version 0.5.4 (1 bug fixed; 2 new features)</title>
+            <title>Version 0.5.4 (2 bugs fixed, 1 new feature)</title>
             <description><![CDATA[
-<h2>New features</h2>
+<h2>New feature</h2>
 <pre>
 - updates with Sparkle
 </pre>
@@ -20,8 +20,8 @@
 - fullscreen can use any display, not only the first one
 </pre>
             ]]></description>
-            <pubDate>Sun, 12 Jul 2009 17:15:11 +0000</pubDate>
-            <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_3.app.zip" sparkle:version="0.5.4" length="574590" type="application/octet-stream" sparkle:dsaSignature="MCwCFC1sf5lTLF2Rz1gfwIx7BmDTBdAMAhR/FOndry7tWEEXS0xdj4VuIAZ7bg=="/>
+            <pubDate>Mon, 13 Jul 2009 22:00:00 +0000</pubDate>
+            <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_4.app.zip" sparkle:version="0.5.4" length="574576" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCckMEOzaVD5e5WM5y9rVKlJGFQjAIUKS4DamLJsW1IYlr2bExn344ghRs="/>
         </item>
         
     </channel>
