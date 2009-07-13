@@ -15,7 +15,6 @@
 {	
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet CSSBorderlessWindow *slideShowPanel;
-	//NSWindow *fullScreenWindow;
 	
 	IBOutlet CSSMapController *mapController;
 	NSMutableArray *images;
