@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>CocoaSlideShow Changelog</title>
+        <link>http://cocoaslideshow.googlecode.com/svn/trunk/appcast/appcast.xml</link>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+        
+        <item>
+            <title>Version 0.5.4 (2 bugs fixed, 1 new feature)</title>
+            <description><![CDATA[
+<h2>New feature</h2>
+<pre>
+- updates with Sparkle
+</pre>
+
+<h2>Bug fixes</h2>
+<pre>
+- don't crash when setting a new default directory
+- fullscreen can use any display, not only the first one
+</pre>
+            ]]></description>
+            <pubDate>Mon, 13 Jul 2009 22:00:00 +0000</pubDate>
+            <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_4.app.zip" sparkle:version="0.5.4" length="574576" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCckMEOzaVD5e5WM5y9rVKlJGFQjAIUKS4DamLJsW1IYlr2bExn344ghRs="/>
+        </item>
+        
+    </channel>
+</rss>
