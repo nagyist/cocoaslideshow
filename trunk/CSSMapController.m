@@ -189,7 +189,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:dir attributes:nil];
 	if(!success) {
 		NSLog(@"Error: can't create dir at path %@", dir);
-		return;
+		//return;
 	}
 	
 	kmlFilePath = [dir stringByAppendingPathComponent:@"CocoaSlideShow.kml"];
