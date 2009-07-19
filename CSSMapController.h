@@ -17,6 +17,7 @@ extern NSString *const G_NORMAL_MAP;
 	IBOutlet WebView *webView;
 	IBOutlet ImagesController *imagesController;
 	IBOutlet NSView *kmlSavePanelAccessoryView;
+	IBOutlet NSProgressIndicator *kmlExportProgressIndicator;
 }
 
 - (void)clearMap;
