@@ -20,6 +20,10 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 
 @implementation CSSMapController
 
+- (void)awakeFromNib {
+	[kmlExportProgressIndicator setHidden:YES];
+}
+
 - (NSArray *)mapStyles {
 	return [NSArray arrayWithObjects:G_PHYSICAL_MAP, G_NORMAL_MAP, G_SATELLITE_MAP, G_HYBRID_MAP, nil];
 }
@@ -83,11 +87,13 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 }
 
 - (void)updateExportProgress:(NSNumber *)n {
-	NSLog(@"-- updateExportProgress %@", n);
+	[kmlExportProgressIndicator setDoubleValue:[n doubleValue]];
 }
 
 - (void)exportFinished {
-	NSLog(@"-- exportFinished");
+	[kmlExportProgressIndicator setDoubleValue:1.0];
+	[kmlExportProgressIndicator setHidden:YES];
+	[kmlExportProgressIndicator setDoubleValue:0.0];
 }
 
 #pragma KML File Export
@@ -96,14 +102,13 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 - (void)generateKMLWithThumbsDirInSeparateThread:(NSDictionary *)options {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
+	NSArray *images = [options objectForKey:@"images"];
 	NSString *kmlFilePath = [options objectForKey:@"kmlFilePath"];
 	BOOL addThumbnails = [[options objectForKey:@"addThumbnails"] boolValue];
 	NSString *thumbsDir = nil;
 	if(addThumbnails) thumbsDir = [[kmlFilePath stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"images"];
 	
-	unsigned int imagesCount = [[imagesController selectedObjects] count];
-	int count = 0;
-	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
+	NSEnumerator *e = [images objectEnumerator];
 	CSSImageContainer *cssImageContainer = nil;
 	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
 	
@@ -118,9 +123,9 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	
 	NSMutableString *placemarkString = [[[NSMutableString alloc] init] autorelease];
 	
+	unsigned int count = 0;
 	while((cssImageContainer = [e nextObject])) {
-		NSLog(@"-- will add %@", [cssImageContainer path]);
-		// TODO: call main thread
+		//NSLog(@"-- will add %@", [cssImageContainer path]);
 		count++;
 
 		NSString *latitude = [cssImageContainer prettyLatitude];
@@ -143,7 +148,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		[placemarkString appendFormat:@"</Placemark>\n"];
 		
 		if(addThumbnails) {
-			[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithFloat:(float)count/imagesCount] waitUntilDone:NO];
+			[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
 			NSString *thumbPath = [[thumbsDir stringByAppendingPathComponent:[[cssImageContainer path] lastPathComponent]] lowercaseString];
 //			BOOL success = [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:640.0 maxheight:480.0 quality:0.75 saveTo:thumbPath];
 //			BOOL success = [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:510.0 maxheight:360.0 quality:0.75 saveTo:thumbPath];
@@ -160,6 +165,8 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	NSError *error = nil;
 	[kml writeToFile:kmlFilePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
 	if(error) [[NSAlert alertWithError:error] runModal];
+	
+	[self performSelectorOnMainThread:@selector(exportFinished) withObject:nil waitUntilDone:NO];
 	
 	[pool release];
 }
@@ -199,11 +206,19 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		success = [[NSFileManager defaultManager] createDirectoryAtPath:thumbsDir attributes:nil];
 		if(!success) {
 			NSLog(@"Error: can't create dir at path %@", thumbsDir);
-			return;
+			//return;
 		}
 	}
 	
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:kmlFilePath, @"kmlFilePath", [NSNumber numberWithBool:addThumbnails], @"addThumbnails", nil];
+	NSArray *images = [[[imagesController selectedObjects] copy] autorelease];
+	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:images, @"images", kmlFilePath, @"kmlFilePath", [NSNumber numberWithBool:addThumbnails], @"addThumbnails", nil];
+		
+	if(addThumbnails) {
+		[kmlExportProgressIndicator setHidden:NO];
+		[kmlExportProgressIndicator setMinValue:(double)0.0];
+		[kmlExportProgressIndicator setMaxValue:(double)[images count]];
+		[kmlExportProgressIndicator setDoubleValue:0.0];
+	}
 	
 	[NSThread detachNewThreadSelector:@selector(generateKMLWithThumbsDirInSeparateThread:) toTarget:self withObject:options];
 }
