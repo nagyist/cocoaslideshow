@@ -37,7 +37,7 @@
 		var point = new GLatLng(lat, long);
 		var marker = new GMarker(point, {title: "test"+count});
 		
-		var markerText = "<font face=\"verdana, sans-serif\" size=1><br /><b>"+name+"</b><br />"+date+"<\/font>";
+		var markerText = "<font face=\"verdana, sans-serif\" size=1><br /><b>"+name+"</b><br />"+date+"<\/font><br /><img width=\"240\" src=\""+path+"\" />";
 		
 		GEvent.addListener(marker, "click",
 			function() {
