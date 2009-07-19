@@ -21,7 +21,6 @@ extern NSString *const G_NORMAL_MAP;
 - (void)clearMap;
 
 - (NSArray *)mapStyles;
-- (NSString*)generateKML;
 - (NSString *)chooseFile;
 
 - (IBAction)displayGoogleMapForSelection:(id)sender;

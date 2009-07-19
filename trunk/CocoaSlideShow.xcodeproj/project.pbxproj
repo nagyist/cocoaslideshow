@@ -11,6 +11,7 @@
 		030463F10C75347700D70803 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 030463F00C75347700D70803 /* Credits.html */; };
 		032F081B0C542D820037F590 /* AppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 032F081A0C542D820037F590 /* AppleRemote.m */; };
 		033804240C86084300439E5A /* ImagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033804230C86084300439E5A /* ImagesController.m */; };
+		033F91E31012ACF8004AEBA0 /* NSImage+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 033F91E21012ACF8004AEBA0 /* NSImage+CSS.m */; };
 		03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 03458E590C81CA5300385D93 /* NSString+CSS.m */; };
 		034CA91D0DEB72CD00460991 /* Flagged.png in Resources */ = {isa = PBXBuildFile; fileRef = 034CA91B0DEB72CD00460991 /* Flagged.png */; };
 		034CA91E0DEB72CD00460991 /* FlaggedHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 034CA91C0DEB72CD00460991 /* FlaggedHeader.png */; };
@@ -72,6 +73,8 @@
 		032F081A0C542D820037F590 /* AppleRemote.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppleRemote.m; sourceTree = "<group>"; };
 		033804220C86084300439E5A /* ImagesController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ImagesController.h; sourceTree = "<group>"; };
 		033804230C86084300439E5A /* ImagesController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ImagesController.m; sourceTree = "<group>"; };
+		033F91E11012ACF8004AEBA0 /* NSImage+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+CSS.h"; sourceTree = "<group>"; };
+		033F91E21012ACF8004AEBA0 /* NSImage+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CSS.m"; sourceTree = "<group>"; };
 		03458E580C81CA5300385D93 /* NSString+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CSS.h"; sourceTree = "<group>"; };
 		03458E590C81CA5300385D93 /* NSString+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSS.m"; sourceTree = "<group>"; };
 		034CA91B0DEB72CD00460991 /* Flagged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flagged.png; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				030461600C75158100D70803 /* NSFileManager+CSS.m */,
 				03458E580C81CA5300385D93 /* NSString+CSS.h */,
 				03458E590C81CA5300385D93 /* NSString+CSS.m */,
+				033F91E11012ACF8004AEBA0 /* NSImage+CSS.h */,
+				033F91E21012ACF8004AEBA0 /* NSImage+CSS.m */,
 				03C710BC100BA1CE0050FA48 /* CSSBorderlessWindow.h */,
 				03C710BD100BA1CE0050FA48 /* CSSBorderlessWindow.m */,
 			);
@@ -363,6 +368,7 @@
 				03A122E30EC224F60076DF63 /* MyImageView.m in Sources */,
 				039B5A590ECE281600D7C02C /* CSSMapController.m in Sources */,
 				03C710BE100BA1CE0050FA48 /* CSSBorderlessWindow.m in Sources */,
+				033F91E31012ACF8004AEBA0 /* NSImage+CSS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
