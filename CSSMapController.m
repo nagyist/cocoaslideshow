@@ -107,6 +107,15 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	CSSImageContainer *cssImageContainer = nil;
 	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
 	
+	BOOL useRemoteBaseURL = [[NSUserDefaults standardUserDefaults] boolForKey:@"RemoteKMLThumbnails"];
+	NSString *baseURL = @"images/";
+	if(useRemoteBaseURL) {
+		baseURL = [[NSUserDefaults standardUserDefaults] valueForKey:@"KMLThumbnailsRemoteURLs"];
+		if(![baseURL hasSuffix:@"/"]) {
+			baseURL = [baseURL stringByAppendingString:@"/"];
+		}
+	}
+	
 	NSMutableString *placemarkString = [[[NSMutableString alloc] init] autorelease];
 	
 	while((cssImageContainer = [e nextObject])) {
@@ -118,7 +127,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		NSString *longitude = [cssImageContainer prettyLongitude];
 		NSString *timestamp = [cssImageContainer exifDateTime];
 		
-		NSString *imageName = [[cssImageContainer path] lastPathComponent];
+		NSString *imageName = [[[cssImageContainer path] lastPathComponent] lowercaseString];
 		
 		if([latitude length] == 0 || [longitude length] == 0) {
 			continue;
@@ -128,21 +137,24 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		
 		if(addThumbnails) {
 			NSString *imageName = [[[cssImageContainer path] lastPathComponent] lowercaseString];
-			[placemarkString appendFormat:@"<description>&lt;img src=\"images/%@\" /&gt;</description><Style><text>$[description]</text></Style> ", imageName];
+			[placemarkString appendFormat:@"<description>&lt;img src=\"%@%@\" /&gt;</description><Style><text>$[description]</text></Style> ", baseURL, imageName];
 		}
 
 		[placemarkString appendFormat:@"</Placemark>\n"];
 		
 		if(addThumbnails) {
 			[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithFloat:(float)count/imagesCount] waitUntilDone:NO];
-			NSString *thumbPath = [thumbsDir stringByAppendingPathComponent:[[cssImageContainer path] lastPathComponent]];
-			BOOL success = [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:640.0 maxheight:480.0 quality:0.75 saveTo:thumbPath];
+			NSString *thumbPath = [[thumbsDir stringByAppendingPathComponent:[[cssImageContainer path] lastPathComponent]] lowercaseString];
+//			BOOL success = [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:640.0 maxheight:480.0 quality:0.75 saveTo:thumbPath];
+//			BOOL success = [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:510.0 maxheight:360.0 quality:0.75 saveTo:thumbPath];
+			BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:300.0 maxheight:225.0 quality:0.75 saveTo:thumbPath] :
+											  [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:510.0 maxheight:360.0 quality:0.75 saveTo:thumbPath];
 			if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
 		}
 	}
 	
 	NSLog(@"-- finished!");
-		
+	
 	NSString *kml = [NSString stringWithFormat:XMLContainer, placemarkString];
 	
 	NSError *error = nil;
@@ -156,13 +168,11 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
     NSSavePanel *sPanel = [NSSavePanel savePanel];
 	
 	[sPanel setAccessoryView:kmlSavePanelAccessoryView];
-	
-	[sPanel setRequiredFileType:@""];
 	[sPanel setCanCreateDirectories:YES];
 	
 	NSString *desktopPath = [NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 
-	int runResult = [sPanel runModalForDirectory:desktopPath file:@"CocoaSlideShow"];
+	int runResult = [sPanel runModalForDirectory:desktopPath file:@"KMLExport"];
 	
 	return (runResult == NSOKButton) ? [sPanel filename] : nil;
 }
@@ -197,6 +207,5 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	
 	[NSThread detachNewThreadSelector:@selector(generateKMLWithThumbsDirInSeparateThread:) toTarget:self withObject:options];
 }
-
 
 @end
