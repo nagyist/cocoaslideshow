@@ -16,12 +16,12 @@ extern NSString *const G_NORMAL_MAP;
 @interface CSSMapController : NSObject {
 	IBOutlet WebView *webView;
 	IBOutlet ImagesController *imagesController;
+	IBOutlet NSView *kmlSavePanelAccessoryView;
 }
 
 - (void)clearMap;
 
 - (NSArray *)mapStyles;
-- (NSString *)chooseFile;
 
 - (IBAction)displayGoogleMapForSelection:(id)sender;
 - (IBAction)exportKMLToFile:(id)sender;

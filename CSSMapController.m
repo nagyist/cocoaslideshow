@@ -95,10 +95,12 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 // TODO: when 10.5 only, use http://www.entropy.ch/software/macosx/#epegwrapper
 - (void)generateKMLWithThumbsDirInSeparateThread:(NSDictionary *)options {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	NSString *thumbsDir = [options valueForKey:@"thumbsDir"];
-	NSString *kmlFilePath = [options valueForKey:@"kmlFilePath"];
 
+	NSString *kmlFilePath = [options objectForKey:@"kmlFilePath"];
+	BOOL addThumbnails = [[options objectForKey:@"addThumbnails"] boolValue];
+	NSString *thumbsDir = nil;
+	if(addThumbnails) thumbsDir = [[kmlFilePath stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"images"];
+	
 	unsigned int imagesCount = [[imagesController selectedObjects] count];
 	int count = 0;
 	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
@@ -123,13 +125,15 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		}
 
 		[placemarkString appendFormat:@"    <Placemark><name>%@</name><timestamp><when>%@</when></timestamp><Point><coordinates>%@,%@</coordinates></Point>", imageName, timestamp, longitude, latitude];
-		if(thumbsDir) {
+		
+		if(addThumbnails) {
 			NSString *imageName = [[[cssImageContainer path] lastPathComponent] lowercaseString];
 			[placemarkString appendFormat:@"<description>&lt;img src=\"images/%@\" /&gt;</description><Style><text>$[description]</text></Style> ", imageName];
 		}
+
 		[placemarkString appendFormat:@"</Placemark>\n"];
 		
-		if(thumbsDir) {
+		if(addThumbnails) {
 			[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithFloat:(float)count/imagesCount] waitUntilDone:NO];
 			NSString *thumbPath = [thumbsDir stringByAppendingPathComponent:[[cssImageContainer path] lastPathComponent]];
 			BOOL success = [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:640.0 maxheight:480.0 quality:0.75 saveTo:thumbPath];
@@ -148,21 +152,10 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	[pool release];
 }
 
-- (NSString *)chooseFile {
+- (NSString *)chooseKMLExportDirectory {
     NSSavePanel *sPanel = [NSSavePanel savePanel];
 	
-	[sPanel setRequiredFileType:@"kml"];
-	[sPanel setCanCreateDirectories:YES];
-	
-	NSString *desktopPath = [NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-
-	int runResult = [sPanel runModalForDirectory:desktopPath file:@"CocoaSlideShow.kml"];
-	
-	return (runResult == NSOKButton) ? [sPanel filename] : nil;
-}
-
-- (NSString *)chooseDirectory {
-    NSSavePanel *sPanel = [NSSavePanel savePanel];
+	[sPanel setAccessoryView:kmlSavePanelAccessoryView];
 	
 	[sPanel setRequiredFileType:@""];
 	[sPanel setCanCreateDirectories:YES];
@@ -175,40 +168,33 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 }
 
 - (IBAction)exportKMLToFile:(id)sender {
-	// TODO: [savePanel setAccessoryView:savePanelAccessoryView]; // to choose thumbnails export or not
-	
-	BOOL addThumbnails = [[NSUserDefaults standardUserDefaults] boolForKey:@"IncludeThumbsInKMLExport"];
-
 	NSString *kmlFilePath = nil;
 	NSString *thumbsDir = nil;
 	
-	if(addThumbnails) {		
-		NSString *dir = [self chooseDirectory];
-		if(!dir) return;
+	NSString *dir = [self chooseKMLExportDirectory];
+	if(!dir) return;
 
-		BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:dir attributes:nil];
-		if(!success) {
-			NSLog(@"Error: can't create dir at path %@", dir);
-			return;
-		}
-		
-		kmlFilePath = [dir stringByAppendingPathComponent:@"CocoaSlideShow.kml"];
+	BOOL addThumbnails = [[NSUserDefaults standardUserDefaults] boolForKey:@"IncludeThumbsInKMLExport"];
 
+	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:dir attributes:nil];
+	if(!success) {
+		NSLog(@"Error: can't create dir at path %@", dir);
+		return;
+	}
+	
+	kmlFilePath = [dir stringByAppendingPathComponent:@"CocoaSlideShow.kml"];
+
+	if(addThumbnails) {
 		thumbsDir = [dir stringByAppendingPathComponent:@"images"];
 		success = [[NSFileManager defaultManager] createDirectoryAtPath:thumbsDir attributes:nil];
 		if(!success) {
 			NSLog(@"Error: can't create dir at path %@", thumbsDir);
 			return;
 		}
-	} else {
-		kmlFilePath = [self chooseFile];
-		if(!kmlFilePath) return;
 	}
 	
-	NSMutableDictionary *options = [NSMutableDictionary dictionary];
-	[options setObject:kmlFilePath forKey:@"kmlFilePath"];
-	if(thumbsDir) [options setObject:thumbsDir forKey:@"thumbsDir"];
-
+	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:kmlFilePath, @"kmlFilePath", [NSNumber numberWithBool:addThumbnails], @"addThumbnails", nil];
+	
 	[NSThread detachNewThreadSelector:@selector(generateKMLWithThumbsDirInSeparateThread:) toTarget:self withObject:options];
 }
 
