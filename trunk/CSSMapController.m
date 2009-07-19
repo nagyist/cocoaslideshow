@@ -82,10 +82,25 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	
 }
 
+- (void)updateExportProgress:(NSNumber *)n {
+	NSLog(@"-- updateExportProgress %@", n);
+}
+
+- (void)exportFinished {
+	NSLog(@"-- exportFinished");
+}
+
 #pragma KML File Export
 
-- (NSString*)generateKMLWithThumbsDir:(NSString *)thumbsDir {
+// TODO: when 10.5 only, use http://www.entropy.ch/software/macosx/#epegwrapper
+- (void)generateKMLWithThumbsDirInSeparateThread:(NSDictionary *)options {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
+	NSString *thumbsDir = [options valueForKey:@"thumbsDir"];
+	NSString *kmlFilePath = [options valueForKey:@"kmlFilePath"];
+
+	unsigned int imagesCount = [[imagesController selectedObjects] count];
+	int count = 0;
 	NSEnumerator *e = [[imagesController selectedObjects] objectEnumerator];
 	CSSImageContainer *cssImageContainer = nil;
 	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
@@ -93,7 +108,10 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	NSMutableString *placemarkString = [[[NSMutableString alloc] init] autorelease];
 	
 	while((cssImageContainer = [e nextObject])) {
-		
+		NSLog(@"-- will add %@", [cssImageContainer path]);
+		// TODO: call main thread
+		count++;
+
 		NSString *latitude = [cssImageContainer prettyLatitude];
 		NSString *longitude = [cssImageContainer prettyLongitude];
 		NSString *timestamp = [cssImageContainer exifDateTime];
@@ -112,13 +130,22 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		[placemarkString appendFormat:@"</Placemark>\n"];
 		
 		if(thumbsDir) {
+			[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithFloat:(float)count/imagesCount] waitUntilDone:NO];
 			NSString *thumbPath = [thumbsDir stringByAppendingPathComponent:[[cssImageContainer path] lastPathComponent]];
 			BOOL success = [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:640.0 maxheight:480.0 quality:0.75 saveTo:thumbPath];
 			if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
 		}
 	}
+	
+	NSLog(@"-- finished!");
 		
-	return [NSString stringWithFormat:XMLContainer, placemarkString];
+	NSString *kml = [NSString stringWithFormat:XMLContainer, placemarkString];
+	
+	NSError *error = nil;
+	[kml writeToFile:kmlFilePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+	if(error) [[NSAlert alertWithError:error] runModal];
+	
+	[pool release];
 }
 
 - (NSString *)chooseFile {
@@ -137,23 +164,25 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 - (NSString *)chooseDirectory {
     NSSavePanel *sPanel = [NSSavePanel savePanel];
 	
-	//[sPanel setRequiredFileType:@"kml"];
+	[sPanel setRequiredFileType:@""];
 	[sPanel setCanCreateDirectories:YES];
 	
 	NSString *desktopPath = [NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 
-	int runResult = [sPanel runModalForDirectory:desktopPath file:@""];
+	int runResult = [sPanel runModalForDirectory:desktopPath file:@"CocoaSlideShow"];
 	
 	return (runResult == NSOKButton) ? [sPanel filename] : nil;
 }
 
 - (IBAction)exportKMLToFile:(id)sender {
+	// TODO: [savePanel setAccessoryView:savePanelAccessoryView]; // to choose thumbnails export or not
+	
 	BOOL addThumbnails = [[NSUserDefaults standardUserDefaults] boolForKey:@"IncludeThumbsInKMLExport"];
 
 	NSString *kmlFilePath = nil;
 	NSString *thumbsDir = nil;
 	
-	if(addThumbnails) {
+	if(addThumbnails) {		
 		NSString *dir = [self chooseDirectory];
 		if(!dir) return;
 
@@ -173,11 +202,14 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		}
 	} else {
 		kmlFilePath = [self chooseFile];
+		if(!kmlFilePath) return;
 	}
-		
-	NSError *error = nil;
-	[[self generateKMLWithThumbsDir:thumbsDir] writeToFile:kmlFilePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
-	if(error) [[NSAlert alertWithError:error] runModal];
+	
+	NSMutableDictionary *options = [NSMutableDictionary dictionary];
+	[options setObject:kmlFilePath forKey:@"kmlFilePath"];
+	if(thumbsDir) [options setObject:thumbsDir forKey:@"thumbsDir"];
+
+	[NSThread detachNewThreadSelector:@selector(generateKMLWithThumbsDirInSeparateThread:) toTarget:self withObject:options];
 }
 
 
