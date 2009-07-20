@@ -95,10 +95,11 @@
 
 - (BOOL)loadSource {
 	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
+	BOOL isExportingKML = [[[NSApp delegate] valueForKey:@"isExportingKML"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
 	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:@"MultipleSelectionAllowsEdition"];
 
-	if(!readOnMultiSelect && multipleImagesSelected && !isMap) {
+	if(!readOnMultiSelect && multipleImagesSelected && !isMap && !isExportingKML) {
 		return nil;
     }
 	

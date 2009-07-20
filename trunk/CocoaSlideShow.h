@@ -39,6 +39,7 @@
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
 	BOOL isSaving;
+	BOOL isExportingKML;
 }
 
 - (BOOL)isFullScreen;

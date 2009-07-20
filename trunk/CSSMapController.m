@@ -94,6 +94,8 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	[kmlExportProgressIndicator setDoubleValue:1.0];
 	[kmlExportProgressIndicator setHidden:YES];
 	[kmlExportProgressIndicator setDoubleValue:0.0];
+	
+	[[NSApp delegate] setValue:[NSNumber numberWithBool:NO] forKey:@"isExportingKML"];
 }
 
 #pragma KML File Export
@@ -158,8 +160,6 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		}
 	}
 	
-	NSLog(@"-- finished!");
-	
 	NSString *kml = [NSString stringWithFormat:XMLContainer, placemarkString];
 	
 	NSError *error = nil;
@@ -185,6 +185,8 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 }
 
 - (IBAction)exportKMLToFile:(id)sender {
+	[[NSApp delegate] setValue:[NSNumber numberWithBool:YES] forKey:@"isExportingKML"];
+
 	NSString *kmlFilePath = nil;
 	NSString *thumbsDir = nil;
 	
