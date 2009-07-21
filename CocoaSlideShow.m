@@ -8,6 +8,8 @@
 
 #import <Carbon/Carbon.h>
 
+#import "NSImage+CSS.h"
+
 @implementation CocoaSlideShow
 
 - (id)init {
@@ -43,57 +45,6 @@
 
 - (BOOL)isMap {
 	return [tabView selectedTabViewItem] == mapTabViewItem;
-}
-
-- (NSImage *)rotateIndividualImage:(NSImage *)image clockwise:(BOOL)clockwise {
-	// from http://swik.net/User:marc/Chipmunk+Ninja+Technical+Articles/Rotating+an+NSImage+object+in+Cocoa/zgha
-	// TODO (NST) remember the rotation angle in the same session
-    
-	NSImage *existingImage = image;
-    NSSize existingSize;
-		
-	/**
-     * Get the size of the original image in its raw bitmap format.
-     * The bestRepresentationForDevice: nil tells the NSImage to just
-     * give us the raw image instead of it's wacky DPI-translated version.
-     */
-    existingSize.width = [existingImage size].width;//[[existingImage bestRepresentationForDevice: nil] pixelsWide];
-    existingSize.height = [existingImage size].height;//[[existingImage bestRepresentationForDevice: nil] pixelsHigh];
-
-    NSSize newSize = NSMakeSize(existingSize.height, existingSize.width);
-
-    NSImage *rotatedImage = [[NSImage alloc] initWithSize:newSize];
-
-    [rotatedImage lockFocus];
-
-    /**
-     * Apply the following transformations:
-     *
-     * - bring the rotation point to the centre of the image instead of
-     *   the default lower, left corner (0,0).
-     * - rotate it by 90 degrees, either clock or counter clockwise.
-     * - re-translate the rotated image back down to the lower left corner
-     *   so that it appears in the right place.
-     */
-    NSAffineTransform *rotateTF = [NSAffineTransform transform];
-    NSPoint centerPoint = NSMakePoint(newSize.width / 2, newSize.height / 2);
-
-    [rotateTF translateXBy: centerPoint.x yBy: centerPoint.y];
-    [rotateTF rotateByDegrees: (clockwise) ? - 90 : 90];
-    [rotateTF translateXBy: -centerPoint.y yBy: -centerPoint.x];
-    [rotateTF concat];
-
-    /**
-     * We have to get the image representation to do its drawing directly,
-     * because otherwise the stupid NSImage DPI thingie bites us in the butt
-     * again.
-     */
-    NSRect r1 = NSMakeRect(0, 0, newSize.height, newSize.width);
-    [[existingImage bestRepresentationForDevice: nil] drawInRect: r1];
-
-    [rotatedImage unlockFocus];
-
-    return [rotatedImage autorelease];
 }
 
 - (void)setupImagesControllerWithDir:(NSString *)dir recursive:(BOOL)isRecursive {
@@ -206,7 +157,8 @@
 }
 
 - (void)rotate:(NSImageView *)iv clockwise:(BOOL)cw {
-	[iv setImage:[self rotateIndividualImage:[iv image] clockwise:cw]];
+//	[iv setImage:[self rotateIndividualImage:[iv image] clockwise:cw]];
+	[iv setImage:[[iv image] rotatedImageByDegrees:cw ? -90 : 90]];
 }
 
 - (IBAction)rotateLeft:(id)sender {

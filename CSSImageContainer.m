@@ -10,6 +10,7 @@
 #import "NSString+CSS.h"
 #import "CocoaSlideShow.h"
 #import "NSFileManager+CSS.h"
+#import "NSImage+CSS.h"
 
 @implementation CSSImageContainer
 
@@ -119,6 +120,9 @@
 	
 	CFDictionaryRef metadataRef = CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
 	NSDictionary *immutableMetadata = (NSDictionary *)metadataRef;
+	
+	//NSLog(@"-- immutableMetadata %@", immutableMetadata);
+	
 	[metadata autorelease];
 	metadata = [immutableMetadata mutableCopy];
 	CFRelease(metadataRef);
@@ -133,6 +137,25 @@
 	[self didChangeValueForKey:@"isJpeg"];
     
 	return YES;
+}
+
+// http://www.impulseadventure.com/photo/exif-orientation.html
+- (int)orientationDegrees {
+	NSString *s = [[self metadata] valueForKey:@"Orientation"];
+	if(!s) return 0;
+	int o = [s intValue];
+	switch(o) {
+		case 1:
+			return 0; break;
+		case 8:
+			return 90; break;
+		case 3:
+			return 180; break;
+		case 6:
+			return 270; break;
+		default:
+			return 0;
+	}
 }
 
 - (NSString *)fileName {
@@ -308,7 +331,10 @@
 
 - (NSImage *)image {
 	//if(![[NSApp delegate] isFullScreen]) return nil;
-	return [[[NSImage alloc] initByReferencingFile:path] autorelease];
+	
+	int orientationDegrees = [self orientationDegrees];
+	
+	return [[[[NSImage alloc] initByReferencingFile:path] autorelease] rotatedImageByDegrees:orientationDegrees];
 }
 
 - (NSURL *)googleMapsURL {
