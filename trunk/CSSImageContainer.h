@@ -28,6 +28,8 @@
 
 - (NSImage *)image;
 
+- (int)orientationDegrees;
+
 - (NSString *)path;
 - (NSImage *)image;
 

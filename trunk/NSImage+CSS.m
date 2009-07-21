@@ -13,7 +13,7 @@
 
 @implementation NSImage (CSS)
 
-+(BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath toPath:(NSString *)dstPath boundingBox:(NSSize)boundingBox {
++ (BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath toPath:(NSString *)dstPath boundingBox:(NSSize)boundingBox {
 	NSImage *thumbnail = [EpegWrapper imageWithPath2:srcPath boundingBox:boundingBox];
 	
 	NSData *jpegData = [NSBitmapImageRep representationOfImageRepsInArray:[thumbnail representations]
@@ -23,7 +23,7 @@
 	return [jpegData writeToFile:dstPath atomically:NO];
 }
 
-+(BOOL)scaleAndSaveAsJPEG:(NSString *)source 
++ (BOOL)scaleAndSaveAsJPEG:(NSString *)source 
 				 maxwidth:(int)width 
 				maxheight:(int)height 
 				  quality:(float)quality
@@ -115,6 +115,58 @@
     [pool release];
     
     return ret;
+}
+
+- (NSImage *)rotatedImageByDegrees:(int)degrees {
+	// from http://swik.net/User:marc/Chipmunk+Ninja+Technical+Articles/Rotating+an+NSImage+object+in+Cocoa/zgha
+	// TODO (NST) remember the rotation angle in the same session
+    
+	if(degrees == 0) return self;
+	
+	NSSize existingSize;
+		
+	/**
+     * Get the size of the original image in its raw bitmap format.
+     * The bestRepresentationForDevice: nil tells the NSImage to just
+     * give us the raw image instead of it's wacky DPI-translated version.
+     */
+    existingSize.width = [self size].width;//[[existingImage bestRepresentationForDevice: nil] pixelsWide];
+    existingSize.height = [self size].height;//[[existingImage bestRepresentationForDevice: nil] pixelsHigh];
+
+    NSSize newSize = NSMakeSize(existingSize.height, existingSize.width);
+
+    NSImage *rotatedImage = [[NSImage alloc] initWithSize:newSize];
+
+    [rotatedImage lockFocus];
+
+    /**
+     * Apply the following transformations:
+     *
+     * - bring the rotation point to the centre of the image instead of
+     *   the default lower, left corner (0,0).
+     * - rotate it by 90 degrees, either clock or counter clockwise.
+     * - re-translate the rotated image back down to the lower left corner
+     *   so that it appears in the right place.
+     */
+    NSAffineTransform *rotateTF = [NSAffineTransform transform];
+    NSPoint centerPoint = NSMakePoint(newSize.width / 2, newSize.height / 2);
+
+    [rotateTF translateXBy: centerPoint.x yBy: centerPoint.y];
+    [rotateTF rotateByDegrees: degrees];
+    [rotateTF translateXBy: -centerPoint.y yBy: -centerPoint.x];
+    [rotateTF concat];
+
+    /**
+     * We have to get the image representation to do its drawing directly,
+     * because otherwise the stupid NSImage DPI thingie bites us in the butt
+     * again.
+     */
+    NSRect r1 = NSMakeRect(0, 0, newSize.height, newSize.width);
+    [[self bestRepresentationForDevice: nil] drawInRect: r1];
+
+    [rotatedImage unlockFocus];
+
+    return [rotatedImage autorelease];
 }
 
 @end
