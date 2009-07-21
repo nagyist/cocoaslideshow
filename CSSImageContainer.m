@@ -139,22 +139,31 @@
 	return YES;
 }
 
+- (void)rotateLeft {
+	userRotation -= 90;
+}
+
+- (void)rotateRight {
+	userRotation += 90;	
+}
+
 // http://www.impulseadventure.com/photo/exif-orientation.html
 - (int)orientationDegrees {
 	NSString *s = [[self metadata] valueForKey:@"Orientation"];
-	if(!s) return 0;
+	if(!s) return userRotation;
+	
 	int o = [s intValue];
 	switch(o) {
 		case 1:
-			return 0; break;
+			return 0 + userRotation; break;
 		case 8:
-			return 90; break;
+			return 90 + userRotation; break;
 		case 3:
-			return 180; break;
+			return 180 + userRotation; break;
 		case 6:
-			return 270; break;
+			return 270 + userRotation; break;
 		default:
-			return 0;
+			return 0 + userRotation;
 	}
 }
 
@@ -334,7 +343,7 @@
 	
 	int orientationDegrees = [self orientationDegrees];
 	
-	return [[[[NSImage alloc] initByReferencingFile:path] autorelease] rotatedImageByDegrees:orientationDegrees];
+	return [[[[NSImage alloc] initByReferencingFile:path] autorelease] rotatedWithAngle:orientationDegrees];
 }
 
 - (NSURL *)googleMapsURL {

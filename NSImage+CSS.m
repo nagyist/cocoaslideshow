@@ -13,6 +13,8 @@
 
 @implementation NSImage (CSS)
 
+static inline double rad(int alpha) {return ((alpha * pi)/180);}
+
 + (BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath toPath:(NSString *)dstPath boundingBox:(NSSize)boundingBox {
 	NSImage *thumbnail = [EpegWrapper imageWithPath2:srcPath boundingBox:boundingBox];
 	
@@ -22,12 +24,12 @@
 																									  forKey:NSImageCompressionFactor]];
 	return [jpegData writeToFile:dstPath atomically:NO];
 }
-
+/*
 + (BOOL)scaleAndSaveAsJPEG:(NSString *)source 
-				 maxwidth:(int)width 
-				maxheight:(int)height 
-				  quality:(float)quality
-				   saveTo:(NSString *)dest {
+				  maxwidth:(int)width 
+				 maxheight:(int)height 
+				   quality:(float)quality
+					saveTo:(NSString *)dest {
 	
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSBitmapImageRep *rep = nil;
@@ -116,57 +118,53 @@
     
     return ret;
 }
-
-- (NSImage *)rotatedImageByDegrees:(int)degrees {
-	// from http://swik.net/User:marc/Chipmunk+Ninja+Technical+Articles/Rotating+an+NSImage+object+in+Cocoa/zgha
-	// TODO (NST) remember the rotation angle in the same session
-    
-	if(degrees == 0) return self;
+*/
+// http://lists.apple.com/archives/Cocoa-dev/2005//Dec/msg00143.html
+- (NSImage *)rotatedWithAngle:(int)alpha {
+	float factorW, factorH, dW, dH;
+	NSAffineTransform *centreOp, *rotateOp;
+	NSImage *tmpImage;
+	NSPoint startPoint;
+	NSGraphicsContext* graphicsContext;
+	BOOL wasAntialiasing;
+	NSImageInterpolation previousImageInterpolation;
 	
-	NSSize existingSize;
-		
-	/**
-     * Get the size of the original image in its raw bitmap format.
-     * The bestRepresentationForDevice: nil tells the NSImage to just
-     * give us the raw image instead of it's wacky DPI-translated version.
-     */
-    existingSize.width = [self size].width;//[[existingImage bestRepresentationForDevice: nil] pixelsWide];
-    existingSize.height = [self size].height;//[[existingImage bestRepresentationForDevice: nil] pixelsHigh];
-
-    NSSize newSize = NSMakeSize(existingSize.height, existingSize.width);
-
-    NSImage *rotatedImage = [[NSImage alloc] initWithSize:newSize];
-
-    [rotatedImage lockFocus];
-
-    /**
-     * Apply the following transformations:
-     *
-     * - bring the rotation point to the centre of the image instead of
-     *   the default lower, left corner (0,0).
-     * - rotate it by 90 degrees, either clock or counter clockwise.
-     * - re-translate the rotated image back down to the lower left corner
-     *   so that it appears in the right place.
-     */
-    NSAffineTransform *rotateTF = [NSAffineTransform transform];
-    NSPoint centerPoint = NSMakePoint(newSize.width / 2, newSize.height / 2);
-
-    [rotateTF translateXBy: centerPoint.x yBy: centerPoint.y];
-    [rotateTF rotateByDegrees: degrees];
-    [rotateTF translateXBy: -centerPoint.y yBy: -centerPoint.x];
-    [rotateTF concat];
-
-    /**
-     * We have to get the image representation to do its drawing directly,
-     * because otherwise the stupid NSImage DPI thingie bites us in the butt
-     * again.
-     */
-    NSRect r1 = NSMakeRect(0, 0, newSize.height, newSize.width);
-    [[self bestRepresentationForDevice: nil] drawInRect: r1];
-
-    [rotatedImage unlockFocus];
-
-    return [rotatedImage autorelease];
+	if (0 == alpha) return self;
+	factorW = fabs(cos(rad(alpha)));
+	factorH = fabs(sin(rad(alpha)));
+	dW = [self size].width * factorW + [self size].height * factorH;
+	dH = [self size].width * factorH + [self size].height * factorW;
+	tmpImage = [[NSImage alloc] initWithSize: NSMakeSize(dW, dH)];
+	
+	centreOp = [NSAffineTransform transform];
+	[centreOp translateXBy: dW / 2 yBy: dH / 2];
+	rotateOp = [NSAffineTransform transform];
+	[rotateOp rotateByDegrees: alpha];
+	[rotateOp appendTransform: centreOp];
+	
+	[self setMatchesOnMultipleResolution: NO];
+	[self setUsesEPSOnResolutionMismatch: YES];
+	[tmpImage lockFocus];
+	graphicsContext = [NSGraphicsContext currentContext];
+	wasAntialiasing = [graphicsContext shouldAntialias];
+	previousImageInterpolation = [graphicsContext imageInterpolation];
+	[graphicsContext setShouldAntialias: YES];
+	[graphicsContext setImageInterpolation: NSImageInterpolationHigh];
+	
+	[rotateOp concat];
+	startPoint = NSMakePoint(-[self size].width / 2, -[self size].height / 2);
+	[self drawAtPoint: startPoint
+			 fromRect: NSMakeRect(0, 0, [self size].width, [self size].height)
+			operation: NSCompositeCopy
+			 fraction: 1.0];
+	
+	[graphicsContext setShouldAntialias: wasAntialiasing];
+	[graphicsContext setImageInterpolation: previousImageInterpolation];
+	[tmpImage unlockFocus];
+	[tmpImage setDataRetained: YES];
+	[tmpImage setScalesWhenResized: YES];
+	
+	return [tmpImage autorelease];
 }
 
 @end
