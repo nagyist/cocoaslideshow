@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03043931101531DB00C72114 /* Epeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03043930101531DB00C72114 /* Epeg.framework */; };
+		030439801015346D00C72114 /* Epeg.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 03043930101531DB00C72114 /* Epeg.framework */; };
 		030461610C75158100D70803 /* NSFileManager+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 030461600C75158100D70803 /* NSFileManager+CSS.m */; };
 		030463F10C75347700D70803 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 030463F00C75347700D70803 /* Credits.html */; };
 		032F081B0C542D820037F590 /* AppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 032F081A0C542D820037F590 /* AppleRemote.m */; };
@@ -59,6 +61,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				037F6A5B100A2C8B0071E2A9 /* Sparkle.framework in Copy Frameworks */,
+				030439801015346D00C72114 /* Epeg.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03043930101531DB00C72114 /* Epeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Epeg.framework; sourceTree = "<group>"; };
 		0304615F0C75158100D70803 /* NSFileManager+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CSS.h"; sourceTree = "<group>"; };
 		030461600C75158100D70803 /* NSFileManager+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CSS.m"; sourceTree = "<group>"; };
 		030463F00C75347700D70803 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 				03A126B10EC2496C0076DF63 /* WebKit.framework in Frameworks */,
 				037F69C1100A29BC0071E2A9 /* Sparkle.framework in Frameworks */,
 				037F6A21100A2BA00071E2A9 /* Sparkle.framework in Frameworks */,
+				03043931101531DB00C72114 /* Epeg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +199,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03043930101531DB00C72114 /* Epeg.framework */,
 				037F69C0100A29BC0071E2A9 /* Sparkle.framework */,
 				03A126B00EC2496C0076DF63 /* WebKit.framework */,
 				036D5C2E0C7269D0004A8236 /* Carbon.framework */,
@@ -412,9 +418,11 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -438,9 +446,11 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;

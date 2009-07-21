@@ -11,6 +11,10 @@
 
 @interface NSImage (CSS)
 
++(BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath
+								  toPath:(NSString *)dstPath
+							 boundingBox:(NSSize)boundingBox;
+
 +(BOOL)scaleAndSaveAsJPEG:(NSString *)source
 				 maxwidth:(int)width
 				maxheight:(int)height

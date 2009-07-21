@@ -6,17 +6,28 @@
 //  Copyright 2009 Sen:te. All rights reserved.
 //
 
-#import "NSImage+CSS.h"
+// http://www.cocoadev.com/index.pl?ThumbnailImages
 
+#import "NSImage+CSS.h"
+#import <Epeg/EpegWrapper.h>
 
 @implementation NSImage (CSS)
 
-// http://www.cocoadev.com/index.pl?ThumbnailImages
++(BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath toPath:(NSString *)dstPath boundingBox:(NSSize)boundingBox {
+	NSImage *thumbnail = [EpegWrapper imageWithPath2:srcPath boundingBox:boundingBox];
+	
+	NSData *jpegData = [NSBitmapImageRep representationOfImageRepsInArray:[thumbnail representations]
+																usingType:NSJPEGFileType
+															   properties:[NSDictionary dictionaryWithObject:[NSDecimalNumber numberWithFloat:0.75]
+																									  forKey:NSImageCompressionFactor]];
+	return [jpegData writeToFile:dstPath atomically:NO];
+}
+
 +(BOOL)scaleAndSaveAsJPEG:(NSString *)source 
-		 maxwidth:(int)width 
-		maxheight:(int)height 
-		  quality:(float)quality
-		   saveTo:(NSString *)dest {
+				 maxwidth:(int)width 
+				maxheight:(int)height 
+				  quality:(float)quality
+				   saveTo:(NSString *)dest {
 	
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSBitmapImageRep *rep = nil;
@@ -48,8 +59,8 @@
 		// ratios
 		wr = w/(float)width;
 		hr = h/(float)height;
-	
-	
+		
+		
 		if (wr>hr) { // landscape
 			nw = width;
 			nh = h/wr;
@@ -85,9 +96,9 @@
     
     // save as JPEG
     NSDictionary *properties =
-        [NSDictionary dictionaryWithObjectsAndKeys:
-	    [NSNumber numberWithFloat:quality],
-	    NSImageCompressionFactor, NULL];    
+	[NSDictionary dictionaryWithObjectsAndKeys:
+	 [NSNumber numberWithFloat:quality],
+	 NSImageCompressionFactor, NULL];    
     
     bitmapData = [output representationUsingType:NSJPEGFileType
 									  properties:properties];
