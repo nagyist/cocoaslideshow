@@ -17,6 +17,8 @@
 	BOOL isFlagged;
 	BOOL isLoadingCache;
 	BOOL isJpeg;
+	
+	int userRotation;
 }
 
 - (NSString *)exifDateTime;
@@ -27,6 +29,9 @@
 - (BOOL)loadSource;
 
 - (NSImage *)image;
+
+- (void)rotateLeft;
+- (void)rotateRight;
 
 - (int)orientationDegrees;
 

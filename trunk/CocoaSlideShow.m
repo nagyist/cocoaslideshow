@@ -158,17 +158,26 @@
 
 - (void)rotate:(NSImageView *)iv clockwise:(BOOL)cw {
 //	[iv setImage:[self rotateIndividualImage:[iv image] clockwise:cw]];
-	[iv setImage:[[iv image] rotatedImageByDegrees:cw ? -90 : 90]];
+	
+	[iv setImage:[[iv image] rotatedWithAngle: cw ? -90 : 90]];
+	
+//	
+//	SEL selector = cw ? @selector(rotateRight) : @selector(rotateLeft);
+//	[[imagesController selectedObjects] makeObjectsPerformSelector:selector];
 }
 
 - (IBAction)rotateLeft:(id)sender {
 	NSImageView *iv = isFullScreen ? panelImageView : imageView;
 	[self rotate:iv clockwise:NO];
+//
+//	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(rotateLeft)];
 }
 
 - (IBAction)rotateRight:(id)sender {
 	NSImageView *iv = isFullScreen ? panelImageView : imageView;
 	[self rotate:iv clockwise:YES];
+//	
+//	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(rotateRight)];
 }
 
 - (IBAction)fullScreenMode:(id)sender {
