@@ -38,6 +38,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	}
 }
 
+// TODO: don't reload map each time, simply adjust the content
 - (IBAction)displayGoogleMapForSelection:(id)sender {
 
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gmap" ofType:@"html"];
