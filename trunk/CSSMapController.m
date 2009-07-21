@@ -125,6 +125,8 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	
 	NSMutableString *placemarkString = [[[NSMutableString alloc] init] autorelease];
 	
+	//NSDate *d1 = [NSDate date];
+	
 	unsigned int count = 0;
 	while((cssImageContainer = [e nextObject])) {
 		//NSLog(@"-- will add %@", [cssImageContainer path]);
@@ -139,7 +141,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		if([latitude length] == 0 || [longitude length] == 0) {
 			continue;
 		}
-
+		
 		[placemarkString appendFormat:@"    <Placemark><name>%@</name><timestamp><when>%@</when></timestamp><Point><coordinates>%@,%@</coordinates></Point>", imageName, timestamp, longitude, latitude];
 		
 		if(addThumbnails) {
@@ -152,13 +154,20 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		if(addThumbnails) {
 			[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
 			NSString *thumbPath = [[thumbsDir stringByAppendingPathComponent:[[cssImageContainer path] lastPathComponent]] lowercaseString];
-//			BOOL success = [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:640.0 maxheight:480.0 quality:0.75 saveTo:thumbPath];
-//			BOOL success = [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:510.0 maxheight:360.0 quality:0.75 saveTo:thumbPath];
-			BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:300.0 maxheight:225.0 quality:0.75 saveTo:thumbPath] :
-											  [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:510.0 maxheight:360.0 quality:0.75 saveTo:thumbPath];
+
+//			BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:300.0 maxheight:225.0 quality:0.75 saveTo:thumbPath] :
+//											  [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:510.0 maxheight:360.0 quality:0.75 saveTo:thumbPath];
+
+			NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+			BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageContainer path] toPath:thumbPath boundingBox:NSMakeSize(300.0, 225.0)] :
+											  [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageContainer path] toPath:thumbPath boundingBox:NSMakeSize(510.0, 360.0)];			
+			[pool release];
+			
 			if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
 		}
 	}
+	
+	//NSLog(@"-- TIME %f", [[NSDate date] timeIntervalSinceDate:d1]);
 	
 	NSString *kml = [NSString stringWithFormat:XMLContainer, placemarkString];
 	
