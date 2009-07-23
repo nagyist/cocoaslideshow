@@ -15,16 +15,15 @@
 
 static inline double rad(int alpha) {return ((alpha * pi)/180);}
 
-+ (BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath toPath:(NSString *)dstPath boundingBox:(NSSize)boundingBox {
-	NSImage *thumbnail = [EpegWrapper imageWithPath2:srcPath boundingBox:boundingBox];
-	
-	NSData *jpegData = [NSBitmapImageRep representationOfImageRepsInArray:[thumbnail representations]
-																usingType:NSJPEGFileType
-															   properties:[NSDictionary dictionaryWithObject:[NSDecimalNumber numberWithFloat:0.75]
-																									  forKey:NSImageCompressionFactor]];
-	return [jpegData writeToFile:dstPath atomically:NO];
++ (BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath toPath:(NSString *)dstPath boundingBox:(NSSize)boundingBox rotation:(int)orientationDegrees {
+	NSImage *thumbnail = [[EpegWrapper imageWithPath2:srcPath boundingBox:boundingBox] rotatedWithAngle:orientationDegrees];
+	NSBitmapImageRep *bitmap = [NSBitmapImageRep imageRepWithData: [thumbnail TIFFRepresentation]];
+	NSDictionary *properties = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithFloat:0.7], NSImageCompressionFactor, [NSNumber numberWithBool:YES], NSImageProgressive, nil];
+	NSData *data = [bitmap representationUsingType:NSJPEGFileType properties:properties];
+
+	return [data writeToFile:dstPath atomically:NO];
 }
-/*
+
 + (BOOL)scaleAndSaveAsJPEG:(NSString *)source 
 				  maxwidth:(int)width 
 				 maxheight:(int)height 
@@ -118,7 +117,7 @@ static inline double rad(int alpha) {return ((alpha * pi)/180);}
     
     return ret;
 }
-*/
+
 // http://lists.apple.com/archives/Cocoa-dev/2005//Dec/msg00143.html
 - (NSImage *)rotatedWithAngle:(int)alpha {
 	float factorW, factorH, dW, dH;

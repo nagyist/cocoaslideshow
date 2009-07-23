@@ -78,7 +78,8 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 			continue;
 		}
 		
-		NSString *js = [NSString stringWithFormat:@"addPoint(%@, %@, \"%@\", \"%@\", \"%@\");", latitude, longitude, fileName, filePath, fileModDateString];
+//		NSString *js = [NSString stringWithFormat:@"addPoint(%@, %@, \"%@\", \"%@\", \"%@\");", latitude, longitude, fileName, filePath, fileModDateString];
+		NSString *js = [NSString stringWithFormat:@"addPoint(%@, %@, \"%@\", \"%@\", \"%@\", %d);", latitude, longitude, fileName, filePath, fileModDateString, [cssImageContainer orientationDegrees]];
 		//NSLog(@"-- js:%@", js);
 		[webView stringByEvaluatingJavaScriptFromString:js];
 	}
@@ -130,9 +131,10 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	
 	unsigned int count = 0;
 	while((cssImageContainer = [e nextObject])) {
-		//NSLog(@"-- will add %@", [cssImageContainer path]);
 		count++;
 
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		
 		NSString *latitude = [cssImageContainer prettyLatitude];
 		NSString *longitude = [cssImageContainer prettyLongitude];
 		NSString *timestamp = [cssImageContainer exifDateTime];
@@ -156,16 +158,12 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 			[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
 			NSString *thumbPath = [[thumbsDir stringByAppendingPathComponent:[[cssImageContainer path] lastPathComponent]] lowercaseString];
 
-//			BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:300.0 maxheight:225.0 quality:0.75 saveTo:thumbPath] :
-//											  [NSImage scaleAndSaveAsJPEG:[cssImageContainer path] maxwidth:510.0 maxheight:360.0 quality:0.75 saveTo:thumbPath];
-
-			NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-			BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageContainer path] toPath:thumbPath boundingBox:NSMakeSize(300.0, 225.0)] :
-											  [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageContainer path] toPath:thumbPath boundingBox:NSMakeSize(510.0, 360.0)];			
-			[pool release];
+			BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageContainer path] toPath:thumbPath boundingBox:NSMakeSize(300.0, 225.0) rotation:[cssImageContainer orientationDegrees]] :
+											  [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageContainer path] toPath:thumbPath boundingBox:NSMakeSize(510.0, 360.0) rotation:[cssImageContainer orientationDegrees]];			
 			
 			if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
 		}
+		[pool release];
 	}
 	
 	//NSLog(@"-- TIME %f", [[NSDate date] timeIntervalSinceDate:d1]);
