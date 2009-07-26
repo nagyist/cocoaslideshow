@@ -628,11 +628,14 @@
 	unsigned int count = 0;
 	while((imageInfo = [e nextObject])) {
 		count++;
+		NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
 		
 		[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
 		NSString *thumbPath = [[exportDir stringByAppendingPathComponent:[[imageInfo path] lastPathComponent]] lowercaseString];
 		BOOL success = [NSImage scaleAndSaveJPEGThumbnailFromFile:[imageInfo path] toPath:thumbPath boundingBox:bbox rotation:[imageInfo orientationDegrees]];
-		if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);	
+		if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
+
+		[subPool release];
 	}
 	
 	[self performSelectorOnMainThread:@selector(exportFinished) withObject:nil waitUntilDone:NO];
