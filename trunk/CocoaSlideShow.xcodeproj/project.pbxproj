@@ -47,7 +47,7 @@
 		03A3F55C0C786878009AD69D /* CocoaSlideShow.icns in Resources */ = {isa = PBXBuildFile; fileRef = 03A3F55B0C786878009AD69D /* CocoaSlideShow.icns */; };
 		03B1BB110C5173B40032C03F /* CocoaSlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */; };
 		03C710BE100BA1CE0050FA48 /* CSSBorderlessWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C710BD100BA1CE0050FA48 /* CSSBorderlessWindow.m */; };
-		03DA06480C805F0B009D508F /* CSSImageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA06470C805F0B009D508F /* CSSImageContainer.m */; };
+		03DA06480C805F0B009D508F /* CSSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA06470C805F0B009D508F /* CSSImageInfo.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -122,8 +122,8 @@
 		03B1BB100C5173B40032C03F /* CocoaSlideShow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CocoaSlideShow.m; sourceTree = "<group>"; };
 		03C710BC100BA1CE0050FA48 /* CSSBorderlessWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSBorderlessWindow.h; sourceTree = "<group>"; };
 		03C710BD100BA1CE0050FA48 /* CSSBorderlessWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSBorderlessWindow.m; sourceTree = "<group>"; };
-		03DA06460C805F0B009D508F /* CSSImageContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSImageContainer.h; sourceTree = "<group>"; };
-		03DA06470C805F0B009D508F /* CSSImageContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSImageContainer.m; sourceTree = "<group>"; };
+		03DA06460C805F0B009D508F /* CSSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSImageInfo.h; sourceTree = "<group>"; };
+		03DA06470C805F0B009D508F /* CSSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSImageInfo.m; sourceTree = "<group>"; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -174,8 +174,8 @@
 				03A122E20EC224F60076DF63 /* MyImageView.m */,
 				03A3F43F0C77D97E009AD69D /* MyWindow.h */,
 				03A3F4400C77D97E009AD69D /* MyWindow.m */,
-				03DA06460C805F0B009D508F /* CSSImageContainer.h */,
-				03DA06470C805F0B009D508F /* CSSImageContainer.m */,
+				03DA06460C805F0B009D508F /* CSSImageInfo.h */,
+				03DA06470C805F0B009D508F /* CSSImageInfo.m */,
 				033804220C86084300439E5A /* ImagesController.h */,
 				033804230C86084300439E5A /* ImagesController.m */,
 				03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */,
@@ -367,7 +367,7 @@
 				036D55170C712C1B004A8236 /* RemoteControl.m in Sources */,
 				030461610C75158100D70803 /* NSFileManager+CSS.m in Sources */,
 				03A3F4410C77D97E009AD69D /* MyWindow.m in Sources */,
-				03DA06480C805F0B009D508F /* CSSImageContainer.m in Sources */,
+				03DA06480C805F0B009D508F /* CSSImageInfo.m in Sources */,
 				03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */,
 				033804240C86084300439E5A /* ImagesController.m in Sources */,
 				037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */,

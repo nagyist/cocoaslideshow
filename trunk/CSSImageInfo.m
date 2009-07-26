@@ -6,13 +6,13 @@
 //  Copyright 2007 __MyCompanyName__. All rights reserved.
 //
 
-#import "CSSImageContainer.h"
+#import "CSSImageInfo.h"
 #import "NSString+CSS.h"
 #import "CocoaSlideShow.h"
 #import "NSFileManager+CSS.h"
 #import "NSImage+CSS.h"
 
-@implementation CSSImageContainer
+@implementation CSSImageInfo
 
 + (void)initialize {
     [self setKeys:[NSArray arrayWithObjects:@"isFlagged", nil] triggerChangeNotificationsForDependentKey:@"flagIcon"];
@@ -40,8 +40,8 @@
 	return self;
 }
 
-+ (CSSImageContainer *)containerWithPath:(NSString *)aPath {
-	return [[[CSSImageContainer alloc] initWithPath:aPath] autorelease];
++ (CSSImageInfo *)containerWithPath:(NSString *)aPath {
+	return [[[CSSImageInfo alloc] initWithPath:aPath] autorelease];
 }
 
 - (void)dealloc {
@@ -96,11 +96,11 @@
 
 - (BOOL)loadSource {
 	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
-	BOOL isExportingKML = [[[NSApp delegate] valueForKey:@"isExportingKML"] boolValue];
+	BOOL isExporting = [[[NSApp delegate] valueForKey:@"isExporting"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
 	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:@"MultipleSelectionAllowsEdition"];
 
-	if(!readOnMultiSelect && multipleImagesSelected && !isMap && !isExportingKML) {
+	if(!readOnMultiSelect && multipleImagesSelected && !isMap && !isExporting) {
 		return nil;
     }
 	

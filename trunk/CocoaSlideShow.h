@@ -30,6 +30,11 @@
 	IBOutlet NSTabViewItem *imageTabViewItem;
 	IBOutlet NSTabViewItem *mapTabViewItem;
 	
+	IBOutlet NSView *kmlSavePanelAccessoryView;
+	IBOutlet NSView *thumbnailsExportAccessoryView;
+	
+	IBOutlet NSProgressIndicator *progressIndicator;
+	
 	NSToolbar *toolbar;
 	
 	RemoteControl *remoteControl;
@@ -39,7 +44,7 @@
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
 	BOOL isSaving;
-	BOOL isExportingKML;
+	BOOL isExporting;
 }
 
 - (BOOL)isFullScreen;
@@ -66,6 +71,9 @@
 - (IBAction)toggleSlideShow:(id)sender;
 
 - (IBAction)toggleGoogleMap:(id)sender;
+
+- (IBAction)exportKMLToFile:(id)sender;
+- (IBAction)exportThumbails:(id)sender;
 
 - (void)invalidateTimer;
 - (NSUndoManager *)undoManager;

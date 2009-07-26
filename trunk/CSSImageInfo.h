@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CSSImageContainer : NSObject {
+@interface CSSImageInfo : NSObject {
 	NSString *path;
 	CGImageSourceRef source;
 	NSMutableDictionary *metadata;
@@ -41,7 +41,7 @@
 - (NSDictionary *)exif;
 - (NSDictionary *)gps;
 
-+ (CSSImageContainer *)containerWithPath:(NSString *)aPath;
++ (CSSImageInfo *)containerWithPath:(NSString *)aPath;
 
 - (NSString *)path;
 
