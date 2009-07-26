@@ -1,7 +1,8 @@
 #import "ImagesController.h"
-#import "CSSImageContainer.h"
+#import "CSSImageInfo.h"
 #import "NSFileManager+CSS.h"
 #import "CocoaSlideShow.h"
+#import "NSImage+CSS.h"
 
 @implementation ImagesController
 
@@ -29,7 +30,7 @@
 	NSMutableIndexSet *flaggedIndexes = [[NSMutableIndexSet alloc] init];
 	
 	NSEnumerator *e = [[self arrangedObjects] objectEnumerator];
-	CSSImageContainer *container;
+	CSSImageInfo *container;
 	while(( container = [e nextObject] )) {
 		if([container isFlagged]) {
 			[flaggedIndexes addIndex:[[self arrangedObjects] indexOfObject:container]];
@@ -128,7 +129,7 @@
 			continue;
 		}
 
-		[self addObject:[CSSImageContainer containerWithPath:path]];
+		[self addObject:[CSSImageInfo containerWithPath:path]];
 	}
 	
 	[subPool release];
@@ -159,7 +160,7 @@
 - (BOOL)atLeastOneImageWithGPSSelected {
 	
 	NSEnumerator *e = [[self selectedObjects] objectEnumerator];
-	CSSImageContainer *container = nil;
+	CSSImageInfo *container = nil;
 
 	while((container = [e nextObject])) {
 		if([container gps] != nil) return YES;
@@ -170,7 +171,7 @@
 
 - (IBAction)openGoogleMap:(id)sender {
 	if(![[self selectedObjects] count]) return;
-	CSSImageContainer *i = [[self selectedObjects] lastObject];
+	CSSImageInfo *i = [[self selectedObjects] lastObject];
 	NSURL *url = [i googleMapsURL];
 	if(!url) return;
 	[[NSWorkspace sharedWorkspace] openURL:url];

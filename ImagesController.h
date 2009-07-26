@@ -3,7 +3,7 @@
 #import <Cocoa/Cocoa.h>
 
 @class CocoaSlideShow;
-@class CSSImageContainer;
+@class CSSImageInfo;
 
 @interface ImagesController : NSArrayController
 {
@@ -12,6 +12,7 @@
 	unsigned inMemoryBitmapsNextIndex;
 	NSMutableArray *inMemoryBitmapsContainers;
 	NSArray *allowedExtensions;
+	NSString *thumbsDir;
 }
 
 - (NSUndoManager *)undoManager;
