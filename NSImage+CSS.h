@@ -15,14 +15,6 @@
 								  toPath:(NSString *)dstPath
 							 boundingBox:(NSSize)boundingBox
 								 rotation:(int)orientationDegrees;
-/*
-+ (BOOL)scaleAndSaveAsJPEG:(NSString *)source
-				 maxwidth:(int)width
-				maxheight:(int)height
-				  quality:(float)quality
-				   saveTo:(NSString *)dest;
-*/
-//- (NSImage *)rotatedImageByDegrees:(int)degrees;
 
 - (NSImage *)rotatedWithAngle:(int)alpha;
 

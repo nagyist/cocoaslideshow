@@ -27,6 +27,7 @@
 - (NSString *)prettyLongitude;
 
 - (BOOL)loadSource;
+- (BOOL)isJpeg;
 
 - (NSImage *)image;
 

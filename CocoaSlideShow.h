@@ -73,7 +73,7 @@
 - (IBAction)toggleGoogleMap:(id)sender;
 
 - (IBAction)exportKMLToFile:(id)sender;
-- (IBAction)exportThumbails:(id)sender;
+- (IBAction)resizeJPEGs:(id)sender;
 
 - (void)invalidateTimer;
 - (NSUndoManager *)undoManager;

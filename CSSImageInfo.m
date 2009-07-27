@@ -94,6 +94,7 @@
 	return [longitudeRef isEqualToString:@"W"] ? [@"-" stringByAppendingFormat:@"%@", longitude] : [longitude description];
 }
 
+// FIXME: not thread safe, source might be read while export and released too early while displaying map, @synchronized seems to kill performance though
 - (BOOL)loadSource {
 	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
 	BOOL isExporting = [[[NSApp delegate] valueForKey:@"isExporting"] boolValue];
@@ -106,7 +107,10 @@
 	
 	//NSLog(@"-- loadSource %@", path);
 	NSURL *url = [NSURL fileURLWithPath:path];
+
 	source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
+
+	NSString *UTI = nil;
 	
 	if (!source) {
 		CGImageSourceStatus status = CGImageSourceGetStatus(source);
@@ -126,7 +130,7 @@
 	metadata = [immutableMetadata mutableCopy];
 	CFRelease(metadataRef);
 
-	NSString *UTI = (NSString *)CGImageSourceGetType(source);
+	UTI = (NSString *)CGImageSourceGetType(source);
 
 	CFRelease(source);
 	source = nil;
@@ -263,6 +267,7 @@
 }
 
 - (BOOL)isJpeg {
+	if(!sourceRead) [self loadSource];
 	return isJpeg;
 }
 
