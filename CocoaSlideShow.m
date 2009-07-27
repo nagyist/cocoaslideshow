@@ -467,18 +467,25 @@
 	[progressIndicator setDoubleValue:0.0];
 }
 
-#pragma mark KML export
-
-- (void)updateExportProgress:(NSNumber *)n {
-	[progressIndicator setDoubleValue:[n doubleValue]];
-}
-
 - (void)exportFinished {
+	NSString *soundPath = @"/System/Library/Sounds/Hero.aiff";
+	if([[NSFileManager defaultManager] fileExistsAtPath:soundPath]) {
+		NSSound *sound = [[NSSound alloc] initWithContentsOfFile:soundPath byReference:YES];
+		[sound play];
+		[sound release];
+	}
+	
 	[progressIndicator setDoubleValue:1.0];
 	[progressIndicator setHidden:YES];
 	[progressIndicator setDoubleValue:0.0];
 	
 	[self setValue:[NSNumber numberWithBool:NO] forKey:@"isExporting"];
+}
+
+#pragma mark KML export
+
+- (void)updateExportProgress:(NSNumber *)n {
+	[progressIndicator setDoubleValue:[n doubleValue]];
 }
 
 #pragma KML File Export
@@ -644,21 +651,17 @@
 }
 
 - (NSString *)chooseThumbsExportDirectory {
-	NSOpenPanel *oPanel = [NSOpenPanel openPanel];
- 
-    [oPanel setCanCreateDirectories:YES];
-    [oPanel setCanChooseDirectories:YES];
-//	[oPanel setCanChooseFiles:NO];
-	[oPanel setAccessoryView:thumbnailsExportAccessoryView];
-	[oPanel setPrompt:NSLocalizedString(@"Export", @"Open panel to choose a folder for thumbnails, prompt")];
-	[oPanel setTitle:NSLocalizedString(@"Thumnails export", @"Open panel to choose a folder for thumbnails, title")];
-	[oPanel setMessage:NSLocalizedString(@"Choose where to export the thumbnails", @"Open panel to choose a folder for thumbnails, message")];
+
+    NSSavePanel *sPanel = [NSSavePanel savePanel];
+	
+	[sPanel setAccessoryView:thumbnailsExportAccessoryView];
+	[sPanel setCanCreateDirectories:YES];
 	
 	NSString *desktopPath = [NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 
-	int runResult = [oPanel runModalForDirectory:desktopPath file:NSLocalizedString(@"Thumbnails", @"Thumbnails export folder name")];
+	int runResult = [sPanel runModalForDirectory:desktopPath file:@"ThumbnailsExport"];
 	
-	return (runResult == NSOKButton) ? [oPanel filename] : nil;
+	return (runResult == NSOKButton) ? [sPanel filename] : nil;
 }
 
 - (IBAction)exportThumbails:(id)sender {
@@ -666,11 +669,11 @@
 	
 	NSString *exportDir = [self chooseThumbsExportDirectory];
 	if(!exportDir) return;
-	/*
+	
 	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:exportDir attributes:nil];
 	if(!success) NSLog(@"Error: can't create dir at path %@", exportDir);
 	//return;
-	*/
+	
 	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isExporting"];
 	
 	NSArray *theImages = [[[imagesController selectedObjects] copy] autorelease];

@@ -117,13 +117,12 @@
 	sourceRead = YES;
 	
 	// fill caches
-	
 	CFDictionaryRef metadataRef = CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
 	NSDictionary *immutableMetadata = (NSDictionary *)metadataRef;
 	
 	//NSLog(@"-- immutableMetadata %@", immutableMetadata);
 	
-	[metadata autorelease];
+	[metadata release];
 	metadata = [immutableMetadata mutableCopy];
 	CFRelease(metadataRef);
 
