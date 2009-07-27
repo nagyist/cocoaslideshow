@@ -621,9 +621,9 @@
 
 #pragma mark thumbnails export
 
-- (void)exportThumbnailsOnSeparateThread:(NSDictionary *)options {
+- (void)resizeJPEGsOnSeparateThread:(NSDictionary *)options {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
+		
 	NSArray *theImages = [options objectForKey:@"Images"];
 	NSString *exportDir = [options objectForKey:@"ExportDir"];
 	NSNumber *width = [options objectForKey:@"Width"];
@@ -635,6 +635,7 @@
 	unsigned int count = 0;
 	while((imageInfo = [e nextObject])) {
 		count++;
+		if(![imageInfo isJpeg]) continue;
 		NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
 		
 		[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
@@ -644,7 +645,7 @@
 
 		[subPool release];
 	}
-	
+
 	[self performSelectorOnMainThread:@selector(exportFinished) withObject:nil waitUntilDone:NO];
 
 	[pool release];
@@ -659,12 +660,12 @@
 	
 	NSString *desktopPath = [NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 
-	int runResult = [sPanel runModalForDirectory:desktopPath file:@"ThumbnailsExport"];
+	int runResult = [sPanel runModalForDirectory:desktopPath file:@"ResizedImages"];
 	
 	return (runResult == NSOKButton) ? [sPanel filename] : nil;
 }
 
-- (IBAction)exportThumbails:(id)sender {
+- (IBAction)resizeJPEGs:(id)sender {
 	if(isExporting) return;
 	
 	NSString *exportDir = [self chooseThumbsExportDirectory];
@@ -700,7 +701,7 @@
 	NSNumber *height = [NSNumber numberWithInt:h];
 	
 	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:exportDir, @"ExportDir", theImages, @"Images", width, @"Width", height, @"Height", nil];
-	[NSThread detachNewThreadSelector:@selector(exportThumbnailsOnSeparateThread:) toTarget:self withObject:options];
+	[NSThread detachNewThreadSelector:@selector(resizeJPEGsOnSeparateThread:) toTarget:self withObject:options];
 }
 
 @end
