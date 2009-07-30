@@ -21,6 +21,12 @@
 	int userRotation;
 }
 
+- (NSString *)jsAddPoint;
+- (NSString *)jsRemovePoint;
+
+- (NSString *)jsShowPoint;
+- (NSString *)jsHidePoint;
+
 - (NSString *)exifDateTime;
 
 - (NSString *)prettyLatitude;

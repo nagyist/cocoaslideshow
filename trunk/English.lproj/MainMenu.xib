@@ -2461,22 +2461,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<int key="connectionID">571</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentArray: images</string>
-						<reference key="source" ref="79550871"/>
-						<reference key="destination" ref="166783046"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="79550871"/>
-							<reference key="NSDestination" ref="166783046"/>
-							<string key="NSLabel">contentArray: images</string>
-							<string key="NSBinding">contentArray</string>
-							<string key="NSKeyPath">images</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">577</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">undo:</string>
 						<reference key="source" ref="166783046"/>
@@ -3484,6 +3468,22 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<reference key="destination" ref="295205419"/>
 					</object>
 					<int key="connectionID">1142</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentArray: images</string>
+						<reference key="source" ref="79550871"/>
+						<reference key="destination" ref="166783046"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="79550871"/>
+							<reference key="NSDestination" ref="166783046"/>
+							<string key="NSLabel">contentArray: images</string>
+							<string key="NSBinding">contentArray</string>
+							<string key="NSKeyPath">images</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1144</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5282,7 +5282,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1142</int>
+			<int key="maxID">1144</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5298,10 +5298,6 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<object class="IBPartialClassDescription">
 					<string key="className">CSSMapController</string>
 					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">displayGoogleMapForSelection:</string>
-						<string key="NS.object.0">id</string>
-					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
