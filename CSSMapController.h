@@ -16,12 +16,16 @@ extern NSString *const G_NORMAL_MAP;
 @interface CSSMapController : NSObject {
 	IBOutlet WebView *webView;
 	IBOutlet ImagesController *imagesController;
+	WebScriptObject *scriptObject;
+	
+	NSMutableSet *displayedImages;
 }
 
 - (void)clearMap;
 
 - (NSArray *)mapStyles;
 
-- (IBAction)displayGoogleMapForSelection:(id)sender;
+- (void)evaluateNewJavaScriptOnArrangedObjectsChange;
+- (void)evaluateNewJavaScriptOnSelectedObjectsChange;
 
 @end

@@ -268,13 +268,15 @@
 - (void)hideGoogleMap {
 	[tabView selectTabViewItem:imageTabViewItem];
 	[imagesController removeObserver:mapController forKeyPath:@"selectedObjects"];
+	[imagesController removeObserver:mapController forKeyPath:@"arrangedObjects"];
 	[mapController clearMap];
 }
 
 - (void)showGoogleMap {
 	[tabView selectTabViewItem:mapTabViewItem];
-	[imagesController addObserver:mapController forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
-	[mapController displayGoogleMapForSelection:self];
+	[imagesController addObserver:mapController forKeyPath:@"selectedObjects" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:NULL];
+	[imagesController addObserver:mapController forKeyPath:@"arrangedObjects" options:(NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew) context:NULL];
+	[mapController evaluateNewJavaScriptOnArrangedObjectsChange];
 }
 
 - (IBAction)toggleGoogleMap:(id)sender {

@@ -271,6 +271,31 @@
 	return isJpeg;
 }
 
+- (NSString *)jsAddPoint {
+	NSString *latitude = [self prettyLatitude];
+	NSString *longitude = [self prettyLongitude];
+	if(!latitude || !longitude) return nil;
+
+	NSString *filePath = [self path];
+	NSString *fileName = [filePath lastPathComponent];
+	NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:YES];
+	NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
+	
+	return [NSString stringWithFormat:@"addPoint(%d, %@, %@, \"%@\", \"%@\", \"%@\", %d);", [self hash], latitude, longitude, fileName, filePath, fileModDateString, [self orientationDegrees]];
+}
+
+- (NSString *)jsRemovePoint {
+	return [NSString stringWithFormat:@"removePoint(%d);", [self hash]];
+}
+
+- (NSString *)jsShowPoint {
+	return [NSString stringWithFormat:@"showPoint(%d);", [self hash]];
+}
+
+- (NSString *)jsHidePoint {
+	return [NSString stringWithFormat:@"hidePoint(%d);", [self hash]];
+}
+
 - (void)setUserComment:(NSString *)comment {
 	if(![self isJpeg]) return;
 
