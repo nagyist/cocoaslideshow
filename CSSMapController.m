@@ -95,7 +95,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		if(!jsHidePoint) continue;
 		[jsCommands addObject:jsHidePoint];
 		[displayedImages removeObject:imageInfo];
-		//NSLog(@"  -- hide %d", [imageInfo hash]);
+		NSLog(@"  -- hide %d", [imageInfo hash]);
 	}
 
 	e = [toShow objectEnumerator];
@@ -104,16 +104,16 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		if(!jsShowPoint) continue;
 		[jsCommands addObject:jsShowPoint];
 		[displayedImages addObject:imageInfo];
-		//NSLog(@"  -- show %d", [imageInfo hash]);
+		NSLog(@"  -- show %d", [imageInfo hash]);
 	}
 	
 	[toHide release];
 
 	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:@"mapZoom"];
-	if(zoom) {
+	if(zoom && [[imagesController arrangedObjects] count] > 1) {
 		[jsCommands addObject:[NSString stringWithFormat:@"centerWithZoom(%@);", zoom]];
 	} else {
-		[jsCommands addObject:[NSString stringWithFormat:@"center();", zoom]];	
+		[jsCommands addObject:@"center();"];
 	}
 	NSString *js = [jsCommands componentsJoinedByString:@"\n"];
 	//NSLog(@"-- %@", js);
@@ -145,6 +145,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		NSString *jsAddPoint = [imageInfo jsAddPoint];
 		if(!jsAddPoint) continue;
 		[jsCommands addObject:jsAddPoint];
+		NSLog(@"  -- add %d", [imageInfo hash]);
 	}
 	
 	[toRemove release];

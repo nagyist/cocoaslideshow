@@ -82,11 +82,13 @@
 	function removePoint(uid) {
 		var marker = markers[uid];
 		map.removeOverlay(marker);
+		GEvent.removeListener(marker);
 		delete markers[uid];
 	}
 	
 	function hidePoint(uid) {
 		var marker = markers[uid];
+		marker.closeInfoWindow();
 		marker.hide();
 	}
 	
