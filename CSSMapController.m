@@ -21,7 +21,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 @implementation CSSMapController
 
 - (void)awakeFromNib {
-	displayedImages = [[NSMutableSet alloc] initWithArray:[imagesController arrangedObjects]];
+	displayedImages = [[NSMutableSet alloc] init];
 	
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"gmap" ofType:@"html"];	
 	
@@ -80,9 +80,11 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	NSLog(@"-- evaluateNewJavaScriptOnSelectedObjectsChange");
 
 	NSMutableSet *toShow = [NSMutableSet setWithArray:[imagesController selectedObjects]];
-	//[toShow minusSet:displayedImages];
+	[toShow minusSet:displayedImages];
+	//NSLog(@"-- toShow:%@", toShow);
 	NSMutableSet *toHide = [displayedImages mutableCopy];
-	[toHide minusSet:toShow];
+	[toHide minusSet:[NSMutableSet setWithArray:[imagesController selectedObjects]]];
+	//NSLog(@"-- toHide:%@", toHide);
 	
 	NSMutableArray *jsCommands = [NSMutableArray array];
 
@@ -93,6 +95,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		if(!jsHidePoint) continue;
 		[jsCommands addObject:jsHidePoint];
 		[displayedImages removeObject:imageInfo];
+		//NSLog(@"  -- hide %d", [imageInfo hash]);
 	}
 
 	e = [toShow objectEnumerator];
@@ -101,6 +104,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		if(!jsShowPoint) continue;
 		[jsCommands addObject:jsShowPoint];
 		[displayedImages addObject:imageInfo];
+		//NSLog(@"  -- show %d", [imageInfo hash]);
 	}
 	
 	[toHide release];
@@ -112,7 +116,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		[jsCommands addObject:[NSString stringWithFormat:@"center();", zoom]];	
 	}
 	NSString *js = [jsCommands componentsJoinedByString:@"\n"];
-	NSLog(@"-- %@", js);
+	//NSLog(@"-- %@", js);
 	
 	[webView stringByEvaluatingJavaScriptFromString:js];
 }
@@ -141,32 +145,16 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		NSString *jsAddPoint = [imageInfo jsAddPoint];
 		if(!jsAddPoint) continue;
 		[jsCommands addObject:jsAddPoint];
-		//[displayedImages removeObject:imageInfo];
-	}
-	
-	e = [[imagesController selectedObjects] objectEnumerator];
-	while((imageInfo = [e nextObject])) {
-		NSString *jsShowPoint = [imageInfo jsShowPoint];
-		if(!jsShowPoint) continue;
-		[jsCommands addObject:jsShowPoint];
-		[displayedImages addObject:imageInfo];
 	}
 	
 	[toRemove release];
-	/*
-	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:@"mapZoom"];
-	if(zoom) {
-		[jsCommands addObject:[NSString stringWithFormat:@"centerWithZoom(%@);", zoom]];
-	} else {
-		[jsCommands addObject:[NSString stringWithFormat:@"center();", zoom]];	
-	}
-	*/
+
 	NSString *js = [jsCommands componentsJoinedByString:@"\n"];
-	NSLog(@"-- %@", js);
+	//NSLog(@"-- %@", js);
 	
 	[webView stringByEvaluatingJavaScriptFromString:js];
 	
-	//[self evaluateNewJavaScriptOnSelectedObjectsChange];
+	[self evaluateNewJavaScriptOnSelectedObjectsChange];
 }
 
 #pragma mark WebFrameLoadDelegate
@@ -179,15 +167,6 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		[[NSUserDefaults standardUserDefaults] setValue:mapStyle forKey:@"mapStyle"];
 	}
 	[webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"setMapStyle(%@);", mapStyle]];
-
-	[self evaluateNewJavaScriptOnArrangedObjectsChange];
-	
-	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:@"mapZoom"];
-	if(zoom) {
-		[webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"centerWithZoom(%@);", zoom]];
-	} else {
-		[webView stringByEvaluatingJavaScriptFromString:@"center();"];
-	}
 }
 
 - (void)dealloc {
