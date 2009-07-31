@@ -109,6 +109,8 @@
 	
 	NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
 	
+	NSMutableArray *imagesInfoToAdd = [NSMutableArray array];
+	
 	unsigned int count = 0;
 	
 	while(( path = [e nextObject] )) {
@@ -128,9 +130,11 @@
 		if([path hasPrefix:@"."] || ![self extensionIsAllowed:path]) {
 			continue;
 		}
+		
+		[imagesInfoToAdd addObject:[CSSImageInfo containerWithPath:path]];
 
-		[self addObject:[CSSImageInfo containerWithPath:path]];
 	}
+	[self addObjects:imagesInfoToAdd];
 	
 	[subPool release];
 }
