@@ -42,7 +42,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 }
 */
 - (void)mapTypeDidChange:(id)mapType {
-	NSLog(@"-- mapTypeDidChange:%@", mapType);
+	//NSLog(@"-- mapTypeDidChange:%@", mapType);
 	
 	if([[self mapStyles] containsObject:mapType]) {
 		[[NSUserDefaults standardUserDefaults] setValue:mapType forKey:@"mapStyle"];
@@ -50,7 +50,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 }
 
 - (void)zoomLevelDidChange:(id)zoomLevel {
-	NSLog(@"-- zoomLevelDidChange:%@", zoomLevel);
+	//NSLog(@"-- zoomLevelDidChange:%@", zoomLevel);
 
 	[[NSUserDefaults standardUserDefaults] setValue:zoomLevel forKey:@"mapZoom"];
 }
@@ -109,14 +109,23 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	
 	[toHide release];
 
-//	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:@"mapZoom"];
+	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:@"mapZoom"];
 //	if(zoom && [[imagesController arrangedObjects] count] > 1) {
 //		[jsCommands addObject:[NSString stringWithFormat:@"centerWithZoom(%@);", zoom]];
 //	} else {
-		[jsCommands addObject:@"center();"];
+//		[jsCommands addObject:@"center();"];	
 //	}
+	
+	CSSImageInfo *lastObject = [[imagesController selectedObjects] lastObject];
+	
+	NSString *lat = [lastObject prettyLatitude];
+	NSString *lon = [lastObject prettyLongitude];
+	if([lat length] && [lon length] && zoom) {
+		[jsCommands addObject:[NSString stringWithFormat:@"centerToLatitudeAndLongitudeWithZoom(%@, %@, %@);", lat, lon, zoom]];
+	}
+	
 	NSString *js = [jsCommands componentsJoinedByString:@"\n"];
-	NSLog(@"-- %@", js);
+	//NSLog(@"-- \n%@", js);
 	
 	[webView stringByEvaluatingJavaScriptFromString:js];
 }
@@ -141,7 +150,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		//NSLog(@"  -- remove %d", [imageInfo hash]);
 	}
 	
-	[jsCommands addObject:@"cleanup();"];
+	//[jsCommands addObject:@"cleanup();"];
 	
 	e = [toAdd objectEnumerator];
 	while((imageInfo = [e nextObject])) {
@@ -154,7 +163,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	[toRemove release];
 
 	NSString *js = [jsCommands componentsJoinedByString:@"\n"];
-	NSLog(@"-- %@", js);
+	//NSLog(@"-- \n%@", js);
 	
 	[webView stringByEvaluatingJavaScriptFromString:js];
 	
