@@ -109,12 +109,12 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	
 	[toHide release];
 
-	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:@"mapZoom"];
-	if(zoom && [[imagesController arrangedObjects] count] > 1) {
-		[jsCommands addObject:[NSString stringWithFormat:@"centerWithZoom(%@);", zoom]];
-	} else {
+//	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:@"mapZoom"];
+//	if(zoom && [[imagesController arrangedObjects] count] > 1) {
+//		[jsCommands addObject:[NSString stringWithFormat:@"centerWithZoom(%@);", zoom]];
+//	} else {
 		[jsCommands addObject:@"center();"];
-	}
+//	}
 	NSString *js = [jsCommands componentsJoinedByString:@"\n"];
 	NSLog(@"-- %@", js);
 	
