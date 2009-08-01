@@ -16,6 +16,8 @@
 	var bounds = new GLatLngBounds();
 
 	var count = 0;
+	
+	var centerSet = false;
 
 	var currentPosMarker = null;
 
@@ -27,8 +29,8 @@
 		
 		map.addControl(new GLargeMapControl());
 		map.addControl(new GMapTypeControl());
-        
-        if(!mapController) return;
+
+        //if(!mapController) return;
 		
 		GEvent.addListener(map, "maptypechanged",
 			function() {
@@ -51,19 +53,13 @@
 				mapController.zoomLevelDidChange_(newLevel);
 			}
 		);
+		
+   		//map.setCenter(new GLatLng(0.0, 0.0), 13);
     }
 	
 	function setMapStyle(style) {
 		map.setMapType(style); // G_NORMAL_MAP, G_HYBRID_MAP, G_SATELLITE_MAP, G_PHYSICAL_MAP
 	}
-	
-    function hashMapLength(array) {
-        var count = 0;
-        for(key in array) {
-            count++;
-        }
-        return count;
-    }
 	
 	function addPoint(uid, lat, long, name, path, date, degrees) {
 	   
@@ -114,14 +110,22 @@
 		return typeof(marker);
 	}
 
-    function cleanup() {
-        //map.clearOverlays();
-        //markers = null;
-        //markers = new Array();
-    }
-
 	function center() {
 		map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds));
+	}
+	
+	function centerToLatitudeAndLongitudeWithZoom(latitude, longitude, zoom) {
+        if(!centerSet) {
+            map.setCenter(new GLatLng(0.0, 0.0), 13);
+            centerSet = true;
+        }
+        
+        var coord = new GLatLng(latitude, longitude);
+        //map.setCenter(coord, zoom);
+        //return map;
+        map.setZoom(zoom);
+        //return typeof(zoom);
+        map.panTo(coord);
 	}
 
 	function centerWithZoom(zoom) {
