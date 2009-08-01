@@ -77,7 +77,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 }
 
 - (void)evaluateNewJavaScriptOnSelectedObjectsChange {
-	NSLog(@"-- evaluateNewJavaScriptOnSelectedObjectsChange");
+	//NSLog(@"-- evaluateNewJavaScriptOnSelectedObjectsChange");
 
 	NSMutableSet *toShow = [NSMutableSet setWithArray:[imagesController selectedObjects]];
 	[toShow minusSet:displayedImages];
@@ -95,7 +95,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		if(!jsHidePoint) continue;
 		[jsCommands addObject:jsHidePoint];
 		[displayedImages removeObject:imageInfo];
-		NSLog(@"  -- hide %d", [imageInfo hash]);
+		//NSLog(@"  -- hide %d", [imageInfo hash]);
 	}
 
 	e = [toShow objectEnumerator];
@@ -104,7 +104,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		if(!jsShowPoint) continue;
 		[jsCommands addObject:jsShowPoint];
 		[displayedImages addObject:imageInfo];
-		NSLog(@"  -- show %d", [imageInfo hash]);
+		//NSLog(@"  -- show %d", [imageInfo hash]);
 	}
 	
 	[toHide release];
@@ -116,13 +116,13 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		[jsCommands addObject:@"center();"];
 	}
 	NSString *js = [jsCommands componentsJoinedByString:@"\n"];
-	//NSLog(@"-- %@", js);
+	NSLog(@"-- %@", js);
 	
 	[webView stringByEvaluatingJavaScriptFromString:js];
 }
 
 - (void)evaluateNewJavaScriptOnArrangedObjectsChange {
-	NSLog(@"-- evaluateNewJavaScriptOnArrangedObjectsChange");
+	//NSLog(@"-- evaluateNewJavaScriptOnArrangedObjectsChange");
 	
 	NSMutableSet *toAdd = [NSMutableSet setWithArray:[imagesController arrangedObjects]];
 	[toAdd minusSet:displayedImages];
@@ -138,20 +138,23 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 		if(!jsRemovePoint) continue;
 		[jsCommands addObject:jsRemovePoint];
 		[displayedImages removeObject:imageInfo];
+		//NSLog(@"  -- remove %d", [imageInfo hash]);
 	}
-
+	
+	[jsCommands addObject:@"cleanup();"];
+	
 	e = [toAdd objectEnumerator];
 	while((imageInfo = [e nextObject])) {
 		NSString *jsAddPoint = [imageInfo jsAddPoint];
 		if(!jsAddPoint) continue;
 		[jsCommands addObject:jsAddPoint];
-		NSLog(@"  -- add %d", [imageInfo hash]);
+		//NSLog(@"  -- add %d", [imageInfo hash]);
 	}
 	
 	[toRemove release];
 
 	NSString *js = [jsCommands componentsJoinedByString:@"\n"];
-	//NSLog(@"-- %@", js);
+	NSLog(@"-- %@", js);
 	
 	[webView stringByEvaluatingJavaScriptFromString:js];
 	

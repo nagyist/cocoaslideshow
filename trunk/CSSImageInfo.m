@@ -274,26 +274,26 @@
 - (NSString *)jsAddPoint {
 	NSString *latitude = [self prettyLatitude];
 	NSString *longitude = [self prettyLongitude];
-	if(!latitude || !longitude) return nil;
+	if([latitude length] == 0 || [longitude length] == 0) return nil;
 
 	NSString *filePath = [self path];
 	NSString *fileName = [filePath lastPathComponent];
 	NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:YES];
 	NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
 	
-	return [NSString stringWithFormat:@"addPoint(%d, %@, %@, \"%@\", \"%@\", \"%@\", %d);", [self hash], latitude, longitude, fileName, filePath, fileModDateString, [self orientationDegrees]];
+	return [NSString stringWithFormat:@"addPoint(\"h%d\", %@, %@, \"%@\", \"%@\", \"%@\", %d);", [self hash], latitude, longitude, fileName, filePath, fileModDateString, [self orientationDegrees]];
 }
 
 - (NSString *)jsRemovePoint {
-	return [NSString stringWithFormat:@"removePoint(%d);", [self hash]];
+	return [NSString stringWithFormat:@"removePoint(\"h%d\");", [self hash]];
 }
 
 - (NSString *)jsShowPoint {
-	return [NSString stringWithFormat:@"showPoint(%d);", [self hash]];
+	return [NSString stringWithFormat:@"showPoint(\"h%d\");", [self hash]];
 }
 
 - (NSString *)jsHidePoint {
-	return [NSString stringWithFormat:@"hidePoint(%d);", [self hash]];
+	return [NSString stringWithFormat:@"hidePoint(\"h%d\");", [self hash]];
 }
 
 - (void)setUserComment:(NSString *)comment {
