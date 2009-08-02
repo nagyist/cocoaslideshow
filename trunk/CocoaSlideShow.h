@@ -78,6 +78,4 @@
 - (void)invalidateTimer;
 - (NSUndoManager *)undoManager;
 
-- (NSString *)selectAllFlagsMenuItemText;
-
 @end
