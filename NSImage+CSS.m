@@ -18,7 +18,7 @@ static inline double rad(int alpha) {return ((alpha * pi)/180);}
 + (BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath toPath:(NSString *)dstPath boundingBox:(NSSize)boundingBox rotation:(int)orientationDegrees {
 	NSImage *thumbnail = [[EpegWrapper imageWithPath2:srcPath boundingBox:boundingBox] rotatedWithAngle:orientationDegrees];
 	NSBitmapImageRep *bitmap = [NSBitmapImageRep imageRepWithData: [thumbnail TIFFRepresentation]];
-	NSDictionary *properties = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithFloat:0.7], NSImageCompressionFactor, [NSNumber numberWithBool:YES], NSImageProgressive, nil];
+	NSDictionary *properties = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithFloat:0.75], NSImageCompressionFactor, [NSNumber numberWithBool:YES], NSImageProgressive, nil];
 	NSData *data = [bitmap representationUsingType:NSJPEGFileType properties:properties];
 
 	return [data writeToFile:dstPath atomically:NO];
