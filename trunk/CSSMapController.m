@@ -6,8 +6,6 @@
 //  Copyright 2008 Sen:te. All rights reserved.
 //
 
-// TODO: remember map style
-
 #import "CSSMapController.h"
 #import "CSSImageInfo.h"
 #import "CocoaSlideShow.h"
@@ -85,10 +83,8 @@ static NSString *const kMapZoom = @"mapZoom";
 
 	NSMutableSet *toShow = [NSMutableSet setWithArray:[imagesController selectedObjects]];
 	[toShow minusSet:displayedImages];
-	//NSLog(@"-- toShow:%@", toShow);
 	NSMutableSet *toHide = [displayedImages mutableCopy];
 	[toHide minusSet:[NSMutableSet setWithArray:[imagesController selectedObjects]]];
-	//NSLog(@"-- toHide:%@", toHide);
 	
 	NSMutableArray *jsCommands = [NSMutableArray array];
 
@@ -99,7 +95,6 @@ static NSString *const kMapZoom = @"mapZoom";
 		if(!jsHidePoint) continue;
 		[jsCommands addObject:jsHidePoint];
 		[displayedImages removeObject:imageInfo];
-		//NSLog(@"  -- hide %d", [imageInfo hash]);
 	}
 
 	e = [toShow objectEnumerator];
@@ -108,22 +103,15 @@ static NSString *const kMapZoom = @"mapZoom";
 		if(!jsShowPoint) continue;
 		[jsCommands addObject:jsShowPoint];
 		[displayedImages addObject:imageInfo];
-		//NSLog(@"  -- show %d", [imageInfo hash]);
 	}
 	
 	[toHide release];
 
-	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:kMapZoom];
-//	if(zoom && [[imagesController arrangedObjects] count] > 1) {
-//		[jsCommands addObject:[NSString stringWithFormat:@"centerWithZoom(%@);", zoom]];
-//	} else {
-//		[jsCommands addObject:@"center();"];	
-//	}
-	
 	CSSImageInfo *lastObject = [[imagesController selectedObjects] lastObject];
 	
 	NSString *lat = [lastObject prettyLatitude];
 	NSString *lon = [lastObject prettyLongitude];
+	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:kMapZoom];
 	if([lat length] && [lon length] && zoom) {
 		[jsCommands addObject:[NSString stringWithFormat:@"centerToLatitudeAndLongitudeWithZoom(%@, %@, %@);", lat, lon, zoom]];
 	}
@@ -151,10 +139,7 @@ static NSString *const kMapZoom = @"mapZoom";
 		if(!jsRemovePoint) continue;
 		[jsCommands addObject:jsRemovePoint];
 		[displayedImages removeObject:imageInfo];
-		//NSLog(@"  -- remove %d", [imageInfo hash]);
 	}
-	
-	//[jsCommands addObject:@"cleanup();"];
 	
 	e = [toAdd objectEnumerator];
 	while((imageInfo = [e nextObject])) {
