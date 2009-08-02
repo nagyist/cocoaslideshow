@@ -12,6 +12,8 @@
 #import "NSFileManager+CSS.h"
 #import "NSImage+CSS.h"
 
+static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllowsEdition";
+
 @implementation CSSImageInfo
 
 + (void)initialize {
@@ -99,7 +101,7 @@
 	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
 	BOOL isExporting = [[[NSApp delegate] valueForKey:@"isExporting"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
-	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:@"MultipleSelectionAllowsEdition"];
+	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:kMultipleSelectionAllowsEdition];
 
 	if(!readOnMultiSelect && multipleImagesSelected && !isMap && !isExporting) {
 		return nil;
