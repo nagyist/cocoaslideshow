@@ -49,7 +49,7 @@
             <description><![CDATA[
 <h2>New features</h2>
 <pre>
-- export resized photos in batch (JPEG only)
+- resize and export JPEGs in batch
 - much better google map integration
 </pre>
 
