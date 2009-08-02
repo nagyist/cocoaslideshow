@@ -540,6 +540,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 		NSString *imageName = [[[cssImageInfo path] lastPathComponent] lowercaseString];
 		
 		if([latitude length] == 0 || [longitude length] == 0) {
+			[pool release];
 			continue;
 		}
 		
