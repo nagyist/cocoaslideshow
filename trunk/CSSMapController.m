@@ -18,6 +18,10 @@ NSString *const G_HYBRID_MAP = @"G_HYBRID_MAP";
 NSString *const G_SATELLITE_MAP = @"G_SATELLITE_MAP";
 NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 
+static NSString *const kMapStyle = @"mapStyle";
+static NSString *const kMapZoom = @"mapZoom";
+
+
 @implementation CSSMapController
 
 - (void)awakeFromNib {
@@ -45,14 +49,14 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	//NSLog(@"-- mapTypeDidChange:%@", mapType);
 	
 	if([[self mapStyles] containsObject:mapType]) {
-		[[NSUserDefaults standardUserDefaults] setValue:mapType forKey:@"mapStyle"];
+		[[NSUserDefaults standardUserDefaults] setValue:mapType forKey:kMapStyle];
 	}
 }
 
 - (void)zoomLevelDidChange:(id)zoomLevel {
 	//NSLog(@"-- zoomLevelDidChange:%@", zoomLevel);
 
-	[[NSUserDefaults standardUserDefaults] setValue:zoomLevel forKey:@"mapZoom"];
+	[[NSUserDefaults standardUserDefaults] setValue:zoomLevel forKey:kMapZoom];
 }
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector { return NO; }
@@ -109,7 +113,7 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 	
 	[toHide release];
 
-	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:@"mapZoom"];
+	NSString *zoom = [[NSUserDefaults standardUserDefaults] valueForKey:kMapZoom];
 //	if(zoom && [[imagesController arrangedObjects] count] > 1) {
 //		[jsCommands addObject:[NSString stringWithFormat:@"centerWithZoom(%@);", zoom]];
 //	} else {
@@ -174,10 +178,10 @@ NSString *const G_PHYSICAL_MAP = @"G_PHYSICAL_MAP";
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
 	
-	NSString *mapStyle = [[NSUserDefaults standardUserDefaults] stringForKey:@"mapStyle"];
+	NSString *mapStyle = [[NSUserDefaults standardUserDefaults] stringForKey:kMapStyle];
 	if(!mapStyle || ![[self mapStyles] containsObject:mapStyle]) {
 		mapStyle = G_PHYSICAL_MAP;
-		[[NSUserDefaults standardUserDefaults] setValue:mapStyle forKey:@"mapStyle"];
+		[[NSUserDefaults standardUserDefaults] setValue:mapStyle forKey:kMapStyle];
 	}
 	[webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"setMapStyle(%@);", mapStyle]];
 }

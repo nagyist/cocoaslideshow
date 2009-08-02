@@ -12,6 +12,15 @@
 
 #import "CSSImageInfo.h"
 
+static NSString *const kImagesDirectory = @"ImagesDirectory";
+static NSString *const kKMLThumbnailsRemoteURLs = @"KMLThumbnailsRemoteURLs";
+static NSString *const kRemoteKMLThumbnails = @"RemoteKMLThumbnails";
+static NSString *const kSlideShowSpeed = @"SlideShowSpeed";
+static NSString *const kThumbsExportSizeTag = @"ThumbsExportSizeTag";
+static NSString *const kThumbsExportSizeHeight = @"ThumbsExportSizeHeight";
+static NSString *const kThumbsExportSizeWidth = @"ThumbsExportSizeWidth";
+static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
+
 @implementation CocoaSlideShow
 
 - (id)init {
@@ -136,7 +145,7 @@
 	NSString *dir = [self chooseDirectory];
 	if(dir) {
 		[self setupImagesControllerWithDir:dir recursive:YES];
-		[[NSUserDefaults standardUserDefaults] setValue:dir forKey:@"ImagesDirectory"];
+		[[NSUserDefaults standardUserDefaults] setValue:dir forKey:kImagesDirectory];
 	}
 }
 
@@ -246,7 +255,7 @@
 	if([timer isValid]) {
 		[self invalidateTimer];
 	} else {
-		timer = [NSTimer scheduledTimerWithTimeInterval:[[[NSUserDefaults standardUserDefaults] valueForKey:@"SlideShowSpeed"] floatValue]
+		timer = [NSTimer scheduledTimerWithTimeInterval:[[[NSUserDefaults standardUserDefaults] valueForKey:kSlideShowSpeed] floatValue]
 												  target:self
 												selector:@selector(timerNextTick)
 												userInfo:NULL
@@ -255,7 +264,7 @@
 }
 
 - (IBAction)startSlideShow:(id)sender {
-	if([[NSUserDefaults standardUserDefaults] boolForKey:@"SlideshowIsFullscreen"]) {
+	if([[NSUserDefaults standardUserDefaults] boolForKey:kSlideshowIsFullscreen]) {
 		[self fullScreenMode:self];
 	}
 	[self toggleSlideShow:self];
@@ -374,7 +383,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	if(takeFilesFromDefault) {
 		NSString *defaultDir = [NSString pathWithComponents:[NSArray arrayWithObjects:NSHomeDirectory(), @"Pictures", nil]];
-		NSString *defaultValue = [[NSUserDefaults standardUserDefaults] valueForKey:@"ImagesDirectory"];
+		NSString *defaultValue = [[NSUserDefaults standardUserDefaults] valueForKey:kImagesDirectory];
 		if(defaultValue) {
 			defaultDir = defaultValue;
 		}
@@ -505,10 +514,10 @@
 	CSSImageInfo *cssImageInfo = nil;
 	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
 	
-	BOOL useRemoteBaseURL = [[NSUserDefaults standardUserDefaults] boolForKey:@"RemoteKMLThumbnails"];
+	BOOL useRemoteBaseURL = [[NSUserDefaults standardUserDefaults] boolForKey:kRemoteKMLThumbnails];
 	NSString *baseURL = @"images/";
 	if(useRemoteBaseURL) {
-		baseURL = [[NSUserDefaults standardUserDefaults] valueForKey:@"KMLThumbnailsRemoteURLs"];
+		baseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kKMLThumbnailsRemoteURLs];
 		if(![baseURL hasSuffix:@"/"]) {
 			baseURL = [baseURL stringByAppendingString:@"/"];
 		}
@@ -683,7 +692,7 @@
 
 	[self prepareProgressIndicator:[theImages count]];
 	
-	int tag = [[NSUserDefaults standardUserDefaults] integerForKey:@"ThumbsExportSizeTag"];
+	int tag = [[NSUserDefaults standardUserDefaults] integerForKey:kThumbsExportSizeTag];
 	
 	int w = 0;
 	int h = 0;
@@ -695,8 +704,8 @@
 	} else if (tag == 2) {
 		w = 800; h = 600;
 	} else if (tag == 3) {
-		w = [[[NSUserDefaults standardUserDefaults] stringForKey:@"ThumbsExportSizeWidth"] intValue];
-		h = [[[NSUserDefaults standardUserDefaults] stringForKey:@"ThumbsExportSizeHeight"] intValue];	
+		w = [[[NSUserDefaults standardUserDefaults] stringForKey:kThumbsExportSizeWidth] intValue];
+		h = [[[NSUserDefaults standardUserDefaults] stringForKey:kThumbsExportSizeHeight] intValue];	
 	}
 
 	NSNumber *width = [NSNumber numberWithInt:w];
