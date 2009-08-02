@@ -43,6 +43,25 @@
             <pubDate>Tue, 21 Jul 2009 23:30:00 +0000</pubDate>
             <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_5.app.zip" sparkle:version="0.5.5" length="712055" type="application/octet-stream" sparkle:dsaSignature="MCwCFHa62SyiihBElR76SO1/8AwgnNafAhRGzEjS7WyIMYM6h6gg2Dy6/O5fHA=="/>
         </item>
+
+        <item>
+            <title>Version 0.5.6 (2 bugs fixed, 2 new features)</title>
+            <description><![CDATA[
+<h2>New features</h2>
+<pre>
+- export resized photos in batch (JPEG only)
+- much better google map integration
+</pre>
+
+<h2>Bug fix</h2>
+<pre>
+- did crash on startup when default folder had more that 500 images
+- thumbnails are now properly rotated on the map
+</pre>
+            ]]></description>
+            <pubDate>Sun, 02 Aug 2009 18:30:00 +0000</pubDate>
+            <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_6.app.zip" sparkle:version="0.5.6" length="1794995" type="application/octet-stream" sparkle:dsaSignature="MCwCFGxFXXu4sh+wMwTTfXlJUanruxIiAhQfdPYLSfTLS8TLzj3fElhMmkh/rg=="/>
+        </item>
         
     </channel>
 </rss>
