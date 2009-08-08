@@ -50,6 +50,15 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	[super dealloc];
 }
 
+- (void)playSuccessSound {
+	NSString *soundPath = @"/System/Library/Sounds/Hero.aiff";
+	if([[NSFileManager defaultManager] fileExistsAtPath:soundPath]) {
+		NSSound *sound = [[NSSound alloc] initWithContentsOfFile:soundPath byReference:YES];
+		[sound play];
+		[sound release];
+	}
+}
+
 - (NSUndoManager *)undoManager {
 	return undoManager;
 }
@@ -163,6 +172,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	}
 
 	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(copyToDirectory:) withObject:destDirectory];
+	[self playSuccessSound];
 }
 
 - (BOOL)isFullScreen {
@@ -479,12 +489,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 }
 
 - (void)exportFinished {
-	NSString *soundPath = @"/System/Library/Sounds/Hero.aiff";
-	if([[NSFileManager defaultManager] fileExistsAtPath:soundPath]) {
-		NSSound *sound = [[NSSound alloc] initWithContentsOfFile:soundPath byReference:YES];
-		[sound play];
-		[sound release];
-	}
+	[self playSuccessSound];
 	
 	[progressIndicator setDoubleValue:1.0];
 	[progressIndicator setHidden:YES];
