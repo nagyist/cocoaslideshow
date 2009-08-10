@@ -21,6 +21,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 }
 
 - (void)setPath:(NSString *)aPath {
+
 	if(aPath == nil) {
 		NSLog(@"-- aPath is nil :-(");
 		return;
@@ -371,10 +372,15 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 
 - (NSImage *)image {
 	//if(![[NSApp delegate] isFullScreen]) return nil;
-	
+	//NSLog(@"--image with path:%@", path);
 	int orientationDegrees = [self orientationDegrees];
 	
 	return [[[[NSImage alloc] initByReferencingFile:path] autorelease] rotatedWithAngle:orientationDegrees];
+}
+
+// just to appear to be KVC compliant, useful when droping an image on the imageView
+- (void)setImage:(NSImage *)anImage {
+	//NSLog(@"-- setImage:%@", anImage);
 }
 
 - (NSURL *)googleMapsURL {
