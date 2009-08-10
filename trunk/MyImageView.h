@@ -8,6 +8,4 @@
 	BOOL isDraggingFromSelf;
 }
 
--(void) setDelegate: (id) del;
-
 @end

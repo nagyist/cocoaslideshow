@@ -104,6 +104,9 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	[flagHeaderImageCell setImage:flagHeaderImage];
 	[flagColumn setHeaderCell:flagHeaderImageCell];
 	
+	[tableView setDraggingSourceOperationMask:NSDragOperationCopy forLocal:NO];
+	[tableView setDraggingSourceOperationMask:NSDragOperationNone forLocal:YES];
+	
 	//[imageView setDelegate:self];
 	[mainWindow setDelegate:self];
 	
@@ -422,6 +425,15 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
 - (void)windowWillClose:(NSNotification *)aNotification {
 	[NSApp terminate:self];
+}
+
+#pragma mark NSDraggingSource
+
+- (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
+	NSArray *files = [[[imagesController arrangedObjects] objectsAtIndexes:rowIndexes] valueForKey:@"path"];
+    [pboard declareTypes:[NSArray arrayWithObject:NSFilenamesPboardType] owner:self];
+    [pboard setPropertyList:files forType:NSFilenamesPboardType];
+    return YES;
 }
 
 #pragma mark NSDraggingDestination
