@@ -23,6 +23,7 @@
 
     function initialize() {
 		map	= new GMap2(document.getElementById("map_canvas"));
+		map.checkResize();
 		
 		map.addMapType(G_PHYSICAL_MAP);
 		map.setMapType(G_PHYSICAL_MAP);
@@ -144,7 +145,7 @@
 		
 	</style>
   </head>
-  <body onload="initialize()" onresize="resizeView()" onunload="GUnload()">
+  <body onload="initialize()" onresize="map.checkResize()" onunload="GUnload()">
     <div id="map_canvas"></div>
   </body>
 </html>
