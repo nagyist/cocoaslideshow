@@ -30,6 +30,7 @@ static NSString *const kMapZoom = @"mapZoom";
 	NSURL *url = [NSURL fileURLWithPath:filePath];
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
+	// TODO: fix webView frame when window is bigger than in nib
 	[webView setFrameLoadDelegate:self];
 	[[webView mainFrame] loadRequest:request];
 	
