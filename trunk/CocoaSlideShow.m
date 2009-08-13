@@ -403,7 +403,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 		[self setupImagesControllerWithDir:defaultDir recursive:NO];
 	}
 	
-	NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"]];
+	NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"UserDefaults" ofType:@"plist"]];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	
     [[SUUpdater sharedUpdater] checkForUpdatesInBackground];

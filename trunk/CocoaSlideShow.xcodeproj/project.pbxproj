@@ -33,7 +33,7 @@
 		036D5C2F0C7269D0004A8236 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036D5C2E0C7269D0004A8236 /* Carbon.framework */; };
 		037D95D40DCDD8BB00E8DEB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */; };
 		037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */; };
-		037F66C21008E7FD0071E2A9 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037F66C11008E7FD0071E2A9 /* Defaults.plist */; };
+		037F66C21008E7FD0071E2A9 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037F66C11008E7FD0071E2A9 /* UserDefaults.plist */; };
 		037F672D1008EDAE0071E2A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 037F672C1008EDAE0071E2A9 /* Localizable.strings */; };
 		037F69C1100A29BC0071E2A9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037F69C0100A29BC0071E2A9 /* Sparkle.framework */; };
 		037F6A21100A2BA00071E2A9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037F69C0100A29BC0071E2A9 /* Sparkle.framework */; };
@@ -102,7 +102,7 @@
 		037D95D30DCDD8BB00E8DEB7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		037D96170DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CocoaSlideShow+Toolbar.h"; sourceTree = "<group>"; };
 		037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CocoaSlideShow+Toolbar.m"; sourceTree = "<group>"; };
-		037F66C11008E7FD0071E2A9 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		037F66C11008E7FD0071E2A9 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		037F672A1008EDA90071E2A9 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		037F67341008EDB60071E2A9 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		037F67A11008F41E0071E2A9 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 				037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				03A127EA0EC252140076DF63 /* gmap.html */,
-				037F66C11008E7FD0071E2A9 /* Defaults.plist */,
+				037F66C11008E7FD0071E2A9 /* UserDefaults.plist */,
 				037F672C1008EDAE0071E2A9 /* Localizable.strings */,
 			);
 			name = Resources;
@@ -347,7 +347,7 @@
 				03677BA60E3A45C600524B59 /* add.png in Resources */,
 				034FC8780EBFB09C00BE42CA /* gmap.png in Resources */,
 				03A127EB0EC252140076DF63 /* gmap.html in Resources */,
-				037F66C21008E7FD0071E2A9 /* Defaults.plist in Resources */,
+				037F66C21008E7FD0071E2A9 /* UserDefaults.plist in Resources */,
 				037F672D1008EDAE0071E2A9 /* Localizable.strings in Resources */,
 				037F6B27100A34130071E2A9 /* css_dsa_pub.pem in Resources */,
 			);
