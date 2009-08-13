@@ -17,8 +17,9 @@
 	var currentPosMarker = null;
 
     function initialize() {
-		map	= new GMap2(document.getElementById("map_canvas"));
-		map.checkResize();
+	
+		map	= new google.maps.Map(document.getElementById("map_canvas"));
+		//GLog.write("xx");
 		
 		map.addMapType(G_PHYSICAL_MAP);
 		map.setMapType(G_PHYSICAL_MAP);
@@ -26,7 +27,9 @@
 		map.addControl(new GLargeMapControl());
 		map.addControl(new GMapTypeControl());
 
-        if(!mapController) return;
+        if(!mapController) {
+			return;
+		}
 		
 		GEvent.addListener(map, "maptypechanged",
 			function() {
@@ -50,8 +53,13 @@
 			}
 		);
 		
-   		//map.setCenter(new GLatLng(0.0, 0.0), 13);
     }
+
+	function setMapSize(width, height) {
+		//map.setMapType(style); // G_NORMAL_MAP, G_HYBRID_MAP, G_SATELLITE_MAP, G_PHYSICAL_MAP
+		map.checkResize();
+	}
+
 	
 	function setMapStyle(style) {
 		map.setMapType(style); // G_NORMAL_MAP, G_HYBRID_MAP, G_SATELLITE_MAP, G_PHYSICAL_MAP
@@ -123,10 +131,7 @@
         }
         
         var coord = new GLatLng(latitude, longitude);
-        //map.setCenter(coord, zoom);
-        //return map;
         map.setZoom(zoom);
-        //return typeof(zoom);
         map.panTo(coord);
 	}
 
@@ -146,7 +151,7 @@
 		
 	</style>
   </head>
-  <body onload="initialize()" onresize="map.checkResize()" onunload="GUnload()">
-    <div id="map_canvas"></div>
+  <body onload="initialize();" onunload="GUnload();">
+    <div id="map_canvas" style="width:100%; height:100%"></div>
   </body>
 </html>
