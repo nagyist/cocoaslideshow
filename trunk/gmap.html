@@ -7,18 +7,13 @@
     <script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAyj5pErQ2rt4sNoP8_DBVcxQqgwkBz2GMttiD5juD_pXeJYXxeBRiygJvZWY_J3-nSAR3nvEmuLIi3Q">
 	</script>
 	<script type="text/javascript">
-
-	var markers = new Array();
 	
-	//var mapController = null;
+	var mapController; // set from Cocoa via KVC
 
+	var markers = [];
 	var map = null;
 	var bounds = new GLatLngBounds();
-
-	var count = 0;
-	
 	var centerSet = false;
-
 	var currentPosMarker = null;
 
     function initialize() {
@@ -31,7 +26,7 @@
 		map.addControl(new GLargeMapControl());
 		map.addControl(new GMapTypeControl());
 
-        //if(!mapController) return;
+        if(!mapController) return;
 		
 		GEvent.addListener(map, "maptypechanged",
 			function() {
@@ -64,12 +59,12 @@
 	
 	function addPoint(uid, lat, long, name, path, date, degrees) {
 	   
-		if(markers[uid]) return;
-	
-		count++;
-		
+		if(markers[uid]) {
+			return;
+		}
+			
 		var point = new GLatLng(lat, long);
-		var marker = new GMarker(point, {title: "point "+count});
+		var marker = new GMarker(point);
 		marker.hide();
 		var markerText = "<font face=\"verdana, sans-serif\" size=1><br /><b>"+name+"</b><br />"+date+"<\/font><br /><div class=\"rot"+degrees+"\"><img width=\"240\" src=\""+path+"\" /></div>";
 				
@@ -90,8 +85,10 @@
 	function removePoint(uid) {
 		var marker = markers[uid];
 		
-		if(!marker) return;
-				
+		if(!marker) {
+			return;
+		}
+		
 		map.removeOverlay(marker);
 		
 		delete markers[uid];
@@ -99,14 +96,18 @@
 	
 	function hidePoint(uid) {
 		var marker = markers[uid];
-		if(!marker) return;
+		if(!marker) {
+			return;
+		}
 		marker.closeInfoWindow();
 		marker.hide();
 	}
 	
 	function showPoint(uid) {
 		var marker = markers[uid];
-		if(!marker) return uid + " not found";
+		if(!marker) {
+			return uid + " not found";
+		}
 		marker.show();
 		return typeof(marker);
 	}
