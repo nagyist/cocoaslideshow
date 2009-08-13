@@ -602,7 +602,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</bytes>
 								</object>
 								<object class="NSTabView" id="705611117">
 									<reference key="NSNextResponder" ref="301182071"/>
-									<int key="NSvFlags">18</int>
+									<int key="NSvFlags">274</int>
 									<string key="NSFrame">{{179, 0}, {572, 400}}</string>
 									<reference key="NSSuperview" ref="301182071"/>
 									<object class="NSMutableArray" key="NSTabViewItems">
@@ -5383,11 +5383,13 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>imagesController</string>
+							<string>scriptObject</string>
 							<string>webView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>ImagesController</string>
+							<string>WebScriptObject</string>
 							<string>WebView</string>
 						</object>
 					</object>
