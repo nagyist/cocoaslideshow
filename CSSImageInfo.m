@@ -105,7 +105,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:kMultipleSelectionAllowsEdition];
 
 	if(!readOnMultiSelect && multipleImagesSelected && !isMap && !isExporting) {
-		return nil;
+		return NO;
     }
 	
 	//NSLog(@"-- loadSource %@", path);
@@ -125,14 +125,16 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	
 	// fill caches
 	CFDictionaryRef metadataRef = CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
-	NSDictionary *immutableMetadata = (NSDictionary *)metadataRef;
+	if(metadataRef) {
+		NSDictionary *immutableMetadata = (NSDictionary *)metadataRef;
+		
+		//NSLog(@"-- immutableMetadata %@", immutableMetadata);
+		
+		[metadata release];
+		metadata = [immutableMetadata mutableCopy];
+		CFRelease(metadataRef);
+	}
 	
-	//NSLog(@"-- immutableMetadata %@", immutableMetadata);
-	
-	[metadata release];
-	metadata = [immutableMetadata mutableCopy];
-	CFRelease(metadataRef);
-
 	UTI = (NSString *)CGImageSourceGetType(source);
 
 	CFRelease(source);
