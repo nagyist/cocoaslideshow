@@ -17,11 +17,12 @@
 	BOOL isFlagged;
 	BOOL isLoadingCache;
 	BOOL isJpeg;
+    BOOL isModified;
 	
 	int userRotation;
+    
+    NSLock *lock;
 }
-
-+ (CSSImageInfo *)containerWithPath:(NSString *)aPath;
 
 - (NSString *)jsAddPoint;
 - (NSString *)jsRemovePoint;
@@ -36,6 +37,7 @@
 
 - (BOOL)loadSource;
 - (BOOL)isJpeg;
+- (BOOL)isModified;
 
 - (NSImage *)image;
 
@@ -50,6 +52,8 @@
 - (NSDictionary *)exif;
 - (NSDictionary *)gps;
 
++ (CSSImageInfo *)containerWithPath:(NSString *)aPath;
+
 - (NSString *)path;
 
 - (NSURL *)googleMapsURL;
@@ -63,5 +67,6 @@
 - (void)removeFlag;
 - (BOOL)isFlagged;
 - (NSImage *)flagIcon;
+- (void)saveSourceWithMetadata;
 
 @end

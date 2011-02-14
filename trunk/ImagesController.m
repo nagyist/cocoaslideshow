@@ -60,7 +60,7 @@
 }
 
 - (IBAction)selectFlags:(id)sender {
-	[(NSArrayController *)[[self undoManager] prepareWithInvocationTarget:self] setSelectionIndexes:[self selectionIndexes]];
+	[[[self undoManager] prepareWithInvocationTarget:self] setSelectionIndexes:[self selectionIndexes]];
 	[self setSelectionIndexes:[self flaggedIndexes]];
 }
 
@@ -139,6 +139,41 @@
 - (IBAction)moveToTrash:(id)sender {
 	[[self selectedObjects] makeObjectsPerformSelector:@selector(moveToTrash)];
 	[self removeObjectsAtArrangedObjectIndexes:[self selectionIndexes]];
+}
+
+- (IBAction)save:(id)sender {
+    [saveProgress setMinValue:0];
+    [NSApp beginSheet:savePanel modalForWindow:mainWindow modalDelegate:self didEndSelector:nil contextInfo:NULL];
+    [NSThread detachNewThreadSelector:@selector(performSaveInSeparateThread) toTarget:self withObject:nil];
+}
+
+- (void)performSaveInSeparateThread {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSMutableArray *objectsToSave = [NSMutableArray array];
+    for (CSSImageInfo *info in [self arrangedObjects]) {
+        if ([info isModified]) [objectsToSave addObject:info];
+    }
+    
+    [saveProgress setMinValue:0];
+    [saveProgress setMaxValue:[objectsToSave count]];
+    
+    for (CSSImageInfo *info in objectsToSave) {
+        [saveState setStringValue:[info fileName]];
+        [info saveSourceWithMetadata];
+        [self performSelectorOnMainThread:@selector(didImageSave:) withObject:info waitUntilDone:NO];
+    }
+    [self performSelectorOnMainThread:@selector(didSaveEnd) withObject:nil waitUntilDone:NO];
+    [pool release];
+}
+
+- (void)didImageSave:(CSSImageInfo *)info {
+    [saveProgress incrementBy:1.0];
+}
+
+- (void)didSaveEnd {
+    [saveState setStringValue:@""];
+    [savePanel orderOut:nil];
+    [NSApp endSheet:savePanel];
 }
 
 /*
