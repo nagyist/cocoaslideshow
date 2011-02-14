@@ -60,7 +60,7 @@
 }
 
 - (IBAction)selectFlags:(id)sender {
-	[[[self undoManager] prepareWithInvocationTarget:self] setSelectionIndexes:[self selectionIndexes]];
+    [(NSArrayController *)[[self undoManager] prepareWithInvocationTarget:self] setSelectionIndexes:[self selectionIndexes]];
 	[self setSelectionIndexes:[self flaggedIndexes]];
 }
 

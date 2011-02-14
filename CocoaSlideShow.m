@@ -153,10 +153,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	}
 }
 
-- (IBAction)save:(id)sender {
-    [imagesController save];
-}
-
 - (IBAction)setDirectory:(id)sender {
 	NSString *dir = [self chooseDirectory];
 	if(dir) {

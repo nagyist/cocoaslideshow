@@ -24,6 +24,8 @@
     NSLock *lock;
 }
 
++ (CSSImageInfo *)containerWithPath:(NSString *)aPath;
+
 - (NSString *)jsAddPoint;
 - (NSString *)jsRemovePoint;
 
@@ -51,8 +53,6 @@
 
 - (NSDictionary *)exif;
 - (NSDictionary *)gps;
-
-+ (CSSImageInfo *)containerWithPath:(NSString *)aPath;
 
 - (NSString *)path;
 

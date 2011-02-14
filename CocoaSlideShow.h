@@ -66,7 +66,6 @@
 - (IBAction)revealInFinder:(id)sender;
 - (IBAction)exportToDirectory:(id)sender;
 - (IBAction)open:(id)sender;
-- (IBAction)save:(id)sender;
 
 - (IBAction)startSlideShow:(id)sender;
 - (IBAction)toggleSlideShow:(id)sender;
