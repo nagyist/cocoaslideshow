@@ -8,6 +8,11 @@
 @interface ImagesController : NSArrayController
 {
 	IBOutlet CocoaSlideShow *cocoaSlideShow;
+    IBOutlet NSPanel *savePanel;
+    IBOutlet NSWindow *mainWindow;
+    IBOutlet NSTextField *saveState;
+    IBOutlet NSProgressIndicator *saveProgress;
+    
 	BOOL importDone;
 	unsigned inMemoryBitmapsNextIndex;
 	NSMutableArray *inMemoryBitmapsContainers;
@@ -33,5 +38,6 @@
 - (void)addDirFiles:(NSString *)dir;
 - (BOOL)atLeastOneImageWithGPSSelected;
 - (IBAction)openGoogleMap:(id)sender;
+- (IBAction)save:(id)sender;
 
 @end

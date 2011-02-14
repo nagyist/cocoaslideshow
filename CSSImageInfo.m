@@ -217,9 +217,8 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	return [[self metadata] objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
 }
 
-- (BOOL)saveSourceWithMetadata {
-
-	if(!source) {
+- (void)saveSourceWithMetadata {
+    if(!source) {
 		NSURL *url = [NSURL fileURLWithPath:path];
 		source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
 	}
@@ -227,7 +226,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	if(!source) {
 		CGImageSourceStatus status = CGImageSourceGetStatus(source);
 		NSLog(@"Error: could not create image source. Status: %d", status);
-		return NO;
+		return;
 	}
 	
 	NSData *data = [NSMutableData data];
@@ -239,7 +238,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 			CFRelease(source);
 			source = nil;
 		}
-        return NO;
+        return;
     }
     
     CGImageDestinationAddImageFromSource(destination, source, 0, (CFDictionaryRef)metadata);
@@ -251,7 +250,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 			CFRelease(source);
 			source = nil;
 		}
-		return NO;
+		return;
 	}
 	
 	CFRelease(destination);
@@ -262,18 +261,22 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	
 	NSURL *url = [NSURL fileURLWithPath:path];
 	NSError *error = nil;
-	success = [data writeToURL:url options:NSAtomicWrite error:&error];
+	[data writeToURL:url options:NSAtomicWrite error:&error];
 
 	if(error) {
 		NSLog(@"-- error: can't write data: %@", [error localizedDescription]);
 	}
-	
-	return success;
+	isModified = NO;
+	return;
 }
 
 - (BOOL)isJpeg {
 	if(!sourceRead) [self loadSource];
 	return isJpeg;
+}
+
+- (BOOL)isModified {
+    return isModified;
 }
 
 - (NSString *)jsAddPoint {
@@ -318,12 +321,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	[self didChangeValueForKey:@"exif"];
 	[self didChangeValueForKey:@"userComment"];
 	
-	BOOL success = [self saveSourceWithMetadata];
-	if(!success) {
-		NSLog(@"Error: can't set user comment");
-	}
-	
-	return;
+	isModified = YES;
 }
 
 - (void)setKeywords:(NSArray *)keywords {
@@ -341,10 +339,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	[iptcDict release];
 	[self didChangeValueForKey:@"keywords"];
 	
-	BOOL success = [self saveSourceWithMetadata];
-	if(!success) {
-		NSLog(@"Error: can't set keywords");
-	}
+	isModified = YES;
 }
 
 - (NSArray *)keywords {
