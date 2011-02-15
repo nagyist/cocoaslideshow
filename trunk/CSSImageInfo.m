@@ -136,7 +136,6 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	}
 	
 	UTI = (NSString *)CGImageSourceGetType(source);
-
 	CFRelease(source);
 	source = nil;
 	
@@ -268,6 +267,28 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	}
 	isModified = NO;
 	return;
+}
+
+- (BOOL)isJPEGExt {
+    return [[[self path] lowercaseString] hasSuffix:@".jpg"];
+}
+
+- (void)resizeJPEGWithOptions:(NSDictionary *)options {
+    // Let a second change to rely on the extension to export
+    if(![self isJpeg] && ![self isJPEGExt]) return;
+    
+    NSString *exportDir = [options objectForKey:@"ExportDir"];
+	NSNumber *width = [options objectForKey:@"Width"];
+	NSNumber *height = [options objectForKey:@"Height"];
+	NSSize bbox = NSMakeSize([width floatValue], [height floatValue]);
+    
+    NSString *thumbPath = [[exportDir stringByAppendingPathComponent:[[self path] lastPathComponent]] lowercaseString];
+    
+    BOOL success = [NSImage scaleAndSaveJPEGThumbnailFromFile:[self path] toPath:thumbPath boundingBox:bbox rotation:[self orientationDegrees]];
+    
+    if(!success) {
+        NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
+    }
 }
 
 - (BOOL)isJpeg {

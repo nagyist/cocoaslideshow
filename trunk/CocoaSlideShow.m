@@ -6,6 +6,8 @@
 
 #import "CSSBorderlessWindow.h"
 
+#import "BatchController.h"
+
 #import <Carbon/Carbon.h>
 
 #import "NSImage+CSS.h"
@@ -153,6 +155,14 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	}
 }
 
+- (IBAction)save:(id)sender {
+    [batchController executeBatchName:@"Saving"
+                               onList:[imagesController modifiedObjects] 
+                           withSelector:@"saveSourceWithMetadata"
+                         modalForWindow:mainWindow
+                           withObject:nil];
+}
+
 - (IBAction)setDirectory:(id)sender {
 	NSString *dir = [self chooseDirectory];
 	if(dir) {
@@ -173,9 +183,12 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	if(!destDirectory) {
 		return;
 	}
-
-	[[imagesController selectedObjects] makeObjectsPerformSelector:@selector(copyToDirectory:) withObject:destDirectory];
-	[self playSuccessSound];
+    
+    [batchController executeBatchName:@"Exporting"
+                               onList:[imagesController selectedObjects] 
+                         withSelector:@"copyToDirectory:"
+                       modalForWindow:mainWindow 
+                           withObject:destDirectory];
 }
 
 - (BOOL)isFullScreen {
@@ -500,16 +513,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	[progressIndicator setDoubleValue:0.0];
 }
 
-- (void)exportFinished {
-	[self playSuccessSound];
-	
-	[progressIndicator setDoubleValue:1.0];
-	[progressIndicator setHidden:YES];
-	[progressIndicator setDoubleValue:0.0];
-	
-	[self setValue:[NSNumber numberWithBool:NO] forKey:@"isExporting"];
-}
-
 #pragma mark KML export
 
 - (void)updateExportProgress:(NSNumber *)n {
@@ -610,9 +613,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 }
 
 - (IBAction)exportKMLToFile:(id)sender {
-	if(isExporting) return;
-
-	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isExporting"];
 
 	NSString *thumbsDir = nil;
 	
@@ -650,36 +650,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
 #pragma mark thumbnails export
 
-- (void)resizeJPEGsOnSeparateThread:(NSDictionary *)options {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		
-	NSArray *theImages = [options objectForKey:@"Images"];
-	NSString *exportDir = [options objectForKey:@"ExportDir"];
-	NSNumber *width = [options objectForKey:@"Width"];
-	NSNumber *height = [options objectForKey:@"Height"];
-	NSSize bbox = NSMakeSize([width floatValue], [height floatValue]);
-	
-	CSSImageInfo *imageInfo = nil;
-	NSEnumerator *e = [theImages objectEnumerator];
-	unsigned int count = 0;
-	while((imageInfo = [e nextObject])) {
-		count++;
-		if(![imageInfo isJpeg]) continue;
-		NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
-		
-		[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
-		NSString *thumbPath = [[exportDir stringByAppendingPathComponent:[[imageInfo path] lastPathComponent]] lowercaseString];
-		BOOL success = [NSImage scaleAndSaveJPEGThumbnailFromFile:[imageInfo path] toPath:thumbPath boundingBox:bbox rotation:[imageInfo orientationDegrees]];
-		if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
-
-		[subPool release];
-	}
-
-	[self performSelectorOnMainThread:@selector(exportFinished) withObject:nil waitUntilDone:NO];
-
-	[pool release];
-}
-
 - (NSString *)chooseThumbsExportDirectory {
 
     NSSavePanel *sPanel = [NSSavePanel savePanel];
@@ -695,16 +665,12 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 }
 
 - (IBAction)resizeJPEGs:(id)sender {
-	if(isExporting) return;
-	
 	NSString *exportDir = [self chooseThumbsExportDirectory];
 	if(!exportDir) return;
 	
 	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:exportDir attributes:nil];
 	if(!success) NSLog(@"Error: can't create dir at path %@", exportDir);
-	//return;
 	
-	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isExporting"];
 	
 	NSArray *theImages = [[[imagesController selectedObjects] copy] autorelease];
 
@@ -729,8 +695,13 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	NSNumber *width = [NSNumber numberWithInt:w];
 	NSNumber *height = [NSNumber numberWithInt:h];
 	
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:exportDir, @"ExportDir", theImages, @"Images", width, @"Width", height, @"Height", nil];
-	[NSThread detachNewThreadSelector:@selector(resizeJPEGsOnSeparateThread:) toTarget:self withObject:options];
+	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:exportDir, @"ExportDir", width, @"Width", height, @"Height", nil];
+    
+    [batchController executeBatchName:@"Resizing"
+                               onList:[imagesController selectedObjects] 
+                         withSelector:@"resizeJPEGWithOptions:"
+                       modalForWindow:mainWindow 
+                           withObject:options];
 }
 
 @end
