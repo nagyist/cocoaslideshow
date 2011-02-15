@@ -68,5 +68,6 @@
 - (BOOL)isFlagged;
 - (NSImage *)flagIcon;
 - (void)saveSourceWithMetadata;
+- (void)resizeJPEGWithOptions:(NSDictionary *)options;
 
 @end

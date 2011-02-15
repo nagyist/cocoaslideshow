@@ -10,6 +10,7 @@
 #import "CSSMapController.h"
 
 @class CSSBorderlessWindow;
+@class BatchController;
 
 @interface CocoaSlideShow : NSObject
 {	
@@ -34,13 +35,15 @@
 	IBOutlet NSView *thumbnailsExportAccessoryView;
 	
 	IBOutlet NSProgressIndicator *progressIndicator;
+    
+    IBOutlet BatchController *batchController;
 	
 	NSToolbar *toolbar;
 	
 	RemoteControl *remoteControl;
 	NSUndoManager *undoManager;
 	NSTimer *timer;
-
+    
 	BOOL isFullScreen;
 	BOOL takeFilesFromDefault;
 	BOOL isSaving;
@@ -66,6 +69,7 @@
 - (IBAction)revealInFinder:(id)sender;
 - (IBAction)exportToDirectory:(id)sender;
 - (IBAction)open:(id)sender;
+- (IBAction)save:(id)sender;
 
 - (IBAction)startSlideShow:(id)sender;
 - (IBAction)toggleSlideShow:(id)sender;
