@@ -8,10 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class ImagesController;
+
 @interface CSSImageInfo : NSObject {
 	NSString *path;
 	CGImageSourceRef source;
 	NSMutableDictionary *metadata;
+    ImagesController *imagesController;
 
 	BOOL sourceRead;
 	BOOL isFlagged;
@@ -24,7 +27,7 @@
     NSLock *lock;
 }
 
-+ (CSSImageInfo *)containerWithPath:(NSString *)aPath;
++ (CSSImageInfo *)containerWithPath:(NSString *)aPath andController:(ImagesController *)controller;
 
 - (NSString *)jsAddPoint;
 - (NSString *)jsRemovePoint;

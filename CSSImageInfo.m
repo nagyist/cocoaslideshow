@@ -11,6 +11,7 @@
 #import "CocoaSlideShow.h"
 #import "NSFileManager+CSS.h"
 #import "NSImage+CSS.h"
+#import "ImagesController.h"
 
 static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllowsEdition";
 
@@ -37,14 +38,16 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	return path;
 }
 
-- (id)initWithPath:(NSString *)aPath {
+- (id)initWithPath:(NSString *)aPath andController:(ImagesController *)controller {
 	self = [super init];
 	[self setPath:aPath];
+    imagesController = controller;
 	return self;
 }
 
-+ (CSSImageInfo *)containerWithPath:(NSString *)aPath {
-	return [[[CSSImageInfo alloc] initWithPath:aPath] autorelease];
++ (CSSImageInfo *)containerWithPath:(NSString *)aPath andController:(ImagesController *)controller {
+	return [[[CSSImageInfo alloc] initWithPath:aPath 
+                                 andController:controller] autorelease];
 }
 
 - (void)dealloc {
@@ -266,6 +269,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 		NSLog(@"-- error: can't write data: %@", [error localizedDescription]);
 	}
 	isModified = NO;
+    [imagesController didSaveCSSImageInfo:self];
 	return;
 }
 
@@ -343,6 +347,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	[self didChangeValueForKey:@"userComment"];
 	
 	isModified = YES;
+    [imagesController needSaveCSSImageInfo:self];
 }
 
 - (void)setKeywords:(NSArray *)keywords {
@@ -361,6 +366,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	[self didChangeValueForKey:@"keywords"];
 	
 	isModified = YES;
+    [imagesController needSaveCSSImageInfo:self];
 }
 
 - (NSArray *)keywords {

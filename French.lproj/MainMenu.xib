@@ -12,10 +12,10 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="916"/>
 			<integer value="1127"/>
 			<integer value="1080"/>
-			<integer value="29"/>
-			<integer value="916"/>
+			<integer value="81"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3546,6 +3546,22 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 					<int key="connectionID">1239</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: hasImagesToSave</string>
+						<reference key="source" ref="29509252"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="29509252"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">enabled: hasImagesToSave</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">hasImagesToSave</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1241</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -5446,7 +5462,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1239</int>
+			<int key="maxID">1241</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
