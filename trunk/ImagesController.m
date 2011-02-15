@@ -13,7 +13,9 @@
 								  @"ico", @"icns",  @"bmp", @"bmpf",
 								  @"dng", @"cr2", @"crw", @"fpx", @"fpix", @"raf", @"dcr", @"ptng", @"pnt", @"mac", @"mrw", @"nef",
 								  @"orf", @"exr", @"psd", @"qti", @"qtif", @"hdr", @"sgi", @"srf", @"targa", @"tga", @"cur", @"xbm", nil];
-	[allowedExtensions retain];	
+	imagesToSaveCounter = 0;
+    hasImagesToSave = NO;
+    [allowedExtensions retain];	
 }
 
 - (void)dealloc {
@@ -124,7 +126,7 @@
 			continue;
 		}
 		
-		[imagesInfoToAdd addObject:[CSSImageInfo containerWithPath:path]];
+		[imagesInfoToAdd addObject:[CSSImageInfo containerWithPath:path andController:self]];
 	}
 	
 	[self addObjects:imagesInfoToAdd];
@@ -147,6 +149,14 @@
         if ([info isModified]) [objects addObject:info];
     }
     return [NSArray arrayWithArray:objects];
+}
+
+- (void)needSaveCSSImageInfo:(CSSImageInfo *)info {
+    [self setValue:[NSNumber numberWithBool:++imagesToSaveCounter > 0] forKey:@"hasImagesToSave"];
+}
+
+- (void)didSaveCSSImageInfo:(CSSImageInfo *)info {
+    [self setValue:[NSNumber numberWithBool:--imagesToSaveCounter > 0] forKey:@"hasImagesToSave"];
 }
 
 /*

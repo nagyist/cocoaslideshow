@@ -8,7 +8,8 @@
 @interface ImagesController : NSArrayController
 {
 	IBOutlet CocoaSlideShow *cocoaSlideShow;
-    
+    int imagesToSaveCounter;
+    BOOL hasImagesToSave;
 	BOOL importDone;
 	unsigned inMemoryBitmapsNextIndex;
 	NSMutableArray *inMemoryBitmapsContainers;
@@ -35,5 +36,8 @@
 - (BOOL)atLeastOneImageWithGPSSelected;
 - (IBAction)openGoogleMap:(id)sender;
 - (NSArray *)modifiedObjects;
+- (void)needSaveCSSImageInfo:(CSSImageInfo *)info;
+- (void)didSaveCSSImageInfo:(CSSImageInfo *)info;
+
 
 @end

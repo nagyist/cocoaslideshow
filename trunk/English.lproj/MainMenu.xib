@@ -12,11 +12,11 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1207"/>
-			<integer value="1072"/>
 			<integer value="1109"/>
-			<integer value="2"/>
 			<integer value="81"/>
+			<integer value="1072"/>
+			<integer value="2"/>
+			<integer value="1207"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1238,6 +1238,7 @@
 					<string>gps</string>
 					<string>ThumbsExportSizeHeight</string>
 					<string>ThumbsExportSizeTag</string>
+					<string>hasImagesToSave</string>
 				</object>
 				<string key="NSObjectClassName">CSSImageInfo</string>
 				<bool key="NSEditable">YES</bool>
@@ -3524,6 +3525,22 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 					<int key="connectionID">1224</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: hasImagesToSave</string>
+						<reference key="source" ref="622855894"/>
+						<reference key="destination" ref="79550871"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="622855894"/>
+							<reference key="NSDestination" ref="79550871"/>
+							<string key="NSLabel">enabled: hasImagesToSave</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">hasImagesToSave</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1227</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -4844,6 +4861,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<string>1207.IBPluginDependency</string>
 					<string>1208.IBPluginDependency</string>
 					<string>1208.IBViewBoundsToFrameTransform</string>
+					<string>1208.IBViewIntegration.shadowBlurRadius</string>
+					<string>1208.IBViewIntegration.shadowColor</string>
+					<string>1208.IBViewIntegration.shadowOffsetHeight</string>
+					<string>1208.IBViewIntegration.shadowOffsetWidth</string>
 					<string>1209.IBPluginDependency</string>
 					<string>1209.IBViewBoundsToFrameTransform</string>
 					<string>1210.IBPluginDependency</string>
@@ -5153,6 +5174,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABB+AAAwYAAAA</bytes>
 					</object>
+					<real value="0.0"/>
+					<reference ref="134731192"/>
+					<real value="0.0"/>
+					<real value="0.0"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABCmgAAwpAAAA</bytes>
@@ -5212,9 +5237,9 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{58, 271}, {751, 486}}</string>
+					<string>{{100, 288}, {751, 486}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{58, 271}, {751, 486}}</string>
+					<string>{{100, 288}, {751, 486}}</string>
 					<integer value="1"/>
 					<integer value="1"/>
 					<boolean value="YES"/>
@@ -5420,7 +5445,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1224</int>
+			<int key="maxID">1227</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

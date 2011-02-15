@@ -39,25 +39,25 @@
     SEL selector = NSSelectorFromString([args objectAtIndex:1]);
     
     for (CSSImageInfo *info in list) {
-        [self performSelectorOnMainThread:@selector(willStartCSSImageInfo:) withObject:info waitUntilDone:YES];
+        [self performSelectorOnMainThread:@selector(willProcessCSSImageInfo:) withObject:info waitUntilDone:YES];
         [info performSelector:selector withObject:object];
-        [self performSelectorOnMainThread:@selector(didStartCSSImageInfo:) withObject:info waitUntilDone:YES];
+        [self performSelectorOnMainThread:@selector(didProcessCSSImageInfo:) withObject:info waitUntilDone:YES];
     }
     
     [self performSelectorOnMainThread:@selector(didFinish) withObject:nil waitUntilDone:NO];
     [pool release];
 }
 
-- (void)willStartCSSImageInfo:(CSSImageInfo *)info {
+- (void)willProcessCSSImageInfo:(CSSImageInfo *)info {
     [status setStringValue:[info fileName]];
 }
 
-- (void)didStartCSSImageInfo:(CSSImageInfo *)info {
+- (void)didProcessCSSImageInfo:(CSSImageInfo *)info {
     [progress incrementBy:1.0];
-    [status setStringValue:@""];
 }
 
 - (void)didFinish {
+    [status setStringValue:@""];
     [panel orderOut:nil];
     [NSApp endSheet:panel];
 }
