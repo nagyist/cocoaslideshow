@@ -12,9 +12,11 @@
 
 @interface CSSImageInfo : NSObject {
 	NSString *path;
+    NSString *newFilename;
 	CGImageSourceRef source;
 	NSMutableDictionary *metadata;
     ImagesController *imagesController;
+    NSNumberFormatter* formatter;
 
 	BOOL sourceRead;
 	BOOL isFlagged;
