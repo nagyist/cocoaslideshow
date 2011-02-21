@@ -15,8 +15,9 @@
 
 static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllowsEdition";
 static NSString *const kRenameFilesWithKeywords = @"RenameFilesWithKeywords";
-static NSString *const kRenameFilesNumeWithNumbering = @"RenameFilesNumeWithNumbering";
+static NSString *const kRenameFilesNumeWithNumbering = @"RenameFilesNameWithNumbering";
 static NSString *const kRenameFilesSeparator = @"RenameFilesSeparator";
+static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 
 @implementation CSSImageInfo
 
@@ -397,10 +398,17 @@ static NSString *const kRenameFilesSeparator = @"RenameFilesSeparator";
         }
     }
     
+    BOOL renameLowercaseExtension = [[NSUserDefaults standardUserDefaults] boolForKey:kRenameLowercaseExtension];
+    if (renameLowercaseExtension) {
+        fname = [fname stringByAppendingPathExtension:[[[self fileName] pathExtension] lowercaseString]];
+    } else {
+        fname = [fname stringByAppendingPathExtension:[[self fileName] pathExtension]];
+    }
+
     [self willChangeValueForKey:@"fileName"];
     [newFilename release];
     newFilename = nil;
-    newFilename = [fname stringByAppendingPathExtension:[[self fileName] pathExtension]];
+    newFilename = fname;
     [newFilename retain];
     [self didChangeValueForKey:@"fileName"];
 }

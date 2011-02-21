@@ -33,7 +33,7 @@
 	
 	IBOutlet NSView *kmlSavePanelAccessoryView;
 	IBOutlet NSView *thumbnailsExportAccessoryView;
-	
+	IBOutlet NSApplication *application;
     IBOutlet BatchController *batchController;
 	
 	NSToolbar *toolbar;
