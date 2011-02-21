@@ -23,6 +23,13 @@ static NSString *const kThumbsExportSizeHeight = @"ThumbsExportSizeHeight";
 static NSString *const kThumbsExportSizeWidth = @"ThumbsExportSizeWidth";
 static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
+static NSString *const kBatchResizing = @"Resizing";
+static NSString *const kBatchSaving = @"Saving";
+static NSString *const kBatchExporting = @"Exporting";
+static NSString *const kBatchSavingBeforeQuitting = @"Saving before quitting";
+static NSString *const kBatchPreloadForKML = @"Preload for KML";
+static NSString *const kBatchGeneratingThumbnails = @"Generating thumbnails";
+
 @implementation CocoaSlideShow
 
 - (id)init {
@@ -155,7 +162,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 }
 
 - (IBAction)save:(id)sender {
-    [batchController executeBatchName:@"Saving"
+    [batchController executeBatchName:kBatchSaving
                                onList:[imagesController modifiedObjects] 
                            withSelector:@"saveSourceWithMetadata"
                          modalForWindow:mainWindow
@@ -183,7 +190,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 		return;
 	}
     
-    [batchController executeBatchName:@"Exporting"
+    [batchController executeBatchName:kBatchExporting
                                onList:[imagesController selectedObjects] 
                          withSelector:@"copyToDirectory:"
                        modalForWindow:mainWindow 
@@ -439,6 +446,42 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	[NSApp terminate:self];
 }
 
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
+    
+    int modifiedObjects = [[imagesController modifiedObjects] count];
+    
+    if (modifiedObjects == 0) {
+        return NSTerminateNow;
+    }
+    
+    NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:@"You have %d images unsaved changes.\nDo you want to save them all?", modifiedObjects] 
+                    defaultButton:@"Save" 
+                  alternateButton:@"Discard Changes" 
+                      otherButton:@"Cancel" 
+        informativeTextWithFormat:@""];
+    
+    NSInteger choice = [alert runModal];
+    NSLog(@"--> choice: %d", choice);
+    switch (choice) {
+        case 1:
+            [batchController executeBatchName:kBatchSavingBeforeQuitting
+                                       onList:[imagesController modifiedObjects] 
+                                 withSelector:@"saveSourceWithMetadata"
+                               modalForWindow:mainWindow
+                                   withObject:nil
+                                 withDelegate:self 
+                                withContext:nil];
+            
+            return NSTerminateLater;
+        case -1:
+            return NSTerminateCancel;
+        case 0:
+            return NSTerminateNow;
+        default:
+            return NSTerminateCancel;
+    }
+}
+
 #pragma mark NSDraggingSource
 
 - (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
@@ -596,7 +639,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
     NSDictionary *preloadContext = [NSDictionary 
                                     dictionaryWithObjectsAndKeys:kmlFilePath, @"kmlFilePath", kmlImages, @"kmlImages", thumbsDir, @"thumbsDir", nil];
     
-    [batchController executeBatchName:@"Preload for KML"
+    [batchController executeBatchName:kBatchPreloadForKML
                                onList:kmlImages 
                          withSelector:@"metadata"
                        modalForWindow:mainWindow 
@@ -626,7 +669,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
         
         NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:thumbsDir, @"ExportDir", width, @"Width", height, @"Height", nil];
         
-        [batchController executeBatchName:@"Generating thumbnails"
+        [batchController executeBatchName:kBatchGeneratingThumbnails
                                    onList:[imagesController selectedObjects] 
                              withSelector:@"resizeJPEGWithOptions:"
                            modalForWindow:mainWindow 
@@ -638,11 +681,13 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 - (void)didFinishBatch:(NSDictionary *)context {
     NSString *name = [context objectForKey:@"name"];
     NSLog(@"Batch did finish %@", name);
-    if ([name isEqualToString:@"Preload for KML"]) {
+    if ([name isEqualToString:kBatchPreloadForKML]) {
         NSString *kmlFilePath = [context objectForKey:@"kmlFilePath"];
         NSArray *kmlImages = [context objectForKey:@"kmlImages"];
         NSString *thumbsDir = [context objectForKey:@"thumbsDir"];
         [self processKMLExportAfterPreloadAtPath:kmlFilePath withImages:kmlImages withThumbnailsDir:thumbsDir];
+    } else if ([name isEqualToString:kBatchSavingBeforeQuitting]) {
+        [application replyToApplicationShouldTerminate:YES];
     }
     
 }
@@ -691,7 +736,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	
 	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:exportDir, @"ExportDir", width, @"Width", height, @"Height", nil];
     
-    [batchController executeBatchName:@"Resizing"
+    [batchController executeBatchName:kBatchResizing
                                onList:[imagesController selectedObjects] 
                          withSelector:@"resizeJPEGWithOptions:"
                        modalForWindow:mainWindow 
