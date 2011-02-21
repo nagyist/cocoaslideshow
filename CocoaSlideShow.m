@@ -112,7 +112,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	//[imageView setDelegate:self];
 	[mainWindow setDelegate:self];
 	
-	[progressIndicator setHidden:YES];
 
 	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:1.0], @"SlideShowSpeed",
@@ -506,29 +505,11 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	}
 }
 
-- (void)prepareProgressIndicator:(unsigned int)count {
-	[progressIndicator setHidden:NO];
-	[progressIndicator setMinValue:(double)0.0];
-	[progressIndicator setMaxValue:(double)count];
-	[progressIndicator setDoubleValue:0.0];
-}
-
 #pragma mark KML export
-
-- (void)updateExportProgress:(NSNumber *)n {
-	[progressIndicator setDoubleValue:[n doubleValue]];
-}
 
 #pragma KML File Export
 
-- (void)generateKMLWithThumbsDirInSeparateThread:(NSDictionary *)options {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
-	NSArray *exportImages = [options objectForKey:@"images"];
-	NSString *kmlFilePath = [options objectForKey:@"kmlFilePath"];
-	BOOL addThumbnails = [[options objectForKey:@"addThumbnails"] boolValue];
-	NSString *thumbsDir = nil;
-	if(addThumbnails) thumbsDir = [[kmlFilePath stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"images"];
+- (void)generateKMLToPath:(NSString *)kmlFilePath withImages:(NSArray *)exportImages withThumbnailsDir:(NSString *)thumbsDir {
 	
 	NSEnumerator *e = [exportImages objectEnumerator];
 	CSSImageInfo *cssImageInfo = nil;
@@ -545,13 +526,9 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	
 	NSMutableString *placemarkString = [[NSMutableString alloc] init];
 	
-	//NSDate *d1 = [NSDate date];
-	
 	unsigned int count = 0;
 	while((cssImageInfo = [e nextObject])) {
 		count++;
-
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		
 		NSString *latitude = [cssImageInfo prettyLatitude];
 		NSString *longitude = [cssImageInfo prettyLongitude];
@@ -559,33 +536,22 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 		
 		NSString *imageName = [[[cssImageInfo path] lastPathComponent] lowercaseString];
 		
+        NSLog(@"--> latitude %@", latitude);
+        
 		if([latitude length] == 0 || [longitude length] == 0) {
-			[pool release];
 			continue;
 		}
 		
 		[placemarkString appendFormat:@"    <Placemark><name>%@</name><timestamp><when>%@</when></timestamp><Point><coordinates>%@,%@</coordinates></Point>", imageName, timestamp, longitude, latitude];
 		
-		if(addThumbnails) {
+		if(thumbsDir) {
 			NSString *imageName = [[[cssImageInfo path] lastPathComponent] lowercaseString];
 			[placemarkString appendFormat:@"<description>&lt;img src=\"%@%@\" /&gt;</description><Style><text>$[description]</text></Style> ", baseURL, imageName];
 		}
 
 		[placemarkString appendFormat:@"</Placemark>\n"];
 		
-		if(addThumbnails) {
-			[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
-			NSString *thumbPath = [[thumbsDir stringByAppendingPathComponent:[[cssImageInfo path] lastPathComponent]] lowercaseString];
-
-			BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(300.0, 225.0) rotation:[cssImageInfo orientationDegrees]] :
-											  [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(510.0, 360.0) rotation:[cssImageInfo orientationDegrees]];			
-			
-			if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
-		}
-		[pool release];
-	}
-	
-	//NSLog(@"-- TIME %f", [[NSDate date] timeIntervalSinceDate:d1]);
+    }
 	
 	NSString *kml = [NSString stringWithFormat:XMLContainer, placemarkString];
 	[placemarkString release];
@@ -593,10 +559,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	NSError *error = nil;
 	[kml writeToFile:kmlFilePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
 	if(error) [[NSAlert alertWithError:error] runModal];
-	
-	[self performSelectorOnMainThread:@selector(exportFinished) withObject:nil waitUntilDone:NO];
-	
-	[pool release];
 }
 
 - (NSString *)chooseKMLExportDirectory {
@@ -613,39 +575,76 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 }
 
 - (IBAction)exportKMLToFile:(id)sender {
-
-	NSString *thumbsDir = nil;
-	
 	NSString *dir = [self chooseKMLExportDirectory];
 	if(!dir) return;
 
 	BOOL addThumbnails = [[NSUserDefaults standardUserDefaults] boolForKey:@"IncludeThumbsInKMLExport"];
-
+    NSString *kmlFilePath = [dir stringByAppendingPathComponent:@"CocoaSlideShow.kml"];
+    NSString *thumbsDir = nil;
+    
+    if (addThumbnails) {
+        thumbsDir = [[kmlFilePath stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"images"];
+    }
+    
+    NSArray *kmlImages = [[[imagesController selectedObjects] copy] autorelease];
+    
 	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:dir attributes:nil];
 	if(!success) {
 		NSLog(@"Error: can't create dir at path %@", dir);
-		//return;
 	}
 	
-	NSString *kmlFilePath = [dir stringByAppendingPathComponent:@"CocoaSlideShow.kml"];
+    NSDictionary *preloadContext = [NSDictionary 
+                                    dictionaryWithObjectsAndKeys:kmlFilePath, @"kmlFilePath", kmlImages, @"kmlImages", thumbsDir, @"thumbsDir", nil];
+    
+    [batchController executeBatchName:@"Preload for KML"
+                               onList:kmlImages 
+                         withSelector:@"metadata"
+                       modalForWindow:mainWindow 
+                           withObject:nil
+                         withDelegate:self
+                          withContext:preloadContext];
+}
 
-	if(addThumbnails) {
-		thumbsDir = [dir stringByAppendingPathComponent:@"images"];
-		success = [[NSFileManager defaultManager] createDirectoryAtPath:thumbsDir attributes:nil];
-		if(!success) {
-			NSLog(@"Error: can't create dir at path %@", thumbsDir);
-			//return;
-		}
-	}
-	
-	NSArray *kmlImages = [[[imagesController selectedObjects] copy] autorelease];
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:kmlImages, @"images", kmlFilePath, @"kmlFilePath", [NSNumber numberWithBool:addThumbnails], @"addThumbnails", nil];
-		
-	if(addThumbnails) {
-		[self prepareProgressIndicator:[kmlImages count]];
-	}
-	
-	[NSThread detachNewThreadSelector:@selector(generateKMLWithThumbsDirInSeparateThread:) toTarget:self withObject:options];
+- (void)processKMLExportAfterPreloadAtPath:(NSString *)kmlFilePath withImages:(NSArray *)kmlImages withThumbnailsDir:(NSString *)thumbsDir {
+    
+    [self generateKMLToPath:kmlFilePath withImages:kmlImages withThumbnailsDir:thumbsDir];
+    
+    if(thumbsDir) {
+        
+        [[NSFileManager defaultManager] createDirectoryAtPath:thumbsDir withIntermediateDirectories:NO attributes:nil error:NULL];
+        
+        BOOL useRemoteBaseURL = [[NSUserDefaults standardUserDefaults] boolForKey:kRemoteKMLThumbnails];
+        NSNumber *width, *height;
+        
+        if (useRemoteBaseURL) {
+            width = [NSNumber numberWithInt:300];
+            height = [NSNumber numberWithInt:225];
+        } else {
+            width = [NSNumber numberWithInt:510];
+            height = [NSNumber numberWithInt:360];    
+        }
+        
+        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:thumbsDir, @"ExportDir", width, @"Width", height, @"Height", nil];
+        
+        [batchController executeBatchName:@"Generating thumbnails"
+                                   onList:[imagesController selectedObjects] 
+                             withSelector:@"resizeJPEGWithOptions:"
+                           modalForWindow:mainWindow 
+                               withObject:options];
+    }
+    
+}
+
+- (void)didFinishBatch:(NSDictionary *)context {
+    NSString *name = [context objectForKey:@"name"];
+    NSLog(@"Batch did finish %@", name);
+    if ([name isEqualToString:@"Preload for KML"]) {
+        NSString *kmlFilePath = [context objectForKey:@"kmlFilePath"];
+        NSArray *kmlImages = [context objectForKey:@"kmlImages"];
+        NSString *thumbsDir = [context objectForKey:@"thumbsDir"];
+        [self processKMLExportAfterPreloadAtPath:kmlFilePath withImages:kmlImages withThumbnailsDir:thumbsDir];
+    }
+    
 }
 
 #pragma mark thumbnails export
@@ -670,11 +669,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	
 	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:exportDir attributes:nil];
 	if(!success) NSLog(@"Error: can't create dir at path %@", exportDir);
-	
-	
-	NSArray *theImages = [[[imagesController selectedObjects] copy] autorelease];
-
-	[self prepareProgressIndicator:[theImages count]];
 	
 	int tag = [[NSUserDefaults standardUserDefaults] integerForKey:kThumbsExportSizeTag];
 	

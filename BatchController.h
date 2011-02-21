@@ -16,6 +16,18 @@
     IBOutlet NSProgressIndicator *progress;
 }
 
-- (void)executeBatchName:(NSString *)name onList:(NSArray *)list withSelector:(NSString *)selectorAsString modalForWindow:(NSWindow *)window withObject:(id)object;
+- (void)executeBatchName:(NSString *)name 
+                  onList:(NSArray *)list 
+            withSelector:(NSString *)selectorAsString 
+          modalForWindow:(NSWindow *)window 
+              withObject:(id)object;
+
+- (void)executeBatchName:(NSString *)name 
+                  onList:(NSArray *)list 
+            withSelector:(NSString *)selectorAsString 
+          modalForWindow:(NSWindow *)window 
+              withObject:(id)object
+            withDelegate:(id)delegate
+             withContext:(NSDictionary *)aContext;
 
 @end

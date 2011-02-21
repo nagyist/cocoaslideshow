@@ -14,6 +14,9 @@
 #import "ImagesController.h"
 
 static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllowsEdition";
+static NSString *const kRenameFilesWithKeywords = @"RenameFilesWithKeywords";
+static NSString *const kRenameFilesNumeWithNumbering = @"RenameFilesNumeWithNumbering";
+static NSString *const kRenameFilesSeparator = @"RenameFilesSeparator";
 
 @implementation CSSImageInfo
 
@@ -42,6 +45,7 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	self = [super init];
 	[self setPath:aPath];
     imagesController = controller;
+    formatter = [[NSNumberFormatter alloc] init];
 	return self;
 }
 
@@ -51,7 +55,6 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 }
 
 - (void)dealloc {
-	//NSLog(@"-- dealloc %@", path);
 
 	if(source) {
 		CFRelease(source);
@@ -60,6 +63,8 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 
 	[path release];
 	[metadata release];
+    [newFilename release];
+    [formatter release];
 
 	[super dealloc];
 }
@@ -102,14 +107,17 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 
 // FIXME: not thread safe, source might be read while export and released too early while displaying map, @synchronized seems to kill performance though
 - (BOOL)loadSource {
-	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
+	/*
+    BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
 	BOOL isExporting = [[[NSApp delegate] valueForKey:@"isExporting"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
 	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:kMultipleSelectionAllowsEdition];
 
+    
 	if(!readOnMultiSelect && multipleImagesSelected && !isMap && !isExporting) {
 		return NO;
     }
+     */
 	
 	//NSLog(@"-- loadSource %@", path);
 	NSURL *url = [NSURL fileURLWithPath:path];
@@ -178,6 +186,8 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 }
 
 - (NSString *)fileName {
+    if (newFilename)
+        return newFilename;
 	return [path lastPathComponent];
 }
 
@@ -268,6 +278,12 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	if(error) {
 		NSLog(@"-- error: can't write data: %@", [error localizedDescription]);
 	}
+    if (newFilename) {
+        [self setFileName:newFilename];
+        [newFilename release];
+        newFilename = nil;
+    }
+    
 	isModified = NO;
     [imagesController didSaveCSSImageInfo:self];
 	return;
@@ -350,6 +366,45 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
     [imagesController needSaveCSSImageInfo:self];
 }
 
+- (void)setFileNameWithKeywords:(NSArray *)keywords appendNumeration:(BOOL)appendNumeration {
+    NSString *fname;
+    
+    if (appendNumeration) {
+        int count = [[imagesController arrangedObjects] count];
+        int num = [[imagesController arrangedObjects] indexOfObject:self] + 1;
+        
+        NSString *format = @"";
+        
+        while (count > 10) {
+            format = [format stringByAppendingString:@"0"];
+            count = count / 10;
+        }
+        
+        [formatter setFormat: format];
+        fname = [formatter stringFromNumber:[NSNumber numberWithInt:num]];
+        fname = [fname stringByAppendingString:@"_"];
+    } else {
+        fname = @"";
+    }
+    NSString *separator = [[NSUserDefaults standardUserDefaults] stringForKey:kRenameFilesSeparator];
+    int count = [keywords count];
+    int i;
+    for (i = 0; i < count; i++) {
+        NSString *word = [keywords objectAtIndex:i];
+        fname = [fname stringByAppendingString:word];
+        if (i < count -1) {
+            fname = [fname stringByAppendingString:separator];
+        }
+    }
+    
+    [self willChangeValueForKey:@"fileName"];
+    [newFilename release];
+    newFilename = nil;
+    newFilename = [fname stringByAppendingPathExtension:[[self fileName] pathExtension]];
+    [newFilename retain];
+    [self didChangeValueForKey:@"fileName"];
+}
+
 - (void)setKeywords:(NSArray *)keywords {
 	if(![self isJpeg]) return;
 
@@ -365,7 +420,13 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	[iptcDict release];
 	[self didChangeValueForKey:@"keywords"];
 	
-	isModified = YES;
+    BOOL renameFilesWithKeywords = [[NSUserDefaults standardUserDefaults] boolForKey:kRenameFilesWithKeywords];
+    if (renameFilesWithKeywords) {
+        BOOL renameFilesNumeWithNumbering = [[NSUserDefaults standardUserDefaults] boolForKey:kRenameFilesNumeWithNumbering];
+        [self setFileNameWithKeywords:keywords appendNumeration:renameFilesNumeWithNumbering];
+    }
+    
+    isModified = YES;
     [imagesController needSaveCSSImageInfo:self];
 }
 

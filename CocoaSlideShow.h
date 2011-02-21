@@ -34,8 +34,6 @@
 	IBOutlet NSView *kmlSavePanelAccessoryView;
 	IBOutlet NSView *thumbnailsExportAccessoryView;
 	
-	IBOutlet NSProgressIndicator *progressIndicator;
-    
     IBOutlet BatchController *batchController;
 	
 	NSToolbar *toolbar;
