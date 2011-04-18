@@ -2,7 +2,7 @@
 
 @implementation MyImageView
 
--(void) setDelegate: (id) del {
+- (void)setDelegate:(id)del {
     delegate = del;
 }
 

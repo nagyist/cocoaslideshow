@@ -4,6 +4,15 @@
 #import "CocoaSlideShow.h"
 #import "NSImage+CSS.h"
 
+static NSString *const kApplyNaturalSortOrder = @"ApplyNaturalSortOrder";
+
+static NSComparisonResult naturalCompare( CSSImageInfo *img1, CSSImageInfo *img2, void *context ) {
+	NSString *str1 = [img1 fileName];
+	NSString *str2 = [img2 fileName];
+	
+	return [str1 compare:str2 options:NSNumericSearch];
+}
+
 @implementation ImagesController
 
 - (void)awakeFromNib {
@@ -127,6 +136,10 @@
 		}
 		
 		[imagesInfoToAdd addObject:[CSSImageInfo containerWithPath:path andController:self]];
+	}
+	
+	if([[NSUserDefaults standardUserDefaults] boolForKey:kApplyNaturalSortOrder]) {
+		[imagesInfoToAdd sortUsingFunction:&naturalCompare context:nil];
 	}
 	
 	[self addObjects:imagesInfoToAdd];
