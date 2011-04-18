@@ -1,6 +1,6 @@
-#import "MyImageView.h"
+#import "CSSImageView.h"
 
-@implementation MyImageView
+@implementation CSSImageView
 
 - (void)setDelegate:(id)del {
     delegate = del;

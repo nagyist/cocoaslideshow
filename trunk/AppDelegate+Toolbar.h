@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "CocoaSlideShow.h"
+#import "AppDelegate.h"
 
-@interface CocoaSlideShow (Toolbar)
+@interface AppDelegate (Toolbar)
 
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar
      itemForItemIdentifier:(NSString *)itemIdentifier

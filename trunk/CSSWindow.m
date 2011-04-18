@@ -1,14 +1,14 @@
-#import "MyWindow.h"
-#import "CocoaSlideShow.h"
+#import "CSSWindow.h"
+#import "AppDelegate.h"
 
-@implementation MyWindow
+@implementation CSSWindow
 
 - (BOOL)preservesContentDuringLiveResize {
 	return NO;
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-	CocoaSlideShow *css = [self delegate];
+	AppDelegate *css = [self delegate];
 	
 	//NSLog(@"-- %d", [theEvent keyCode]);
 	

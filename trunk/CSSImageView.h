@@ -2,7 +2,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MyImageView : NSImageView
+@interface CSSImageView : NSImageView
 {
     IBOutlet id delegate;
 	BOOL isDraggingFromSelf;

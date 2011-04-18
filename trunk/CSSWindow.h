@@ -3,7 +3,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ImagesController.h"
 
-@interface MyWindow : NSWindow
+@interface CSSWindow : NSWindow
 {
 	IBOutlet ImagesController *imagesController;
 }

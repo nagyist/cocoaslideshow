@@ -4,14 +4,14 @@
 
 #import "RemoteControl.h"
 
-#import "MyImageView.h"
+#import "CSSImageView.h"
 #import "ImagesController.h"
 
 #import "CSSMapController.h"
 
 @class CSSBorderlessWindow;
 
-@interface CocoaSlideShow : NSObject
+@interface AppDelegate : NSObject
 {	
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet CSSBorderlessWindow *slideShowPanel;
@@ -20,7 +20,7 @@
 	NSMutableArray *images;
 	
 	IBOutlet ImagesController *imagesController;
-	IBOutlet MyImageView *imageView;
+	IBOutlet CSSImageView *imageView;
 	IBOutlet NSImageView *panelImageView;
 	IBOutlet NSTextField *userCommentTextField;
 	IBOutlet NSTableView *tableView;

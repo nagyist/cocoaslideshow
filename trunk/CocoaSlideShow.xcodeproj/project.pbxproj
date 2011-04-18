@@ -32,7 +32,7 @@
 		036D55170C712C1B004A8236 /* RemoteControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D55160C712C1B004A8236 /* RemoteControl.m */; };
 		036D5C2F0C7269D0004A8236 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036D5C2E0C7269D0004A8236 /* Carbon.framework */; };
 		037D95D40DCDD8BB00E8DEB7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037D95D20DCDD8BB00E8DEB7 /* MainMenu.xib */; };
-		037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */; };
+		037D96190DCDDDCF00E8DEB7 /* AppDelegate+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D96180DCDDDCF00E8DEB7 /* AppDelegate+Toolbar.m */; };
 		037F66C21008E7FD0071E2A9 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037F66C11008E7FD0071E2A9 /* UserDefaults.plist */; };
 		037F672D1008EDAE0071E2A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 037F672C1008EDAE0071E2A9 /* Localizable.strings */; };
 		037F69C1100A29BC0071E2A9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037F69C0100A29BC0071E2A9 /* Sparkle.framework */; };
@@ -40,12 +40,12 @@
 		037F6A5B100A2C8B0071E2A9 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 037F69C0100A29BC0071E2A9 /* Sparkle.framework */; };
 		037F6B27100A34130071E2A9 /* css_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 037F6B26100A34130071E2A9 /* css_dsa_pub.pem */; };
 		039B5A590ECE281600D7C02C /* CSSMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039B5A580ECE281600D7C02C /* CSSMapController.m */; };
-		03A122E30EC224F60076DF63 /* MyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A122E20EC224F60076DF63 /* MyImageView.m */; };
+		03A122E30EC224F60076DF63 /* CSSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A122E20EC224F60076DF63 /* CSSImageView.m */; };
 		03A126B10EC2496C0076DF63 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A126B00EC2496C0076DF63 /* WebKit.framework */; };
 		03A127EB0EC252140076DF63 /* gmap.html in Resources */ = {isa = PBXBuildFile; fileRef = 03A127EA0EC252140076DF63 /* gmap.html */; };
-		03A3F4410C77D97E009AD69D /* MyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A3F4400C77D97E009AD69D /* MyWindow.m */; };
+		03A3F4410C77D97E009AD69D /* CSSWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A3F4400C77D97E009AD69D /* CSSWindow.m */; };
 		03A3F55C0C786878009AD69D /* CocoaSlideShow.icns in Resources */ = {isa = PBXBuildFile; fileRef = 03A3F55B0C786878009AD69D /* CocoaSlideShow.icns */; };
-		03B1BB110C5173B40032C03F /* CocoaSlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B1BB100C5173B40032C03F /* CocoaSlideShow.m */; };
+		03B1BB110C5173B40032C03F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B1BB100C5173B40032C03F /* AppDelegate.m */; };
 		03C710BE100BA1CE0050FA48 /* CSSBorderlessWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C710BD100BA1CE0050FA48 /* CSSBorderlessWindow.m */; };
 		03DA06480C805F0B009D508F /* CSSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA06470C805F0B009D508F /* CSSImageInfo.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -100,8 +100,8 @@
 		036D55160C712C1B004A8236 /* RemoteControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = RemoteControl.m; sourceTree = "<group>"; };
 		036D5C2E0C7269D0004A8236 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		037D95D30DCDD8BB00E8DEB7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		037D96170DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CocoaSlideShow+Toolbar.h"; sourceTree = "<group>"; };
-		037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CocoaSlideShow+Toolbar.m"; sourceTree = "<group>"; };
+		037D96170DCDDDCF00E8DEB7 /* AppDelegate+Toolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Toolbar.h"; sourceTree = "<group>"; };
+		037D96180DCDDDCF00E8DEB7 /* AppDelegate+Toolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Toolbar.m"; sourceTree = "<group>"; };
 		037F66C11008E7FD0071E2A9 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		037F672A1008EDA90071E2A9 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		037F67341008EDB60071E2A9 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -110,16 +110,16 @@
 		037F6B26100A34130071E2A9 /* css_dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = css_dsa_pub.pem; sourceTree = "<group>"; };
 		039B5A570ECE281600D7C02C /* CSSMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapController.h; sourceTree = "<group>"; };
 		039B5A580ECE281600D7C02C /* CSSMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSMapController.m; sourceTree = "<group>"; };
-		03A122E10EC224F60076DF63 /* MyImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageView.h; sourceTree = "<group>"; };
-		03A122E20EC224F60076DF63 /* MyImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImageView.m; sourceTree = "<group>"; };
+		03A122E10EC224F60076DF63 /* CSSImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSImageView.h; sourceTree = "<group>"; };
+		03A122E20EC224F60076DF63 /* CSSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSImageView.m; sourceTree = "<group>"; };
 		03A126B00EC2496C0076DF63 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		03A127EA0EC252140076DF63 /* gmap.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gmap.html; sourceTree = "<group>"; };
-		03A3F43F0C77D97E009AD69D /* MyWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MyWindow.h; sourceTree = "<group>"; };
-		03A3F4400C77D97E009AD69D /* MyWindow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MyWindow.m; sourceTree = "<group>"; };
+		03A3F43F0C77D97E009AD69D /* CSSWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSSWindow.h; sourceTree = "<group>"; };
+		03A3F4400C77D97E009AD69D /* CSSWindow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSSWindow.m; sourceTree = "<group>"; };
 		03A3F4E60C77E3B0009AD69D /* VersionCheck.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = VersionCheck.plist; sourceTree = "<group>"; };
 		03A3F55B0C786878009AD69D /* CocoaSlideShow.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CocoaSlideShow.icns; sourceTree = "<group>"; };
-		03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CocoaSlideShow.h; sourceTree = "<group>"; };
-		03B1BB100C5173B40032C03F /* CocoaSlideShow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CocoaSlideShow.m; sourceTree = "<group>"; };
+		03B1BB0F0C5173B40032C03F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		03B1BB100C5173B40032C03F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		03C710BC100BA1CE0050FA48 /* CSSBorderlessWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSBorderlessWindow.h; sourceTree = "<group>"; };
 		03C710BD100BA1CE0050FA48 /* CSSBorderlessWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSBorderlessWindow.m; sourceTree = "<group>"; };
 		03DA06460C805F0B009D508F /* CSSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSImageInfo.h; sourceTree = "<group>"; };
@@ -170,18 +170,18 @@
 			isa = PBXGroup;
 			children = (
 				031AD9AA0DBF854D00799D5C /* Remote Control */,
-				03A122E10EC224F60076DF63 /* MyImageView.h */,
-				03A122E20EC224F60076DF63 /* MyImageView.m */,
-				03A3F43F0C77D97E009AD69D /* MyWindow.h */,
-				03A3F4400C77D97E009AD69D /* MyWindow.m */,
+				03A122E10EC224F60076DF63 /* CSSImageView.h */,
+				03A122E20EC224F60076DF63 /* CSSImageView.m */,
+				03A3F43F0C77D97E009AD69D /* CSSWindow.h */,
+				03A3F4400C77D97E009AD69D /* CSSWindow.m */,
 				03DA06460C805F0B009D508F /* CSSImageInfo.h */,
 				03DA06470C805F0B009D508F /* CSSImageInfo.m */,
 				033804220C86084300439E5A /* ImagesController.h */,
 				033804230C86084300439E5A /* ImagesController.m */,
-				03B1BB0F0C5173B40032C03F /* CocoaSlideShow.h */,
-				03B1BB100C5173B40032C03F /* CocoaSlideShow.m */,
-				037D96170DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.h */,
-				037D96180DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m */,
+				03B1BB0F0C5173B40032C03F /* AppDelegate.h */,
+				03B1BB100C5173B40032C03F /* AppDelegate.m */,
+				037D96170DCDDDCF00E8DEB7 /* AppDelegate+Toolbar.h */,
+				037D96180DCDDDCF00E8DEB7 /* AppDelegate+Toolbar.m */,
 				039B5A570ECE281600D7C02C /* CSSMapController.h */,
 				039B5A580ECE281600D7C02C /* CSSMapController.m */,
 				0304615F0C75158100D70803 /* NSFileManager+CSS.h */,
@@ -368,17 +368,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				03B1BB110C5173B40032C03F /* CocoaSlideShow.m in Sources */,
+				03B1BB110C5173B40032C03F /* AppDelegate.m in Sources */,
 				032F081B0C542D820037F590 /* AppleRemote.m in Sources */,
 				036D55130C712BFC004A8236 /* HIDRemoteControlDevice.m in Sources */,
 				036D55170C712C1B004A8236 /* RemoteControl.m in Sources */,
 				030461610C75158100D70803 /* NSFileManager+CSS.m in Sources */,
-				03A3F4410C77D97E009AD69D /* MyWindow.m in Sources */,
+				03A3F4410C77D97E009AD69D /* CSSWindow.m in Sources */,
 				03DA06480C805F0B009D508F /* CSSImageInfo.m in Sources */,
 				03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */,
 				033804240C86084300439E5A /* ImagesController.m in Sources */,
-				037D96190DCDDDCF00E8DEB7 /* CocoaSlideShow+Toolbar.m in Sources */,
-				03A122E30EC224F60076DF63 /* MyImageView.m in Sources */,
+				037D96190DCDDDCF00E8DEB7 /* AppDelegate+Toolbar.m in Sources */,
+				03A122E30EC224F60076DF63 /* CSSImageView.m in Sources */,
 				039B5A590ECE281600D7C02C /* CSSMapController.m in Sources */,
 				03C710BE100BA1CE0050FA48 /* CSSBorderlessWindow.m in Sources */,
 				033F91E31012ACF8004AEBA0 /* NSImage+CSS.m in Sources */,

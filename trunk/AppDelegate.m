@@ -1,4 +1,4 @@
-#import "CocoaSlideShow.h"
+#import "AppDelegate.h"
 #import "AppleRemote.h"
 
 #import "NSFileManager+CSS.h"
@@ -21,7 +21,7 @@ static NSString *const kThumbsExportSizeHeight = @"ThumbsExportSizeHeight";
 static NSString *const kThumbsExportSizeWidth = @"ThumbsExportSizeWidth";
 static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
-@implementation CocoaSlideShow
+@implementation AppDelegate
 
 - (id)init {
 	self = [super init];
@@ -212,9 +212,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	[slideShowPanel setContentSize:[screen frame].size];
     [slideShowPanel setFrame:[screen frame] display:YES];
 
-	[self willChangeValueForKey:@"isFullScreen"];
-	isFullScreen = YES;
-	[self didChangeValueForKey:@"isFullScreen"];
+	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isFullScreen"];
 }
 
 - (IBAction)undo:(id)sender {
@@ -244,9 +242,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	
 	[slideShowPanel orderOut:self];
 
-	[self willChangeValueForKey:@"isFullScreen"];
-	isFullScreen = NO;
-	[self didChangeValueForKey:@"isFullScreen"];
+	[self setValue:[NSNumber numberWithBool:NO] forKey:@"isFullScreen"];
 }
 
 - (IBAction)toggleFullScreen:(id)sender {
