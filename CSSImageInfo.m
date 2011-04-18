@@ -8,7 +8,7 @@
 
 #import "CSSImageInfo.h"
 #import "NSString+CSS.h"
-#import "CocoaSlideShow.h"
+#import "AppDelegate.h"
 #import "NSFileManager+CSS.h"
 #import "NSImage+CSS.h"
 

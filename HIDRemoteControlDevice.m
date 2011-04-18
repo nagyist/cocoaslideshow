@@ -317,10 +317,10 @@ cleanup:
 Will be called for any event of any type (cookie) to which we subscribe
 */
 static void QueueCallbackFunction(void* target,  IOReturn result, void* refcon, void* sender) {	
-	if (target < 0) {
-		NSLog(@"QueueCallbackFunction called with invalid target!");
-		return;
-	}
+//	if (target < 0) {
+//		NSLog(@"QueueCallbackFunction called with invalid target!");
+//		return;
+//	}
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 	
 	HIDRemoteControlDevice* remote = (HIDRemoteControlDevice*)target;	

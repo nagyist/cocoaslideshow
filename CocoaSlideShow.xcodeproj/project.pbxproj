@@ -48,6 +48,7 @@
 		03B1BB110C5173B40032C03F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B1BB100C5173B40032C03F /* AppDelegate.m */; };
 		03C710BE100BA1CE0050FA48 /* CSSBorderlessWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C710BD100BA1CE0050FA48 /* CSSBorderlessWindow.m */; };
 		03DA06480C805F0B009D508F /* CSSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA06470C805F0B009D508F /* CSSImageInfo.m */; };
+		5F4535E6135C5BD400CC3980 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4535E5135C5BD400CC3980 /* Quartz.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -131,6 +132,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* CocoaSlideShow_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaSlideShow_Prefix.pch; sourceTree = "<group>"; };
+		5F4535E5135C5BD400CC3980 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* CocoaSlideShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaSlideShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 				037F69C1100A29BC0071E2A9 /* Sparkle.framework in Frameworks */,
 				037F6A21100A2BA00071E2A9 /* Sparkle.framework in Frameworks */,
 				03043931101531DB00C72114 /* Epeg.framework in Frameworks */,
+				5F4535E6135C5BD400CC3980 /* Quartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +208,7 @@
 				036D5C2E0C7269D0004A8236 /* Carbon.framework */,
 				0367A7F90C56CA6600BD57E8 /* IOKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				5F4535E5135C5BD400CC3980 /* Quartz.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";

@@ -10,6 +10,7 @@
 
 #import "NSImage+CSS.h"
 #import <Epeg/EpegWrapper.h>
+#import <Quartz/Quartz.h>
 
 @implementation NSImage (CSS)
 
@@ -24,11 +25,18 @@ static inline double rad(int alpha) {return ((alpha * pi)/180);}
 	return [data writeToFile:dstPath atomically:NO];
 }
 
-+ (BOOL)scaleAndSaveAsJPEG:(NSString *)source 
-				  maxwidth:(int)width 
-				 maxheight:(int)height 
-				   quality:(float)quality
-					saveTo:(NSString *)dest {
+- (CIImage *)toCIImage {
+    NSBitmapImageRep *bitmapimagerep = [[[NSBitmapImageRep alloc] initWithData:[self TIFFRepresentation]] autorelease];
+    CIImage *im = [[[CIImage alloc]
+                    initWithBitmapImageRep:bitmapimagerep]
+                   autorelease];
+    return im;
+}
+
+- (BOOL)scaleAndSaveAsJPEGWithMaxWidth:(int)width 
+                             maxHeight:(int)height 
+                               quality:(float)quality
+                           destination:(NSString *)dest {
 	
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSBitmapImageRep *rep = nil;
@@ -37,11 +45,11 @@ static inline double rad(int alpha) {return ((alpha * pi)/180);}
     int w,h,nw,nh;
     NSData *bitmapData;
     
-    rep = [NSBitmapImageRep imageRepWithContentsOfFile:source];
+    rep = [NSBitmapImageRep imageRepWithData:[self TIFFRepresentation]];
     
     // could not open file
     if (!rep) {
-		NSLog(@"Could not load '%@'", source);
+		NSLog(@"Could not create NSBitmapImageRep");
 		[pool release];
 		return NO;
     }
@@ -119,6 +127,7 @@ static inline double rad(int alpha) {return ((alpha * pi)/180);}
 }
 
 // http://lists.apple.com/archives/Cocoa-dev/2005//Dec/msg00143.html
+// TODO: use CIImage?
 - (NSImage *)rotatedWithAngle:(int)alpha {
 	float factorW, factorH, dW, dH;
 	NSAffineTransform *centreOp, *rotateOp;
@@ -165,5 +174,13 @@ static inline double rad(int alpha) {return ((alpha * pi)/180);}
 	
 	return [tmpImage autorelease];
 }
-
+/*
+- (NSImage *)rotatedWithAngle:(int)alpha {
+    CIImage *ciImage = [self toCIImage];
+    
+    CIImage *rotateImage = [ciImage rotateByDegrees:alpha];
+    
+    return [rotateImage toNSImage];
+}
+*/
 @end
