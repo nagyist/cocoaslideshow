@@ -15,7 +15,7 @@
 
 static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllowsEdition";
 static NSString *const kRenameFilesWithKeywords = @"RenameFilesWithKeywords";
-static NSString *const kRenameFilesNumeWithNumbering = @"RenameFilesNameWithNumbering";
+static NSString *const kRenameFilesNameWithNumbering = @"RenameFilesNameWithNumbering";
 static NSString *const kRenameFilesSeparator = @"RenameFilesSeparator";
 static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 
@@ -430,7 +430,7 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 	
     BOOL renameFilesWithKeywords = [[NSUserDefaults standardUserDefaults] boolForKey:kRenameFilesWithKeywords];
     if (renameFilesWithKeywords) {
-        BOOL renameFilesNumeWithNumbering = [[NSUserDefaults standardUserDefaults] boolForKey:kRenameFilesNumeWithNumbering];
+        BOOL renameFilesNumeWithNumbering = [[NSUserDefaults standardUserDefaults] boolForKey:kRenameFilesNameWithNumbering];
         [self setFileNameWithKeywords:keywords appendNumeration:renameFilesNumeWithNumbering];
     }
     
