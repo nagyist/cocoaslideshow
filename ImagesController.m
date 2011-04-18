@@ -1,7 +1,7 @@
 #import "ImagesController.h"
 #import "CSSImageInfo.h"
 #import "NSFileManager+CSS.h"
-#import "CocoaSlideShow.h"
+#import "AppDelegate.h"
 #import "NSImage+CSS.h"
 
 static NSString *const kApplyNaturalSortOrder = @"ApplyNaturalSortOrder";

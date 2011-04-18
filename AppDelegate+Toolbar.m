@@ -6,14 +6,14 @@
 //  Copyright 2008 Sen:te. All rights reserved.
 //
 
-#import "CocoaSlideShow+Toolbar.h"
+#import "AppDelegate+Toolbar.h"
 
 #define kAlwaysSelected 0
 #define kSelectedIfAtLeastOneImageSelected 1
 #define kSelectedIfAtLeastOneGPSImageSelected 2
 #define kSelectedIfGPSOrCanGoBackToImage 3
 
-@implementation CocoaSlideShow (Toolbar)
+@implementation AppDelegate (Toolbar)
 
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
     

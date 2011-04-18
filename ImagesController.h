@@ -2,12 +2,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class CocoaSlideShow;
+@class AppDelegate;
 @class CSSImageInfo;
 
 @interface ImagesController : NSArrayController
 {
-	IBOutlet CocoaSlideShow *cocoaSlideShow;
+	IBOutlet AppDelegate *cocoaSlideShow;
 	BOOL importDone;
 	NSArray *allowedExtensions;
 	NSString *thumbsDir;
