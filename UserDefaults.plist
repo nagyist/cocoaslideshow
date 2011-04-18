@@ -8,5 +8,7 @@
 	<string>http://foo.com/my_trip/images/</string>
 	<key>mapZoom</key>
 	<integer>10</integer>
+	<key>ApplyNaturalSortOrder</key>
+	<true/>
 </dict>
 </plist>
