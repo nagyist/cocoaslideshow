@@ -653,7 +653,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	NSString *exportDir = [options objectForKey:@"ExportDir"];
 	NSNumber *width = [options objectForKey:@"Width"];
 	NSNumber *height = [options objectForKey:@"Height"];
-	NSSize bbox = NSMakeSize([width floatValue], [height floatValue]);
 	
 	CSSImageInfo *imageInfo = nil;
 	NSEnumerator *e = [theImages objectEnumerator];
@@ -664,9 +663,9 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 		NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
 		
 		[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
-		NSString *thumbPath = [[exportDir stringByAppendingPathComponent:[[imageInfo path] lastPathComponent]] lowercaseString];
-		BOOL success = [NSImage scaleAndSaveJPEGThumbnailFromFile:[imageInfo path] toPath:thumbPath boundingBox:bbox rotation:[imageInfo orientationDegrees]];
-		if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
+		NSString *destPath = [[exportDir stringByAppendingPathComponent:[[imageInfo path] lastPathComponent]] lowercaseString];
+        BOOL success = [[imageInfo image] scaleAndSaveAsJPEGWithMaxWidth:[width integerValue] maxHeight:[height integerValue] quality:0.85 destination:destPath];
+		if(!success) NSLog(@"Could not scale and save as jpeg into %@", destPath);
 
 		[subPool release];
 	}

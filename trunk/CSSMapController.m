@@ -8,7 +8,7 @@
 
 #import "CSSMapController.h"
 #import "CSSImageInfo.h"
-#import "CocoaSlideShow.h"
+#import "AppDelegate.h"
 #import "NSImage+CSS.h"
 
 NSString *const G_NORMAL_MAP = @"G_NORMAL_MAP";

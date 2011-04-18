@@ -12,9 +12,14 @@
 @interface NSImage (CSS)
 
 + (BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath
-								  toPath:(NSString *)dstPath
-							 boundingBox:(NSSize)boundingBox
+                                   toPath:(NSString *)dstPath
+                              boundingBox:(NSSize)boundingBox
 								 rotation:(int)orientationDegrees;
+
+- (BOOL)scaleAndSaveAsJPEGWithMaxWidth:(int)width 
+				 maxHeight:(int)height 
+				   quality:(float)quality
+					destination:(NSString *)dest;    
 
 - (NSImage *)rotatedWithAngle:(int)alpha;
 
