@@ -8,28 +8,20 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class ImagesController;
-
 @interface CSSImageInfo : NSObject {
 	NSString *path;
-    NSString *newFilename;
 	CGImageSourceRef source;
 	NSMutableDictionary *metadata;
-    ImagesController *imagesController;
-    NSNumberFormatter* formatter;
 
 	BOOL sourceRead;
 	BOOL isFlagged;
 	BOOL isLoadingCache;
 	BOOL isJpeg;
-    BOOL isModified;
 	
 	int userRotation;
-    
-    NSLock *lock;
 }
 
-+ (CSSImageInfo *)containerWithPath:(NSString *)aPath andController:(ImagesController *)controller;
++ (CSSImageInfo *)containerWithPath:(NSString *)aPath;
 
 - (NSString *)jsAddPoint;
 - (NSString *)jsRemovePoint;
@@ -44,7 +36,6 @@
 
 - (BOOL)loadSource;
 - (BOOL)isJpeg;
-- (BOOL)isModified;
 
 - (NSImage *)image;
 
@@ -72,7 +63,5 @@
 - (void)removeFlag;
 - (BOOL)isFlagged;
 - (NSImage *)flagIcon;
-- (void)saveSourceWithMetadata;
-- (void)resizeJPEGWithOptions:(NSDictionary *)options;
 
 @end

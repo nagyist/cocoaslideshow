@@ -11,13 +11,8 @@
 #import "CocoaSlideShow.h"
 #import "NSFileManager+CSS.h"
 #import "NSImage+CSS.h"
-#import "ImagesController.h"
 
 static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllowsEdition";
-static NSString *const kRenameFilesWithKeywords = @"RenameFilesWithKeywords";
-static NSString *const kRenameFilesNameWithNumbering = @"RenameFilesNameWithNumbering";
-static NSString *const kRenameFilesSeparator = @"RenameFilesSeparator";
-static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 
 @implementation CSSImageInfo
 
@@ -42,20 +37,18 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 	return path;
 }
 
-- (id)initWithPath:(NSString *)aPath andController:(ImagesController *)controller {
+- (id)initWithPath:(NSString *)aPath {
 	self = [super init];
 	[self setPath:aPath];
-    imagesController = controller;
-    formatter = [[NSNumberFormatter alloc] init];
 	return self;
 }
 
-+ (CSSImageInfo *)containerWithPath:(NSString *)aPath andController:(ImagesController *)controller {
-	return [[[CSSImageInfo alloc] initWithPath:aPath 
-                                 andController:controller] autorelease];
++ (CSSImageInfo *)containerWithPath:(NSString *)aPath {
+	return [[[CSSImageInfo alloc] initWithPath:aPath] autorelease];
 }
 
 - (void)dealloc {
+	//NSLog(@"-- dealloc %@", path);
 
 	if(source) {
 		CFRelease(source);
@@ -64,8 +57,6 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 
 	[path release];
 	[metadata release];
-    [newFilename release];
-    [formatter release];
 
 	[super dealloc];
 }
@@ -108,17 +99,14 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 
 // FIXME: not thread safe, source might be read while export and released too early while displaying map, @synchronized seems to kill performance though
 - (BOOL)loadSource {
-	/*
-    BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
+	BOOL isMap = [[[NSApp delegate] valueForKey:@"isMap"] boolValue];
 	BOOL isExporting = [[[NSApp delegate] valueForKey:@"isExporting"] boolValue];
 	BOOL multipleImagesSelected = [[[NSApp delegate] valueForKeyPath:@"imagesController.multipleImagesSelected"] boolValue];
 	BOOL readOnMultiSelect = [[NSUserDefaults standardUserDefaults] boolForKey:kMultipleSelectionAllowsEdition];
 
-    
 	if(!readOnMultiSelect && multipleImagesSelected && !isMap && !isExporting) {
 		return NO;
     }
-     */
 	
 	//NSLog(@"-- loadSource %@", path);
 	NSURL *url = [NSURL fileURLWithPath:path];
@@ -148,6 +136,7 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 	}
 	
 	UTI = (NSString *)CGImageSourceGetType(source);
+
 	CFRelease(source);
 	source = nil;
 	
@@ -187,8 +176,6 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 }
 
 - (NSString *)fileName {
-    if (newFilename)
-        return newFilename;
 	return [path lastPathComponent];
 }
 
@@ -230,8 +217,9 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 	return [[self metadata] objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
 }
 
-- (void)saveSourceWithMetadata {
-    if(!source) {
+- (BOOL)saveSourceWithMetadata {
+
+	if(!source) {
 		NSURL *url = [NSURL fileURLWithPath:path];
 		source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
 	}
@@ -239,7 +227,7 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 	if(!source) {
 		CGImageSourceStatus status = CGImageSourceGetStatus(source);
 		NSLog(@"Error: could not create image source. Status: %d", status);
-		return;
+		return NO;
 	}
 	
 	NSData *data = [NSMutableData data];
@@ -251,7 +239,7 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 			CFRelease(source);
 			source = nil;
 		}
-        return;
+        return NO;
     }
     
     CGImageDestinationAddImageFromSource(destination, source, 0, (CFDictionaryRef)metadata);
@@ -263,7 +251,7 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 			CFRelease(source);
 			source = nil;
 		}
-		return;
+		return NO;
 	}
 	
 	CFRelease(destination);
@@ -274,51 +262,18 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 	
 	NSURL *url = [NSURL fileURLWithPath:path];
 	NSError *error = nil;
-	[data writeToURL:url options:NSAtomicWrite error:&error];
+	success = [data writeToURL:url options:NSAtomicWrite error:&error];
 
 	if(error) {
 		NSLog(@"-- error: can't write data: %@", [error localizedDescription]);
 	}
-    if (newFilename) {
-        [self setFileName:newFilename];
-        [newFilename release];
-        newFilename = nil;
-    }
-    
-	isModified = NO;
-    [imagesController didSaveCSSImageInfo:self];
-	return;
-}
-
-- (BOOL)isJPEGExt {
-    return [[[self path] lowercaseString] hasSuffix:@".jpg"];
-}
-
-- (void)resizeJPEGWithOptions:(NSDictionary *)options {
-    // Let a second change to rely on the extension to export
-    if(![self isJpeg] && ![self isJPEGExt]) return;
-    
-    NSString *exportDir = [options objectForKey:@"ExportDir"];
-	NSNumber *width = [options objectForKey:@"Width"];
-	NSNumber *height = [options objectForKey:@"Height"];
-	NSSize bbox = NSMakeSize([width floatValue], [height floatValue]);
-    
-    NSString *thumbPath = [[exportDir stringByAppendingPathComponent:[[self path] lastPathComponent]] lowercaseString];
-    
-    BOOL success = [NSImage scaleAndSaveJPEGThumbnailFromFile:[self path] toPath:thumbPath boundingBox:bbox rotation:[self orientationDegrees]];
-    
-    if(!success) {
-        NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
-    }
+	
+	return success;
 }
 
 - (BOOL)isJpeg {
 	if(!sourceRead) [self loadSource];
 	return isJpeg;
-}
-
-- (BOOL)isModified {
-    return isModified;
 }
 
 - (NSString *)jsAddPoint {
@@ -363,54 +318,12 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 	[self didChangeValueForKey:@"exif"];
 	[self didChangeValueForKey:@"userComment"];
 	
-	isModified = YES;
-    [imagesController needSaveCSSImageInfo:self];
-}
-
-- (void)setFileNameWithKeywords:(NSArray *)keywords appendNumeration:(BOOL)appendNumeration {
-    NSString *fname;
-    
-    if (appendNumeration) {
-        int count = [[imagesController arrangedObjects] count];
-        int num = [[imagesController arrangedObjects] indexOfObject:self] + 1;
-        
-        NSString *format = @"";
-        
-        while (count > 10) {
-            format = [format stringByAppendingString:@"0"];
-            count = count / 10;
-        }
-        
-        [formatter setFormat: format];
-        fname = [formatter stringFromNumber:[NSNumber numberWithInt:num]];
-        fname = [fname stringByAppendingString:@"_"];
-    } else {
-        fname = @"";
-    }
-    NSString *separator = [[NSUserDefaults standardUserDefaults] stringForKey:kRenameFilesSeparator];
-    int count = [keywords count];
-    int i;
-    for (i = 0; i < count; i++) {
-        NSString *word = [keywords objectAtIndex:i];
-        fname = [fname stringByAppendingString:word];
-        if (i < count -1) {
-            fname = [fname stringByAppendingString:separator];
-        }
-    }
-    
-    BOOL renameLowercaseExtension = [[NSUserDefaults standardUserDefaults] boolForKey:kRenameLowercaseExtension];
-    if (renameLowercaseExtension) {
-        fname = [fname stringByAppendingPathExtension:[[[self fileName] pathExtension] lowercaseString]];
-    } else {
-        fname = [fname stringByAppendingPathExtension:[[self fileName] pathExtension]];
-    }
-
-    [self willChangeValueForKey:@"fileName"];
-    [newFilename release];
-    newFilename = nil;
-    newFilename = fname;
-    [newFilename retain];
-    [self didChangeValueForKey:@"fileName"];
+	BOOL success = [self saveSourceWithMetadata];
+	if(!success) {
+		NSLog(@"Error: can't set user comment");
+	}
+	
+	return;
 }
 
 - (void)setKeywords:(NSArray *)keywords {
@@ -428,14 +341,10 @@ static NSString *const kRenameLowercaseExtension = @"RenameLowercaseExtension";
 	[iptcDict release];
 	[self didChangeValueForKey:@"keywords"];
 	
-    BOOL renameFilesWithKeywords = [[NSUserDefaults standardUserDefaults] boolForKey:kRenameFilesWithKeywords];
-    if (renameFilesWithKeywords) {
-        BOOL renameFilesNumeWithNumbering = [[NSUserDefaults standardUserDefaults] boolForKey:kRenameFilesNameWithNumbering];
-        [self setFileNameWithKeywords:keywords appendNumeration:renameFilesNumeWithNumbering];
-    }
-    
-    isModified = YES;
-    [imagesController needSaveCSSImageInfo:self];
+	BOOL success = [self saveSourceWithMetadata];
+	if(!success) {
+		NSLog(@"Error: can't set keywords");
+	}
 }
 
 - (NSArray *)keywords {

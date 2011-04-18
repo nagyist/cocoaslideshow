@@ -9,7 +9,7 @@ static NSString *const kApplyNaturalSortOrder = @"ApplyNaturalSortOrder";
 static NSComparisonResult naturalCompare( CSSImageInfo *img1, CSSImageInfo *img2, void *context ) {
 	NSString *str1 = [img1 fileName];
 	NSString *str2 = [img2 fileName];
-	
+
 	return [str1 compare:str2 options:NSNumericSearch];
 }
 
@@ -22,13 +22,10 @@ static NSComparisonResult naturalCompare( CSSImageInfo *img1, CSSImageInfo *img2
 								  @"ico", @"icns",  @"bmp", @"bmpf",
 								  @"dng", @"cr2", @"crw", @"fpx", @"fpix", @"raf", @"dcr", @"ptng", @"pnt", @"mac", @"mrw", @"nef",
 								  @"orf", @"exr", @"psd", @"qti", @"qtif", @"hdr", @"sgi", @"srf", @"targa", @"tga", @"cur", @"xbm", nil];
-	imagesToSaveCounter = 0;
-    hasImagesToSave = NO;
-    [allowedExtensions retain];	
+	[allowedExtensions retain];	
 }
 
 - (void)dealloc {
-	[inMemoryBitmapsContainers release];
 	[allowedExtensions release];
 	[super dealloc];
 }
@@ -71,7 +68,7 @@ static NSComparisonResult naturalCompare( CSSImageInfo *img1, CSSImageInfo *img2
 }
 
 - (IBAction)selectFlags:(id)sender {
-    [(NSArrayController *)[[self undoManager] prepareWithInvocationTarget:self] setSelectionIndexes:[self selectionIndexes]];
+	[(NSArrayController *)[[self undoManager] prepareWithInvocationTarget:self] setSelectionIndexes:[self selectionIndexes]];
 	[self setSelectionIndexes:[self flaggedIndexes]];
 }
 
@@ -135,7 +132,7 @@ static NSComparisonResult naturalCompare( CSSImageInfo *img1, CSSImageInfo *img2
 			continue;
 		}
 		
-		[imagesInfoToAdd addObject:[CSSImageInfo containerWithPath:path andController:self]];
+		[imagesInfoToAdd addObject:[CSSImageInfo containerWithPath:path]];
 	}
 	
 	if([[NSUserDefaults standardUserDefaults] boolForKey:kApplyNaturalSortOrder]) {
@@ -154,22 +151,6 @@ static NSComparisonResult naturalCompare( CSSImageInfo *img1, CSSImageInfo *img2
 - (IBAction)moveToTrash:(id)sender {
 	[[self selectedObjects] makeObjectsPerformSelector:@selector(moveToTrash)];
 	[self removeObjectsAtArrangedObjectIndexes:[self selectionIndexes]];
-}
-
-- (NSArray *)modifiedObjects {
-    NSMutableArray *objects = [NSMutableArray array];
-    for (CSSImageInfo *info in [self arrangedObjects]) {
-        if ([info isModified]) [objects addObject:info];
-    }
-    return [NSArray arrayWithArray:objects];
-}
-
-- (void)needSaveCSSImageInfo:(CSSImageInfo *)info {
-    [self setValue:[NSNumber numberWithBool:++imagesToSaveCounter > 0] forKey:@"hasImagesToSave"];
-}
-
-- (void)didSaveCSSImageInfo:(CSSImageInfo *)info {
-    [self setValue:[NSNumber numberWithBool:--imagesToSaveCounter > 0] forKey:@"hasImagesToSave"];
 }
 
 /*
