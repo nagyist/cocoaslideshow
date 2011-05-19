@@ -78,7 +78,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	if([dirContent count] > 0) [imagesController setSelectionIndex:0];
 }
 
-- (void)setupToolbar {
+- (void)setupToolbar {	
     toolbar = [[[NSToolbar alloc] initWithIdentifier:@"mainToolbar"] autorelease];
     [toolbar setDelegate:self];
     [toolbar setAllowsUserCustomization:YES];
@@ -508,8 +508,9 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
 #pragma mark KML export
 
-- (void)updateExportProgress:(NSNumber *)n {
-	[progressIndicator setDoubleValue:[n doubleValue]];
+- (void)incrementExportProgress {
+	double newValue = [progressIndicator doubleValue] + 1;
+	[progressIndicator setDoubleValue:newValue];
 }
 
 #pragma KML File Export
@@ -646,35 +647,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
 #pragma mark thumbnails export
 
-- (void)resizeJPEGsOnSeparateThread:(NSDictionary *)options {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		
-	NSArray *theImages = [options objectForKey:@"Images"];
-	NSString *exportDir = [options objectForKey:@"ExportDir"];
-	NSNumber *width = [options objectForKey:@"Width"];
-	NSNumber *height = [options objectForKey:@"Height"];
-	
-	CSSImageInfo *imageInfo = nil;
-	NSEnumerator *e = [theImages objectEnumerator];
-	unsigned int count = 0;
-	while((imageInfo = [e nextObject])) {
-		count++;
-		if(![imageInfo isJpeg]) continue;
-		NSAutoreleasePool *subPool = [[NSAutoreleasePool alloc] init];
-		
-		[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
-		NSString *destPath = [[exportDir stringByAppendingPathComponent:[[imageInfo path] lastPathComponent]] lowercaseString];
-        BOOL success = [[imageInfo image] scaleAndSaveAsJPEGWithMaxWidth:[width integerValue] maxHeight:[height integerValue] quality:0.85 destination:destPath];
-		if(!success) NSLog(@"Could not scale and save as jpeg into %@", destPath);
-
-		[subPool release];
-	}
-
-	[self performSelectorOnMainThread:@selector(exportFinished) withObject:nil waitUntilDone:NO];
-
-	[pool release];
-}
-
 - (NSString *)chooseThumbsExportDirectory {
 
     NSSavePanel *sPanel = [NSSavePanel savePanel];
@@ -721,11 +693,31 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 		h = [[[NSUserDefaults standardUserDefaults] stringForKey:kThumbsExportSizeHeight] intValue];	
 	}
 
-	NSNumber *width = [NSNumber numberWithInt:w];
-	NSNumber *height = [NSNumber numberWithInt:h];
+	NSOperationQueue *resizeQueue = [[[NSOperationQueue alloc] init] autorelease];
 	
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:exportDir, @"ExportDir", theImages, @"Images", width, @"Width", height, @"Height", nil];
-	[NSThread detachNewThreadSelector:@selector(resizeJPEGsOnSeparateThread:) toTarget:self withObject:options];
+	NSBlockOperation *resizeBlockOperation = [[NSBlockOperation alloc] init];
+
+	for(CSSImageInfo *imageInfo in theImages) {
+		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+			[self incrementExportProgress];
+		}];
+
+		if([imageInfo isJpeg] == NO) continue;
+		
+		[resizeBlockOperation addExecutionBlock:^{
+			NSString *destPath = [[exportDir stringByAppendingPathComponent:[[imageInfo path] lastPathComponent]] lowercaseString];
+			BOOL success = [[imageInfo image] scaleAndSaveAsJPEGWithMaxWidth:w maxHeight:h quality:0.9 destination:destPath];
+			if(!success) NSLog(@"Could not scale and save as jpeg into %@", destPath);			
+        }];	
+	}
+	
+	[resizeBlockOperation setCompletionBlock:^{
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self exportFinished];
+		}];
+    }];
+	
+	[resizeQueue addOperation:resizeBlockOperation];
 }
 
 @end
