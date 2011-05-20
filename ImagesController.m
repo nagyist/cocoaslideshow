@@ -112,15 +112,10 @@ static NSComparisonResult naturalCompare( CSSImageInfo *img1, CSSImageInfo *img2
 }
 
 - (void)addFiles:(NSArray *)filePaths {
-	NSEnumerator *e = [filePaths objectEnumerator];
-	NSString *path;
-	
+
 	NSMutableArray *imagesInfoToAdd = [NSMutableArray array];
 	
-	unsigned int count = 0;
-	
-	while(( path = [e nextObject] )) {
-		count++;
+	for(NSString *path in filePaths) {
 		
 		if([[NSFileManager defaultManager] isDirectory:path]) {
 			NSArray *dirContent = [[NSFileManager defaultManager] directoryContentFullPaths:path recursive:YES];
