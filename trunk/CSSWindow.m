@@ -7,8 +7,9 @@
 	return NO;
 }
 
+// TODO: use notifications instead
 - (void)keyDown:(NSEvent *)theEvent {
-	AppDelegate *css = [self delegate];
+	AppDelegate *css = (AppDelegate *)[[NSApplication sharedApplication] delegate];
 	
 	//NSLog(@"-- %d", [theEvent keyCode]);
 	

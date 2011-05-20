@@ -14,11 +14,31 @@
 
 static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllowsEdition";
 
+static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
+
 @implementation CSSImageInfo
 
-+ (void)initialize {
-    [self setKeys:[NSArray arrayWithObjects:@"isFlagged", nil] triggerChangeNotificationsForDependentKey:@"flagIcon"];
++ (NSSet *)keyPathsForValuesAffectingFlagIcon {
+	if(keyPathsForValuesAffectingFlagIcon == nil) {
+		keyPathsForValuesAffectingFlagIcon = [[NSSet setWithObject:@"isFlagged"] retain];
+	}
+	
+	return keyPathsForValuesAffectingFlagIcon;
 }
+/*
++ (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
+	NSMutableSet *set = [NSMutableSet set];
+
+	if([key isEqualToString:@"flagIcon"]) {
+		[set addObject:@"isFlagged"];
+	}
+			
+	return set;
+}
+*/
+//+ (void)initialize {
+//    [self setKeys:[NSArray arrayWithObjects:@"isFlagged", nil] triggerChangeNotificationsForDependentKey:@"flagIcon"];
+//}
 
 - (void)setPath:(NSString *)aPath {
 
@@ -182,10 +202,13 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 - (void)setFileName:(NSString *)s {
 	NSString *newPath = [[path stringByDeletingLastPathComponent] stringByAppendingPathComponent:s];
 	
-	if([[NSFileManager defaultManager] fileExistsAtPath:newPath]) return;
-
-	if([[NSFileManager defaultManager] movePath:path toPath:newPath handler:nil]) {
+	if([[NSFileManager defaultManager] fileExistsAtPath:newPath]) return; // necessary?
+	
+	NSError *error = nil;	
+	if([[NSFileManager defaultManager] moveItemAtPath:path toPath:newPath error:&error]) {
 		[self setValue:newPath forKey:@"path"];
+	} else {
+		NSLog(@"-- cannot move:%@ to:%@, error: %@", path, newPath, error);
 	}
 }
 
@@ -283,7 +306,14 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 
 	NSString *filePath = [self path];
 	NSString *fileName = [filePath lastPathComponent];
-	NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:YES];
+//	NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:YES];
+	NSError *error = nil;
+	NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:&error];
+	if(fileAttributes == nil) {
+		NSLog(@"-- can't get attributesOfItemAtPath:%@ error:%@", filePath, error);
+		return nil;
+	}
+
 	NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
 	
 	return [NSString stringWithFormat:@"addPoint(\"h%d\", %@, %@, \"%@\", \"%@\", \"%@\", %d);", [self hash], latitude, longitude, fileName, filePath, fileModDateString, [self orientationDegrees]];
@@ -437,13 +467,21 @@ static NSString *const kMultipleSelectionAllowsEdition = @"MultipleSelectionAllo
 	NSFileManager *fm = [NSFileManager defaultManager];
 
 	if ([fm fileExistsAtPath:path]) {
-		[fm copyPath:path toPath:destPath handler:nil];
+		NSError *error = nil;
+		BOOL success = [fm copyItemAtPath:path toPath:destPath error:&error];
+		if(success == NO) {
+			NSLog(@"-- cannot copyItemAtPath:%@ toPath:%@ error:%@", path, destPath, error);
+		}
 	}
 }
 
 - (void)moveToTrash {
 	NSString *trashPath = [[@"~/.Trash/" stringByExpandingTildeInPath] stringByAppendingPathComponent:[path lastPathComponent]];
-	[[NSFileManager defaultManager] movePath:path toPath:trashPath handler:nil];
+	NSError *error = nil;
+	BOOL success = [[NSFileManager defaultManager] moveItemAtPath:path toPath:trashPath error:&error];
+	if(success == NO) {
+		NSLog(@"-- cannot move:%@ to:%@, error: %@", path, trashPath, error);
+	}
 }
 
 - (void)revealInFinder {

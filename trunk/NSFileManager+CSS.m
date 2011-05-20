@@ -21,12 +21,17 @@
 	if(![self isDirectory:dirPath]) {
 		return nil;
 	}
-	
-	NSArray *dirContent = [[NSFileManager defaultManager] directoryContentsAtPath:dirPath];
+
+	NSError *error = nil;
+	NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dirPath error:&error];
+	if(dirContents == nil) {
+		NSLog(@"-- cannot get contentsOfDirectoryAtPath:%@ error%@", dirPath, error);
+		return nil;
+	}
 	
 	NSMutableArray *fullPaths = [[NSMutableArray alloc] init];
 	
-	NSEnumerator *e = [dirContent objectEnumerator];
+	NSEnumerator *e = [dirContents objectEnumerator];
 	NSString *name;
 	NSString *currentPath;
 	while (( name = [e nextObject] )) {
@@ -46,7 +51,15 @@
 }
 
 - (NSString *)prettyFileSize:(NSString *)path {
-	NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:path traverseLink:YES];
+//	NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:path traverseLink:YES];
+	NSError *error = nil;
+	NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error];
+	
+	if(fileAttributes == nil) {
+		NSLog(@"-- can't get attributesOfItemAtPath:%@ error:%@", path, error);
+		return nil;
+	}
+									
 	float fileSize = (float)[fileAttributes fileSize];
 	NSString *unit = @"bytes";
 	

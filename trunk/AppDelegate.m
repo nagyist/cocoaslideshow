@@ -618,9 +618,11 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
 	BOOL addThumbnails = [[NSUserDefaults standardUserDefaults] boolForKey:@"IncludeThumbsInKMLExport"];
 
-	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:dir attributes:nil];
+//	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:dir attributes:nil];
+	NSError *error = nil;
+	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:&error];
 	if(!success) {
-		NSLog(@"Error: can't create dir at path %@", dir);
+		NSLog(@"Error: can't create dir at path %@, error:%@", dir, error);
 		//return;
 	}
 	
@@ -628,9 +630,11 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
 	if(addThumbnails) {
 		thumbsDir = [dir stringByAppendingPathComponent:@"images"];
-		success = [[NSFileManager defaultManager] createDirectoryAtPath:thumbsDir attributes:nil];
+
+		error = nil;
+		success = [[NSFileManager defaultManager] createDirectoryAtPath:thumbsDir withIntermediateDirectories:YES attributes:nil error:&error];
 		if(!success) {
-			NSLog(@"Error: can't create dir at path %@", thumbsDir);
+			NSLog(@"Error: can't create dir at path %@, error:%@", dir, error);
 			//return;
 		}
 	}
@@ -667,9 +671,18 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	NSString *exportDir = [self chooseThumbsExportDirectory];
 	if(!exportDir) return;
 	
-	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:exportDir attributes:nil];
-	if(!success) NSLog(@"Error: can't create dir at path %@", exportDir);
-	//return;
+	NSError *error = nil;
+	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:exportDir withIntermediateDirectories:YES attributes:nil error:&error];
+	if(!success) {
+		NSLog(@"Error: can't create dir at path %@, error: %@", exportDir, error);
+		if(error) {
+//		[mainWindow presentError:error
+//            modalForWindow:mainWindow
+//            delegate:self
+//            didPresentSelector:nil
+//            contextInfo:nil];
+		}
+	}
 	
 	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isExporting"];
 	

@@ -11,8 +11,7 @@
 
 @class CSSBorderlessWindow;
 
-@interface AppDelegate : NSObject
-{	
+@interface AppDelegate : NSObject <NSToolbarDelegate, NSWindowDelegate> {	
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet CSSBorderlessWindow *slideShowPanel;
 	
