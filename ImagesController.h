@@ -5,9 +5,9 @@
 @class AppDelegate;
 @class CSSImageInfo;
 
-@interface ImagesController : NSArrayController
-{
+@interface ImagesController : NSArrayController {
 	IBOutlet AppDelegate *cocoaSlideShow;
+	
 	BOOL importDone;
 	NSArray *allowedExtensions;
 	NSString *thumbsDir;

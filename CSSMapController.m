@@ -91,17 +91,14 @@ static NSString *const kMapZoom = @"mapZoom";
 	
 	NSMutableArray *jsCommands = [NSMutableArray array];
 
-	CSSImageInfo *imageInfo = nil;
-	NSEnumerator *e = [toHide objectEnumerator];
-	while((imageInfo = [e nextObject])) {
+	for(CSSImageInfo *imageInfo in toHide) {
 		NSString *jsHidePoint = [imageInfo jsHidePoint];
 		if(!jsHidePoint) continue;
 		[jsCommands addObject:jsHidePoint];
 		[displayedImages removeObject:imageInfo];
 	}
 
-	e = [toShow objectEnumerator];
-	while((imageInfo = [e nextObject])) {
+	for(CSSImageInfo *imageInfo in toShow) {
 		NSString *jsShowPoint = [imageInfo jsShowPoint];
 		if(!jsShowPoint) continue;
 		[jsCommands addObject:jsShowPoint];
@@ -135,17 +132,14 @@ static NSString *const kMapZoom = @"mapZoom";
 	
 	NSMutableArray *jsCommands = [NSMutableArray array];
 
-	CSSImageInfo *imageInfo = nil;
-	NSEnumerator *e = [toRemove objectEnumerator];
-	while((imageInfo = [e nextObject])) {
+	for(CSSImageInfo *imageInfo in toRemove) {
 		NSString *jsRemovePoint = [imageInfo jsRemovePoint];
 		if(!jsRemovePoint) continue;
 		[jsCommands addObject:jsRemovePoint];
 		[displayedImages removeObject:imageInfo];
 	}
 	
-	e = [toAdd objectEnumerator];
-	while((imageInfo = [e nextObject])) {
+	for(CSSImageInfo *imageInfo in toAdd) {
 		NSString *jsAddPoint = [imageInfo jsAddPoint];
 		if(!jsAddPoint) continue;
 		[jsCommands addObject:jsAddPoint];

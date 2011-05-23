@@ -410,9 +410,8 @@ static void QueueCallbackFunction(void* target,  IOReturn result, void* refcon, 
 		*/
 		allCookies = [[NSMutableArray alloc] init];
 		
-		NSEnumerator *elementsEnumerator = [elements objectEnumerator];
 		
-		while (element = [elementsEnumerator nextObject]) {						
+		for (element in elements) {						
 			//Get cookie
 			object = [element valueForKey: (NSString*)CFSTR(kIOHIDElementCookieKey) ];
 			if (object == nil || ![object isKindOfClass:[NSNumber class]]) continue;

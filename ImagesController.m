@@ -22,7 +22,8 @@ static NSComparisonResult naturalCompare( CSSImageInfo *img1, CSSImageInfo *img2
 								  @"ico", @"icns",  @"bmp", @"bmpf",
 								  @"dng", @"cr2", @"crw", @"fpx", @"fpix", @"raf", @"dcr", @"ptng", @"pnt", @"mac", @"mrw", @"nef",
 								  @"orf", @"exr", @"psd", @"qti", @"qtif", @"hdr", @"sgi", @"srf", @"targa", @"tga", @"cur", @"xbm", nil];
-	[allowedExtensions retain];	
+	[allowedExtensions retain];
+	
 }
 
 - (void)dealloc {
@@ -37,14 +38,12 @@ static NSComparisonResult naturalCompare( CSSImageInfo *img1, CSSImageInfo *img2
 - (NSIndexSet *)flaggedIndexes {
 	NSMutableIndexSet *flaggedIndexes = [[NSMutableIndexSet alloc] init];
 	
-	NSEnumerator *e = [[self arrangedObjects] objectEnumerator];
-	CSSImageInfo *container;
-	while(( container = [e nextObject] )) {
-		if([container isFlagged]) {
-			[flaggedIndexes addIndex:[[self arrangedObjects] indexOfObject:container]];
+	for( CSSImageInfo *imageInfo in [self arrangedObjects] ) {
+		if([imageInfo isFlagged]) {
+			[flaggedIndexes addIndex:[[self arrangedObjects] indexOfObject:imageInfo]];
 		}
 	}
-	[self setSelectionIndexes:flaggedIndexes];
+
 	return [flaggedIndexes autorelease];
 }
 
