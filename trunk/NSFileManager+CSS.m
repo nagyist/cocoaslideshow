@@ -31,10 +31,9 @@
 	
 	NSMutableArray *fullPaths = [[NSMutableArray alloc] init];
 	
-	NSEnumerator *e = [dirContents objectEnumerator];
 	NSString *name;
 	NSString *currentPath;
-	while (( name = [e nextObject] )) {
+	for (name in dirContents) {
 		currentPath = [dirPath stringByAppendingPathComponent:name];
 		if([self isDirectory:currentPath]) {
 			if(isRecursive) {

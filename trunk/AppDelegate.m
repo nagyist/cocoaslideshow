@@ -117,14 +117,21 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	    [NSNumber numberWithBool:YES], @"SlideshowIsFullscreen", nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	
-#ifndef NSAppKitVersionNumber10_5
-#define NSAppKitVersionNumber10_5 949
-#endif
-
-	unsigned int _NSImageScaleProportionallyUpOrDown = 3;
+	[panelImageView setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
-	if (NSAppKitVersionNumber >= NSAppKitVersionNumber10_5) {
-		[panelImageView setImageScaling:_NSImageScaleProportionallyUpOrDown];
+	[imagesController addObserver:self forKeyPath:@"arrangedObjects.isFlagged" options:NSKeyValueChangeSetting context:NULL];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+	
+	if(object == imagesController && [keyPath isEqualToString:@"arrangedObjects.isFlagged"]) {
+		NSUInteger objectsCount = [[imagesController arrangedObjects] count];
+		NSUInteger flaggedCount = [[imagesController flaggedIndexes] count];
+		
+		NSString *title = [NSString stringWithFormat:@"CocoaSlideShow (%d/%d)", flaggedCount, objectsCount];
+		[mainWindow setTitle:title];
+	} else {
+		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 	}
 }
 
@@ -524,7 +531,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	NSString *thumbsDir = nil;
 	if(addThumbnails) thumbsDir = [[kmlFilePath stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"images"];
 	
-	NSEnumerator *e = [exportImages objectEnumerator];
 	CSSImageInfo *cssImageInfo = nil;
 	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
 	
@@ -542,7 +548,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	//NSDate *d1 = [NSDate date];
 	
 	unsigned int count = 0;
-	while((cssImageInfo = [e nextObject])) {
+	for(cssImageInfo in exportImages) {
 		count++;
 
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -618,7 +624,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
 	BOOL addThumbnails = [[NSUserDefaults standardUserDefaults] boolForKey:@"IncludeThumbsInKMLExport"];
 
-//	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:dir attributes:nil];
 	NSError *error = nil;
 	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:&error];
 	if(!success) {
@@ -675,13 +680,13 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:exportDir withIntermediateDirectories:YES attributes:nil error:&error];
 	if(!success) {
 		NSLog(@"Error: can't create dir at path %@, error: %@", exportDir, error);
-		if(error) {
+//		if(error) {
 //		[mainWindow presentError:error
 //            modalForWindow:mainWindow
 //            delegate:self
 //            didPresentSelector:nil
 //            contextInfo:nil];
-		}
+//		}
 	}
 	
 	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isExporting"];
