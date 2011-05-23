@@ -128,11 +128,12 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 		NSUInteger objectsCount = [[imagesController arrangedObjects] count];
 		NSUInteger flaggedCount = [[imagesController flaggedIndexes] count];
 		
-		NSString *title = [NSString stringWithFormat:@"CocoaSlideShow (%d/%d)", flaggedCount, objectsCount];
-		[mainWindow setTitle:title];
-	} else {
-		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-	}
+		// TODO: localize
+		NSString *title = [NSString stringWithFormat:@"%d images (%d flags)", objectsCount, flaggedCount];
+		
+		[[[tableView tableColumnWithIdentifier:@"name"] headerCell] setTitle:title];
+		[tableView reloadData];
+	}	
 }
 
 - (NSString *)chooseDirectory {
