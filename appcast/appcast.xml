@@ -89,7 +89,7 @@
 <h2>New features</h2>
 <pre>
 - display the number of flagged and unflagged images in the tableview header
-- added an option to sort image names by natural order
+- added an option to sort image names by natural order (germ...@gmail.com)
 </pre>
 
 <h2>Bug fix</h2>
