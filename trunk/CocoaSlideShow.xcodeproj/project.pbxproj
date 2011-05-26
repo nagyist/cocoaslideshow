@@ -15,6 +15,7 @@
 		03458E5A0C81CA5300385D93 /* NSString+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 03458E590C81CA5300385D93 /* NSString+CSS.m */; };
 		034CA91D0DEB72CD00460991 /* Flagged.png in Resources */ = {isa = PBXBuildFile; fileRef = 034CA91B0DEB72CD00460991 /* Flagged.png */; };
 		034CA91E0DEB72CD00460991 /* FlaggedHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 034CA91C0DEB72CD00460991 /* FlaggedHeader.png */; };
+		034F0B2D138EE5D000A98D10 /* Epeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034F0B2C138EE5D000A98D10 /* Epeg.framework */; };
 		034FC8780EBFB09C00BE42CA /* gmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 034FC8770EBFB09C00BE42CA /* gmap.png */; };
 		03677B9E0E3A45C600524B59 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 03677B950E3A45C500524B59 /* right.png */; };
 		03677B9F0E3A45C600524B59 /* slideshow.png in Resources */ = {isa = PBXBuildFile; fileRef = 03677B960E3A45C500524B59 /* slideshow.png */; };
@@ -80,6 +81,7 @@
 		03458E590C81CA5300385D93 /* NSString+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSS.m"; sourceTree = "<group>"; };
 		034CA91B0DEB72CD00460991 /* Flagged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flagged.png; sourceTree = "<group>"; };
 		034CA91C0DEB72CD00460991 /* FlaggedHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlaggedHeader.png; sourceTree = "<group>"; };
+		034F0B2C138EE5D000A98D10 /* Epeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Epeg.framework; sourceTree = "<group>"; };
 		034FC8770EBFB09C00BE42CA /* gmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gmap.png; sourceTree = "<group>"; };
 		03677B950E3A45C500524B59 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		03677B960E3A45C500524B59 /* slideshow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slideshow.png; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				037F69C1100A29BC0071E2A9 /* Sparkle.framework in Frameworks */,
 				037F6A21100A2BA00071E2A9 /* Sparkle.framework in Frameworks */,
 				5F4535E6135C5BD400CC3980 /* Quartz.framework in Frameworks */,
+				034F0B2D138EE5D000A98D10 /* Epeg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +199,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				034F0B2C138EE5D000A98D10 /* Epeg.framework */,
 				037F69C0100A29BC0071E2A9 /* Sparkle.framework */,
 				03A126B00EC2496C0076DF63 /* WebKit.framework */,
 				036D5C2E0C7269D0004A8236 /* Carbon.framework */,
@@ -422,10 +426,12 @@
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -446,10 +452,12 @@
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
@@ -462,14 +470,14 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
 				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				WARNING_CFLAGS = "-Wunreachable-code";
