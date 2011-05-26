@@ -83,6 +83,23 @@
             <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_7.app.zip" sparkle:version="0.5.7" length="735624" type="application/octet-stream" sparkle:dsaSignature="MCwCFAReGjIUrDnsXPcT+rEpwQjlq4dcAhRIlOCt1ZoFD8JRtjt+kgk/K8UR7A=="/>
         </item>
 
+        <item>
+            <title>Version 0.5.8 (1 bug fixed, 3 new features, Mac OS X 10.6 required)</title>
+            <description><![CDATA[
+<h2>New features</h2>
+<pre>
+- display the number of flagged and unflagged images in the tableview header
+- added an option to sort image names by natural order
+</pre>
+
+<h2>Bug fix</h2>
+<pre>
+- application could crash when opening corrupted images
+</pre>
+            ]]></description>
+            <pubDate>Thu, 26 May 2011 19:00:00 +0000</pubDate>
+            <enclosure url="http://cocoaslideshow.googlecode.com/files/CocoaSlideShow_0_5_8.app.zip" sparkle:version="0.5.8" length="709241" type="application/octet-stream" sparkle:dsaSignature="MCwCFBnBny4rGtQfnuEzGIisHo4v9aq+AhQhUyOAYC+z9gGoQ/qJ/zBy82SEjg=="/>
+        </item>
         
     </channel>
 </rss>

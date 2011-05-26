@@ -107,13 +107,12 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	[tableView setDraggingSourceOperationMask:NSDragOperationCopy forLocal:NO];
 	[tableView setDraggingSourceOperationMask:NSDragOperationNone forLocal:YES];
 	
-	//[imageView setDelegate:self];
 	[mainWindow setDelegate:self];
 	
 	[progressIndicator setHidden:YES];
 
 	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
-		[NSNumber numberWithInt:1.0], @"SlideShowSpeed",
+		[NSNumber numberWithInt:1], @"SlideShowSpeed",
 	    [NSNumber numberWithBool:YES], @"SlideshowIsFullscreen", nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	
@@ -593,9 +592,11 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	
 	NSError *error = nil;
 	[kml writeToFile:kmlFilePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
-	if(error) [[NSAlert alertWithError:error] runModal];
-	
-	[self performSelectorOnMainThread:@selector(exportFinished) withObject:nil waitUntilDone:NO];
+
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+			if(error) [[NSAlert alertWithError:error] runModal];
+            [self exportFinished];
+		}];
 	
 	[pool release];
 }
