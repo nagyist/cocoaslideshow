@@ -48,6 +48,7 @@
 		03C710BE100BA1CE0050FA48 /* CSSBorderlessWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C710BD100BA1CE0050FA48 /* CSSBorderlessWindow.m */; };
 		03DA06480C805F0B009D508F /* CSSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA06470C805F0B009D508F /* CSSImageInfo.m */; };
 		5F4535E6135C5BD400CC3980 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4535E5135C5BD400CC3980 /* Quartz.framework */; };
+		5F4FBF0D140690DE0070656D /* Epeg.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 034F0B2C138EE5D000A98D10 /* Epeg.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -60,6 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5F4FBF0D140690DE0070656D /* Epeg.framework in Copy Frameworks */,
 				037F6A5B100A2C8B0071E2A9 /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
