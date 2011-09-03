@@ -14,7 +14,8 @@
 + (BOOL)scaleAndSaveJPEGThumbnailFromFile:(NSString *)srcPath
                                    toPath:(NSString *)dstPath
                               boundingBox:(NSSize)boundingBox
-								 rotation:(int)orientationDegrees;
+								 rotation:(int)orientationDegrees
+								 size:(NSSize *)mySize;
 
 - (BOOL)scaleAndSaveAsJPEGWithMaxWidth:(int)width 
 				 maxHeight:(int)height 
