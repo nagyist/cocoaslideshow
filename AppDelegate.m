@@ -1,15 +1,10 @@
 #import "AppDelegate.h"
 #import "AppleRemote.h"
-
 #import "NSFileManager+CSS.h"
 #import <Sparkle/SUUpdater.h>
-
 #import "CSSBorderlessWindow.h"
-
 #import <Carbon/Carbon.h>
-
 #import "NSImage+CSS.h"
-
 #import "CSSImageInfo.h"
 
 static NSString *const kImagesDirectory = @"ImagesDirectory";
@@ -31,7 +26,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	takeFilesFromDefault = YES;
 		
 	undoManager = [[NSUndoManager alloc] init];
-	[undoManager setLevelsOfUndo:10];
+	[undoManager setLevelsOfUndo:20];
 
 	return self;
 }
@@ -522,85 +517,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
 #pragma KML File Export
 
-- (void)generateKMLWithThumbsDirInSeparateThread:(NSDictionary *)options {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
-	NSArray *exportImages = [options objectForKey:@"images"];
-	NSString *kmlFilePath = [options objectForKey:@"kmlFilePath"];
-	BOOL addThumbnails = [[options objectForKey:@"addThumbnails"] boolValue];
-	NSString *thumbsDir = nil;
-	if(addThumbnails) thumbsDir = [[kmlFilePath stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"images"];
-	
-	CSSImageInfo *cssImageInfo = nil;
-	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
-	
-	BOOL useRemoteBaseURL = [[NSUserDefaults standardUserDefaults] boolForKey:kRemoteKMLThumbnails];
-	NSString *baseURL = @"images/";
-	if(useRemoteBaseURL) {
-		baseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kKMLThumbnailsRemoteURLs];
-		if(![baseURL hasSuffix:@"/"]) {
-			baseURL = [baseURL stringByAppendingString:@"/"];
-		}
-	}
-	
-	NSMutableString *placemarkString = [[NSMutableString alloc] init];
-	
-	//NSDate *d1 = [NSDate date];
-	
-	unsigned int count = 0;
-	for(cssImageInfo in exportImages) {
-		count++;
-
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		
-		NSString *latitude = [cssImageInfo prettyLatitude];
-		NSString *longitude = [cssImageInfo prettyLongitude];
-		NSString *timestamp = [cssImageInfo exifDateTime];
-		
-		NSString *imageName = [[[cssImageInfo path] lastPathComponent] lowercaseString];
-		
-		if([latitude length] == 0 || [longitude length] == 0) {
-			[pool release];
-			continue;
-		}
-		
-		[placemarkString appendFormat:@"    <Placemark><name>%@</name><timestamp><when>%@</when></timestamp><Point><coordinates>%@,%@</coordinates></Point>", imageName, timestamp, longitude, latitude];
-		
-		if(addThumbnails) {
-			NSString *imageName = [[[cssImageInfo path] lastPathComponent] lowercaseString];
-			[placemarkString appendFormat:@"<description>&lt;img src=\"%@%@\" /&gt;</description><Style><text>$[description]</text></Style> ", baseURL, imageName];
-		}
-
-		[placemarkString appendFormat:@"</Placemark>\n"];
-		
-		if(addThumbnails) {
-			[self performSelectorOnMainThread:@selector(updateExportProgress:) withObject:[NSNumber numberWithInt:count] waitUntilDone:NO];
-			NSString *thumbPath = [[thumbsDir stringByAppendingPathComponent:[[cssImageInfo path] lastPathComponent]] lowercaseString];
-
-			BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(300.0, 225.0) rotation:[cssImageInfo orientationDegrees]] :
-											  [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(510.0, 360.0) rotation:[cssImageInfo orientationDegrees]];			
-			
-			if(!success) NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
-		}
-		[pool release];
-	}
-	
-	//NSLog(@"-- TIME %f", [[NSDate date] timeIntervalSinceDate:d1]);
-	
-	NSString *kml = [NSString stringWithFormat:XMLContainer, placemarkString];
-	[placemarkString release];
-	
-	NSError *error = nil;
-	[kml writeToFile:kmlFilePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
-
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-			if(error) [[NSAlert alertWithError:error] runModal];
-            [self exportFinished];
-		}];
-	
-	[pool release];
-}
-
 - (NSString *)chooseKMLExportDirectory {
     NSSavePanel *sPanel = [NSSavePanel savePanel];
 	
@@ -618,8 +534,6 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	if(isExporting) return;
 
 	[self setValue:[NSNumber numberWithBool:YES] forKey:@"isExporting"];
-
-	NSString *thumbsDir = nil;
 	
 	NSString *dir = [self chooseKMLExportDirectory];
 	if(!dir) return;
@@ -635,6 +549,8 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	
 	NSString *kmlFilePath = [dir stringByAppendingPathComponent:@"CocoaSlideShow.kml"];
 
+    NSString *thumbsDir = nil;
+    
 	if(addThumbnails) {
 		thumbsDir = [dir stringByAppendingPathComponent:@"images"];
 
@@ -647,13 +563,105 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	}
 	
 	NSArray *kmlImages = [[[imagesController selectedObjects] copy] autorelease];
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:kmlImages, @"images", kmlFilePath, @"kmlFilePath", [NSNumber numberWithBool:addThumbnails], @"addThumbnails", nil];
 		
 	if(addThumbnails) {
 		[self prepareProgressIndicator:[kmlImages count]];
 	}
+	    
+	if(addThumbnails) thumbsDir = [[kmlFilePath stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"images"];
 	
-	[NSThread detachNewThreadSelector:@selector(generateKMLWithThumbsDirInSeparateThread:) toTarget:self withObject:options];
+	NSString *XMLContainer = @"<?xml version=\"1.0\" encoding=\"UTF-8\"?> <kml xmlns=\"http://www.opengis.net/kml/2.2\">\n<Folder>\n%@</Folder>\n</kml>\n";
+	
+	BOOL useRemoteBaseURL = [[NSUserDefaults standardUserDefaults] boolForKey:kRemoteKMLThumbnails];
+	NSString *baseURL = @"images/";
+	if(useRemoteBaseURL) {
+		baseURL = [[NSUserDefaults standardUserDefaults] valueForKey:kKMLThumbnailsRemoteURLs];
+		if(![baseURL hasSuffix:@"/"]) {
+			baseURL = [baseURL stringByAppendingString:@"/"];
+		}
+	}
+    
+    NSMutableArray *placemarkStrings = [NSMutableArray array];
+    
+    NSOperationQueue *exportQueue = [[[NSOperationQueue alloc] init] autorelease];
+
+    NSBlockOperation *exportOperationBlock = [[[NSBlockOperation alloc] init] autorelease];
+            
+	for(CSSImageInfo *cssImageInfo in kmlImages) {
+        
+        [exportOperationBlock addExecutionBlock:^{
+        
+            NSString *latitude = [cssImageInfo prettyLatitude];
+            NSString *longitude = [cssImageInfo prettyLongitude];
+            NSString *timestamp = [cssImageInfo exifDateTime];
+            
+            NSString *imageName = [[[cssImageInfo path] lastPathComponent] lowercaseString];
+            
+            if([latitude length] == 0 || [longitude length] == 0) {
+                return;
+            }
+
+            NSMutableString *placemarkString = [NSMutableString stringWithFormat:@"    <Placemark><name>%@</name><timestamp><when>%@</when></timestamp><Point><coordinates>%@,%@</coordinates></Point>", imageName, timestamp, longitude, latitude];
+            
+            if(addThumbnails) {
+                
+                [self incrementExportProgress];
+                
+                NSString *thumbPath = [[thumbsDir stringByAppendingPathComponent:[[cssImageInfo path] lastPathComponent]] lowercaseString];
+
+                float w1, h1, w2, h2;
+
+                if ([[cssImageInfo image] size].height > [[cssImageInfo image] size].width) {
+                    w1 = 106.0;
+                    h1 = 160.0;
+                    w2 = 360.0;
+                    h2 = 510.0;
+                } else {
+                    w1 = 160.0;
+                    h1 = 106.0;
+                    w2 = 510.0;
+                    h2 = 360.0;
+                }
+                
+                NSSize size = NSZeroSize;
+                BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(w1, h1) rotation:[cssImageInfo orientationDegrees] size:&size] :
+                [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(w2, h2) rotation:[cssImageInfo orientationDegrees] size:&size];			
+                
+                if(success == NO) {
+                    NSLog(@"Could not scale and save as jpeg into %@", thumbPath);
+                }
+                
+                NSString *imageName = [[[cssImageInfo path] lastPathComponent] lowercaseString];
+                
+                [placemarkString appendFormat:@"<description>&lt;img src=\"%@%@\" height=\"%.0f\" width=\"%.0f\" /&gt;</description><Style><text>$[description]</text></Style> ", baseURL, imageName, (float)size.height, (float)size.width];
+            }
+
+            [placemarkString appendString:@"</Placemark>\n"];
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+
+                [placemarkStrings addObject:placemarkString];
+            }];
+        }];
+        
+        [exportOperationBlock setCompletionBlock:^{
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                NSString *placemarkString = [placemarkStrings componentsJoinedByString:@""];
+                
+                NSString *kml = [NSString stringWithFormat:XMLContainer, placemarkString];
+                                
+                NSError *anError = nil;
+                [kml writeToFile:kmlFilePath atomically:YES encoding:NSUTF8StringEncoding error:&anError];
+                
+                if(anError) [[NSAlert alertWithError:anError] runModal];
+                
+                [self exportFinished];
+            }];        
+        }];
+	}
+    
+    [exportQueue addOperation:exportOperationBlock];
 }
 
 #pragma mark thumbnails export
@@ -715,7 +723,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 
 	NSOperationQueue *resizeQueue = [[[NSOperationQueue alloc] init] autorelease];
 	
-	NSBlockOperation *resizeBlockOperation = [[NSBlockOperation alloc] init];
+	NSBlockOperation *resizeBlockOperation = [[[NSBlockOperation alloc] init] autorelease];
 
 	for(CSSImageInfo *imageInfo in theImages) {
 		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
