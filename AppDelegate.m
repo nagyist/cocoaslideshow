@@ -258,6 +258,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 - (void)timerNextTick {
 	if(![imagesController canSelectNext]) {
 		[self invalidateTimer];
+        if(isFullScreen) [self exitFullScreen:nil];
 	}
 	[imagesController selectNextImage]; 
 }
@@ -624,8 +625,8 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
                 }
                 
                 NSSize size = NSZeroSize;
-                BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(w1, h1) rotation:[cssImageInfo orientationDegrees] size:&size] :
-                [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(w2, h2) rotation:[cssImageInfo orientationDegrees] size:&size];			
+                BOOL success = useRemoteBaseURL ? [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(w1, h1) rotation:0 size:&size] :
+                [NSImage scaleAndSaveJPEGThumbnailFromFile:[cssImageInfo path] toPath:thumbPath boundingBox:NSMakeSize(w2, h2) rotation:0 size:&size];			
                 
                 if(success == NO) {
                     NSLog(@"Could not scale and save as jpeg into %@", thumbPath);

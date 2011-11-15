@@ -42,7 +42,7 @@
 - (void)rotateLeft;
 - (void)rotateRight;
 
-- (int)orientationDegrees;
+//- (int)orientationDegrees;
 
 - (NSString *)path;
 - (NSImage *)image;

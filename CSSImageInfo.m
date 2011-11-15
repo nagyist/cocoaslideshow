@@ -154,7 +154,7 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 		metadata = [immutableMetadata mutableCopy];
 		CFRelease(metadataRef);
 	}
-	
+    
 	UTI = (NSString *)CGImageSourceGetType(source);
 
 	CFRelease(source);
@@ -175,25 +175,21 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 	userRotation += 90;	
 }
 
-// http://www.impulseadventure.com/photo/exif-orientation.html
-- (int)orientationDegrees {
-	NSString *s = [[self metadata] valueForKey:@"Orientation"];
-	if(!s) return userRotation;
-	
-	int o = [s intValue];
-	switch(o) {
-		case 1:
-			return 0 + userRotation; break;
-		case 8:
-			return 90 + userRotation; break;
-		case 3:
-			return 180 + userRotation; break;
-		case 6:
-			return 270 + userRotation; break;
-		default:
-			return 0 + userRotation;
-	}
-}
+//// http://www.impulseadventure.com/photo/exif-orientation.html
+//- (int)orientationDegrees {
+//	NSNumber *n = [[self metadata] valueForKey:@"Orientation"];
+//	NSLog(@"-- n: %@", n);
+//    
+//    NSUInteger i = [n unsignedIntValue];
+//    NSLog(@"------ %d", i);
+//    
+//    if(i == 1) return 0 + userRotation;
+//    if(i == 8) return 90 + userRotation;
+//    if(i == 3) return 180 + userRotation;
+//    if(i == 6) return 270 + userRotation;
+//
+//    return userRotation;
+//}
 
 - (NSString *)fileName {
 	return [path lastPathComponent];
@@ -316,7 +312,7 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 
 	NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
 	
-	return [NSString stringWithFormat:@"addPoint(\"h%d\", %@, %@, \"%@\", \"%@\", \"%@\", %d);", [self hash], latitude, longitude, fileName, filePath, fileModDateString, [self orientationDegrees]];
+	return [NSString stringWithFormat:@"addPoint(\"h%d\", %@, %@, \"%@\", \"%@\", \"%@\", %d);", [self hash], latitude, longitude, fileName, filePath, fileModDateString, 0];
 }
 
 - (NSString *)jsRemovePoint {
@@ -403,11 +399,8 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 }
 
 - (NSImage *)image {
-	//if(![[NSApp delegate] isFullScreen]) return nil;
-	//NSLog(@"--image with path:%@", path);
-	int orientationDegrees = [self orientationDegrees];
-	
-	return [[[[NSImage alloc] initByReferencingFile:path] autorelease] rotatedWithAngle:orientationDegrees];
+    //int orientationDegrees = [self orientationDegrees];
+	return [[[[NSImage alloc] initByReferencingFile:path] autorelease] rotatedWithAngle:0];
 }
 
 // just to appear to be KVC compliant, useful when droping an image on the imageView
