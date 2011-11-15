@@ -13,13 +13,15 @@
 	CGImageSourceRef source;
 	NSMutableDictionary *metadata;
 
-	BOOL sourceRead;
+	BOOL sourceWasRead;
 	BOOL isFlagged;
 	BOOL isLoadingCache;
 	BOOL isJpeg;
 	
 	int userRotation;
 }
+
+- (CGImageSourceRef)source;
 
 + (CSSImageInfo *)containerWithPath:(NSString *)aPath;
 
