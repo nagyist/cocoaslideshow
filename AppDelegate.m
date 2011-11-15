@@ -308,7 +308,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 	}
 }
 
-- (void) sendRemoteButtonEvent: (RemoteControlEventIdentifier) event pressedDown: (BOOL) pressedDown remoteControl: (RemoteControl*) remoteControl {
+- (void)sendRemoteButtonEvent: (RemoteControlEventIdentifier) event pressedDown: (BOOL) pressedDown remoteControl: (RemoteControl*) remoteControl {
 	//NSLog(@"Button %d pressed down %d", event, pressedDown);
 	
 	NSString* buttonName=nil;

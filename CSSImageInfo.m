@@ -43,7 +43,7 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 - (void)setPath:(NSString *)aPath {
 
 	if(aPath == nil) {
-		NSLog(@"-- aPath is nil :-(");
+		NSLog(@"-- error: path is nil");
 		return;
 	}
 	
@@ -82,13 +82,13 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 }
 
 - (NSMutableDictionary *)metadata {
-	if(!sourceRead) [self loadSource];
+	if(!sourceWasRead) [self loadSource];
 	return metadata;
 }
 
 - (NSString *)exifDateTime {
-	NSDictionary *exif = [[self metadata] objectForKey:(NSString *)kCGImagePropertyExifDictionary];
-	return [exif objectForKey:(NSString *)kCGImagePropertyExifDateTimeOriginal];
+	NSDictionary *exif = [[self metadata] valueForKey:(NSString *)kCGImagePropertyExifDictionary];
+	return [exif valueForKey:(NSString *)kCGImagePropertyExifDateTimeOriginal];
 }
 
 - (NSString *)prettyLatitude {
@@ -96,8 +96,8 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 	
 	if(!gps) return @"";
 	
-	NSNumber *latitude = [gps objectForKey:@"Latitude"];
-	NSString *latitudeRef = [gps objectForKey:@"LatitudeRef"];
+	NSNumber *latitude = [gps valueForKey:@"Latitude"];
+	NSString *latitudeRef = [gps valueForKey:@"LatitudeRef"];
 	
 	if(!latitude) return @"";
 	
@@ -109,11 +109,11 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 	
 	if(!gps) return @"";
 	
-	NSNumber *longitude = [gps objectForKey:@"Longitude"];
-	NSString *longitudeRef = [gps objectForKey:@"LongitudeRef"];
-	
+	NSNumber *longitude = [gps valueForKey:@"Longitude"];
 	if(!longitude) return @"";
-	
+
+	NSString *longitudeRef = [gps valueForKey:@"LongitudeRef"];
+    
 	return [longitudeRef isEqualToString:@"W"] ? [@"-" stringByAppendingFormat:@"%@", longitude] : [longitude description];
 }
 
@@ -128,21 +128,8 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 		return NO;
     }
 	
-	//NSLog(@"-- loadSource %@", path);
-	NSURL *url = [NSURL fileURLWithPath:path];
-
-	source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
-
-	NSString *UTI = nil;
-	
-	if (!source) {
-		CGImageSourceStatus status = CGImageSourceGetStatus(source);
-		NSLog(@"Error: could not create image source. Status: %d", status);
-		return NO;
-	}
-	
-	sourceRead = YES;
-	
+    if([self source] == NULL) return NO;
+    
 	// fill caches
 	CFDictionaryRef metadataRef = CGImageSourceCopyPropertiesAtIndex(source,0,NULL);
 	if(metadataRef) {
@@ -155,7 +142,7 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 		CFRelease(metadataRef);
 	}
     
-	UTI = (NSString *)CGImageSourceGetType(source);
+	NSString *UTI = (NSString *)CGImageSourceGetType(source);
 
 	CFRelease(source);
 	source = nil;
@@ -209,45 +196,55 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 }
 
 - (NSString *)latitude {
-	return [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSLatitude];
+	return [[self gps] valueForKey:(NSString *)kCGImagePropertyGPSLatitude];
 }
 
 - (NSString *)longitude {
-	return [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSLongitude];
+	return [[self gps] valueForKey:(NSString *)kCGImagePropertyGPSLongitude];
 }
 
 - (NSString *)latitudeRef {
-	return [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSLatitudeRef];
+	return [[self gps] valueForKey:(NSString *)kCGImagePropertyGPSLatitudeRef];
 }
 
 - (NSString *)longitudeRef {
-	return [[self gps] objectForKey:(NSString *)kCGImagePropertyGPSLongitudeRef];
+	return [[self gps] valueForKey:(NSString *)kCGImagePropertyGPSLongitudeRef];
 }
 
 - (NSDictionary *)exif {
-	return [[self metadata] objectForKey:(NSString *)kCGImagePropertyExifDictionary];
+	return [[self metadata] valueForKey:(NSString *)kCGImagePropertyExifDictionary];
 }
 
 - (NSDictionary *)iptc {
-	return [[self metadata] objectForKey:(NSString *)kCGImagePropertyIPTCDictionary];
+	return [[self metadata] valueForKey:(NSString *)kCGImagePropertyIPTCDictionary];
 }
 
 - (NSDictionary *)gps {
-	return [[self metadata] objectForKey:(NSString *)kCGImagePropertyGPSDictionary];
+	return [[self metadata] valueForKey:(NSString *)kCGImagePropertyGPSDictionary];
+}
+
+- (CGImageSourceRef)source {
+    if(sourceWasRead) return source;
+    
+    if(source) return source;
+    
+    if(path == nil) return NULL;
+    
+    NSURL *url = [NSURL fileURLWithPath:path];
+    if(url == nil) return NULL;
+    
+    source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
+    sourceWasRead = YES;
+    if(source) return source;
+    
+	CGImageSourceStatus status = CGImageSourceGetStatus(source);
+	NSLog(@"Error: could not create image source. Status: %d", status);
+	return NULL;
 }
 
 - (BOOL)saveSourceWithMetadata {
 
-	if(!source) {
-		NSURL *url = [NSURL fileURLWithPath:path];
-		source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
-	}
-	
-	if(!source) {
-		CGImageSourceStatus status = CGImageSourceGetStatus(source);
-		NSLog(@"Error: could not create image source. Status: %d", status);
-		return NO;
-	}
+	if([self source] == NULL) return NO;
 	
 	NSData *data = [NSMutableData data];
     CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)data, (CFStringRef)@"public.jpeg", 1, NULL);
@@ -291,7 +288,7 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 }
 
 - (BOOL)isJpeg {
-	if(!sourceRead) [self loadSource];
+	if(!sourceWasRead) [self loadSource];
 	return isJpeg;
 }
 
@@ -310,7 +307,7 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 		return nil;
 	}
 
-	NSString *fileModDateString = fileAttributes ? [[fileAttributes objectForKey:NSFileModificationDate] description] : @"";
+	NSString *fileModDateString = fileAttributes ? [[fileAttributes valueForKey:NSFileModificationDate] description] : @"";
 	
 	return [NSString stringWithFormat:@"addPoint(\"h%d\", %@, %@, \"%@\", \"%@\", \"%@\", %d);", [self hash], latitude, longitude, fileName, filePath, fileModDateString, 0];
 }
@@ -330,11 +327,11 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 - (void)setUserComment:(NSString *)comment {
 	if(![self isJpeg]) return;
 
-	if(!sourceRead) [self loadSource];
+	if(!sourceWasRead) [self loadSource];
 	
 	[self willChangeValueForKey:@"userComment"];
 	[self willChangeValueForKey:@"exif"];
-	NSMutableDictionary *exifData = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
+	NSMutableDictionary *exifData = [[metadata valueForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
 	if(!exifData) {
 		exifData = [[NSMutableDictionary alloc] init];
 	}
@@ -355,7 +352,7 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 - (void)setKeywords:(NSArray *)keywords {
 	if(![self isJpeg]) return;
 
-	if(!sourceRead) [self loadSource];
+	if(!sourceWasRead) [self loadSource];
 
 	[self willChangeValueForKey:@"keywords"];
 	NSMutableDictionary *iptcDict = [[self iptc] mutableCopy];
@@ -374,21 +371,21 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 }
 
 - (NSArray *)keywords {
-	return [[self iptc] objectForKey:(NSString *)kCGImagePropertyIPTCKeywords];
+	return [[self iptc] valueForKey:(NSString *)kCGImagePropertyIPTCKeywords];
 }
 
 - (NSString *)userComment {
-	return [[self exif] objectForKey:(NSString *)kCGImagePropertyExifUserComment];
+	return [[self exif] valueForKey:(NSString *)kCGImagePropertyExifUserComment];
 }
 
 - (NSString *)prettyGPS {
 	NSDictionary *gps = [self gps];
 	if(!gps) return nil;
 	
-	NSString *latitude = [[gps objectForKey:(NSString *)kCGImagePropertyGPSLatitude] description];
-	NSString *longitude = [[gps objectForKey:(NSString *)kCGImagePropertyGPSLongitude] description];
-	NSString *latitudeRef = [gps objectForKey:(NSString *)kCGImagePropertyGPSLatitudeRef];
-	NSString *longitudeRef = [gps objectForKey:(NSString *)kCGImagePropertyGPSLongitudeRef];
+	NSString *latitude = [[gps valueForKey:(NSString *)kCGImagePropertyGPSLatitude] description];
+	NSString *longitude = [[gps valueForKey:(NSString *)kCGImagePropertyGPSLongitude] description];
+	NSString *latitudeRef = [gps valueForKey:(NSString *)kCGImagePropertyGPSLatitudeRef];
+	NSString *longitudeRef = [gps valueForKey:(NSString *)kCGImagePropertyGPSLongitudeRef];
 	
 	if(!latitude || !longitude || !latitudeRef || !longitudeRef) return nil;
 	
@@ -419,8 +416,8 @@ static NSSet *keyPathsForValuesAffectingFlagIcon = nil;
 }
 
 - (NSString *)prettyImageSize {
-	NSString *x = [[self exif] objectForKey:(NSString *)kCGImagePropertyExifPixelXDimension];
-	NSString *y = [[self exif] objectForKey:(NSString *)kCGImagePropertyExifPixelYDimension];
+	NSString *x = [[self exif] valueForKey:(NSString *)kCGImagePropertyExifPixelXDimension];
+	NSString *y = [[self exif] valueForKey:(NSString *)kCGImagePropertyExifPixelYDimension];
 	if(x && y) {
 		return [NSString stringWithFormat:@"%@x%@", x, y];
 	}

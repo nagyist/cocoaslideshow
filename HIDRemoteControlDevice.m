@@ -251,7 +251,6 @@ cleanup:
 	return hidDeviceInterface;
 }
 
-
 - (NSDictionary*) cookieToButtonMapping {
 	return cookieToButtonMapping;
 }
