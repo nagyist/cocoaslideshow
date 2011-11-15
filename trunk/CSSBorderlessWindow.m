@@ -13,13 +13,13 @@
 
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
 	
-	NSWindow *result = [super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:NO];
+	self = [super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:NO];
 	
-	[result setBackgroundColor:[NSColor blackColor]];
+	[self setBackgroundColor:[NSColor blackColor]];
 	
-	[result setLevel:NSStatusWindowLevel];
+	[self setLevel:NSStatusWindowLevel];
 	
-	return result;
+	return self;
 }
 
 @end
