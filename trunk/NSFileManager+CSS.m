@@ -11,7 +11,7 @@
 
 @implementation NSFileManager (CSS)
 
-- (BOOL) isDirectory:(NSString *)path {
+- (BOOL)isDirectory:(NSString *)path {
 	BOOL isDir;
 	[self fileExistsAtPath:path isDirectory:&isDir];
 	return isDir;
