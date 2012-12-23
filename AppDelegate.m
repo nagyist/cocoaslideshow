@@ -82,6 +82,7 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 }
 
 - (void)awakeFromNib {
+    
 	remoteControl = [[AppleRemote alloc] initWithDelegate: self];
 	
 	[mainWindow registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
@@ -311,8 +312,8 @@ static NSString *const kSlideshowIsFullscreen = @"SlideshowIsFullscreen";
 - (void)sendRemoteButtonEvent: (RemoteControlEventIdentifier) event pressedDown: (BOOL) pressedDown remoteControl: (RemoteControl*) remoteControl {
 	//NSLog(@"Button %d pressed down %d", event, pressedDown);
 	
-	NSString* buttonName=nil;
-	NSString* pressed=@"";
+	NSString* buttonName = nil;
+	NSString* pressed = @"";
 	
 	if(!pressedDown) {
 		return;

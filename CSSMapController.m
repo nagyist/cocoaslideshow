@@ -128,7 +128,7 @@ static NSString *const kMapZoom = @"mapZoom";
 	NSMutableSet *toAdd = [NSMutableSet setWithArray:[imagesController arrangedObjects]];
 	[toAdd minusSet:displayedImages];
 	NSMutableSet *toRemove = [displayedImages mutableCopy];
-	[toRemove minusSet:[imagesController arrangedObjects]];
+	[toRemove minusSet:[NSSet setWithArray:[imagesController arrangedObjects]]];
 	
 	NSMutableArray *jsCommands = [NSMutableArray array];
 
