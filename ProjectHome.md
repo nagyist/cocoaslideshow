@@ -1,0 +1,1 @@
+# CocoaSlideShow has a new home on [github](https://github.com/nst/CocoaSlideShow) #
